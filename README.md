@@ -79,3 +79,21 @@ the concurrency clients are 5000.
 In 30 ms processing time, the tets result for 100, 1000, 5000 clients is:
 
 ![](concurrency.png)
+
+
+## Usage
+You should install this package first if you want to run this test.
+
+```
+go get github.com/smallnest/go-web-framework-benchmark
+```
+
+It takes a while to install a large number of dependencies that need to be downloaded. Once that command completes, you can run:
+
+```
+cd $GOPATH/src/github.com/smallnest/go-web-framework-benchmark
+go build -o  gowebbenchmark server.go
+./test.sh
+```
+
+It will  generate test results in processtime.csv and concurrency.csv. You can modify test.sh to execute your customized test cases.
