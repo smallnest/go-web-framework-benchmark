@@ -37,6 +37,7 @@ import (
 	"github.com/naoina/denco"
 	"github.com/pilu/traffic"
 	"github.com/plimble/ace"
+	routing "github.com/qiangxue/fasthttp-routing"
 	"github.com/rcrowley/go-tigertonic"
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
@@ -91,6 +92,8 @@ func main() {
 		startEchoV2Fasthttp()
 	case "fasthttprouter":
 		startFastHttpRouter()
+	case "fasthttp-routing":
+		startFastHttpRouting()
 	case "gin":
 		startGin()
 	case "gocraftWeb":
@@ -244,7 +247,7 @@ func startEchoV2Fasthttp() {
 	mux.Run(echov2fasthttp.New(":" + strconv.Itoa(port)))
 }
 
-//fasthttp
+//fasthttprouter
 func fastHttpHandler(ctx *fasthttp.RequestCtx, ps fasthttprouter.Params) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
@@ -252,9 +255,23 @@ func fastHttpHandler(ctx *fasthttp.RequestCtx, ps fasthttprouter.Params) {
 	ctx.Write(message)
 }
 func startFastHttpRouter() {
-	router := fasthttprouter.New()
-	router.GET("/hello", fastHttpHandler)
-	fasthttp.ListenAndServe(":"+strconv.Itoa(port), router.Handler)
+	mux := fasthttprouter.New()
+	mux.GET("/hello", fastHttpHandler)
+	fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.Handler)
+}
+
+//fasthttprouting
+func fastHttpRoutingHandler(c *routing.Context) error {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	}
+	c.Write(message)
+	return nil
+}
+func startFastHttpRouting() {
+	mux := routing.New()
+	mux.Get("/hello", fastHttpRoutingHandler)
+	fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.HandleRequest)
 }
 
 // gin
