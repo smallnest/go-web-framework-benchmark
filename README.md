@@ -10,6 +10,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [pat](https://github.com/bmizerany/pat)
 * [lion](https://github.com/celrenheit/lion)
 * [httptreemux](https://github.com/dimfeld/httptreemux)
+* [baa](https://github.com/go-baa/baa)
 * [go-restful](https://github.com/emicklei/go-restful)
 * [gin](https://github.com/gin-gonic/gin)
 * [martini](https://github.com/go-martini/martini)

@@ -44,6 +44,7 @@ import (
 	gojiv2 "goji.io"
 	gojiv2pat "goji.io/pat"
 	gcontext "golang.org/x/net/context"
+	"gopkg.in/baa.v1"
 	echo "gopkg.in/labstack/echo.v1"
 )
 
@@ -74,6 +75,8 @@ func main() {
 		startDefaultMux()
 	case "ace":
 		startAce()
+	case "baa":
+		startBaa()
 	case "beego":
 		startBeego()
 	case "bone":
@@ -155,6 +158,19 @@ func aceHandler(c *ace.C) {
 func startAce() {
 	mux := ace.New()
 	mux.GET("/hello", aceHandler)
+	mux.Run(":" + strconv.Itoa(port))
+}
+
+// baa
+func baaHandler(ctx *baa.Context) {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	}
+	ctx.Text(200, message)
+}
+func startBaa() {
+	mux := baa.New()
+	mux.Get("/hello", baaHandler)
 	mux.Run(":" + strconv.Itoa(port))
 }
 
