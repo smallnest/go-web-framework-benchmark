@@ -90,6 +90,8 @@ func main() {
 		startEchoV2Standard()
 	case "echov2fasthttp":
 		startEchoV2Fasthttp()
+	case "fasthttp-raw":
+		startFasthttp()
 	case "fasthttprouter":
 		startFastHttpRouter()
 	case "fasthttp-routing":
@@ -245,6 +247,22 @@ func startEchoV2Fasthttp() {
 	mux := echov2.New()
 	mux.Get("/hello", echov2Handler)
 	mux.Run(echov2fasthttp.New(":" + strconv.Itoa(port)))
+}
+
+//fasthttp
+func fastHttpRawHandler(ctx *fasthttp.RequestCtx) {
+	switch string(ctx.Path()) {
+	case "/hello":
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		}
+		ctx.Write(message)
+	default:
+		ctx.Error("Unsupported path", fasthttp.StatusNotFound)
+	}
+}
+func startFasthttp() {
+	fasthttp.ListenAndServe(":"+strconv.Itoa(port), fastHttpRawHandler)
 }
 
 //fasthttprouter
