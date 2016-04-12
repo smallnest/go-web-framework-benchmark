@@ -251,15 +251,19 @@ func startEchoV2Fasthttp() {
 
 //fasthttp
 func fastHttpRawHandler(ctx *fasthttp.RequestCtx) {
-	switch string(ctx.Path()) {
-	case "/hello":
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
+	if string(ctx.Method()) == "GET" {
+		switch string(ctx.Path()) {
+		case "/hello":
+			if sleepTime > 0 {
+				time.Sleep(sleepTimeDuration)
+			}
+			ctx.Write(message)
+		default:
+			ctx.Error("Unsupported path", fasthttp.StatusNotFound)
 		}
-		ctx.Write(message)
-	default:
-		ctx.Error("Unsupported path", fasthttp.StatusNotFound)
+		return
 	}
+	ctx.Error("Unsupported method", fasthttp.StatusMethodNotAllowed)
 }
 func startFasthttp() {
 	fasthttp.ListenAndServe(":"+strconv.Itoa(port), fastHttpRawHandler)
@@ -418,7 +422,7 @@ func irisHandler(c *iris.Context) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
 	}
-	c.Text(messageStr)
+	c.WriteString(messageStr)
 }
 func startIris() {
 	mux := iris.New()
