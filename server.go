@@ -421,9 +421,9 @@ func irisHandler(c *iris.Context) {
 	c.Text(messageStr)
 }
 func startIris() {
-	mux := iris.Custom(iris.StationOptions{Cache: false, PathCorrection: true})
+	mux := iris.New()
 	mux.Get("/hello", irisHandler)
-	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+	mux.Listen(":" + strconv.Itoa(port))
 }
 
 // lars
