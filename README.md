@@ -8,6 +8,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [go-json-rest](https://github.com/ant0ine/go-json-rest)
 * [beego](https://github.com/astaxie/beego)
 * [pat](https://github.com/bmizerany/pat)
+* [fasthttprouter](https://github.com/buaazp/fasthttprouter)
 * [lion](https://github.com/celrenheit/lion)
 * [httptreemux](https://github.com/dimfeld/httptreemux)
 * [baa](https://github.com/go-baa/baa)
@@ -26,6 +27,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [denco](https://github.com/naoina/denco)
 * [traffic](https://github.com/pilu/traffic)
 * [ace](https://github.com/plimble/ace)
+* [fasthttp-routing](https://github.com/qiangxue/fasthttp-routing)
 * [go-tigertonic](https://github.com/rcrowley/go-tigertonic)
 * [fasthttp](https://github.com/valyala/fasthttp)
 * [r2router](https://github.com/vanng822/r2router)
@@ -76,10 +78,18 @@ The first test case is to mock 0 ms, 10 ms, 100 ms, 500 ms processing time in ha
 
 the concurrency clients are 5000.
 
+If we enable http pipelining, test result as below:
+
+![](benchmark-pipelining.png)
+
 ## Concurrency Test 
 In 30 ms processing time, the tets result for 100, 1000, 5000 clients is:
 
 ![](concurrency.png)
+
+If we enable http pipelining, test result as below:
+
+![](concurrency-pipelining.png)
 
 
 ## Usage
