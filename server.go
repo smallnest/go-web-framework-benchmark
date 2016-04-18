@@ -5,6 +5,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"runtime"
 	"strconv"
 	"time"
 
@@ -54,6 +55,7 @@ var sleepTime = 0
 var sleepTimeDuration time.Duration
 var message = []byte("hello world")
 var messageStr = "hello world"
+var samplingPoint = 20 //seconds
 
 // server [default] [10] [8080]
 func main() {
@@ -69,7 +71,22 @@ func main() {
 	if argsLen > 3 {
 		port, _ = strconv.Atoi(args[3])
 	}
+	if argsLen > 4 {
+		samplingPoint, _ = strconv.Atoi(args[4])
+	}
 	sleepTimeDuration = time.Duration(sleepTime) * time.Millisecond
+	samplingPointDuration := time.Duration(samplingPoint) * time.Second
+
+	go func() {
+		time.Sleep(samplingPointDuration)
+		var mem runtime.MemStats
+		runtime.ReadMemStats(&mem)
+		var u uint64 = 1024 * 1024
+		fmt.Printf("TotalAlloc: %d\n", mem.TotalAlloc/u)
+		fmt.Printf("Alloc: %d\n", mem.Alloc/u)
+		fmt.Printf("HeapAlloc: %d\n", mem.HeapAlloc/u)
+		fmt.Printf("HeapSys: %d\n", mem.HeapSys/u)
+	}()
 
 	switch webFramework {
 	case "default":
