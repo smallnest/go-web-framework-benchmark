@@ -439,7 +439,7 @@ func irisHandler(c *iris.Context) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
 	}
-	c.WriteString(messageStr)
+	c.SetBody(message)
 }
 func startIris() {
 	mux := iris.New()
