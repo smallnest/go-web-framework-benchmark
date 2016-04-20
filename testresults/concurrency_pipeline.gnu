@@ -7,7 +7,7 @@ set style histogram clustered gap 2
 set style fill solid 0.7 border
 set border lw 0.8
 
-set ylabel "millisecond"
+set ylabel "requests / second"
 set xtics nomirror rotate by -45
 set ytics nomirror
 
