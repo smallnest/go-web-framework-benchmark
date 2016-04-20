@@ -9,12 +9,18 @@ test_result=()
 test_latency_result=()
 test_alloc_result=()
 
+cpu_cores=`cat /proc/cpuinfo|grep processor|wc -l`
+if [ $cpu_cores -eq 0 ]
+then
+  cpu_cores=1
+fi
+
 test_web_framework()
 {
   echo "testing web framework: $2"
   ./$server_bin_name $2 $3 > alloc.log 2>&1 &
   sleep 2
-  wrk -t16 -c$4 -d30s -H 'Connection: Close' http://127.0.0.1:8080/hello > tmp.log
+  wrk -t$cpu_cores -c$4 -d30s -H 'Connection: Close' http://127.0.0.1:8080/hello > tmp.log
   throughput=`cat tmp.log|grep Requests/sec|awk '{print $2}'`
   latency=`cat tmp.log|grep Latency | awk '{print $2}'`
   latency=${latency%ms}

@@ -7,13 +7,19 @@ length=${#web_frameworks[@]}
 
 test_result=()
 
+cpu_cores=`cat /proc/cpuinfo|grep processor|wc -l`
+if [ $cpu_cores -eq 0 ]
+then
+  cpu_cores=1
+fi
+
 test_web_framework()
 {
   echo "testing web framework: $2"
   ./$server_bin_name $2 $3 &
   sleep 2
 
-  throughput=`wrk -t16 -c$4 -d30s http://127.0.0.1:8080/hello -s pipeline.lua --latency -- / 16| grep Requests/sec | awk '{print $2}'`
+  throughput=`wrk -t$cpu_cores -c$4 -d30s http://127.0.0.1:8080/hello -s pipeline.lua --latency -- / 16| grep Requests/sec | awk '{print $2}'`
   echo "throughput: $throughput requests/second"
   test_result[$1]=$throughput
 
