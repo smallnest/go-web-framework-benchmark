@@ -80,13 +80,13 @@ the concurrency clients are 5000.
 ![Latency (Round 3)](benchmark_latency.png)
 Latency is the time of real processing time by web servers. The smaller is the better.
 
-![Allocs (Round 3)](benchmark-pipeling.png)
+![Allocs (Round 3)](benchmark-alloc.png)
 Allocs is the heap allocations by web servers when test is running. The unit is MB. The smaller is the better.
 
 
 If we enable http pipelining, test result as below:
 
-![benchmark pipelining (Round 2)](benchmark_pipeline.png)
+![benchmark pipelining (Round 2)](benchmark-pipeline.png)
 
 ## Concurrency Test 
 In 30 ms processing time, the tets result for 100, 1000, 5000 clients is:
