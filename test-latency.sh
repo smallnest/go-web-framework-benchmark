@@ -90,3 +90,11 @@ test_all 30 5000
 echo "5000,"$(IFS=$','; echo "${test_result[*]}" ) >> concurrency.csv
 echo "5000,"$(IFS=$','; echo "${test_latency_result[*]}" ) >> concurrency_latency.csv
 echo "5000,"$(IFS=$','; echo "${test_alloc_result[*]}" ) >> concurrency_alloc.csv
+
+mv -f processtime.csv ./testresults
+mv -f processtime_alloc.csv ./testresults
+mv -f processtime_latency.csv ./testresults
+
+mv -f concurrency.csv ./testresults
+mv -f concurrency_latency.csv ./testresults
+mv -f concurrency_alloc.csv ./testresults

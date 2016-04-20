@@ -77,25 +77,30 @@ The first test case is to mock 0 ms, 10 ms, 100 ms, 500 ms processing time in ha
 ![Benchmark (Round 3)](benchmark.png)
 the concurrency clients are 5000.
 
-![Latency (Round 3)](latency.png)
+![Latency (Round 3)](benchmark_latency.png)
 Latency is the time of real processing time by web servers. The smaller is the better.
 
-![Allocs (Round 3)](alloc.png)
+![Allocs (Round 3)](benchmark-pipeling.png)
 Allocs is the heap allocations by web servers when test is running. The unit is MB. The smaller is the better.
 
 
 If we enable http pipelining, test result as below:
 
-![benchmark pipelining (Round 2)](benchmark-pipelining.png)
+![benchmark pipelining (Round 2)](benchmark_pipeline.png)
 
 ## Concurrency Test 
 In 30 ms processing time, the tets result for 100, 1000, 5000 clients is:
 
 ![concurrency (Round 3)](concurrency.png)
 
+![Latency (Round 3)](concurrency_latency.png)
+
+![Latency (Round 3)](concurrency_alloc.png)
+
+
 If we enable http pipelining, test result as below:
 
-![concurrency pipelining(Round 2)](concurrency-pipelining.png)
+![concurrency pipelining(Round 2)](concurrency-pipeline.png)
 
 
 ## Usage
@@ -137,3 +142,6 @@ It will  generate test results in processtime.csv and concurrency.csv. You can m
 web_frameworks=( "default" "ace" "beego" "bone" "denco" "echov1" "echov2standard" "echov2fasthttp" "fasthttp-raw" "fasthttprouter" "fasthttp-routing" "gin" "gocraftWeb" "goji" "gojiv2" "gojsonrest" "gorestful" "gorilla" "httprouter" "httptreemux" "iris" "lars" "lion" "macaron" "martini" "pat" "possum" "r2router" "tango" "tiger" "traffic" "vulcan" )
 ……
 ```
+
+## Plot
+you can run the shell script `plot.sh` in testresults directory and it can generate all images in its parent directory.

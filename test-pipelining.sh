@@ -65,3 +65,5 @@ test_all 30 1000
 echo "1000,"$(IFS=$','; echo "${test_result[*]}" ) >> concurrency-pipeline.csv
 test_all 30 5000
 echo "5000,"$(IFS=$','; echo "${test_result[*]}" ) >> concurrency-pipeline.csv
+
+mv -f processtime-pipeline.csv ./
