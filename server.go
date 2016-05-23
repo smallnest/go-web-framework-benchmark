@@ -16,6 +16,7 @@ import (
 	"github.com/bmizerany/pat"
 	"github.com/buaazp/fasthttprouter"
 	"github.com/celrenheit/lion"
+	"github.com/claygod/Bxog"
 	"github.com/dimfeld/httptreemux"
 	"github.com/emicklei/go-restful"
 	"github.com/gin-gonic/gin"
@@ -99,6 +100,8 @@ func main() {
 		startBeego()
 	case "bone":
 		startBone()
+	case "bxog":
+		startBxog()
 	case "denco":
 		startDenco()
 	case "echov1":
@@ -216,6 +219,19 @@ func startBone() {
 	mux := bone.New()
 	mux.HandleFunc("/hello", helloHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+// bxog
+func bxogHandler(w http.ResponseWriter, req *http.Request, r *bxog.Router) {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	}
+	w.Write(message)
+}
+func startBxog() {
+	mux := bxog.New()
+	mux.Add("/hello", bxogHandler)
+	mux.Start(":" + strconv.Itoa(port))
 }
 
 // denco
