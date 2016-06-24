@@ -145,3 +145,11 @@ web_frameworks=( "default" "ace" "beego" "bone" "denco" "echov1" "echov2standard
 
 ## Plot
 you can run the shell script `plot.sh` in testresults directory and it can generate all images in its parent directory.
+
+### Docker
+[![](https://imagelayers.io/badge/smallnest/go-web-framework-benchmark:latest.svg)](https://imagelayers.io/?images=smallnest/go-web-framework-benchmark:latest )
+
+I have created a docker [smallnest/go-web-framework-benchmark](https://hub.docker.com/r/smallnest/go-web-framework-benchmark/) and you can exetcute this benchmark test with this docker image as below (it mounts /opt/data at host into /data at container):
+```go
+docker run  -v /opt/data:/data smallnest/go-web-framework-benchmark
+```
