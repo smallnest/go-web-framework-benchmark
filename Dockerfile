@@ -16,4 +16,4 @@ VOLUME ["/data"]
 
 WORKDIR $GOPATH/src/github.com/smallnest/go-web-framework-benchmark
 
-CMD ["/bin/sh","$GOPATH/src/github.com/smallnest/go-web-framework-benchmark/docker-test.sh"]
+CMD ["/bin/sh","./docker-test.sh"]
