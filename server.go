@@ -116,7 +116,7 @@ func main() {
 		startFastHttpRouter()
 	case "fasthttp-routing":
 		startFastHttpRouting()
-	case "gas"
+	case "gas":
 		startGas()
 	case "gin":
 		startGin()
@@ -333,16 +333,16 @@ func startFastHttpRouting() {
 
 //gas
 func startGas() {
- 	g := gas.New()
- 	g.Router.Get("/hello", func(c *gas.Context) error {
- 		if sleepTime > 0 {
- 			time.Sleep(sleepTimeDuration)
- 		}
- 		//c.Write(message)
- 		return c.STRING(200, messageStr)
- 	})
- 	g.Run(":"+strconv.Itoa(port))
- }
+	g := gas.New()
+	g.Router.Get("/hello", func(c *gas.Context) error {
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		}
+		//c.Write(message)
+		return c.STRING(200, messageStr)
+	})
+	g.Run(":" + strconv.Itoa(port))
+}
 
 // gin
 func ginHandler(c *gin.Context) {
