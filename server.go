@@ -20,6 +20,7 @@ import (
 	"github.com/dimfeld/httptreemux"
 	"github.com/emicklei/go-restful"
 	"github.com/gin-gonic/gin"
+	"github.com/go-gas/gas"
 	"github.com/go-martini/martini"
 	"github.com/go-playground/lars"
 	"github.com/go-zoo/bone"
