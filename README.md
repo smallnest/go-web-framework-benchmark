@@ -11,6 +11,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 ## Tested web frameworks
 
 * [default http](https://golang.org/pkg/net/http/)
+* [clevergo](https://github.com/headwindfly/clevergo)
 * [macaron](https://github.com/Unknwon/macaron)
 * [go-json-rest](https://github.com/ant0ine/go-json-rest)
 * [beego](https://github.com/astaxie/beego)

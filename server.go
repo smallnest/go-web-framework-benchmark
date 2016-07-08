@@ -50,6 +50,7 @@ import (
 	gcontext "golang.org/x/net/context"
 	"gopkg.in/baa.v1"
 	echo "gopkg.in/labstack/echo.v1"
+	"github.com/headwindfly/clevergo"
 )
 
 var port = 8080
@@ -103,6 +104,8 @@ func main() {
 		startBone()
 	case "bxog":
 		startBxog()
+	case "clevergo":
+		startCleverGo()
 	case "denco":
 		startDenco()
 	case "echov1":
@@ -235,6 +238,24 @@ func startBxog() {
 	mux := bxog.New()
 	mux.Add("/hello", bxogHandler)
 	mux.Start(":" + strconv.Itoa(port))
+}
+
+// CleverGo
+func cleverGoHandler(ctx *clevergo.Context) {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	}
+	ctx.Write(message)
+}
+func startCleverGo() {
+	// Create a router instance.
+	router := clevergo.NewRouter()
+
+	// Register route handler.
+	router.GET("/hello", clevergo.HandlerFunc(cleverGoHandler))
+
+	// Start CleverGo.
+	clevergo.ListenAndServe(":" + strconv.Itoa(port), router.Handler)
 }
 
 // denco
