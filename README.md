@@ -21,11 +21,13 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [baa](https://github.com/go-baa/baa)
 * [go-restful](https://github.com/emicklei/go-restful)
 * [gin](https://github.com/gin-gonic/gin)
+* [gas](https://github.com/go-gas/gas)
 * [martini](https://github.com/go-martini/martini)
 * [lars](https://github.com/go-playground/lars)
 * [bone](https://github.com/go-zoo/bone)
 * [gocraft](https://github.com/gocraft/web)
 * [gorilla](https://github.com/gorilla/mux)
+* [clevergo](https://github.com/headwindfly/clevergo)
 * [httprouter](https://github.com/julienschmidt/httprouter)
 * [iris](https://github.com/kataras/iris)
 * [tango](https://github.com/lunny/tango)
@@ -160,3 +162,11 @@ I have created a docker [smallnest/go-web-framework-benchmark](https://hub.docke
 ```go
 docker run  -v /opt/data:/data smallnest/go-web-framework-benchmark
 ```
+
+### Add new web framework
+Welcome to add new Go web frameworks. You can follow the below steps and send me a pull request.
+1. add your web framework link in README
+2. add a hello implementation in server.go 
+3. add your webframework in libs.sh 
+
+Please add your web framework alphabetically.

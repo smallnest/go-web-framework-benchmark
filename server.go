@@ -26,6 +26,7 @@ import (
 	"github.com/go-zoo/bone"
 	"github.com/gocraft/web"
 	"github.com/gorilla/mux"
+	"github.com/headwindfly/clevergo"
 	"github.com/julienschmidt/httprouter"
 	"github.com/kataras/iris"
 	echov2 "github.com/labstack/echo"
@@ -103,6 +104,8 @@ func main() {
 		startBone()
 	case "bxog":
 		startBxog()
+	case "clevergo":
+		startCleverGo()
 	case "denco":
 		startDenco()
 	case "echov1":
@@ -235,6 +238,24 @@ func startBxog() {
 	mux := bxog.New()
 	mux.Add("/hello", bxogHandler)
 	mux.Start(":" + strconv.Itoa(port))
+}
+
+// cleverGo
+func cleverGoHandler(ctx *clevergo.Context) {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	}
+	ctx.Write(message)
+}
+func startCleverGo() {
+	// Create a router instance.
+	router := clevergo.NewRouter()
+
+	// Register route handler.
+	router.GET("/hello", clevergo.HandlerFunc(cleverGoHandler))
+
+	// Start CleverGo.
+	clevergo.ListenAndServe(":"+strconv.Itoa(port), router.Handler)
 }
 
 // denco
