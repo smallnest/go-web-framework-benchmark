@@ -27,6 +27,7 @@ import (
 	"github.com/gocraft/web"
 	"github.com/gorilla/mux"
 	"github.com/headwindfly/clevergo"
+	"github.com/ivpusic/neo"
 	"github.com/julienschmidt/httprouter"
 	"github.com/kataras/iris"
 	echov2 "github.com/labstack/echo"
@@ -150,6 +151,8 @@ func main() {
 		startMacaron()
 	case "martini":
 		startMartini()
+	case "neo":
+		startNeo()
 	case "pat":
 		startPat()
 	case "possum":
@@ -553,6 +556,20 @@ func startMartini() {
 	martini := martini.New()
 	martini.Action(mux.Handle)
 	http.ListenAndServe(":"+strconv.Itoa(port), martini)
+}
+
+//neo
+func startNeo() {
+	app := neo.App()
+
+	app.Get("/hello", func(ctx *neo.Ctx) (int, error) {
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		}
+		return 200, ctx.Res.Raw(message)
+	})
+
+	app.Start()
 }
 
 // pat

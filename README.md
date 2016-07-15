@@ -28,6 +28,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [gocraft](https://github.com/gocraft/web)
 * [gorilla](https://github.com/gorilla/mux)
 * [clevergo](https://github.com/headwindfly/clevergo)
+* [neo](ithub.com/ivpusic/neo)
 * [httprouter](https://github.com/julienschmidt/httprouter)
 * [iris](https://github.com/kataras/iris)
 * [tango](https://github.com/lunny/tango)
@@ -165,6 +166,7 @@ docker run  -v /opt/data:/data smallnest/go-web-framework-benchmark
 
 ### Add new web framework
 Welcome to add new Go web frameworks. You can follow the below steps and send me a pull request.
+
 1. add your web framework link in README
 2. add a hello implementation in server.go 
 3. add your webframework in libs.sh 
