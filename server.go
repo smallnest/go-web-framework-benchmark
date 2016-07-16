@@ -52,6 +52,8 @@ import (
 	gcontext "golang.org/x/net/context"
 	"gopkg.in/baa.v1"
 	echo "gopkg.in/labstack/echo.v1"
+
+	guavaweb "github.com/GuavaStudio/web"
 )
 
 var port = 8080
@@ -137,6 +139,8 @@ func main() {
 		startGoRestful()
 	case "gorilla":
 		startGorilla()
+	case "guavastudio_web":
+		startGuavaStudioWeb()
 	case "httprouter":
 		startHttpRouter()
 	case "httptreemux":
@@ -462,6 +466,20 @@ func startGorilla() {
 	mux := mux.NewRouter()
 	mux.HandleFunc("/hello", helloHandler).Methods("GET")
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+//GuavaStudio/Web
+func hello(val string) string {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	}
+
+	return messageStr
+}
+
+func startGuavaStudioWeb() {
+	guavaweb.Get("/(.*)", hello)
+	guavaweb.Run(":" + strconv.Itoa(port))
 }
 
 // httprouter
