@@ -579,6 +579,7 @@ func startMartini() {
 //neo
 func startNeo() {
 	app := neo.App()
+	app.Conf.App.Addr = ":" + strconv.Itoa(port)
 
 	app.Get("/hello", func(ctx *neo.Ctx) (int, error) {
 		if sleepTime > 0 {

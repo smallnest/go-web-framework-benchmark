@@ -8,6 +8,8 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * Go:       1.6.2
 * OS:       CentOS 6.4 / 2.6.32-358.el6.x86_64
 
+(doesn't contain test results of neo because one error)
+
 ## Tested web frameworks
 
 * [default http](https://golang.org/pkg/net/http/)
