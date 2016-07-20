@@ -68,3 +68,4 @@ test_all 30 5000
 echo "5000,"$(IFS=$','; echo "${test_result[*]}" ) >> concurrency-pipeline.csv
 
 mv -f processtime-pipeline.csv ./
+mv -f concurrency-pipeline.csv ./
