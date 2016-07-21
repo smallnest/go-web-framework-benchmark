@@ -6,7 +6,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 *test environment*
 * CPU:      Intel(R) Xeon(R) CPU E5-2620 0 @ 2.00GHz, 24 cores
 * Memory:   16G
-* Go:       1.6.2
+* Go:       1.6.3
 * OS:       CentOS 6.4 / 2.6.32-358.el6.x86_64
 
 (doesn't contain test results of neo because one error)
