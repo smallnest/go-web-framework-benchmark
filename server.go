@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"io/ioutil"
 	"net/http"
 	"os"
 	"runtime"
@@ -39,6 +40,7 @@ import (
 	"github.com/mikespook/possum"
 	possumrouter "github.com/mikespook/possum/router"
 	possumview "github.com/mikespook/possum/view"
+	"github.com/mustafaakin/gongular"
 	"github.com/naoina/denco"
 	"github.com/pilu/traffic"
 	"github.com/plimble/ace"
@@ -135,6 +137,8 @@ func main() {
 		startGojiv2()
 	case "gojsonrest":
 		startGoJsonRest()
+	case "gongular":
+		startGongular()
 	case "gorestful":
 		startGoRestful()
 	case "gorilla":
@@ -444,6 +448,20 @@ func startGoJsonRest() {
 	)
 	api.SetApp(router)
 	http.ListenAndServe(":"+strconv.Itoa(port), api.MakeHandler())
+}
+
+func startGongular() {
+	g := gongular.NewRouter()
+	g.DisableDebug()
+	g.InfoLog.SetOutput(ioutil.Discard)
+	g.InfoLog.SetFlags(0)
+	g.GET("/hello", func(c *gongular.Context) string {
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		}
+		return messageStr
+	})
+	g.ListenAndServe(":" + strconv.Itoa(port))
 }
 
 // goRestful

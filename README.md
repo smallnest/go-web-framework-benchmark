@@ -38,6 +38,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [tango](https://github.com/lunny/tango)
 * [vulcan](https://github.com/mailgun/route)
 * [possum](https://github.com/mikespook/possum)
+* [gongular](https://github.com/mustafaakin/gongular)
 * [denco](https://github.com/naoina/denco)
 * [traffic](https://github.com/pilu/traffic)
 * [ace](https://github.com/plimble/ace)
@@ -48,6 +49,13 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [goji](https://github.com/zenazn/goji/web)
 * [gojiv2](http://goji.io)
 * [echo](http://gopkg.in/labstack/echo.v1)
+
+
+The below web frameworks will be removed from this test because of their poor performance:
+* [gorilla](https://github.com/gorilla/mux)
+* [GuavaStudio/web](github.com/GuavaStudio/web)
+* [possum](https://github.com/mikespook/possum)
+
 
 
 ## Motivation
