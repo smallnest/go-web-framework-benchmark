@@ -17,7 +17,7 @@ import (
 	"github.com/bmizerany/pat"
 	"github.com/buaazp/fasthttprouter"
 	"github.com/celrenheit/lion"
-	"github.com/claygod/Bxog"
+	// "github.com/claygod/Bxog"
 	"github.com/dimfeld/httptreemux"
 	"github.com/emicklei/go-restful"
 	"github.com/gin-gonic/gin"
@@ -54,8 +54,7 @@ import (
 	gcontext "golang.org/x/net/context"
 	"gopkg.in/baa.v1"
 	echo "gopkg.in/labstack/echo.v1"
-
-	guavaweb "github.com/GuavaStudio/web"
+	// guavaweb "github.com/GuavaStudio/web"
 )
 
 var port = 8080
@@ -107,8 +106,8 @@ func main() {
 		startBeego()
 	case "bone":
 		startBone()
-	case "bxog":
-		startBxog()
+	// case "bxog":
+	// 	startBxog()
 	case "clevergo":
 		startCleverGo()
 	case "denco":
@@ -143,8 +142,8 @@ func main() {
 		startGoRestful()
 	case "gorilla":
 		startGorilla()
-	case "guavastudio_web":
-		startGuavaStudioWeb()
+	// case "guavastudio_web":
+	// 	startGuavaStudioWeb()
 	case "httprouter":
 		startHttpRouter()
 	case "httptreemux":
@@ -238,18 +237,18 @@ func startBone() {
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
-// bxog
-func bxogHandler(w http.ResponseWriter, req *http.Request, r *bxog.Router) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
-	}
-	w.Write(message)
-}
-func startBxog() {
-	mux := bxog.New()
-	mux.Add("/hello", bxogHandler)
-	mux.Start(":" + strconv.Itoa(port))
-}
+// // bxog
+// func bxogHandler(w http.ResponseWriter, req *http.Request, r *bxog.Router) {
+// 	if sleepTime > 0 {
+// 		time.Sleep(sleepTimeDuration)
+// 	}
+// 	w.Write(message)
+// }
+// func startBxog() {
+// 	mux := bxog.New()
+// 	mux.Add("/hello", bxogHandler)
+// 	mux.Start(":" + strconv.Itoa(port))
+// }
 
 // cleverGo
 func cleverGoHandler(ctx *clevergo.Context) {
@@ -486,19 +485,19 @@ func startGorilla() {
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
-//GuavaStudio/Web
-func hello(val string) string {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
-	}
+// //GuavaStudio/Web
+// func hello(val string) string {
+// 	if sleepTime > 0 {
+// 		time.Sleep(sleepTimeDuration)
+// 	}
 
-	return messageStr
-}
+// 	return messageStr
+// }
 
-func startGuavaStudioWeb() {
-	guavaweb.Get("/(.*)", hello)
-	guavaweb.Run(":" + strconv.Itoa(port))
-}
+// func startGuavaStudioWeb() {
+// 	guavaweb.Get("/(.*)", hello)
+// 	guavaweb.Run(":" + strconv.Itoa(port))
+// }
 
 // httprouter
 func httpRouterHandler(w http.ResponseWriter, _ *http.Request, ps httprouter.Params) {
