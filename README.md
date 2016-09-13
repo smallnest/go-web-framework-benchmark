@@ -21,6 +21,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [pat](https://github.com/bmizerany/pat)
 * [fasthttprouter](https://github.com/buaazp/fasthttprouter)
 * [lion](https://github.com/celrenheit/lion)
+* [chi](https://github.com/pressly/chi)
 * [httptreemux](https://github.com/dimfeld/httptreemux)
 * [baa](https://github.com/go-baa/baa)
 * [go-restful](https://github.com/emicklei/go-restful)
@@ -31,14 +32,14 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [bone](https://github.com/go-zoo/bone)
 * [gocraft](https://github.com/gocraft/web)
 * [gorilla](https://github.com/gorilla/mux)
-* [GuavaStudio/web](github.com/GuavaStudio/web)
+* [~~GuavaStudio/web~~](github.com/GuavaStudio/web)
 * [clevergo](https://github.com/headwindfly/clevergo)
 * [neo](ithub.com/ivpusic/neo)
 * [httprouter](https://github.com/julienschmidt/httprouter)
 * [iris](https://github.com/kataras/iris)
 * [tango](https://github.com/lunny/tango)
 * [vulcan](https://github.com/mailgun/route)
-* [possum](https://github.com/mikespook/possum)
+* [~~possum~~](https://github.com/mikespook/possum)
 * [gongular](https://github.com/mustafaakin/gongular)
 * [denco](https://github.com/naoina/denco)
 * [traffic](https://github.com/pilu/traffic)
@@ -53,7 +54,6 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 
 
 The below web frameworks will be removed from this test because of their poor performance:
-* [gorilla](https://github.com/gorilla/mux)
 * [GuavaStudio/web](github.com/GuavaStudio/web)
 * [possum](https://github.com/mikespook/possum)
 

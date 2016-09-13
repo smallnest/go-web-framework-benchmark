@@ -17,6 +17,7 @@ import (
 	"github.com/bmizerany/pat"
 	"github.com/buaazp/fasthttprouter"
 	"github.com/celrenheit/lion"
+	"github.com/pressly/chi"
 	// "github.com/claygod/Bxog"
 	"github.com/dimfeld/httptreemux"
 	"github.com/emicklei/go-restful"
@@ -108,6 +109,8 @@ func main() {
 		startBone()
 	// case "bxog":
 	// 	startBxog()
+	case "chi":
+		startChi()
 	case "clevergo":
 		startCleverGo()
 	case "denco":
@@ -249,6 +252,18 @@ func startBone() {
 // 	mux.Add("/hello", bxogHandler)
 // 	mux.Start(":" + strconv.Itoa(port))
 // }
+
+//chi
+func startChi() {
+	// Create a router instance.
+	r := chi.NewRouter()
+
+	// Register route handler.
+	r.Get("/hello", helloHandler)
+
+	// Start Chi.
+	http.ListenAndServe(":"+strconv.Itoa(port), r)
+}
 
 // cleverGo
 func cleverGoHandler(ctx *clevergo.Context) {
