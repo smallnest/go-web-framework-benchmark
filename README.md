@@ -50,7 +50,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [goji](https://github.com/zenazn/goji/web)
 * [gojiv2](http://goji.io)
 * [echo](http://gopkg.in/labstack/echo.v1)
-
+* [chi](https://github.com/pressly/chi)
 
 The below web frameworks will be removed from this test because of their poor performance:
 * [gorilla](https://github.com/gorilla/mux)
