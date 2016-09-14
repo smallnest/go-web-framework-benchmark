@@ -1,0 +1,762 @@
+Total packages found: 152
+-------------------------
+Package: github.com/pressly/chi
+Local:   2016-09-08 14:56:46 +0000 UTC
+Github:  2016-09-08 14:56:46 +0000 UTC
+Status: [32m OK [0m
+----------------------
+Package: github.com/imdario/mergo
+Local:   2016-05-17 06:44:35 +0000 UTC
+Github:  2016-05-17 06:44:35 +0000 UTC
+Status: [32m OK [0m
+------------------------
+Package: github.com/asaskevich/govalidator
+Local:   2016-07-15 17:06:12 +0000 UTC
+Github:  2016-07-15 17:06:12 +0000 UTC
+Status: [32m OK [0m
+---------------------------------
+Package: github.com/kataras/go-sessions
+Local:   2016-09-13 04:53:43 +0000 UTC
+Github:  2016-09-13 04:53:43 +0000 UTC
+Status: [32m OK [0m
+------------------------------
+Package: github.com/go-gas/gas/model
+Local:   2016-08-28 04:28:52 +0000 UTC
+Github:  2016-08-28 04:28:52 +0000 UTC
+Status: [32m OK [0m
+---------------------------
+Package: github.com/gin-gonic/gin
+Local:   2016-05-25 12:45:45 +0000 UTC
+Github:  2016-04-14 23:39:28 +0000 UTC
+Status: [31m Outdated [0m
+------------------------
+Package: github.com/Unknwon/com
+Local:   2015-10-08 13:54:07 +0000 UTC
+Github:  2015-10-08 13:54:07 +0000 UTC
+Status: [32m OK [0m
+----------------------
+Package: github.com/golang/protobuf/proto
+Local:   2016-08-29 19:42:33 +0000 UTC
+Github:  2016-08-29 19:42:33 +0000 UTC
+Status: [32m OK [0m
+--------------------------------
+Package: github.com/philhofer/fwd
+Local:   2016-01-29 03:59:39 +0000 UTC
+Github:  2016-01-29 03:59:39 +0000 UTC
+Status: [32m OK [0m
+------------------------
+Package: github.com/valyala/fasthttp/fasthttputil
+Local:   2016-09-12 11:19:13 +0000 UTC
+Github:  2016-09-12 11:19:13 +0000 UTC
+Status: [32m OK [0m
+----------------------------------------
+Package: github.com/ivpusic/neo/ebus
+Local:   2016-09-09 13:13:18 +0000 UTC
+Github:  2016-09-09 13:13:18 +0000 UTC
+Status: [32m OK [0m
+---------------------------
+Package: github.com/go-gas/sessions
+Local:   2016-08-13 01:48:32 +0000 UTC
+Github:  2016-08-13 01:48:32 +0000 UTC
+Status: [32m OK [0m
+--------------------------
+Package: github.com/kataras/iris
+Local:   2016-09-13 04:54:44 +0000 UTC
+Github:  2016-09-13 04:54:44 +0000 UTC
+Status: [32m OK [0m
+-----------------------
+Package: github.com/satori/go.uuid
+Local:   2016-07-13 18:03:06 +0000 UTC
+Github:  2016-07-13 18:03:06 +0000 UTC
+Status: [32m OK [0m
+-------------------------
+Package: github.com/clevergo/utils
+Local:   2016-08-15 08:23:22 +0000 UTC
+Github:  2016-08-15 08:23:22 +0000 UTC
+Status: [32m OK [0m
+-------------------------
+Package: github.com/labstack/gommon/log
+Local:   2016-08-19 15:13:15 +0000 UTC
+Github:  2016-08-19 15:13:15 +0000 UTC
+Status: [32m OK [0m
+------------------------------
+Package: github.com/iris-contrib/letsencrypt
+Local:   2016-07-28 22:18:19 +0000 UTC
+Github:  2016-07-28 22:18:19 +0000 UTC
+Status: [32m OK [0m
+-----------------------------------
+Package: github.com/ant0ine/go-json-rest/rest/trie
+Local:   2016-08-28 00:39:24 +0000 UTC
+Github:  2016-08-28 00:39:24 +0000 UTC
+Status: [32m OK [0m
+-----------------------------------------
+Package: github.com/rcrowley/go-metrics
+Local:   2016-09-12 22:56:20 +0000 UTC
+Github:  2016-09-12 22:56:20 +0000 UTC
+Status: [32m OK [0m
+------------------------------
+Package: github.com/shiena/ansicolor
+Local:   2015-11-19 15:19:21 +0000 UTC
+Github:  2015-11-19 15:19:21 +0000 UTC
+Status: [32m OK [0m
+---------------------------
+Package: github.com/go-zoo/bone
+Local:   2016-09-11 18:35:09 +0000 UTC
+Github:  2016-09-11 18:35:09 +0000 UTC
+Status: [32m OK [0m
+----------------------
+Package: github.com/kataras/go-errors
+Local:   2016-09-01 03:21:34 +0000 UTC
+Github:  2016-09-01 03:21:34 +0000 UTC
+Status: [32m OK [0m
+----------------------------
+Package: github.com/yudai/golcs
+Local:   2015-04-05 16:35:32 +0000 UTC
+Github:  2015-04-05 16:35:32 +0000 UTC
+Status: [32m OK [0m
+----------------------
+Package: github.com/go-gas/SQLBuilder/MySQLBuilder
+Local:   2016-07-13 14:07:30 +0000 UTC
+Github:  2016-07-13 14:07:30 +0000 UTC
+Status: [32m OK [0m
+-----------------------------------------
+Package: github.com/naoina/denco
+Local:   2015-04-07 04:17:33 +0000 UTC
+Github:  2015-04-07 04:17:33 +0000 UTC
+Status: [32m OK [0m
+-----------------------
+Package: github.com/gocraft/web
+Local:   2016-07-11 12:45:36 +0000 UTC
+Github:  2016-07-11 12:45:36 +0000 UTC
+Status: [32m OK [0m
+----------------------
+Package: github.com/iris-contrib/websocket
+Local:   2016-09-01 03:11:02 +0000 UTC
+Github:  2016-09-01 03:11:02 +0000 UTC
+Status: [32m OK [0m
+---------------------------------
+Package: github.com/oxtoacart/bpool
+Local:   2015-07-12 13:31:11 +0000 UTC
+Github:  2015-07-12 13:31:11 +0000 UTC
+Status: [32m OK [0m
+--------------------------
+Package: github.com/julienschmidt/httprouter
+Local:   2016-08-10 19:53:38 +0000 UTC
+Github:  2016-08-10 19:53:38 +0000 UTC
+Status: [32m OK [0m
+-----------------------------------
+Package: github.com/lunny/tango
+Local:   2016-09-01 02:06:41 +0000 UTC
+Github:  2016-09-01 02:06:41 +0000 UTC
+Status: [32m OK [0m
+----------------------
+Package: github.com/gavv/gojsondiff
+Local:   2016-05-10 21:43:28 +0000 UTC
+Github:  2016-05-10 21:43:28 +0000 UTC
+Status: [32m OK [0m
+--------------------------
+Package: github.com/ivpusic/urlregex
+Local:   2016-01-28 00:07:49 +0000 UTC
+Github:  2016-01-28 00:07:49 +0000 UTC
+Status: [32m OK [0m
+---------------------------
+Package: github.com/emicklei/go-restful/log
+Local:   2016-09-08 09:51:01 +0000 UTC
+Github:  2016-09-08 09:51:01 +0000 UTC
+Status: [32m OK [0m
+----------------------------------
+Package: github.com/xeipuuv/gojsonschema
+Local:   2016-09-08 08:43:13 +0000 UTC
+Github:  2016-09-08 08:43:13 +0000 UTC
+Status: [32m OK [0m
+-------------------------------
+Package: github.com/google/go-querystring/query
+Local:   2016-04-01 23:30:42 +0000 UTC
+Github:  2016-04-01 23:30:42 +0000 UTC
+Status: [32m OK [0m
+--------------------------------------
+Package: github.com/astaxie/beego/session
+Local:   2016-09-04 08:52:59 +0000 UTC
+Github:  2016-09-04 08:52:59 +0000 UTC
+Status: [32m OK [0m
+--------------------------------
+Package: github.com/headwindfly/clevergo
+Local:   2016-09-13 07:24:57 +0000 UTC
+Github:  2016-09-13 07:24:57 +0000 UTC
+Status: [32m OK [0m
+-------------------------------
+Package: github.com/vulcand/predicate
+Local:   2016-06-22 06:01:15 +0000 UTC
+Github:  2016-06-22 06:01:15 +0000 UTC
+Status: [32m OK [0m
+----------------------------
+Package: github.com/xeipuuv/gojsonreference
+Local:   2015-08-08 06:50:54 +0000 UTC
+Github:  2015-08-08 06:50:54 +0000 UTC
+Status: [32m OK [0m
+----------------------------------
+Package: github.com/valyala/fasthttp
+Local:   2016-09-12 11:19:13 +0000 UTC
+Github:  2016-09-12 11:19:13 +0000 UTC
+Status: [32m OK [0m
+---------------------------
+Package: github.com/kataras/go-options
+Local:   2016-09-09 04:20:19 +0000 UTC
+Github:  2016-09-09 04:20:19 +0000 UTC
+Status: [32m OK [0m
+-----------------------------
+Package: github.com/tinylib/msgp/msgp
+Local:   2016-08-03 06:23:24 +0000 UTC
+Github:  2016-08-03 06:23:24 +0000 UTC
+Status: [32m OK [0m
+----------------------------
+Package: github.com/kataras/go-serializer/markdown
+Local:   2016-09-10 04:15:09 +0000 UTC
+Github:  2016-09-10 04:15:09 +0000 UTC
+Status: [32m OK [0m
+-----------------------------------------
+Package: github.com/shurcooL/sanitized_anchor_name
+Local:   2015-10-28 00:19:15 +0000 UTC
+Github:  2015-10-28 00:19:15 +0000 UTC
+Status: [32m OK [0m
+-----------------------------------------
+Package: github.com/kataras/go-template/html
+Local:   2016-09-08 15:20:57 +0000 UTC
+Github:  2016-09-08 15:20:57 +0000 UTC
+Status: [32m OK [0m
+-----------------------------------
+Package: github.com/ant0ine/go-json-rest/rest
+Local:   2016-08-28 00:39:24 +0000 UTC
+Github:  2016-08-28 00:39:24 +0000 UTC
+Status: [32m OK [0m
+------------------------------------
+Package: github.com/celrenheit/lion
+Local:   2016-06-12 10:45:46 +0000 UTC
+Github:  2016-06-12 10:45:46 +0000 UTC
+Status: [32m OK [0m
+--------------------------
+Package: github.com/ivpusic/go-clicolor/clicolor
+Local:   2015-08-28 21:08:04 +0000 UTC
+Github:  2015-08-28 21:08:04 +0000 UTC
+Status: [32m OK [0m
+---------------------------------------
+Package: github.com/labstack/echo/context
+Local:   2016-09-12 13:18:58 +0000 UTC
+Github:  2016-09-12 13:18:58 +0000 UTC
+Status: [32m OK [0m
+--------------------------------
+Package: github.com/kataras/go-fs
+Local:   2016-09-04 18:08:58 +0000 UTC
+Github:  2016-09-04 18:08:58 +0000 UTC
+Status: [32m OK [0m
+------------------------
+Package: github.com/kardianos/osext
+Local:   2016-08-11 00:15:26 +0000 UTC
+Github:  2016-08-11 00:15:26 +0000 UTC
+Status: [32m OK [0m
+--------------------------
+Package: github.com/kataras/iris/utils
+Local:   2016-09-13 04:54:44 +0000 UTC
+Github:  2016-09-13 04:54:44 +0000 UTC
+Status: [32m OK [0m
+-----------------------------
+Package: github.com/gin-gonic/gin/binding
+Local:   2016-05-25 12:45:45 +0000 UTC
+Github:  2016-04-14 23:39:28 +0000 UTC
+Status: [31m Outdated [0m
+--------------------------------
+Package: github.com/kataras/go-websocket
+Local:   2016-09-01 03:24:46 +0000 UTC
+Github:  2016-09-01 03:24:46 +0000 UTC
+Status: [32m OK [0m
+-------------------------------
+Package: github.com/klauspost/cpuid
+Local:   2016-03-02 07:53:16 +0000 UTC
+Github:  2016-03-02 07:53:16 +0000 UTC
+Status: [32m OK [0m
+--------------------------
+Package: github.com/stretchr/testify/require
+Local:   2016-06-15 09:28:44 +0000 UTC
+Github:  2016-06-15 09:28:44 +0000 UTC
+Status: [32m OK [0m
+-----------------------------------
+Package: github.com/fatih/color
+Local:   2016-06-10 11:06:02 +0000 UTC
+Github:  2016-06-10 11:06:02 +0000 UTC
+Status: [32m OK [0m
+----------------------
+Package: github.com/zenazn/goji/web
+Local:   2016-08-23 03:05:49 +0000 UTC
+Github:  2016-08-23 03:05:49 +0000 UTC
+Status: [32m OK [0m
+--------------------------
+Package: github.com/imkira/go-interpol
+Local:   2016-07-05 14:34:55 +0000 UTC
+Github:  2016-07-05 14:34:55 +0000 UTC
+Status: [32m OK [0m
+-----------------------------
+Package: github.com/plimble/sessions
+Local:   2015-09-01 07:09:25 +0000 UTC
+Github:  2015-09-01 07:09:25 +0000 UTC
+Status: [32m OK [0m
+---------------------------
+Package: github.com/ivpusic/neo
+Local:   2016-09-09 13:13:18 +0000 UTC
+Github:  2016-09-09 13:13:18 +0000 UTC
+Status: [32m OK [0m
+----------------------
+Package: github.com/klauspost/compress/zlib
+Local:   2016-08-14 15:04:06 +0000 UTC
+Github:  2016-08-14 15:04:06 +0000 UTC
+Status: [32m OK [0m
+----------------------------------
+Package: github.com/pmezard/go-difflib/difflib
+Local:   2016-01-10 10:55:54 +0000 UTC
+Github:  2016-01-10 10:55:54 +0000 UTC
+Status: [32m OK [0m
+-------------------------------------
+Package: github.com/klauspost/compress/gzip
+Local:   2016-08-14 15:04:06 +0000 UTC
+Github:  2016-08-14 15:04:06 +0000 UTC
+Status: [32m OK [0m
+----------------------------------
+Package: github.com/dimfeld/httptreemux
+Local:   2016-08-17 19:44:18 +0000 UTC
+Github:  2016-08-17 19:44:18 +0000 UTC
+Status: [32m OK [0m
+------------------------------
+Package: github.com/mikespook/possum
+Local:   2015-11-27 09:14:16 +0000 UTC
+Github:  2015-11-27 09:14:16 +0000 UTC
+Status: [32m OK [0m
+---------------------------
+Package: github.com/gavv/httpexpect
+Local:   2016-09-08 12:54:25 +0000 UTC
+Github:  2016-09-08 12:54:25 +0000 UTC
+Status: [32m OK [0m
+--------------------------
+Package: github.com/Unknwon/macaron/inject
+Local:   2015-10-10 23:50:58 +0000 UTC
+Github:  2015-10-10 23:50:58 +0000 UTC
+Status: [32m OK [0m
+---------------------------------
+Package: github.com/rcrowley/go-tigertonic
+Local:   2016-06-04 04:10:31 +0000 UTC
+Github:  2016-06-04 04:10:31 +0000 UTC
+Status: [32m OK [0m
+---------------------------------
+Package: github.com/plimble/utils/pool
+Local:   2015-06-15 05:46:16 +0000 UTC
+Github:  2015-06-15 05:46:16 +0000 UTC
+Status: [32m OK [0m
+-----------------------------
+Package: github.com/gin-gonic/gin/render
+Local:   2016-05-25 12:45:45 +0000 UTC
+Github:  2016-04-14 23:39:28 +0000 UTC
+Status: [31m Outdated [0m
+-------------------------------
+Package: github.com/go-gas/gas
+Local:   2016-08-28 04:28:52 +0000 UTC
+Github:  2016-08-28 04:28:52 +0000 UTC
+Status: [32m OK [0m
+---------------------
+Package: github.com/plimble/ace
+Local:   2016-02-17 02:02:39 +0000 UTC
+Github:  2016-02-17 02:02:39 +0000 UTC
+Status: [32m OK [0m
+----------------------
+Package: github.com/kataras/go-serializer
+Local:   2016-09-10 04:15:09 +0000 UTC
+Github:  2016-09-10 04:15:09 +0000 UTC
+Status: [32m OK [0m
+--------------------------------
+Package: github.com/klauspost/crc32
+Local:   2016-02-19 14:26:09 +0000 UTC
+Github:  2016-02-19 14:26:09 +0000 UTC
+Status: [32m OK [0m
+--------------------------
+Package: github.com/labstack/gommon/color
+Local:   2016-08-19 15:13:15 +0000 UTC
+Github:  2016-08-19 15:13:15 +0000 UTC
+Status: [32m OK [0m
+--------------------------------
+Package: github.com/valyala/fasttemplate
+Local:   2016-03-15 19:31:34 +0000 UTC
+Github:  2016-03-15 19:31:34 +0000 UTC
+Status: [32m OK [0m
+-------------------------------
+Package: github.com/astaxie/beego/utils
+Local:   2016-09-04 08:52:59 +0000 UTC
+Github:  2016-09-04 08:52:59 +0000 UTC
+Status: [32m OK [0m
+------------------------------
+Package: github.com/gorilla/websocket
+Local:   2016-09-12 15:30:41 +0000 UTC
+Github:  2016-09-12 15:30:41 +0000 UTC
+Status: [32m OK [0m
+----------------------------
+Package: github.com/valyala/fasthttp/fasthttpadaptor
+Local:   2016-09-12 11:19:13 +0000 UTC
+Github:  2016-09-12 11:19:13 +0000 UTC
+Status: [32m OK [0m
+-------------------------------------------
+Package: github.com/go-gas/gas/model/MySQL
+Local:   2016-08-28 04:28:52 +0000 UTC
+Github:  2016-08-28 04:28:52 +0000 UTC
+Status: [32m OK [0m
+---------------------------------
+Package: github.com/valyala/bytebufferpool
+Local:   2016-08-17 18:16:52 +0000 UTC
+Github:  2016-08-17 18:16:52 +0000 UTC
+Status: [32m OK [0m
+---------------------------------
+Package: github.com/astaxie/beego/grace
+Local:   2016-09-04 08:52:59 +0000 UTC
+Github:  2016-09-04 08:52:59 +0000 UTC
+Status: [32m OK [0m
+------------------------------
+Package: github.com/kataras/go-template
+Local:   2016-09-08 15:20:57 +0000 UTC
+Github:  2016-09-08 15:20:57 +0000 UTC
+Status: [32m OK [0m
+------------------------------
+Package: github.com/mustafaakin/gongular
+Local:   2016-07-25 16:15:29 +0000 UTC
+Github:  2016-07-25 16:15:29 +0000 UTC
+Status: [32m OK [0m
+-------------------------------
+Package: github.com/ivpusic/toml
+Local:   2015-02-01 21:54:53 +0000 UTC
+Github:  2015-02-01 21:54:53 +0000 UTC
+Status: [32m OK [0m
+-----------------------
+Package: github.com/astaxie/beego
+Local:   2016-09-04 08:52:59 +0000 UTC
+Github:  2016-09-04 08:52:59 +0000 UTC
+Status: [32m OK [0m
+------------------------
+Package: github.com/clevergo/router
+Local:   2016-08-01 03:03:24 +0000 UTC
+Github:  2016-08-01 03:03:24 +0000 UTC
+Status: [32m OK [0m
+--------------------------
+Package: github.com/bmizerany/pat
+Local:   2016-02-17 10:32:42 +0000 UTC
+Github:  2016-02-17 10:32:42 +0000 UTC
+Status: [32m OK [0m
+------------------------
+Package: github.com/lunny/log
+Local:   2015-11-24 14:35:22 +0000 UTC
+Github:  2015-11-24 14:35:22 +0000 UTC
+Status: [32m OK [0m
+--------------------
+Package: github.com/kataras/go-serializer/xml
+Local:   2016-09-10 04:15:09 +0000 UTC
+Github:  2016-09-10 04:15:09 +0000 UTC
+Status: [32m OK [0m
+------------------------------------
+Package: github.com/iris-contrib/formBinder
+Local:   2016-07-02 15:24:44 +0000 UTC
+Github:  2016-07-02 15:24:44 +0000 UTC
+Status: [32m OK [0m
+----------------------------------
+Package: github.com/kataras/go-serializer/json
+Local:   2016-09-10 04:15:09 +0000 UTC
+Github:  2016-09-10 04:15:09 +0000 UTC
+Status: [32m OK [0m
+-------------------------------------
+Package: github.com/stretchr/testify/assert
+Local:   2016-06-15 09:28:44 +0000 UTC
+Github:  2016-06-15 09:28:44 +0000 UTC
+Status: [32m OK [0m
+----------------------------------
+Package: github.com/pilu/config
+Local:   2013-12-14 18:24:32 +0000 UTC
+Github:  2013-12-14 18:24:32 +0000 UTC
+Status: [32m OK [0m
+----------------------
+Package: github.com/labstack/echo/engine/fasthttp
+Local:   2016-09-12 13:18:58 +0000 UTC
+Github:  2016-09-12 13:18:58 +0000 UTC
+Status: [32m OK [0m
+----------------------------------------
+Package: github.com/miekg/dns
+Local:   2016-07-26 03:20:27 +0000 UTC
+Github:  2016-07-26 03:20:27 +0000 UTC
+Status: [32m OK [0m
+--------------------
+Package: github.com/go-sql-driver/mysql
+Local:   2016-08-02 11:38:42 +0000 UTC
+Github:  2016-08-02 11:38:42 +0000 UTC
+Status: [32m OK [0m
+------------------------------
+Package: github.com/gorilla/mux
+Local:   2016-09-02 15:33:43 +0000 UTC
+Github:  2016-09-02 15:33:43 +0000 UTC
+Status: [32m OK [0m
+----------------------
+Package: github.com/astaxie/beego/config
+Local:   2016-09-04 08:52:59 +0000 UTC
+Github:  2016-09-04 08:52:59 +0000 UTC
+Status: [32m OK [0m
+-------------------------------
+Package: github.com/clevergo/securecookie
+Local:   2016-08-17 02:00:00 +0000 UTC
+Github:  2016-08-17 02:00:00 +0000 UTC
+Status: [32m OK [0m
+--------------------------------
+Package: github.com/go-gas/gas/validator
+Local:   2016-08-28 04:28:52 +0000 UTC
+Github:  2016-08-28 04:28:52 +0000 UTC
+Status: [32m OK [0m
+-------------------------------
+Package: github.com/astaxie/beego/toolbox
+Local:   2016-09-04 08:52:59 +0000 UTC
+Github:  2016-09-04 08:52:59 +0000 UTC
+Status: [32m OK [0m
+--------------------------------
+Package: github.com/emicklei/go-restful
+Local:   2016-09-08 09:51:01 +0000 UTC
+Github:  2016-09-08 09:51:01 +0000 UTC
+Status: [32m OK [0m
+------------------------------
+Package: github.com/pilu/traffic
+Local:   2015-11-26 21:31:07 +0000 UTC
+Github:  2015-11-26 21:31:07 +0000 UTC
+Status: [32m OK [0m
+-----------------------
+Package: github.com/garyburd/redigo/internal
+Local:   2016-08-10 23:49:51 +0000 UTC
+Github:  2016-08-10 23:49:51 +0000 UTC
+Status: [32m OK [0m
+-----------------------------------
+Package: github.com/kataras/iris/context
+Local:   2016-09-13 04:54:44 +0000 UTC
+Github:  2016-09-13 04:54:44 +0000 UTC
+Status: [32m OK [0m
+-------------------------------
+Package: github.com/ajg/form
+Local:   2016-08-22 23:00:20 +0000 UTC
+Github:  2016-08-22 23:00:20 +0000 UTC
+Status: [32m OK [0m
+-------------------
+Package: github.com/mikespook/possum/view
+Local:   2015-11-27 09:14:16 +0000 UTC
+Github:  2015-11-27 09:14:16 +0000 UTC
+Status: [32m OK [0m
+--------------------------------
+Package: github.com/codegangsta/inject
+Local:   2015-01-14 23:56:00 +0000 UTC
+Github:  2015-01-14 23:56:00 +0000 UTC
+Status: [32m OK [0m
+-----------------------------
+Package: github.com/labstack/echo/engine
+Local:   2016-09-12 13:18:58 +0000 UTC
+Github:  2016-09-12 13:18:58 +0000 UTC
+Status: [32m OK [0m
+-------------------------------
+Package: github.com/xeipuuv/gojsonpointer
+Local:   2015-10-27 08:21:46 +0000 UTC
+Github:  2015-10-27 08:21:46 +0000 UTC
+Status: [32m OK [0m
+--------------------------------
+Package: github.com/russross/blackfriday
+Local:   2016-09-09 06:28:54 +0000 UTC
+Github:  2016-09-09 06:28:54 +0000 UTC
+Status: [32m OK [0m
+-------------------------------
+Package: github.com/clevergo/sessions
+Local:   2016-08-16 05:42:34 +0000 UTC
+Github:  2016-08-16 05:42:34 +0000 UTC
+Status: [32m OK [0m
+----------------------------
+Package: github.com/go-gas/SQLBuilder
+Local:   2016-07-13 14:07:30 +0000 UTC
+Github:  2016-07-13 14:07:30 +0000 UTC
+Status: [32m OK [0m
+----------------------------
+Package: github.com/mailgun/route
+Local:   2016-08-05 19:15:29 +0000 UTC
+Github:  2016-08-05 19:15:29 +0000 UTC
+Status: [32m OK [0m
+------------------------
+Package: github.com/labstack/echo/engine/standard
+Local:   2016-09-12 13:18:58 +0000 UTC
+Github:  2016-09-12 13:18:58 +0000 UTC
+Status: [32m OK [0m
+----------------------------------------
+Package: github.com/moul/http2curl
+Local:   2016-05-20 21:31:28 +0000 UTC
+Github:  2016-05-20 21:31:28 +0000 UTC
+Status: [32m OK [0m
+-------------------------
+Package: github.com/labstack/echo/log
+Local:   2016-09-12 13:18:58 +0000 UTC
+Github:  2016-09-12 13:18:58 +0000 UTC
+Status: [32m OK [0m
+----------------------------
+Package: github.com/dimfeld/httppath
+Local:   2014-05-15 16:47:37 +0000 UTC
+Github:  2014-05-15 16:47:37 +0000 UTC
+Status: [32m OK [0m
+---------------------------
+Package: github.com/mattn/go-colorable
+Local:   2016-07-31 23:54:17 +0000 UTC
+Github:  2016-07-31 23:54:17 +0000 UTC
+Status: [32m OK [0m
+-----------------------------
+Package: github.com/mikespook/possum/session
+Local:   2015-11-27 09:14:16 +0000 UTC
+Github:  2015-11-27 09:14:16 +0000 UTC
+Status: [32m OK [0m
+-----------------------------------
+Package: github.com/kataras/go-serializer/data
+Local:   2016-09-10 04:15:09 +0000 UTC
+Github:  2016-09-10 04:15:09 +0000 UTC
+Status: [32m OK [0m
+-------------------------------------
+Package: github.com/go-playground/lars
+Local:   2016-08-31 17:55:44 +0000 UTC
+Github:  2016-08-31 17:55:44 +0000 UTC
+Status: [32m OK [0m
+-----------------------------
+Package: github.com/mikespook/possum/router
+Local:   2015-11-27 09:14:16 +0000 UTC
+Github:  2015-11-27 09:14:16 +0000 UTC
+Status: [32m OK [0m
+----------------------------------
+Package: github.com/go-gas/logger
+Local:   2016-07-18 07:03:41 +0000 UTC
+Github:  2016-07-18 07:03:41 +0000 UTC
+Status: [32m OK [0m
+------------------------
+Package: github.com/go-playground/form
+Local:   2016-08-31 12:50:07 +0000 UTC
+Github:  2016-08-31 12:50:07 +0000 UTC
+Status: [32m OK [0m
+-----------------------------
+Package: github.com/go-gas/config
+Local:   2016-08-29 07:25:41 +0000 UTC
+Github:  2016-08-29 07:25:41 +0000 UTC
+Status: [32m OK [0m
+------------------------
+Package: github.com/microcosm-cc/bluemonday
+Local:   2016-08-30 14:19:11 +0000 UTC
+Github:  2016-08-30 14:19:11 +0000 UTC
+Status: [32m OK [0m
+----------------------------------
+Package: github.com/mattn/go-isatty
+Local:   2016-08-06 12:27:52 +0000 UTC
+Github:  2016-08-06 12:27:52 +0000 UTC
+Status: [32m OK [0m
+--------------------------
+Package: github.com/fatih/structs
+Local:   2016-08-07 23:55:29 +0000 UTC
+Github:  2016-08-07 23:55:29 +0000 UTC
+Status: [32m OK [0m
+------------------------
+Package: github.com/kataras/go-serializer/text
+Local:   2016-09-10 04:15:09 +0000 UTC
+Github:  2016-09-10 04:15:09 +0000 UTC
+Status: [32m OK [0m
+-------------------------------------
+Package: github.com/astaxie/beego/context
+Local:   2016-09-04 08:52:59 +0000 UTC
+Github:  2016-09-04 08:52:59 +0000 UTC
+Status: [32m OK [0m
+--------------------------------
+Package: github.com/kardianos/service
+Local:   2016-08-24 00:03:17 +0000 UTC
+Github:  2016-08-24 00:03:17 +0000 UTC
+Status: [32m OK [0m
+----------------------------
+Package: github.com/ivpusic/golog
+Local:   2016-09-09 15:30:49 +0000 UTC
+Github:  2016-09-09 15:30:49 +0000 UTC
+Status: [32m OK [0m
+------------------------
+Package: github.com/xenolf/lego/acme
+Local:   2016-09-12 07:50:14 +0000 UTC
+Github:  2016-09-12 07:50:14 +0000 UTC
+Status: [32m OK [0m
+---------------------------
+Package: github.com/davecgh/go-spew/spew
+Local:   2016-09-07 17:06:01 +0000 UTC
+Github:  2016-09-07 17:06:01 +0000 UTC
+Status: [32m OK [0m
+-------------------------------
+Package: github.com/labstack/echo
+Local:   2016-09-12 13:18:58 +0000 UTC
+Github:  2016-09-12 13:18:58 +0000 UTC
+Status: [32m OK [0m
+------------------------
+Package: github.com/kataras/go-serializer/jsonp
+Local:   2016-09-10 04:15:09 +0000 UTC
+Github:  2016-09-10 04:15:09 +0000 UTC
+Status: [32m OK [0m
+--------------------------------------
+Package: github.com/qiangxue/fasthttp-routing
+Local:   2016-02-25 05:06:29 +0000 UTC
+Github:  2016-02-25 05:06:29 +0000 UTC
+Status: [32m OK [0m
+------------------------------------
+Package: github.com/sergi/go-diff/diffmatchpatch
+Local:   2015-10-21 19:14:53 +0000 UTC
+Github:  2015-10-21 19:14:53 +0000 UTC
+Status: [32m OK [0m
+---------------------------------------
+Package: github.com/vanng822/r2router
+Local:   2015-05-23 11:24:21 +0000 UTC
+Github:  2015-05-23 11:24:21 +0000 UTC
+Status: [32m OK [0m
+----------------------------
+Package: github.com/buaazp/fasthttprouter
+Local:   2016-05-27 05:33:41 +0000 UTC
+Github:  2016-05-27 05:33:41 +0000 UTC
+Status: [32m OK [0m
+--------------------------------
+Package: github.com/klauspost/compress/flate
+Local:   2016-08-14 15:04:06 +0000 UTC
+Github:  2016-08-14 15:04:06 +0000 UTC
+Status: [32m OK [0m
+-----------------------------------
+Package: github.com/go-martini/martini
+Local:   2016-09-08 07:09:01 +0000 UTC
+Github:  2016-09-08 07:09:01 +0000 UTC
+Status: [32m OK [0m
+-----------------------------
+Package: github.com/gavv/monotime
+Local:   2016-06-22 09:25:38 +0000 UTC
+Github:  2016-06-22 09:25:38 +0000 UTC
+Status: [32m OK [0m
+------------------------
+Package: github.com/Unknwon/macaron
+Local:   2015-10-10 23:50:58 +0000 UTC
+Github:  2015-10-10 23:50:58 +0000 UTC
+Status: [32m OK [0m
+--------------------------
+Package: github.com/yalp/jsonpath
+Local:   2015-08-12 00:39:00 +0000 UTC
+Github:  2015-08-12 00:39:00 +0000 UTC
+Status: [32m OK [0m
+------------------------
+Package: github.com/gavv/gojsondiff/formatter
+Local:   2016-05-10 21:43:28 +0000 UTC
+Github:  2016-05-10 21:43:28 +0000 UTC
+Status: [32m OK [0m
+------------------------------------
+Package: github.com/manucorporat/sse
+Local:   2016-01-26 18:01:36 +0000 UTC
+Github:  2016-01-26 18:01:36 +0000 UTC
+Status: [32m OK [0m
+---------------------------
+Package: github.com/garyburd/redigo/redis
+Local:   2016-08-10 23:49:51 +0000 UTC
+Github:  2016-08-10 23:49:51 +0000 UTC
+Status: [32m OK [0m
+--------------------------------
+Package: github.com/astaxie/beego/logs
+Local:   2016-09-04 08:52:59 +0000 UTC
+Github:  2016-09-04 08:52:59 +0000 UTC
+Status: [32m OK [0m
+-----------------------------

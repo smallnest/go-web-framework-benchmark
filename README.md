@@ -1,7 +1,7 @@
 # go-web-framework-benchmark
 This benchmark suite aims to compare the performance of Go web frameworks. It is inspired by [Go HTTP Router Benchmark](https://github.com/julienschmidt/go-http-routing-benchmark) but this benchmark suite is different with that. Go HTTP Router Benchmark suit aims to compare the performance of **routers** but this Benchmark suit aims to compare whole HTTP request processing.
 
-**Last Test Updated:** 2016-08-204
+**Last Test Updated:** 2016-09-14
 
 *test environment*
 
@@ -57,6 +57,7 @@ The below web frameworks will be removed from this test because of their poor pe
 * [GuavaStudio/web](github.com/GuavaStudio/web)
 * [possum](https://github.com/mikespook/possum)
 
+version of all web frameworks is at: [libs.version](libs.version)
 
 
 ## Motivation
