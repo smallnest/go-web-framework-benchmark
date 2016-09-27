@@ -17,6 +17,7 @@ import (
 	"github.com/bmizerany/pat"
 	"github.com/buaazp/fasthttprouter"
 	"github.com/celrenheit/lion"
+	"github.com/dinever/golf"
 	"github.com/pressly/chi"
 	// "github.com/claygod/Bxog"
 	"github.com/dimfeld/httptreemux"
@@ -139,6 +140,8 @@ func main() {
 		startGojiv2()
 	case "gojsonrest":
 		startGoJsonRest()
+	case "golf":
+		startGolf()
 	case "gongular":
 		startGongular()
 	case "gorestful":
@@ -462,6 +465,19 @@ func startGoJsonRest() {
 	)
 	api.SetApp(router)
 	http.ListenAndServe(":"+strconv.Itoa(port), api.MakeHandler())
+}
+
+func golfHandler(ctx *golf.Context) {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	}
+	ctx.Send(messageStr)
+}
+
+func startGolf() {
+	app := golf.New()
+	app.Get("/hello", golfHandler)
+	app.Run(":" + strconv.Itoa(port))
 }
 
 func startGongular() {
