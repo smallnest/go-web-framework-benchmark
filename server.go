@@ -557,15 +557,24 @@ func starthttpTreeMux() {
 }
 
 // iris
-func irisHandler(c *iris.Context) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+func irisHandler(ctx *fasthttp.RequestCtx) {
+	if string(ctx.Method()) == "GET" {
+		switch string(ctx.Path()) {
+		case "/hello":
+			if sleepTime > 0 {
+				time.Sleep(sleepTimeDuration)
+			}
+			ctx.WriteString(messageStr)
+		default:
+			ctx.Error("Unsupported path", iris.StatusNotFound)
+		}
+		return
 	}
-	c.SetBody(message)
+	ctx.Error("Unsupported method", iris.StatusMethodNotAllowed)
 }
 func startIris() {
 	mux := iris.New()
-	mux.Get("/hello", irisHandler)
+	mux.Router = irisHandler
 	mux.Listen(":" + strconv.Itoa(port))
 }
 
