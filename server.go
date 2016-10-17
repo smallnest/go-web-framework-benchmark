@@ -18,6 +18,7 @@ import (
 	"github.com/buaazp/fasthttprouter"
 	"github.com/celrenheit/lion"
 	"github.com/dinever/golf"
+	ozzo "github.com/go-ozzo/ozzo-routing"
 	"github.com/pressly/chi"
 	// "github.com/claygod/Bxog"
 	"github.com/dimfeld/httptreemux"
@@ -148,6 +149,8 @@ func main() {
 		startGoRestful()
 	case "gorilla":
 		startGorilla()
+	case "go-ozzo":
+		startGoozzo()
 	// case "guavastudio_web":
 	// 	startGuavaStudioWeb()
 	case "httprouter":
@@ -277,13 +280,15 @@ func cleverGoHandler(ctx *clevergo.Context) {
 }
 func startCleverGo() {
 	// Create a router instance.
-	router := clevergo.NewRouter()
+	app := clevergo.NewApplication()
+	app.Config.ServerAddr = ":" + strconv.Itoa(port)
+	router := app.NewRouter("")
 
 	// Register route handler.
 	router.GET("/hello", clevergo.HandlerFunc(cleverGoHandler))
 
 	// Start CleverGo.
-	clevergo.ListenAndServe(":"+strconv.Itoa(port), router.Handler)
+	app.Run()
 }
 
 // denco
@@ -514,6 +519,22 @@ func startGorilla() {
 	mux := mux.NewRouter()
 	mux.HandleFunc("/hello", helloHandler).Methods("GET")
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+// go-ozzo
+func ozzoHandler(c *ozzo.Context) error {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	}
+	c.Write(message)
+
+	return nil
+}
+
+func startGoozzo() {
+	r := ozzo.New()
+	r.Get("/hello", ozzoHandler)
+	http.ListenAndServe(":"+strconv.Itoa(port), r)
 }
 
 // //GuavaStudio/Web

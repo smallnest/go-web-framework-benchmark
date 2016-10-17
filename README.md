@@ -25,6 +25,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [chi](https://github.com/pressly/chi)
 * [httptreemux](https://github.com/dimfeld/httptreemux)
 * [baa](https://github.com/go-baa/baa)
+* [go-ozzo](https://github.com/go-ozzo/ozzo-routing)
 * [go-restful](https://github.com/emicklei/go-restful)
 * [gin](https://github.com/gin-gonic/gin)
 * [gas](https://github.com/go-gas/gas)
