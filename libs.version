@@ -15,11 +15,6 @@ Local:   2016-07-15 17:06:12 +0000 UTC
 Github:  2016-07-15 17:06:12 +0000 UTC
 Status: [32m OK [0m
 ---------------------------------
-Package: github.com/kataras/go-sessions
-Local:   2016-09-13 04:53:43 +0000 UTC
-Github:  2016-09-13 04:53:43 +0000 UTC
-Status: [32m OK [0m
-------------------------------
 Package: github.com/go-gas/gas/model
 Local:   2016-08-28 04:28:52 +0000 UTC
 Github:  2016-08-28 04:28:52 +0000 UTC
@@ -60,11 +55,6 @@ Local:   2016-08-13 01:48:32 +0000 UTC
 Github:  2016-08-13 01:48:32 +0000 UTC
 Status: [32m OK [0m
 --------------------------
-Package: github.com/kataras/iris
-Local:   2016-09-13 04:54:44 +0000 UTC
-Github:  2016-09-13 04:54:44 +0000 UTC
-Status: [32m OK [0m
------------------------
 Package: github.com/satori/go.uuid
 Local:   2016-07-13 18:03:06 +0000 UTC
 Github:  2016-07-13 18:03:06 +0000 UTC
@@ -80,11 +70,6 @@ Local:   2016-08-19 15:13:15 +0000 UTC
 Github:  2016-08-19 15:13:15 +0000 UTC
 Status: [32m OK [0m
 ------------------------------
-Package: github.com/iris-contrib/letsencrypt
-Local:   2016-07-28 22:18:19 +0000 UTC
-Github:  2016-07-28 22:18:19 +0000 UTC
-Status: [32m OK [0m
------------------------------------
 Package: github.com/ant0ine/go-json-rest/rest/trie
 Local:   2016-08-28 00:39:24 +0000 UTC
 Github:  2016-08-28 00:39:24 +0000 UTC
@@ -105,11 +90,6 @@ Local:   2016-09-11 18:35:09 +0000 UTC
 Github:  2016-09-11 18:35:09 +0000 UTC
 Status: [32m OK [0m
 ----------------------
-Package: github.com/kataras/go-errors
-Local:   2016-09-01 03:21:34 +0000 UTC
-Github:  2016-09-01 03:21:34 +0000 UTC
-Status: [32m OK [0m
-----------------------------
 Package: github.com/yudai/golcs
 Local:   2015-04-05 16:35:32 +0000 UTC
 Github:  2015-04-05 16:35:32 +0000 UTC
@@ -130,11 +110,6 @@ Local:   2016-07-11 12:45:36 +0000 UTC
 Github:  2016-07-11 12:45:36 +0000 UTC
 Status: [32m OK [0m
 ----------------------
-Package: github.com/iris-contrib/websocket
-Local:   2016-09-01 03:11:02 +0000 UTC
-Github:  2016-09-01 03:11:02 +0000 UTC
-Status: [32m OK [0m
----------------------------------
 Package: github.com/oxtoacart/bpool
 Local:   2015-07-12 13:31:11 +0000 UTC
 Github:  2015-07-12 13:31:11 +0000 UTC
@@ -200,31 +175,16 @@ Local:   2016-09-12 11:19:13 +0000 UTC
 Github:  2016-09-12 11:19:13 +0000 UTC
 Status: [32m OK [0m
 ---------------------------
-Package: github.com/kataras/go-options
-Local:   2016-09-09 04:20:19 +0000 UTC
-Github:  2016-09-09 04:20:19 +0000 UTC
-Status: [32m OK [0m
------------------------------
 Package: github.com/tinylib/msgp/msgp
 Local:   2016-08-03 06:23:24 +0000 UTC
 Github:  2016-08-03 06:23:24 +0000 UTC
 Status: [32m OK [0m
 ----------------------------
-Package: github.com/kataras/go-serializer/markdown
-Local:   2016-09-10 04:15:09 +0000 UTC
-Github:  2016-09-10 04:15:09 +0000 UTC
-Status: [32m OK [0m
------------------------------------------
 Package: github.com/shurcooL/sanitized_anchor_name
 Local:   2015-10-28 00:19:15 +0000 UTC
 Github:  2015-10-28 00:19:15 +0000 UTC
 Status: [32m OK [0m
 -----------------------------------------
-Package: github.com/kataras/go-template/html
-Local:   2016-09-08 15:20:57 +0000 UTC
-Github:  2016-09-08 15:20:57 +0000 UTC
-Status: [32m OK [0m
------------------------------------
 Package: github.com/ant0ine/go-json-rest/rest
 Local:   2016-08-28 00:39:24 +0000 UTC
 Github:  2016-08-28 00:39:24 +0000 UTC
@@ -245,31 +205,16 @@ Local:   2016-09-12 13:18:58 +0000 UTC
 Github:  2016-09-12 13:18:58 +0000 UTC
 Status: [32m OK [0m
 --------------------------------
-Package: github.com/kataras/go-fs
-Local:   2016-09-04 18:08:58 +0000 UTC
-Github:  2016-09-04 18:08:58 +0000 UTC
-Status: [32m OK [0m
-------------------------
 Package: github.com/kardianos/osext
 Local:   2016-08-11 00:15:26 +0000 UTC
 Github:  2016-08-11 00:15:26 +0000 UTC
 Status: [32m OK [0m
 --------------------------
-Package: github.com/kataras/iris/utils
-Local:   2016-09-13 04:54:44 +0000 UTC
-Github:  2016-09-13 04:54:44 +0000 UTC
-Status: [32m OK [0m
------------------------------
 Package: github.com/gin-gonic/gin/binding
 Local:   2016-05-25 12:45:45 +0000 UTC
 Github:  2016-04-14 23:39:28 +0000 UTC
 Status: [31m Outdated [0m
 --------------------------------
-Package: github.com/kataras/go-websocket
-Local:   2016-09-01 03:24:46 +0000 UTC
-Github:  2016-09-01 03:24:46 +0000 UTC
-Status: [32m OK [0m
--------------------------------
 Package: github.com/klauspost/cpuid
 Local:   2016-03-02 07:53:16 +0000 UTC
 Github:  2016-03-02 07:53:16 +0000 UTC
@@ -365,11 +310,6 @@ Local:   2016-02-17 02:02:39 +0000 UTC
 Github:  2016-02-17 02:02:39 +0000 UTC
 Status: [32m OK [0m
 ----------------------
-Package: github.com/kataras/go-serializer
-Local:   2016-09-10 04:15:09 +0000 UTC
-Github:  2016-09-10 04:15:09 +0000 UTC
-Status: [32m OK [0m
---------------------------------
 Package: github.com/klauspost/crc32
 Local:   2016-02-19 14:26:09 +0000 UTC
 Github:  2016-02-19 14:26:09 +0000 UTC
@@ -415,11 +355,6 @@ Local:   2016-09-04 08:52:59 +0000 UTC
 Github:  2016-09-04 08:52:59 +0000 UTC
 Status: [32m OK [0m
 ------------------------------
-Package: github.com/kataras/go-template
-Local:   2016-09-08 15:20:57 +0000 UTC
-Github:  2016-09-08 15:20:57 +0000 UTC
-Status: [32m OK [0m
-------------------------------
 Package: github.com/mustafaakin/gongular
 Local:   2016-07-25 16:15:29 +0000 UTC
 Github:  2016-07-25 16:15:29 +0000 UTC
@@ -450,21 +385,6 @@ Local:   2015-11-24 14:35:22 +0000 UTC
 Github:  2015-11-24 14:35:22 +0000 UTC
 Status: [32m OK [0m
 --------------------
-Package: github.com/kataras/go-serializer/xml
-Local:   2016-09-10 04:15:09 +0000 UTC
-Github:  2016-09-10 04:15:09 +0000 UTC
-Status: [32m OK [0m
-------------------------------------
-Package: github.com/iris-contrib/formBinder
-Local:   2016-07-02 15:24:44 +0000 UTC
-Github:  2016-07-02 15:24:44 +0000 UTC
-Status: [32m OK [0m
-----------------------------------
-Package: github.com/kataras/go-serializer/json
-Local:   2016-09-10 04:15:09 +0000 UTC
-Github:  2016-09-10 04:15:09 +0000 UTC
-Status: [32m OK [0m
--------------------------------------
 Package: github.com/stretchr/testify/assert
 Local:   2016-06-15 09:28:44 +0000 UTC
 Github:  2016-06-15 09:28:44 +0000 UTC
@@ -530,11 +450,6 @@ Local:   2016-08-10 23:49:51 +0000 UTC
 Github:  2016-08-10 23:49:51 +0000 UTC
 Status: [32m OK [0m
 -----------------------------------
-Package: github.com/kataras/iris/context
-Local:   2016-09-13 04:54:44 +0000 UTC
-Github:  2016-09-13 04:54:44 +0000 UTC
-Status: [32m OK [0m
--------------------------------
 Package: github.com/ajg/form
 Local:   2016-08-22 23:00:20 +0000 UTC
 Github:  2016-08-22 23:00:20 +0000 UTC
@@ -610,11 +525,6 @@ Local:   2015-11-27 09:14:16 +0000 UTC
 Github:  2015-11-27 09:14:16 +0000 UTC
 Status: [32m OK [0m
 -----------------------------------
-Package: github.com/kataras/go-serializer/data
-Local:   2016-09-10 04:15:09 +0000 UTC
-Github:  2016-09-10 04:15:09 +0000 UTC
-Status: [32m OK [0m
--------------------------------------
 Package: github.com/go-playground/lars
 Local:   2016-08-31 17:55:44 +0000 UTC
 Github:  2016-08-31 17:55:44 +0000 UTC
@@ -655,11 +565,6 @@ Local:   2016-08-07 23:55:29 +0000 UTC
 Github:  2016-08-07 23:55:29 +0000 UTC
 Status: [32m OK [0m
 ------------------------
-Package: github.com/kataras/go-serializer/text
-Local:   2016-09-10 04:15:09 +0000 UTC
-Github:  2016-09-10 04:15:09 +0000 UTC
-Status: [32m OK [0m
--------------------------------------
 Package: github.com/astaxie/beego/context
 Local:   2016-09-04 08:52:59 +0000 UTC
 Github:  2016-09-04 08:52:59 +0000 UTC
@@ -690,11 +595,6 @@ Local:   2016-09-12 13:18:58 +0000 UTC
 Github:  2016-09-12 13:18:58 +0000 UTC
 Status: [32m OK [0m
 ------------------------
-Package: github.com/kataras/go-serializer/jsonp
-Local:   2016-09-10 04:15:09 +0000 UTC
-Github:  2016-09-10 04:15:09 +0000 UTC
-Status: [32m OK [0m
---------------------------------------
 Package: github.com/qiangxue/fasthttp-routing
 Local:   2016-02-25 05:06:29 +0000 UTC
 Github:  2016-02-25 05:06:29 +0000 UTC

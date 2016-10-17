@@ -33,7 +33,6 @@ import (
 	"github.com/headwindfly/clevergo"
 	"github.com/ivpusic/neo"
 	"github.com/julienschmidt/httprouter"
-	"github.com/kataras/iris"
 	echov2 "github.com/labstack/echo"
 	echov2fasthttp "github.com/labstack/echo/engine/fasthttp"
 	echov2standard "github.com/labstack/echo/engine/standard"
@@ -157,8 +156,6 @@ func main() {
 		startHttpRouter()
 	case "httptreemux":
 		starthttpTreeMux()
-	case "iris":
-		startIris()
 	case "lars":
 		startLars()
 	case "lion":
@@ -575,28 +572,6 @@ func starthttpTreeMux() {
 	mux := httptreemux.New()
 	mux.GET("/hello", httpTreeMuxHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
-}
-
-// iris
-func irisHandler(ctx *fasthttp.RequestCtx) {
-	if string(ctx.Method()) == "GET" {
-		switch string(ctx.Path()) {
-		case "/hello":
-			if sleepTime > 0 {
-				time.Sleep(sleepTimeDuration)
-			}
-			ctx.WriteString(messageStr)
-		default:
-			ctx.Error("Unsupported path", iris.StatusNotFound)
-		}
-		return
-	}
-	ctx.Error("Unsupported method", iris.StatusMethodNotAllowed)
-}
-func startIris() {
-	mux := iris.New()
-	mux.Router = irisHandler
-	mux.Listen(":" + strconv.Itoa(port))
 }
 
 // lars
