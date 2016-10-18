@@ -1,10 +1,11 @@
 FROM golang:1.7.1-alpine
 MAINTAINER smallnest <smallnest@gmail.com>
 
-RUN echo "@testing http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+RUN echo "@community http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+    && echo "@main http://dl-4.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
     && apk update \
     && apk add --no-cache --repository https://pkgs.alpinelinux.org/packages --allow-untrusted \
-    bash git wrk@testing gnuplot@testing
+    bash git libressl2.4-libcrypto@main libressl2.4-libssl@main wrk@community gnuplot@community
 
 # RUN go get github.com/smallnest/go-web-framework-benchmark \
 #     && cd $GOPATH/src/github.com/smallnest/go-web-framework-benchmark \
