@@ -1,4 +1,4 @@
-FROM golang:1.6.2-alpine
+FROM golang:1.7.1-alpine
 MAINTAINER smallnest <smallnest@gmail.com>
 
 RUN echo "@testing http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \

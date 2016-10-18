@@ -38,7 +38,6 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [clevergo](https://github.com/headwindfly/clevergo)
 * [neo](ithub.com/ivpusic/neo)
 * [httprouter](https://github.com/julienschmidt/httprouter)
-* [iris](https://github.com/kataras/iris)
 * [tango](https://github.com/lunny/tango)
 * [vulcan](https://github.com/mailgun/route)
 * [~~possum~~](https://github.com/mikespook/possum)
@@ -165,7 +164,7 @@ It will  generate test results in processtime.csv and concurrency.csv. You can m
 * If you want to test some of web frameworks, you can modify the test script and only keep your selected web frameworks:
 ```
 ……
-web_frameworks=( "default" "ace" "beego" "bone" "denco" "echov1" "echov2standard" "echov2fasthttp" "fasthttp-raw" "fasthttprouter" "fasthttp-routing" "gin" "gocraftWeb" "goji" "gojiv2" "gojsonrest" "gorestful" "gorilla" "httprouter" "httptreemux" "iris" "lars" "lion" "macaron" "martini" "pat" "possum" "r2router" "tango" "tiger" "traffic" "vulcan" )
+web_frameworks=( "default" "ace" "beego" "bone" "denco" "echov1" "echov2standard" "echov2fasthttp" "fasthttp-raw" "fasthttprouter" "fasthttp-routing" "gin" "gocraftWeb" "goji" "gojiv2" "gojsonrest" "gorestful" "gorilla" "httprouter" "httptreemux" "lars" "lion" "macaron" "martini" "pat" "possum" "r2router" "tango" "tiger" "traffic" "vulcan" )
 ……
 ```
 
