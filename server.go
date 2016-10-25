@@ -357,7 +357,7 @@ func startFasthttp() {
 }
 
 //fasthttprouter
-func fastHttpHandler(ctx *fasthttp.RequestCtx, ps fasthttprouter.Params) {
+func fastHttpHandler(ctx *fasthttp.RequestCtx) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
 	}
