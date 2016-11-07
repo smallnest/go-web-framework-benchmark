@@ -31,9 +31,9 @@ import (
 	"github.com/headwindfly/clevergo"
 	"github.com/ivpusic/neo"
 	"github.com/julienschmidt/httprouter"
-	echov2 "github.com/labstack/echo"
-	echov2fasthttp "github.com/labstack/echo/engine/fasthttp"
-	echov2standard "github.com/labstack/echo/engine/standard"
+	echov3 "github.com/labstack/echo"
+	echov3fasthttp "github.com/labstack/echo/engine/fasthttp"
+	echov3standard "github.com/labstack/echo/engine/standard"
 	llog "github.com/lunny/log"
 	"github.com/lunny/tango"
 	vulcan "github.com/mailgun/route"
@@ -113,10 +113,10 @@ func main() {
 		startCleverGo()
 	case "denco":
 		startDenco()
-	case "echov2standard":
-		startEchoV2Standard()
-	case "echov2fasthttp":
-		startEchoV2Fasthttp()
+	case "echov3standard":
+		startEchoV3Standard()
+	case "echov3fasthttp":
+		startEchoV3Fasthttp()
 	case "fasthttp-raw":
 		startFasthttp()
 	case "fasthttprouter":
@@ -294,25 +294,25 @@ func startDenco() {
 	http.ListenAndServe(":"+strconv.Itoa(port), handler)
 }
 
-// echov2-standard
-func echov2Handler(c echov2.Context) error {
+// echov3-standard
+func echov3Handler(c echov3.Context) error {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
 	}
 	c.Response().Write(message)
 	return nil
 }
-func startEchoV2Standard() {
-	mux := echov2.New()
-	mux.Get("/hello", echov2Handler)
-	mux.Run(echov2standard.New(":" + strconv.Itoa(port)))
+func startEchoV3Standard() {
+	mux := echov3.New()
+	mux.Get("/hello", echov3Handler)
+	mux.Run(echov3standard.New(":" + strconv.Itoa(port)))
 }
 
-// echov2-fasthttp
-func startEchoV2Fasthttp() {
-	mux := echov2.New()
-	mux.Get("/hello", echov2Handler)
-	mux.Run(echov2fasthttp.New(":" + strconv.Itoa(port)))
+// echov3-fasthttp
+func startEchoV3Fasthttp() {
+	mux := echov3.New()
+	mux.Get("/hello", echov3Handler)
+	mux.Run(echov3fasthttp.New(":" + strconv.Itoa(port)))
 }
 
 //fasthttp
