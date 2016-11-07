@@ -16,7 +16,6 @@ import (
 	"github.com/astaxie/beego/context"
 	"github.com/bmizerany/pat"
 	"github.com/buaazp/fasthttprouter"
-	"github.com/celrenheit/lion"
 	"github.com/dimfeld/httptreemux"
 	"github.com/dinever/golf"
 	"github.com/emicklei/go-restful"
@@ -53,6 +52,7 @@ import (
 	gojipat "goji.io/pat"
 	gcontext "golang.org/x/net/context"
 	"gopkg.in/baa.v1"
+	lion "gopkg.in/celrenheit/lion.v1"
 	// guavaweb "github.com/GuavaStudio/web"
 )
 
@@ -120,9 +120,9 @@ func main() {
 	case "fasthttp-raw":
 		startFasthttp()
 	case "fasthttprouter":
-		startFastHttpRouter()
+		startFastHTTPRouter()
 	case "fasthttp-routing":
-		startFastHttpRouting()
+		startFastHTTPRouting()
 	case "gas":
 		startGas()
 	case "gin":
@@ -132,7 +132,7 @@ func main() {
 	case "goji":
 		startGoji()
 	case "gojsonrest":
-		startGoJsonRest()
+		startGoJSONRest()
 	case "golf":
 		startGolf()
 	case "gongular":
@@ -146,7 +146,7 @@ func main() {
 	// case "guavastudio_web":
 	// 	startGuavaStudioWeb()
 	case "httprouter":
-		startHttpRouter()
+		startHTTPRouter()
 	case "httptreemux":
 		starthttpTreeMux()
 	case "lars":
@@ -316,7 +316,7 @@ func startEchoV3Fasthttp() {
 }
 
 //fasthttp
-func fastHttpRawHandler(ctx *fasthttp.RequestCtx) {
+func fastHTTPRawHandler(ctx *fasthttp.RequestCtx) {
 	if string(ctx.Method()) == "GET" {
 		switch string(ctx.Path()) {
 		case "/hello":
@@ -332,33 +332,33 @@ func fastHttpRawHandler(ctx *fasthttp.RequestCtx) {
 	ctx.Error("Unsupported method", fasthttp.StatusMethodNotAllowed)
 }
 func startFasthttp() {
-	fasthttp.ListenAndServe(":"+strconv.Itoa(port), fastHttpRawHandler)
+	fasthttp.ListenAndServe(":"+strconv.Itoa(port), fastHTTPRawHandler)
 }
 
 //fasthttprouter
-func fastHttpHandler(ctx *fasthttp.RequestCtx) {
+func fastHTTPHandler(ctx *fasthttp.RequestCtx) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
 	}
 	ctx.Write(message)
 }
-func startFastHttpRouter() {
+func startFastHTTPRouter() {
 	mux := fasthttprouter.New()
-	mux.GET("/hello", fastHttpHandler)
+	mux.GET("/hello", fastHTTPHandler)
 	fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.Handler)
 }
 
 //fasthttprouting
-func fastHttpRoutingHandler(c *routing.Context) error {
+func fastHTTPRoutingHandler(c *routing.Context) error {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
 	}
 	c.Write(message)
 	return nil
 }
-func startFastHttpRouting() {
+func startFastHTTPRouting() {
 	mux := routing.New()
-	mux.Get("/hello", fastHttpRoutingHandler)
+	mux.Get("/hello", fastHTTPRoutingHandler)
 	fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.HandleRequest)
 }
 
@@ -418,17 +418,17 @@ func startGoji() {
 }
 
 // goJsonRest
-func goJsonRestHandler(w rest.ResponseWriter, req *rest.Request) {
+func goJSONRestHandler(w rest.ResponseWriter, req *rest.Request) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
 	}
 	iow := w.(io.Writer)
 	iow.Write(message)
 }
-func startGoJsonRest() {
+func startGoJSONRest() {
 	api := rest.NewApi()
 	router, _ := rest.MakeRouter(
-		&rest.Route{HttpMethod: "GET", PathExp: "/hello", Func: goJsonRestHandler},
+		&rest.Route{HttpMethod: "GET", PathExp: "/hello", Func: goJSONRestHandler},
 	)
 	api.SetApp(router)
 	http.ListenAndServe(":"+strconv.Itoa(port), api.MakeHandler())
@@ -520,7 +520,7 @@ func httpRouterHandler(w http.ResponseWriter, _ *http.Request, ps httprouter.Par
 	}
 	w.Write(message)
 }
-func startHttpRouter() {
+func startHTTPRouter() {
 	mux := httprouter.New()
 	mux.GET("/hello", httpRouterHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)

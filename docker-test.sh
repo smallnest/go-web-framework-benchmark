@@ -8,3 +8,4 @@ chmod +x *.sh
 ./test-latency.sh
 ./test-pipelining.sh
 cp -R testresults /data/testresults
+cp *.png /data/testresults
