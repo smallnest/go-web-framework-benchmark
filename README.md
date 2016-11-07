@@ -51,7 +51,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [r2router](https://github.com/vanng822/r2router)
 * [goji](https://github.com/zenazn/goji/web)
 * [gojiv2](http://goji.io)
-* [echo](http://gopkg.in/labstack/echo.v1)
+* [echo v2](https://github.com/labstack/echo)
 
 
 The below web frameworks will be removed from this test because of their poor performance:

@@ -55,7 +55,6 @@ import (
 	gojiv2pat "goji.io/pat"
 	gcontext "golang.org/x/net/context"
 	"gopkg.in/baa.v1"
-	echo "gopkg.in/labstack/echo.v1"
 	// guavaweb "github.com/GuavaStudio/web"
 )
 
@@ -116,8 +115,6 @@ func main() {
 		startCleverGo()
 	case "denco":
 		startDenco()
-	case "echov1":
-		startEchoV1()
 	case "echov2standard":
 		startEchoV2Standard()
 	case "echov2fasthttp":
@@ -299,20 +296,6 @@ func startDenco() {
 	mux := denco.NewMux()
 	handler, _ := mux.Build([]denco.Handler{mux.GET("/hello", denco.HandlerFunc(dencoHandler))})
 	http.ListenAndServe(":"+strconv.Itoa(port), handler)
-}
-
-// echov1
-func echov1Handler(c *echo.Context) error {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
-	}
-	c.Response().Write(message)
-	return nil
-}
-func startEchoV1() {
-	mux := echo.New()
-	mux.Get("/hello", echov1Handler)
-	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
 // echov2-standard
