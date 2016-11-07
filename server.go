@@ -17,15 +17,13 @@ import (
 	"github.com/bmizerany/pat"
 	"github.com/buaazp/fasthttprouter"
 	"github.com/celrenheit/lion"
-	"github.com/dinever/golf"
-	ozzo "github.com/go-ozzo/ozzo-routing"
-	"github.com/pressly/chi"
-	// "github.com/claygod/Bxog"
 	"github.com/dimfeld/httptreemux"
+	"github.com/dinever/golf"
 	"github.com/emicklei/go-restful"
 	"github.com/gin-gonic/gin"
 	"github.com/go-gas/gas"
 	"github.com/go-martini/martini"
+	ozzo "github.com/go-ozzo/ozzo-routing"
 	"github.com/go-playground/lars"
 	"github.com/go-zoo/bone"
 	"github.com/gocraft/web"
@@ -46,13 +44,13 @@ import (
 	"github.com/naoina/denco"
 	"github.com/pilu/traffic"
 	"github.com/plimble/ace"
+	"github.com/pressly/chi"
 	routing "github.com/qiangxue/fasthttp-routing"
 	"github.com/rcrowley/go-tigertonic"
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
-	goji "github.com/zenazn/goji/web"
-	gojiv2 "goji.io"
-	gojiv2pat "goji.io/pat"
+	goji "goji.io"
+	gojipat "goji.io/pat"
 	gcontext "golang.org/x/net/context"
 	"gopkg.in/baa.v1"
 	// guavaweb "github.com/GuavaStudio/web"
@@ -133,8 +131,6 @@ func main() {
 		startGocraftWeb()
 	case "goji":
 		startGoji()
-	case "gojiv2":
-		startGojiv2()
 	case "gojsonrest":
 		startGoJsonRest()
 	case "golf":
@@ -409,29 +405,15 @@ func startGocraftWeb() {
 }
 
 // goji
-func gojiHandler(c goji.C, w http.ResponseWriter, r *http.Request) {
+func gojiHandler(w http.ResponseWriter, r *http.Request) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
 	}
 	w.Write(message)
 }
 func startGoji() {
-	mux := goji.New()
-	mux.Get("/hello", gojiHandler)
-	http.ListenAndServe(":"+strconv.Itoa(port), mux)
-}
-
-// gojiv2
-
-func gojiv2Handler(ctx gcontext.Context, w http.ResponseWriter, r *http.Request) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
-	}
-	w.Write(message)
-}
-func startGojiv2() {
-	mux := gojiv2.NewMux()
-	mux.HandleFuncC(gojiv2pat.Get("/hello"), gojiv2Handler)
+	mux := goji.NewMux()
+	mux.HandleFunc(gojipat.Get("/hello"), gojiHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
