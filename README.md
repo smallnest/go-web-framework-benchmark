@@ -1,14 +1,14 @@
 # go-web-framework-benchmark
 This benchmark suite aims to compare the performance of Go web frameworks. It is inspired by [Go HTTP Router Benchmark](https://github.com/julienschmidt/go-http-routing-benchmark) but this benchmark suite is different with that. Go HTTP Router Benchmark suit aims to compare the performance of **routers** but this Benchmark suit aims to compare whole HTTP request processing.
 
-**Last Test Updated:** 2016-09-14
+**Last Test Updated:** 2016-11-08
 
 *test environment*
 
 * CPU:      Intel(R) Xeon(R) CPU E5-2620 0 @ 2.00GHz, 24 cores
 * Memory:   16G
-* Go:       1.7
-* OS:       CentOS 6.4 / 2.6.32-358.el6.x86_64
+* Go:       1.7.3
+* OS:       CentOS 7.2 / 3.10.0-327.36.3.el7.x86_64
 
 (doesn't contain test results of neo because one error)
 
