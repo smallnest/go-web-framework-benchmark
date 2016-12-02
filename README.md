@@ -35,7 +35,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [gocraft](https://github.com/gocraft/web)
 * [gorilla](https://github.com/gorilla/mux)
 * [~~GuavaStudio/web~~](github.com/GuavaStudio/web)
-* [clevergo](https://github.com/headwindfly/clevergo)
+* [gem](https://github.com/go-gem/gem)
 * [neo](ithub.com/ivpusic/neo)
 * [httprouter](https://github.com/julienschmidt/httprouter)
 * [tango](https://github.com/lunny/tango)

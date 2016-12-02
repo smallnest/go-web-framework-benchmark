@@ -21,13 +21,13 @@ import (
 	"github.com/emicklei/go-restful"
 	"github.com/gin-gonic/gin"
 	"github.com/go-gas/gas"
+	"github.com/go-gem/gem"
 	"github.com/go-martini/martini"
 	ozzo "github.com/go-ozzo/ozzo-routing"
 	"github.com/go-playground/lars"
 	"github.com/go-zoo/bone"
 	"github.com/gocraft/web"
 	"github.com/gorilla/mux"
-	"github.com/headwindfly/clevergo"
 	"github.com/ivpusic/neo"
 	"github.com/julienschmidt/httprouter"
 	echov3 "github.com/labstack/echo"
@@ -109,8 +109,6 @@ func main() {
 	// 	startBxog()
 	case "chi":
 		startChi()
-	case "clevergo":
-		startCleverGo()
 	case "denco":
 		startDenco()
 	case "echov3standard":
@@ -125,6 +123,8 @@ func main() {
 		startFastHTTPRouting()
 	case "gas":
 		startGas()
+	case "gem":
+		startGem()
 	case "gin":
 		startGin()
 	case "gocraftWeb":
@@ -261,26 +261,6 @@ func startChi() {
 	http.ListenAndServe(":"+strconv.Itoa(port), r)
 }
 
-// cleverGo
-func cleverGoHandler(ctx *clevergo.Context) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
-	}
-	ctx.Write(message)
-}
-func startCleverGo() {
-	// Create a router instance.
-	app := clevergo.NewApplication()
-	app.Config.ServerAddr = ":" + strconv.Itoa(port)
-	router := app.NewRouter("")
-
-	// Register route handler.
-	router.GET("/hello", clevergo.HandlerFunc(cleverGoHandler))
-
-	// Start CleverGo.
-	app.Run()
-}
-
 // denco
 func dencoHandler(w http.ResponseWriter, r *http.Request, params denco.Params) {
 	if sleepTime > 0 {
@@ -373,6 +353,18 @@ func startGas() {
 		return c.STRING(200, messageStr)
 	})
 	g.Run(":" + strconv.Itoa(port))
+}
+
+//gem
+func startGem() {
+	router := gem.NewRouter()
+	router.GET("/hello", func(ctx *gem.Context) {
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		}
+		ctx.RequestCtx.Write(message)
+	})
+	gem.ListenAndServe(":"+strconv.Itoa(port), router.Handler())
 }
 
 // gin
