@@ -21,7 +21,6 @@ import (
 	"github.com/emicklei/go-restful"
 	"github.com/gin-gonic/gin"
 	"github.com/go-gas/gas"
-	"github.com/go-gem/gem"
 	"github.com/go-martini/martini"
 	ozzo "github.com/go-ozzo/ozzo-routing"
 	"github.com/go-playground/lars"
@@ -123,8 +122,6 @@ func main() {
 		startFastHTTPRouting()
 	case "gas":
 		startGas()
-	case "gem":
-		startGem()
 	case "gin":
 		startGin()
 	case "gocraftWeb":
@@ -353,18 +350,6 @@ func startGas() {
 		return c.STRING(200, messageStr)
 	})
 	g.Run(":" + strconv.Itoa(port))
-}
-
-//gem
-func startGem() {
-	router := gem.NewRouter()
-	router.GET("/hello", func(ctx *gem.Context) {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		}
-		ctx.RequestCtx.Write(message)
-	})
-	gem.ListenAndServe(":"+strconv.Itoa(port), router.Handler())
 }
 
 // gin
