@@ -1,0 +1,11 @@
+language: go
+
+go:
+  - 1.6.3
+  - 1.7.3
+
+notifications:
+  email:
+    recipients: smallnest@gmail.com
+    on_success: change
+    on_failure: always
