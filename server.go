@@ -31,8 +31,6 @@ import (
 	"github.com/ivpusic/neo"
 	"github.com/julienschmidt/httprouter"
 	echov3 "github.com/labstack/echo"
-	echov3fasthttp "github.com/labstack/echo/engine/fasthttp"
-	echov3standard "github.com/labstack/echo/engine/standard"
 	llog "github.com/lunny/log"
 	"github.com/lunny/tango"
 	vulcan "github.com/mailgun/route"
@@ -106,15 +104,13 @@ func main() {
 	case "bone":
 		startBone()
 	case "bxog":
-	 	startBxog()
+		startBxog()
 	case "chi":
 		startChi()
 	case "denco":
 		startDenco()
-	case "echov3standard":
-		startEchoV3Standard()
-	case "echov3fasthttp":
-		startEchoV3Fasthttp()
+	case "echov3":
+		startEchoV3()
 	case "fasthttp-raw":
 		startFasthttp()
 	case "fasthttprouter":
@@ -236,16 +232,16 @@ func startBone() {
 
 // bxog
 func bxogHandler(w http.ResponseWriter, req *http.Request) {
- 	if sleepTime > 0 {
- 		time.Sleep(sleepTimeDuration)
- 	}
- 	w.Write(message)
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	}
+	w.Write(message)
 }
- func startBxog() {
- 	mux := bxog.New()
- 	mux.Add("/hello", bxogHandler)
- 	mux.Start(":" + strconv.Itoa(port))
- }
+func startBxog() {
+	mux := bxog.New()
+	mux.Add("/hello", bxogHandler)
+	mux.Start(":" + strconv.Itoa(port))
+}
 
 //chi
 func startChi() {
@@ -280,17 +276,10 @@ func echov3Handler(c echov3.Context) error {
 	c.Response().Write(message)
 	return nil
 }
-func startEchoV3Standard() {
+func startEchoV3() {
 	mux := echov3.New()
 	mux.Get("/hello", echov3Handler)
 	mux.Run(echov3standard.New(":" + strconv.Itoa(port)))
-}
-
-// echov3-fasthttp
-func startEchoV3Fasthttp() {
-	mux := echov3.New()
-	mux.Get("/hello", echov3Handler)
-	mux.Run(echov3fasthttp.New(":" + strconv.Itoa(port)))
 }
 
 //fasthttp

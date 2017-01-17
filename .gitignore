@@ -23,6 +23,7 @@ _testmain.go
 *.test
 *.prof
 gowebbenchmark
+go-web-framework-benchmark
 
 #ide
 .vscode
