@@ -18,6 +18,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [macaron](https://github.com/Unknwon/macaron)
 * [go-json-rest](https://github.com/ant0ine/go-json-rest)
 * [beego](https://github.com/astaxie/beego)
+* [Bxog](https://github.com/claygod/Bxog)
 * [pat](https://github.com/bmizerany/pat)
 * [fasthttprouter](https://github.com/buaazp/fasthttprouter)
 * [lion](https://github.com/celrenheit/lion)
