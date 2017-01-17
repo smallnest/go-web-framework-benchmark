@@ -277,9 +277,10 @@ func echov3Handler(c echov3.Context) error {
 	return nil
 }
 func startEchoV3() {
-	mux := echov3.New()
-	mux.Get("/hello", echov3Handler)
-	mux.Run(echov3standard.New(":" + strconv.Itoa(port)))
+	e := echov3.New()
+	e.GET("/hello", echov3Handler)
+
+	e.Start(":" + strconv.Itoa(port))
 }
 
 //fasthttp
