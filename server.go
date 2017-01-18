@@ -239,7 +239,7 @@ func bxogHandler(w http.ResponseWriter, req *http.Request) {
  	if sleepTime > 0 {
  		time.Sleep(sleepTimeDuration)
  	}
- 	w.Write(message)
+ 	io.WriteString(w, message)
 }
  func startBxog() {
  	mux := bxog.New()
