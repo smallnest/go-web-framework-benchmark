@@ -1,0 +1,115 @@
+{
+    "dependencies": {
+        "github.com/Unknwon/macaron": {
+            "branch": "master"
+        },
+        "github.com/ant0ine/go-json-rest": {
+            "branch": "master"
+        },
+        "github.com/astaxie/beego": {
+            "branch": "master"
+        },
+        "github.com/bmizerany/pat": {
+            "branch": "master"
+        },
+        "github.com/buaazp/fasthttprouter": {
+            "branch": "master"
+        },
+        "github.com/claygod/Bxog": {
+            "branch": "master"
+        },
+        "github.com/dimfeld/httptreemux": {
+            "branch": "master"
+        },
+        "github.com/dinever/golf": {
+            "branch": "master"
+        },
+        "github.com/emicklei/go-restful": {
+            "branch": "master"
+        },
+        "github.com/gin-gonic/gin": {
+            "branch": "master"
+        },
+        "github.com/go-gas/gas": {
+            "branch": "master"
+        },
+        "github.com/go-martini/martini": {
+            "branch": "master"
+        },
+        "github.com/go-ozzo/ozzo-routing": {
+            "branch": "master"
+        },
+        "github.com/go-playground/lars": {
+            "branch": "master"
+        },
+        "github.com/go-zoo/bone": {
+            "branch": "master"
+        },
+        "github.com/gocraft/web": {
+            "branch": "master"
+        },
+        "github.com/gorilla/mux": {
+            "branch": "master"
+        },
+        "github.com/ivpusic/neo": {
+            "branch": "master"
+        },
+        "github.com/julienschmidt/httprouter": {
+            "branch": "master"
+        },
+        "github.com/labstack/echo": {
+            "branch": "master"
+        },
+        "github.com/lunny/log": {
+            "branch": "master"
+        },
+        "github.com/lunny/tango": {
+            "branch": "master"
+        },
+        "github.com/mailgun/route": {
+            "branch": "master"
+        },
+        "github.com/mikespook/possum": {
+            "branch": "master"
+        },
+        "github.com/mustafaakin/gongular": {
+            "branch": "master"
+        },
+        "github.com/naoina/denco": {
+            "branch": "master"
+        },
+        "github.com/pilu/traffic": {
+            "branch": "master"
+        },
+        "github.com/plimble/ace": {
+            "branch": "master"
+        },
+        "github.com/pressly/chi": {
+            "branch": "master"
+        },
+        "github.com/qiangxue/fasthttp-routing": {
+            "branch": "master"
+        },
+        "github.com/rcrowley/go-tigertonic": {
+            "branch": "master"
+        },
+        "github.com/valyala/fasthttp": {
+            "branch": "master"
+        },
+        "github.com/vanng822/r2router": {
+            "branch": "master"
+        },
+        "goji.io": {
+            "branch": "master"
+        },
+        "golang.org/x/net": {
+            "branch": "master"
+        },
+        "gopkg.in/baa.v1": {
+            "branch": "master"
+        },
+        "gopkg.in/celrenheit/lion.v1": {
+            "branch": "v1"
+        }
+    }
+}

@@ -1,0 +1,648 @@
+{
+    "memo": "",
+    "projects": [
+        {
+            "name": "github.com/Unknwon/com",
+            "branch": "master",
+            "revision": "28b053d5a2923b87ce8c5a08f3af779894a72758",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/Unknwon/macaron",
+            "branch": "master",
+            "revision": "9b82b0372a4edf52f66fbc8feaa6aafe0123001d",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/ant0ine/go-json-rest",
+            "branch": "master",
+            "revision": "ce4b71cdf7ba29ef443d704bd923f5bbf281ee30",
+            "packages": [
+                "rest"
+            ]
+        },
+        {
+            "name": "github.com/asaskevich/govalidator",
+            "branch": "master",
+            "revision": "fdf19785fd3558d619ef81212f5edf1d6c2a5911",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/astaxie/beego",
+            "branch": "master",
+            "revision": "90999717dda6193c6f970eec52e289b0a9e74998",
+            "packages": [
+                ".",
+                "context"
+            ]
+        },
+        {
+            "name": "github.com/bmizerany/pat",
+            "branch": "master",
+            "revision": "c068ca2f0aacee5ac3681d68e4d0a003b7d1fd2c",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/buaazp/fasthttprouter",
+            "branch": "master",
+            "revision": "ade4e2031af3aed7fffd241084aad80a58faf421",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/claygod/Bxog",
+            "branch": "master",
+            "revision": "d4ee166632c1d95373107bdf3dc62bf1c7e13f77",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/codegangsta/inject",
+            "branch": "master",
+            "revision": "33e0aa1cb7c019ccc3fbe049a8262a6403d30504",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/dimfeld/httptreemux",
+            "branch": "master",
+            "revision": "9cde5e866f4d64dbe14191be9a61ffa583c92bfa",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/dinever/golf",
+            "branch": "master",
+            "revision": "3776f338be48b5bc5e8cf9faff7851fc52a3f1fe",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/emicklei/go-restful",
+            "branch": "master",
+            "revision": "d916db217751a3fef55337f799c31fde4b8efcf1",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/fatih/color",
+            "branch": "master",
+            "revision": "34e4ee095d12986a2cef5ddb9aeb3b8cfcfea17c",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/gin-gonic/gin",
+            "branch": "master",
+            "revision": "e2212d40c62a98b388a5eb48ecbdcf88534688ba",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/go-gas/SQLBuilder",
+            "branch": "master",
+            "revision": "7f6dcc28641070545cd77f01d61f396bb27aa69b",
+            "packages": [
+                ".",
+                "MySQLBuilder"
+            ]
+        },
+        {
+            "name": "github.com/go-gas/config",
+            "branch": "master",
+            "revision": "c03ca6999dda74e7125a625d8e9959674fbe5481",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/go-gas/gas",
+            "branch": "master",
+            "revision": "ca5685c6c53a88955739664e8ecdd43962baa960",
+            "packages": [
+                ".",
+                "validator"
+            ]
+        },
+        {
+            "name": "github.com/go-gas/logger",
+            "branch": "master",
+            "revision": "9bb1d42dbc536390cc52d8cb0c1c6cefc2da4fe9",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/go-gas/sessions",
+            "branch": "master",
+            "revision": "246752c2b41aca0a9e3248bdff8dd4c2b250f8c9",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/go-martini/martini",
+            "branch": "master",
+            "revision": "fe605b5cd210047ae3bb73d2b69a5b912a9b423d",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/go-ozzo/ozzo-routing",
+            "branch": "master",
+            "revision": "d2a16ccf3fb7eca92e694ccabbd9200bfda4bc6f",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/go-playground/form",
+            "branch": "master",
+            "revision": "d18f24949d2fcf4b367cff1424a9e1a60dd5507f",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/go-playground/lars",
+            "branch": "master",
+            "revision": "ba260b61ea37520157852477e84260c5b32f5572",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/go-sql-driver/mysql",
+            "branch": "master",
+            "revision": "2e00b5cd70399450106cec6431c2e2ce3cae5034",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/go-zoo/bone",
+            "branch": "master",
+            "revision": "964b25230a16a70e93973d6d46886b26113ab654",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/gocraft/web",
+            "branch": "master",
+            "revision": "c8ca29bc8a1cec97abe95c662e29dd8d31aff6e3",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/golang/protobuf",
+            "branch": "master",
+            "revision": "8ee79997227bf9b34611aee7946ae64735e6fd93",
+            "packages": [
+                "proto"
+            ]
+        },
+        {
+            "name": "github.com/gorilla/context",
+            "branch": "master",
+            "revision": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/gorilla/mux",
+            "branch": "master",
+            "revision": "b12896167c61cb7a17ee5f15c2ba0729d78793db",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/gorilla/websocket",
+            "branch": "master",
+            "revision": "bb547c6c5c59732c29a3266d7125a84f6c3fce32",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/ivpusic/go-clicolor",
+            "branch": "master",
+            "revision": "23f0b77f328a0ff36434970ade8f7c0ec8e8148b",
+            "packages": [
+                "clicolor"
+            ]
+        },
+        {
+            "name": "github.com/ivpusic/golog",
+            "branch": "master",
+            "revision": "8a9c49902370870e653ee1eee0b0b589ace3fe7a",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/ivpusic/neo",
+            "branch": "master",
+            "revision": "53e059004ae106949e37ced888293461b443e440",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/ivpusic/toml",
+            "branch": "master",
+            "revision": "3fedaa159a92d673a801042a9e6e72d39f8f0fa2",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/ivpusic/urlregex",
+            "branch": "master",
+            "revision": "4dd86e7844057c62b30f6c745d19200e1a31e13c",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/julienschmidt/httprouter",
+            "branch": "master",
+            "revision": "8a45e95fc75cb77048068a62daed98cc22fdac7c",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/klauspost/compress",
+            "branch": "master",
+            "revision": "461e8fd8397ae84a23f56e385801e4feda2048ce",
+            "packages": [
+                "flate",
+                "gzip",
+                "zlib"
+            ]
+        },
+        {
+            "name": "github.com/klauspost/cpuid",
+            "branch": "master",
+            "revision": "09cded8978dc9e80714c4d85b0322337b0a1e5e0",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/klauspost/crc32",
+            "branch": "master",
+            "revision": "cb6bfca970f6908083f26f39a79009d608efd5cd",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/labstack/echo",
+            "branch": "master",
+            "revision": "a89cf4d0c2649391a86ec30bb9394b7b5e8e72d8",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/labstack/gommon",
+            "branch": "master",
+            "revision": "f72d3c883f8ea180da8f085dd320804c41332ad1",
+            "packages": [
+                "color",
+                "log"
+            ]
+        },
+        {
+            "name": "github.com/lunny/log",
+            "branch": "master",
+            "revision": "7887c61bf0de75586961948b286be6f7d05d9f58",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/lunny/tango",
+            "branch": "master",
+            "revision": "1bdd20c3cc9e42076faf5d01df4da4676c47e68c",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/mailgun/route",
+            "branch": "master",
+            "revision": "61904570391bdf22252f8e376b49a57593d9124c",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/manucorporat/sse",
+            "branch": "master",
+            "revision": "ee05b128a739a0fb76c7ebd3ae4810c1de808d6d",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/mattn/go-colorable",
+            "branch": "master",
+            "revision": "d228849504861217f796da67fae4f6e347643f15",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/mattn/go-isatty",
+            "branch": "master",
+            "revision": "30a891c33c7cde7b02a981314b4228ec99380cca",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/mikespook/possum",
+            "branch": "master",
+            "revision": "159dc6eacda42af0ce776cab22cb37e6e6e75aec",
+            "packages": [
+                ".",
+                "router",
+                "view"
+            ]
+        },
+        {
+            "name": "github.com/mustafaakin/gongular",
+            "branch": "master",
+            "revision": "209fd5d51086b1f1d129b7757a9cb6702ce84435",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/naoina/denco",
+            "branch": "master",
+            "revision": "a2656d3ed566ac9912ba18fcfc942c562d9463c7",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/oxtoacart/bpool",
+            "branch": "master",
+            "revision": "4e1c5567d7c2dd59fa4c7c83d34c2f3528b025d6",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/philhofer/fwd",
+            "branch": "master",
+            "revision": "98c11a7a6ec829d672b03833c3d69a7fae1ca972",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/pilu/config",
+            "branch": "master",
+            "revision": "3eb99e6c0b9a2dae0f56f05552c06ca5a643919b",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/pilu/traffic",
+            "branch": "master",
+            "revision": "bccecb6def5c1d1eea8514b3e1cb7f2371571d8e",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/plimble/ace",
+            "branch": "master",
+            "revision": "1bab4fdfa8bce73975d852c2abbf141543701ac7",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/plimble/sessions",
+            "branch": "master",
+            "revision": "9b87d5a817e27cd53d02ea97c30603626a9c579b",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/plimble/utils",
+            "branch": "master",
+            "revision": "fe08d46675cd09e170c0fb6b7b4e4587e14d0451",
+            "packages": [
+                "pool"
+            ]
+        },
+        {
+            "name": "github.com/pressly/chi",
+            "branch": "master",
+            "revision": "8dd97310abc526d5319e2dea3be5305f2b628f06",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/qiangxue/fasthttp-routing",
+            "branch": "master",
+            "revision": "6ccdc2a18d8712f842de50ddcb8c9a3d025ddc71",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/rcrowley/go-metrics",
+            "branch": "master",
+            "revision": "1f30fe9094a513ce4c700b9a54458bbb0c96996c",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/rcrowley/go-tigertonic",
+            "branch": "master",
+            "revision": "1199db5ea2f29309e20f6c70009b21e7e8810d6e",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/satori/go.uuid",
+            "branch": "master",
+            "revision": "b061729afc07e77a8aa4fad0a2fd840958f1942a",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/shiena/ansicolor",
+            "branch": "master",
+            "revision": "a422bbe96644373c5753384a59d678f7d261ff10",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/tinylib/msgp",
+            "branch": "master",
+            "revision": "362bfb3384d53ae4d5dd745983a4d70b6d23628c",
+            "packages": [
+                "msgp"
+            ]
+        },
+        {
+            "name": "github.com/valyala/bytebufferpool",
+            "branch": "master",
+            "revision": "e746df99fe4a3986f4d4f79e13c1e0117ce9c2f7",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/valyala/fasthttp",
+            "branch": "master",
+            "revision": "b0de56d13b737ecfeba4f051aef806f0f68592ea",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/valyala/fasttemplate",
+            "branch": "master",
+            "revision": "d090d65668a286d9a180d43a19dfdc5dcad8fe88",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/vanng822/r2router",
+            "branch": "master",
+            "revision": "1023140a4f309480a35668e695deda550100f502",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/vulcand/predicate",
+            "branch": "master",
+            "revision": "19b9dde14240d94c804ae5736ad0e1de10bf8fe6",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "goji.io",
+            "branch": "master",
+            "revision": "0d89ff54b2c18c9c4ba530e32496aef902d3c6cd",
+            "packages": [
+                ".",
+                "pat"
+            ]
+        },
+        {
+            "name": "golang.org/x/crypto",
+            "branch": "master",
+            "revision": "41d678d1df78cd0410143162dff954e6dc09300f",
+            "packages": [
+                "acme/autocert"
+            ]
+        },
+        {
+            "name": "golang.org/x/net",
+            "branch": "master",
+            "revision": "f2499483f923065a842d38eb4c7f1927e6fc6e6d",
+            "packages": [
+                "context",
+                "websocket",
+                "context/ctxhttp"
+            ]
+        },
+        {
+            "name": "golang.org/x/sys",
+            "branch": "master",
+            "revision": "d75a52659825e75fff6158388dddc6a5b04f9ba5",
+            "packages": [
+                "unix"
+            ]
+        },
+        {
+            "name": "gopkg.in/baa.v1",
+            "branch": "master",
+            "revision": "55e1452e3773748ce80091d1db19d95a183bdcdd",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "gopkg.in/celrenheit/lion.v1",
+            "branch": "v1",
+            "revision": "7c6ce5d22d64acb2a7da46075480a4ea9142cf24",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "gopkg.in/fsnotify.v1",
+            "branch": "master",
+            "revision": "629574ca2a5df945712d3079857300b5e4da0236",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "gopkg.in/go-playground/validator.v8",
+            "version": "v8.18.1",
+            "revision": "5f57d2222ad794d0dffb07e664ea05e2ee07d60c",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "gopkg.in/ini.v1",
+            "branch": "master",
+            "revision": "6f66b0e091edb3c7b380f7c4f0f884274d550b67",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "gopkg.in/yaml.v2",
+            "branch": "v2",
+            "revision": "a5b47d31c556af34a302ce5d659e6fea44d90de0",
+            "packages": [
+                "."
+            ]
+        }
+    ]
+}

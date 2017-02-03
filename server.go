@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"github.com/Unknwon/macaron"
+	"github.com/alexandrevicenzi/yagm"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
@@ -167,6 +168,8 @@ func main() {
 		startTraffic()
 	case "vulcan":
 		startVulcan()
+	case "yagm":
+		startYagm()
 	}
 }
 
@@ -654,6 +657,14 @@ func startVulcan() {
 	mux := vulcan.NewMux()
 	expr := fmt.Sprintf(`Method("%s") && Path("%s")`, "GET", "/hello")
 	mux.HandleFunc(expr, helloHandler)
+
+	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+// yagm
+func startYagm() {
+	mux := yagm.New()
+	mux.HandleFunc("/hello", helloHandler)
 
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
