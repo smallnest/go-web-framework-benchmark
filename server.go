@@ -45,6 +45,7 @@ import (
 	"github.com/pressly/chi"
 	routing "github.com/qiangxue/fasthttp-routing"
 	"github.com/rcrowley/go-tigertonic"
+	"github.com/teambition/gear"
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
 	goji "goji.io"
@@ -120,6 +121,8 @@ func main() {
 		startFastHTTPRouting()
 	case "gas":
 		startGas()
+	case "gear":
+		startGear()
 	case "gin":
 		startGin()
 	case "gocraftWeb":
@@ -238,7 +241,7 @@ func bxogHandler(w http.ResponseWriter, req *http.Request, r *bxog.Router) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
 	}
-	io.WriteString(w, message)
+	w.Write(message)
 }
 func startBxog() {
 	mux := bxog.New()
@@ -344,6 +347,20 @@ func startGas() {
 		return c.STRING(200, messageStr)
 	})
 	g.Run(":" + strconv.Itoa(port))
+}
+
+//gear
+func startGear() {
+	app := gear.New()
+	router := gear.NewRouter()
+
+	router.Get("/hello", func(c *gear.Context) error {
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		}
+		return c.HTML(200, messageStr)
+	})
+	app.Listen(":" + strconv.Itoa(port))
 }
 
 // gin

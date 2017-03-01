@@ -54,6 +54,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [gojiv2](http://goji.io)
 * [echo v2](https://github.com/labstack/echo)
 * [yagm](https://github.com/alexandrevicenzi/yagm)
+* [gear](http://github.com/teambition/gear)
 
 
 The below web frameworks will be removed from this test because of their poor performance:
