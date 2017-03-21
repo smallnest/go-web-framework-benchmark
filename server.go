@@ -17,18 +17,19 @@ import (
 	"github.com/astaxie/beego/context"
 	"github.com/bmizerany/pat"
 	"github.com/buaazp/fasthttprouter"
-	"github.com/claygod/Bxog"
 	"github.com/dimfeld/httptreemux"
 	"github.com/dinever/golf"
 	"github.com/emicklei/go-restful"
 	"github.com/gin-gonic/gin"
-	"github.com/go-gas/gas"
+	// "github.com/go-gas/gas" // NOTE(@kirilldanshin): gas is 404 now, comment out
+	bxog "github.com/claygod/Bxog"
 	"github.com/go-martini/martini"
 	ozzo "github.com/go-ozzo/ozzo-routing"
 	"github.com/go-playground/lars"
 	"github.com/go-zoo/bone"
 	"github.com/gocraft/web"
 	"github.com/gorilla/mux"
+	"github.com/gramework/gramework"
 	"github.com/ivpusic/neo"
 	"github.com/julienschmidt/httprouter"
 	echov3 "github.com/labstack/echo"
@@ -44,16 +45,15 @@ import (
 	"github.com/plimble/ace"
 	"github.com/pressly/chi"
 	routing "github.com/qiangxue/fasthttp-routing"
-	"github.com/rcrowley/go-tigertonic"
+	tigertonic "github.com/rcrowley/go-tigertonic"
 	"github.com/teambition/gear"
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
 	goji "goji.io"
 	gojipat "goji.io/pat"
 	gcontext "golang.org/x/net/context"
-	"gopkg.in/baa.v1"
+	baa "gopkg.in/baa.v1"
 	lion "gopkg.in/celrenheit/lion.v1"
-	// guavaweb "github.com/GuavaStudio/web"
 )
 
 var port = 8080
@@ -119,8 +119,8 @@ func main() {
 		startFastHTTPRouter()
 	case "fasthttp-routing":
 		startFastHTTPRouting()
-	case "gas":
-		startGas()
+	// case "gas":
+	// 	startGas()
 	case "gear":
 		startGear()
 	case "gin":
@@ -141,8 +141,8 @@ func main() {
 		startGorilla()
 	case "go-ozzo":
 		startGoozzo()
-	// case "guavastudio_web":
-	// 	startGuavaStudioWeb()
+	case "gramework":
+		startGramework()
 	case "httprouter":
 		startHTTPRouter()
 	case "httptreemux":
@@ -336,18 +336,18 @@ func startFastHTTPRouting() {
 	fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.HandleRequest)
 }
 
-//gas
-func startGas() {
-	g := gas.New()
-	g.Router.Get("/hello", func(c *gas.Context) error {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		}
-		//c.Write(message)
-		return c.STRING(200, messageStr)
-	})
-	g.Run(":" + strconv.Itoa(port))
-}
+// //gas
+// func startGas() {
+// 	g := gas.New()
+// 	g.Router.Get("/hello", func(c *gas.Context) error {
+// 		if sleepTime > 0 {
+// 			time.Sleep(sleepTimeDuration)
+// 		}
+// 		//c.Write(message)
+// 		return c.STRING(200, messageStr)
+// 	})
+// 	g.Run(":" + strconv.Itoa(port))
+// }
 
 //gear
 func startGear() {
@@ -487,19 +487,20 @@ func startGoozzo() {
 	http.ListenAndServe(":"+strconv.Itoa(port), r)
 }
 
-// //GuavaStudio/Web
-// func hello(val string) string {
-// 	if sleepTime > 0 {
-// 		time.Sleep(sleepTimeDuration)
-// 	}
+// Gramework
+func hello(ctx *gramework.Context) {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	}
 
-// 	return messageStr
-// }
+	ctx.WriteString(messageStr)
+}
 
-// func startGuavaStudioWeb() {
-// 	guavaweb.Get("/(.*)", hello)
-// 	guavaweb.Run(":" + strconv.Itoa(port))
-// }
+func startGramework() {
+	app := gramework.New()
+	app.GET("/hello", hello)
+	app.ListenAndServe(":" + strconv.Itoa(port))
+}
 
 // httprouter
 func httpRouterHandler(w http.ResponseWriter, _ *http.Request, ps httprouter.Params) {
