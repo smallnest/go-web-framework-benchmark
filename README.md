@@ -33,9 +33,8 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [martini](https://github.com/go-martini/martini)
 * [lars](https://github.com/go-playground/lars)
 * [bone](https://github.com/go-zoo/bone)
-* [gocraft](https://github.com/gocraft/web)
 * [gorilla](https://github.com/gorilla/mux)
-* [~~GuavaStudio/web~~](github.com/GuavaStudio/web)
+* [Gramework](github.com/GuavaStudio/web)
 * [gem](https://github.com/go-gem/gem)
 * [neo](ithub.com/ivpusic/neo)
 * [httprouter](https://github.com/julienschmidt/httprouter)
@@ -58,7 +57,6 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 
 
 The below web frameworks will be removed from this test because of their poor performance:
-* [GuavaStudio/web](github.com/GuavaStudio/web)
 * [possum](https://github.com/mikespook/possum)
 
 version of all web frameworks is at: [libs.version](libs.version)
