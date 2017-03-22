@@ -33,7 +33,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [lars](https://github.com/go-playground/lars)
 * [bone](https://github.com/go-zoo/bone)
 * [gorilla](https://github.com/gorilla/mux)
-* [Gramework](github.com/GuavaStudio/web)
+* [Gramework](github.com/gramework/gramework)
 * [gem](https://github.com/go-gem/gem)
 * [neo](ithub.com/ivpusic/neo)
 * [httprouter](https://github.com/julienschmidt/httprouter)
