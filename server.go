@@ -11,7 +11,6 @@ import (
 	"time"
 
 	"github.com/Unknwon/macaron"
-	"github.com/alexandrevicenzi/yagm"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
@@ -119,8 +118,6 @@ func main() {
 		startFastHTTPRouter()
 	case "fasthttp-routing":
 		startFastHTTPRouting()
-	// case "gas":
-	// 	startGas()
 	case "gear":
 		startGear()
 	case "gin":
@@ -171,8 +168,6 @@ func main() {
 		startTraffic()
 	case "vulcan":
 		startVulcan()
-	case "yagm":
-		startYagm()
 	}
 }
 
@@ -335,19 +330,6 @@ func startFastHTTPRouting() {
 	mux.Get("/hello", fastHTTPRoutingHandler)
 	fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.HandleRequest)
 }
-
-// //gas
-// func startGas() {
-// 	g := gas.New()
-// 	g.Router.Get("/hello", func(c *gas.Context) error {
-// 		if sleepTime > 0 {
-// 			time.Sleep(sleepTimeDuration)
-// 		}
-// 		//c.Write(message)
-// 		return c.STRING(200, messageStr)
-// 	})
-// 	g.Run(":" + strconv.Itoa(port))
-// }
 
 //gear
 func startGear() {
@@ -675,14 +657,6 @@ func startVulcan() {
 	mux := vulcan.NewMux()
 	expr := fmt.Sprintf(`Method("%s") && Path("%s")`, "GET", "/hello")
 	mux.HandleFunc(expr, helloHandler)
-
-	http.ListenAndServe(":"+strconv.Itoa(port), mux)
-}
-
-// yagm
-func startYagm() {
-	mux := yagm.New()
-	mux.HandleFunc("/hello", helloHandler)
 
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }

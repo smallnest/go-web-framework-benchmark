@@ -51,7 +51,6 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [goji](https://github.com/zenazn/goji/web)
 * [gojiv2](http://goji.io)
 * [echo v2](https://github.com/labstack/echo)
-* [yagm](https://github.com/alexandrevicenzi/yagm)
 * [gear](http://github.com/teambition/gear)
 
 
