@@ -1,13 +1,13 @@
 # go-web-framework-benchmark
 This benchmark suite aims to compare the performance of Go web frameworks. It is inspired by [Go HTTP Router Benchmark](https://github.com/julienschmidt/go-http-routing-benchmark) but this benchmark suite is different with that. Go HTTP Router Benchmark suit aims to compare the performance of **routers** but this Benchmark suit aims to compare whole HTTP request processing.
 
-**Last Test Updated:** 2017-04-06
+**Last Test Updated:** 2017-04-10
 
 *test environment*
 
 * CPU:      Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz, 32 cores
 * Memory:   32G
-* Go:       1.8.0
+* Go:       1.8.1
 * OS:       CentOS 7 / 3.10.0-229.el7.x86_64
 
 (doesn't contain test results of neo because one error)
@@ -18,7 +18,6 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [macaron](https://github.com/Unknwon/macaron)
 * [go-json-rest](https://github.com/ant0ine/go-json-rest)
 * [beego](https://github.com/astaxie/beego)
-* [Bxog](https://github.com/claygod/Bxog)
 * [pat](https://github.com/bmizerany/pat)
 * [fasthttprouter](https://github.com/buaazp/fasthttprouter)
 * [lion](https://github.com/celrenheit/lion)
@@ -51,11 +50,13 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [goji](https://github.com/zenazn/goji/web)
 * [gojiv2](http://goji.io)
 * [echo v2](https://github.com/labstack/echo)
-* [gear](http://github.com/teambition/gear)
 
 
 The below web frameworks will be removed from this test because of their poor performance:
 * [possum](https://github.com/mikespook/possum)
+* [Bxog](https://github.com/claygod/Bxog)
+* [gear](http://github.com/teambition/gear)
+
 
 version of all web frameworks is at: [libs.version](libs.version)
 
