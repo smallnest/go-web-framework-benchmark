@@ -342,6 +342,7 @@ func startGear() {
 		}
 		return c.HTML(200, messageStr)
 	})
+	app.UseHandler(router)
 	app.Listen(":" + strconv.Itoa(port))
 }
 
