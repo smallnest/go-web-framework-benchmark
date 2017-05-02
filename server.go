@@ -25,6 +25,7 @@ import (
 	"github.com/go-martini/martini"
 	ozzo "github.com/go-ozzo/ozzo-routing"
 	"github.com/go-playground/lars"
+	"github.com/go-playground/pure"
 	"github.com/go-zoo/bone"
 	"github.com/gocraft/web"
 	"github.com/gorilla/mux"
@@ -158,6 +159,8 @@ func main() {
 		startPat()
 	case "possum":
 		startPossum()
+	case "pure":
+		startPure()
 	case "r2router":
 		startR2router()
 	case "tango":
@@ -600,6 +603,13 @@ func startPossum() {
 	mux := possum.NewServerMux()
 	mux.HandleFunc(possumrouter.Simple("/hello"), possumHandler, possumview.Simple("text/html", "utf-8"))
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+//pure
+func startPure() {
+	p := pure.New()
+	p.Get("/hello", helloHandler)
+	http.ListenAndServe(":"+strconv.Itoa(port), p.Serve())
 }
 
 // R2router
