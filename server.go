@@ -29,6 +29,7 @@ import (
 	"github.com/go-zoo/bone"
 	"github.com/gocraft/web"
 	"github.com/gorilla/mux"
+	gowwwrouter "github.com/gowww/router"
 	"github.com/gramework/gramework"
 	"github.com/ivpusic/neo"
 	"github.com/julienschmidt/httprouter"
@@ -139,6 +140,8 @@ func main() {
 		startGorilla()
 	case "go-ozzo":
 		startGoozzo()
+	case "gowww":
+		startGowww()
 	case "gramework":
 		startGramework()
 	case "httprouter":
@@ -471,6 +474,14 @@ func startGoozzo() {
 	r := ozzo.New()
 	r.Get("/hello", ozzoHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), r)
+}
+
+//gowww
+func startGowww() {
+	rt := gowwwrouter.New()
+	rt.Handle("GET", "/hello", http.HandlerFunc(helloHandler))
+	http.ListenAndServe(":"+strconv.Itoa(port), rt)
+
 }
 
 // Gramework
