@@ -181,6 +181,8 @@ func main() {
 func helloHandler(w http.ResponseWriter, r *http.Request) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	w.Write(message)
 }
@@ -193,6 +195,8 @@ func startDefaultMux() {
 func aceHandler(c *ace.C) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	c.Writer.Write(message)
 }
@@ -206,6 +210,8 @@ func startAce() {
 func baaHandler(ctx *baa.Context) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	ctx.Text(200, message)
 }
@@ -219,6 +225,8 @@ func startBaa() {
 func beegoHandler(ctx *context.Context) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	ctx.WriteString(messageStr)
 }
@@ -241,6 +249,8 @@ func startBone() {
 func bxogHandler(w http.ResponseWriter, req *http.Request, r *bxog.Router) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	w.Write(message)
 }
@@ -266,6 +276,8 @@ func startChi() {
 func dencoHandler(w http.ResponseWriter, r *http.Request, params denco.Params) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	w.Write(message)
 }
@@ -279,6 +291,8 @@ func startDenco() {
 func echov3Handler(c echov3.Context) error {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	c.Response().Write(message)
 	return nil
@@ -297,6 +311,8 @@ func fastHTTPRawHandler(ctx *fasthttp.RequestCtx) {
 		case "/hello":
 			if sleepTime > 0 {
 				time.Sleep(sleepTimeDuration)
+			} else {
+				runtime.Gosched()
 			}
 			ctx.Write(message)
 		default:
@@ -314,6 +330,8 @@ func startFasthttp() {
 func fastHTTPHandler(ctx *fasthttp.RequestCtx) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	ctx.Write(message)
 }
@@ -327,6 +345,8 @@ func startFastHTTPRouter() {
 func fastHTTPRoutingHandler(c *routing.Context) error {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	c.Write(message)
 	return nil
@@ -345,6 +365,8 @@ func startGear() {
 	router.Get("/hello", func(c *gear.Context) error {
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
 		}
 		return c.HTML(200, messageStr)
 	})
@@ -356,6 +378,8 @@ func startGear() {
 func ginHandler(c *gin.Context) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	c.Writer.Write(message)
 }
@@ -372,6 +396,8 @@ type gocraftWebContext struct{}
 func gocraftWebHandler(w web.ResponseWriter, r *web.Request) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	w.Write(message)
 }
@@ -385,6 +411,8 @@ func startGocraftWeb() {
 func gojiHandler(w http.ResponseWriter, r *http.Request) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	w.Write(message)
 }
@@ -398,6 +426,8 @@ func startGoji() {
 func goJSONRestHandler(w rest.ResponseWriter, req *rest.Request) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	iow := w.(io.Writer)
 	iow.Write(message)
@@ -414,6 +444,8 @@ func startGoJSONRest() {
 func golfHandler(ctx *golf.Context) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	ctx.Send(messageStr)
 }
@@ -432,6 +464,8 @@ func startGongular() {
 	g.GET("/hello", func(c *gongular.Context) string {
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
 		}
 		return messageStr
 	})
@@ -442,6 +476,8 @@ func startGongular() {
 func goRestfulHandler(r *restful.Request, w *restful.Response) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	w.Write(message)
 }
@@ -464,6 +500,8 @@ func startGorilla() {
 func ozzoHandler(c *ozzo.Context) error {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	c.Write(message)
 
@@ -485,9 +523,11 @@ func startGowww() {
 }
 
 // Gramework
-func hello(ctx *gramework.Context) {
+func grameworkHandler(ctx *gramework.Context) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 
 	ctx.WriteString(messageStr)
@@ -495,7 +535,7 @@ func hello(ctx *gramework.Context) {
 
 func startGramework() {
 	app := gramework.New()
-	app.GET("/hello", hello)
+	app.GET("/hello", grameworkHandler)
 	app.ListenAndServe(":" + strconv.Itoa(port))
 }
 
@@ -503,6 +543,8 @@ func startGramework() {
 func httpRouterHandler(w http.ResponseWriter, _ *http.Request, ps httprouter.Params) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	w.Write(message)
 }
@@ -516,6 +558,8 @@ func startHTTPRouter() {
 func httpTreeMuxHandler(w http.ResponseWriter, _ *http.Request, vars map[string]string) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	w.Write(message)
 }
@@ -529,6 +573,8 @@ func starthttpTreeMux() {
 func larsHandler(c lars.Context) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	c.Response().Write(message)
 }
@@ -542,6 +588,8 @@ func startLars() {
 func lionHandler(c gcontext.Context, w http.ResponseWriter, r *http.Request) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	w.Write(message)
 }
@@ -555,6 +603,8 @@ func startLion() {
 func macaronHandler(c *macaron.Context) string {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	return messageStr
 }
@@ -568,6 +618,8 @@ func startMacaron() {
 func martiniHandlerWrite(params martini.Params) string {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	return messageStr
 }
@@ -588,6 +640,8 @@ func startNeo() {
 	app.Get("/hello", func(ctx *neo.Ctx) (int, error) {
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
 		}
 		return 200, ctx.Res.Raw(message)
 	})
@@ -606,6 +660,8 @@ func startPat() {
 func possumHandler(c *possum.Context) error {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	c.Response.Write(message)
 	return nil
@@ -627,6 +683,8 @@ func startPure() {
 func r2routerHandler(w http.ResponseWriter, req *http.Request, params r2router.Params) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	w.Write(message)
 }
@@ -640,6 +698,8 @@ func startR2router() {
 func tangoHandler(ctx *tango.Context) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	ctx.Write(message)
 }
@@ -664,6 +724,8 @@ func startTigerTonic() {
 func trafficHandler(w traffic.ResponseWriter, r *traffic.Request) {
 	if sleepTime > 0 {
 		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
 	}
 	w.Write(message)
 }
