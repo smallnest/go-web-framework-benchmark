@@ -20,36 +20,38 @@ import (
 	"github.com/dinever/golf"
 	"github.com/emicklei/go-restful"
 	"github.com/gin-gonic/gin"
-	// "github.com/go-gas/gas" // NOTE(@kirilldanshin): gas is 404 now, comment out
-	bxog "github.com/claygod/Bxog"
 	"github.com/go-martini/martini"
-	ozzo "github.com/go-ozzo/ozzo-routing"
 	"github.com/go-playground/lars"
 	"github.com/go-playground/pure"
 	"github.com/go-zoo/bone"
 	"github.com/gocraft/web"
 	"github.com/gorilla/mux"
-	gowwwrouter "github.com/gowww/router"
 	"github.com/gramework/gramework"
 	"github.com/ivpusic/neo"
 	"github.com/julienschmidt/httprouter"
-	echov3 "github.com/labstack/echo"
-	llog "github.com/lunny/log"
 	"github.com/lunny/tango"
-	vulcan "github.com/mailgun/route"
 	"github.com/mikespook/possum"
-	possumrouter "github.com/mikespook/possum/router"
-	possumview "github.com/mikespook/possum/view"
 	"github.com/mustafaakin/gongular"
 	"github.com/naoina/denco"
 	"github.com/pilu/traffic"
 	"github.com/plimble/ace"
 	"github.com/pressly/chi"
-	routing "github.com/qiangxue/fasthttp-routing"
-	tigertonic "github.com/rcrowley/go-tigertonic"
 	"github.com/teambition/gear"
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
+	// "github.com/go-gas/gas" // NOTE(@kirilldanshin): gas is 404 now, comment out
+	bxog "github.com/claygod/Bxog"
+	ozzo "github.com/go-ozzo/ozzo-routing"
+	siris "github.com/go-siris/siris"
+	siriscontext "github.com/go-siris/siris/context"
+	gowwwrouter "github.com/gowww/router"
+	echov3 "github.com/labstack/echo"
+	llog "github.com/lunny/log"
+	vulcan "github.com/mailgun/route"
+	possumrouter "github.com/mikespook/possum/router"
+	possumview "github.com/mikespook/possum/view"
+	routing "github.com/qiangxue/fasthttp-routing"
+	tigertonic "github.com/rcrowley/go-tigertonic"
 	goji "goji.io"
 	gojipat "goji.io/pat"
 	gcontext "golang.org/x/net/context"
@@ -166,6 +168,8 @@ func main() {
 		startPure()
 	case "r2router":
 		startR2router()
+	case "siris":
+		startSirisrouter()
 	case "tango":
 		startTango()
 	case "tiger":
@@ -692,6 +696,21 @@ func startR2router() {
 	mux := r2router.NewRouter()
 	mux.Get("/hello", r2routerHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+// R2router
+func sirisrouterHandler(ctx siriscontext.Context) {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
+	}
+	ctx.HTML(messageStr)
+}
+func startSirisrouter() {
+	app := siris.New()
+	app.Get("/hello", sirisrouterHandler)
+	app.Run(siris.Addr(":"+strconv.Itoa(port)), siris.WithCharset("UTF-8"))
 }
 
 //Tango
