@@ -20,6 +20,8 @@ import (
 	"github.com/dinever/golf"
 	"github.com/emicklei/go-restful"
 	"github.com/gin-gonic/gin"
+	"github.com/go-siris/siris"
+	siriscontext "github.com/go-siris/siris/context"
 	// "github.com/go-gas/gas" // NOTE(@kirilldanshin): gas is 404 now, comment out
 	bxog "github.com/claygod/Bxog"
 	"github.com/go-martini/martini"
@@ -166,6 +168,8 @@ func main() {
 		startPure()
 	case "r2router":
 		startR2router()
+	case "siris":
+		startSirisrouter()
 	case "tango":
 		startTango()
 	case "tiger":
@@ -692,6 +696,21 @@ func startR2router() {
 	mux := r2router.NewRouter()
 	mux.Get("/hello", r2routerHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+// siris
+func sirisrouterHandler(ctx siriscontext.Context) {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
+	}
+	ctx.HTML(messageStr)
+}
+func startSirisrouter() {
+	app := siris.New()
+	app.Get("/hello", sirisrouterHandler)
+	app.Run(siris.Addr(":"+strconv.Itoa(port)), siris.WithCharset("UTF-8"))
 }
 
 //Tango
