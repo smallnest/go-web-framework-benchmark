@@ -22,6 +22,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-siris/siris"
 	siriscontext "github.com/go-siris/siris/context"
+	"github.com/nbari/violetear"
 	// "github.com/go-gas/gas" // NOTE(@kirilldanshin): gas is 404 now, comment out
 	bxog "github.com/claygod/Bxog"
 	"github.com/go-martini/martini"
@@ -176,6 +177,8 @@ func main() {
 		startTigerTonic()
 	case "traffic":
 		startTraffic()
+	case "violetear":
+		startVioletear()
 	case "vulcan":
 		startVulcan()
 	}
@@ -752,6 +755,13 @@ func startTraffic() {
 	traffic.SetVar("env", "bench")
 	mux := traffic.New()
 	mux.Get("/hello", trafficHandler)
+	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+// violetear
+func startVioletear() {
+	mux := violetear.New()
+	mux.HandleFunc("/hello", helloHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 

@@ -37,6 +37,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [neo](https://github.com/ivpusic/neo)
 * [httprouter](https://github.com/julienschmidt/httprouter)
 * [tango](https://github.com/lunny/tango)
+* [violetear](https://github.com/nbari/violetear)
 * [vulcan](https://github.com/mailgun/route)
 * [~~possum~~](https://github.com/mikespook/possum)
 * [gongular](https://github.com/mustafaakin/gongular)
@@ -84,7 +85,7 @@ So I create this project to compare performance of web frameworks including conn
 
 The you can get some interesting results if you use it to test.
 
-## Implementation 
+## Implementation
 When you test a web framework, this test suit will starts a simple http server implemented by this web framework. It is a real http server and only contains GET url: "/hello".
 
 When this server processes this url, it will sleep n milliseconds in this handler. It mocks the business logics such as:
@@ -99,7 +100,7 @@ It contains a test.sh that can do those tests automatically.
 
 It uses `wrk` to test.
 
-## Basic Test 
+## Basic Test
 The first test case is to mock 0 ms, 10 ms, 100 ms, 500 ms processing time in handlers.
 
 ![Benchmark (Round 3)](benchmark.png)
@@ -116,7 +117,7 @@ If we enable http pipelining, test result as below:
 
 ![benchmark pipelining (Round 2)](benchmark-pipeline.png)
 
-## Concurrency Test 
+## Concurrency Test
 In 30 ms processing time, the tets result for 100, 1000, 5000 clients is:
 
 ![concurrency (Round 3)](concurrency.png)
@@ -167,7 +168,7 @@ It will  generate test results in processtime.csv and concurrency.csv. You can m
 * If you want to test some of web frameworks, you can modify the test script and only keep your selected web frameworks:
 ```
 ……
-web_frameworks=( "default" "ace" "beego" "bone" "denco" "echov1" "echov2standard" "echov2fasthttp" "fasthttp-raw" "fasthttprouter" "fasthttp-routing" "gin" "gocraftWeb" "goji" "gojiv2" "gojsonrest" "gorestful" "gorilla" "httprouter" "httptreemux" "lars" "lion" "macaron" "martini" "pat" "possum" "r2router" "tango" "tiger" "traffic" "vulcan" )
+web_frameworks=( "default" "ace" "beego" "bone" "denco" "echov1" "echov2standard" "echov2fasthttp" "fasthttp-raw" "fasthttprouter" "fasthttp-routing" "gin" "gocraftWeb" "goji" "gojiv2" "gojsonrest" "gorestful" "gorilla" "httprouter" "httptreemux" "lars" "lion" "macaron" "martini" "pat" "possum" "r2router" "tango" "tiger" "traffic" "violetear" "vulcan")
 ……
 ```
 
@@ -187,7 +188,7 @@ docker run  -v /opt/data:/data smallnest/go-web-framework-benchmark
 Welcome to add new Go web frameworks. You can follow the below steps and send me a pull request.
 
 1. add your web framework link in README
-2. add a hello implementation in server.go 
-3. add your webframework in libs.sh 
+2. add a hello implementation in server.go
+3. add your webframework in libs.sh
 
 Please add your web framework alphabetically.
