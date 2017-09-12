@@ -10,7 +10,6 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/Unknwon/macaron"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
@@ -155,8 +154,8 @@ func main() {
 		startLars()
 	case "lion":
 		startLion()
-	case "macaron":
-		startMacaron()
+	// case "macaron":
+	// 	startMacaron()
 	case "martini":
 		startMartini()
 	case "neo":
@@ -607,19 +606,19 @@ func startLion() {
 }
 
 // Macaron
-func macaronHandler(c *macaron.Context) string {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
-	} else {
-		runtime.Gosched()
-	}
-	return messageStr
-}
-func startMacaron() {
-	mux := macaron.New()
-	mux.Get("/hello", macaronHandler)
-	http.ListenAndServe(":"+strconv.Itoa(port), mux)
-}
+// func macaronHandler(c *macaron.Context) string {
+// 	if sleepTime > 0 {
+// 		time.Sleep(sleepTimeDuration)
+// 	} else {
+// 		runtime.Gosched()
+// 	}
+// 	return messageStr
+// }
+// func startMacaron() {
+// 	mux := macaron.New()
+// 	mux.Get("/hello", macaronHandler)
+// 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+// }
 
 // Martini
 func martiniHandlerWrite(params martini.Params) string {
