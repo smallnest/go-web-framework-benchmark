@@ -1,4 +1,4 @@
-,default,ace,beego,bone,chi,denco,echov3,fasthttp-raw,fasthttprouter,fasthttp-routing,gear,gin,goji,gojsonrest,gongular,gorestful,gorilla,go-ozzo,gowww,gramework,httprouter,httptreemux,lars,lion,macaron,martini,neo,pat,pure,r2router,tango,tiger,traffic,vulcan
-100,6,5,7,7,6,5,5,4,4,4,6,6,7,5,4,5,6,5,7,4,4,5,6,5,4,7,7,7,6,5,4,5,5,6
-1000,17,22,30,23,22,18,30,5,8,7,33,31,21,30,19,20,24,18,29,7,28,26,19,25,30,23,22,28,18,22,22,29,28,27
-5000,107,100,135,106,114,106,79,17,16,21,151,122,123,112,115,85,90,85,105,26,106,81,85,113,96,98,106,135,122,100,95,103,131,130
+,default,ace,beego,bone,chi,denco,echov3,fasthttp-raw,fasthttprouter,fasthttp-routing,gear,gin,goji,gojsonrest,gongular,gorestful,gorilla,go-ozzo,gowww,gramework,httprouter,httptreemux,lars,lion,martini,neo,pat,pure,r2router,siris,tango,tiger,traffic,violetear,vulcan
+100,5,4,4,4,5,6,5,2,3,2,4,5,6,5,4,4,5,6,4,3,5,5,4,4,6,5,5,4,5,5,5,3,4,6,4
+1000,21,26,19,22,23,19,21,5,7,7,30,28,23,17,27,21,20,29,25,6,20,23,27,26,19,23,25,19,26,25,20,17,16,33,27
+5000,110,94,148,119,95,127,100,15,22,25,111,91,94,88,110,133,131,90,91,28,128,124,121,112,127,126,104,82,125,112,90,121,99,111,90
