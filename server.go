@@ -57,6 +57,7 @@ import (
 	gcontext "golang.org/x/net/context"
 	baa "gopkg.in/baa.v1"
 	lion "gopkg.in/celrenheit/lion.v1"
+	"github.com/razonyang/fastrouter"
 )
 
 var port = 8080
@@ -122,6 +123,8 @@ func main() {
 		startFastHTTPRouter()
 	case "fasthttp-routing":
 		startFastHTTPRouting()
+	case "fastrouter":
+		startFastRouter()
 	case "gear":
 		startGear()
 	case "gin":
@@ -361,6 +364,22 @@ func startFastHTTPRouting() {
 	mux := routing.New()
 	mux.Get("/hello", fastHTTPRoutingHandler)
 	fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.HandleRequest)
+}
+
+//fastrouter
+func fastRouterHandler(w http.ResponseWriter, r *http.Request) {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
+	}
+	w.Write(message)
+}
+func startFastRouter() {
+	mux := fastrouter.New()
+	mux.Get("/hello", fastRouterHandler)
+	mux.Prepare()
+	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
 //gear
