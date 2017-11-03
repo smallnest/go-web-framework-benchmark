@@ -25,6 +25,9 @@ _testmain.go
 gowebbenchmark
 go-web-framework-benchmark
 
-#ide
+# IDE
 .vscode
 .idea
+
+# MacOSX
+.DS_Store
