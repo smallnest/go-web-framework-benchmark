@@ -27,3 +27,4 @@ go-web-framework-benchmark
 
 #ide
 .vscode
+.idea
