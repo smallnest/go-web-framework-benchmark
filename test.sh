@@ -48,25 +48,25 @@ test_all()
 pkill -9 $server_bin_name
 
 echo ","$(IFS=$','; echo "${web_frameworks[*]}" ) > processtime.csv
-test_all 0 5000
-echo "0 ms,"$(IFS=$','; echo "${test_result[*]}" ) >> processtime.csv
-test_all 10 5000
-echo "10 ms,"$(IFS=$','; echo "${test_result[*]}" ) >> processtime.csv
-test_all 100 5000
-echo "100 ms,"$(IFS=$','; echo "${test_result[*]}" ) >> processtime.csv
-test_all 500 5000
-echo "500 ms,"$(IFS=$','; echo "${test_result[*]}" ) >> processtime.csv
+test_all 0 1
+#echo "0 ms,"$(IFS=$','; echo "${test_result[*]}" ) >> processtime.csv
+#test_all 10 5000
+#echo "10 ms,"$(IFS=$','; echo "${test_result[*]}" ) >> processtime.csv
+#test_all 100 5000
+#echo "100 ms,"$(IFS=$','; echo "${test_result[*]}" ) >> processtime.csv
+#test_all 500 5000
+#echo "500 ms,"$(IFS=$','; echo "${test_result[*]}" ) >> processtime.csv
 
 
 
-echo ","$(IFS=$','; echo "${web_frameworks[*]}" ) > concurrency.csv
-test_all 30 100
-echo "100,"$(IFS=$','; echo "${test_result[*]}" ) >> concurrency.csv
-test_all 30 1000
-echo "1000,"$(IFS=$','; echo "${test_result[*]}" ) >> concurrency.csv
-test_all 30 5000
-echo "5000,"$(IFS=$','; echo "${test_result[*]}" ) >> concurrency.csv
+#echo ","$(IFS=$','; echo "${web_frameworks[*]}" ) > concurrency.csv
+#test_all 30 100
+#echo "100,"$(IFS=$','; echo "${test_result[*]}" ) >> concurrency.csv
+#test_all 30 1000
+#echo "1000,"$(IFS=$','; echo "${test_result[*]}" ) >> concurrency.csv
+#test_all 30 5000
+#echo "5000,"$(IFS=$','; echo "${test_result[*]}" ) >> concurrency.csv
 
 
 mv -f processtime.csv ./testresults
-mv -f concurrency.csv ./testresults
+#mv -f concurrency.csv ./testresults
