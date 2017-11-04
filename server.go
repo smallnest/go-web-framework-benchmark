@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"os"
 	"runtime"
@@ -48,6 +47,7 @@ import (
 	"github.com/plimble/ace"
 	"github.com/pressly/chi"
 	routing "github.com/qiangxue/fasthttp-routing"
+	"github.com/razonyang/fastrouter"
 	tigertonic "github.com/rcrowley/go-tigertonic"
 	"github.com/teambition/gear"
 	"github.com/valyala/fasthttp"
@@ -57,7 +57,6 @@ import (
 	gcontext "golang.org/x/net/context"
 	baa "gopkg.in/baa.v1"
 	lion "gopkg.in/celrenheit/lion.v1"
-	"github.com/razonyang/fastrouter"
 )
 
 var port = 8080
@@ -481,19 +480,22 @@ func startGolf() {
 	app.Run(":" + strconv.Itoa(port))
 }
 
+type HelloMessage struct{}
+
+func (w *HelloMessage) Handle(c *gongular.Context) error {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
+	}
+	c.SetBody(messageStr)
+
+	return nil
+}
+
 func startGongular() {
-	g := gongular.NewRouter()
-	g.DisableDebug()
-	g.InfoLog.SetOutput(ioutil.Discard)
-	g.InfoLog.SetFlags(0)
-	g.GET("/hello", func(c *gongular.Context) string {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		} else {
-			runtime.Gosched()
-		}
-		return messageStr
-	})
+	g := gongular.NewEngine()
+	g.GetRouter().GET("/hello", &HelloMessage{})
 	g.ListenAndServe(":" + strconv.Itoa(port))
 }
 
