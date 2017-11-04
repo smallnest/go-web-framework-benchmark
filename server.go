@@ -50,6 +50,7 @@ import (
 	"github.com/razonyang/fastrouter"
 	tigertonic "github.com/rcrowley/go-tigertonic"
 	"github.com/teambition/gear"
+	"github.com/tockins/fresh"
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
 	goji "goji.io"
@@ -124,6 +125,8 @@ func main() {
 		startFastHTTPRouting()
 	case "fastrouter":
 		startFastRouter()
+	case "fresh":
+		startFresh()
 	case "gear":
 		startGear()
 	case "gin":
@@ -379,6 +382,24 @@ func startFastRouter() {
 	mux.Get("/hello", fastRouterHandler)
 	mux.Prepare()
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+//fresh
+func freshHandler(c fresh.Context) error {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
+	}
+	c.Response().Text(http.StatusOK, messageStr)
+	return nil
+}
+
+func startFresh() {
+	f := fresh.New()
+	f.Config().SetPort(port)
+	f.GET("/hello", freshHandler)
+	f.Run()
 }
 
 //gear
