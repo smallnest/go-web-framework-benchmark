@@ -12,9 +12,14 @@ RUN echo "@community http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/
 #     && cd $GOPATH/src/github.com/smallnest/go-web-framework-benchmark \
 #     && go build -o  gowebbenchmark server.go
 
-RUN go get github.com/smallnest/go-web-framework-benchmark && mkdir /data
+# RUN go get github.com/smallnest/go-web-framework-benchmark && mkdir /data
+
 
 VOLUME ["/data"]
+
+# add current version of gowebbenchmark
+RUN mkdir -p $GOPATH/src/github.com/smallnest/go-web-framework-benchmark
+ADD . $GOPATH/src/github.com/smallnest/go-web-framework-benchmark/
 
 WORKDIR $GOPATH/src/github.com/smallnest/go-web-framework-benchmark
 
