@@ -397,7 +397,7 @@ func freshHandler(c fresh.Context) error {
 
 func startFresh() {
 	f := fresh.New()
-	f.Config().SetPort(port)
+	f.Config().Port(port)
 	f.GET("/hello", freshHandler)
 	f.Run()
 }
