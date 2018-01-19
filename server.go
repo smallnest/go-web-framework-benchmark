@@ -22,6 +22,7 @@ import (
 	siriscontext "github.com/go-siris/siris/context"
 	"github.com/nbari/violetear"
 	"github.com/urfave/negroni"
+	"gopkg.in/macaron.v1"
 	// "github.com/go-gas/gas" // NOTE(@kirilldanshin): gas is 404 now, comment out
 	bxog "github.com/claygod/Bxog"
 	"github.com/go-martini/martini"
@@ -160,8 +161,8 @@ func main() {
 		startLars()
 	case "lion":
 		startLion()
-	// case "macaron":
-	// 	startMacaron()
+	case "macaron":
+		startMacaron()
 	case "martini":
 		startMartini()
 	case "negroni":
@@ -651,19 +652,19 @@ func startLion() {
 }
 
 // Macaron
-// func macaronHandler(c *macaron.Context) string {
-// 	if sleepTime > 0 {
-// 		time.Sleep(sleepTimeDuration)
-// 	} else {
-// 		runtime.Gosched()
-// 	}
-// 	return messageStr
-// }
-// func startMacaron() {
-// 	mux := macaron.New()
-// 	mux.Get("/hello", macaronHandler)
-// 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
-// }
+func macaronHandler(c *macaron.Context) string {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
+	}
+	return messageStr
+}
+func startMacaron() {
+	mux := macaron.New()
+	mux.Get("/hello", macaronHandler)
+	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
 
 // Martini
 func martiniHandlerWrite(params martini.Params) string {
