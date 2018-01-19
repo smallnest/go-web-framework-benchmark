@@ -21,6 +21,7 @@ import (
 	"github.com/go-siris/siris"
 	siriscontext "github.com/go-siris/siris/context"
 	"github.com/nbari/violetear"
+	"github.com/urfave/negroni"
 	// "github.com/go-gas/gas" // NOTE(@kirilldanshin): gas is 404 now, comment out
 	bxog "github.com/claygod/Bxog"
 	"github.com/go-martini/martini"
@@ -163,6 +164,8 @@ func main() {
 	// 	startMacaron()
 	case "martini":
 		startMartini()
+	case "negroni":
+		startNegroni()
 	case "neo":
 		startNeo()
 	case "pat":
@@ -678,6 +681,17 @@ func startMartini() {
 	martini := martini.New()
 	martini.Action(mux.Handle)
 	http.ListenAndServe(":"+strconv.Itoa(port), martini)
+}
+
+// negroni
+func startNegroni() {
+	mux := http.NewServeMux()
+	mux.HandleFunc("/hello", helloHandler)
+
+	n := negroni.New()
+	n.UseHandler(mux)
+
+	http.ListenAndServe(":"+strconv.Itoa(port), n)
 }
 
 //neo
