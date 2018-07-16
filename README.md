@@ -56,6 +56,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [siris](https://github.com/go-siris/siris)
 * [FastRouter](https://github.com/razonyang/fastrouter)
 * [negroni](https://github.com/urfave/negroni)
+* [tinyrouter](https://github.com/go101/tinyrouter)
 
 The below web frameworks will be removed from this test because of their poor performance:
 * [possum](https://github.com/mikespook/possum)

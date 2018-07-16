@@ -30,6 +30,7 @@ import (
 	"github.com/go-playground/lars"
 	"github.com/go-playground/pure"
 	"github.com/go-zoo/bone"
+	tiny "github.com/go101/tinyrouter"
 	"github.com/gocraft/web"
 	"github.com/gorilla/mux"
 	gowwwrouter "github.com/gowww/router"
@@ -183,6 +184,8 @@ func main() {
 		startTango()
 	case "tiger":
 		startTigerTonic()
+	case "tinyrouter":
+		startTinyRouter()
 	case "traffic":
 		startTraffic()
 	case "violetear":
@@ -796,6 +799,18 @@ func startTigerTonic() {
 	mux := tigertonic.NewTrieServeMux()
 	mux.Handle("GET", "/hello", http.HandlerFunc(helloHandler))
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+//  TinyRouter
+func startTinyRouter() {
+	routes := []tiny.Route{
+		{
+			Method:     "GET",
+			Pattern:    "/hello",
+			HandleFunc: helloHandler,
+		}}
+	router := tiny.New(tiny.Config{Routes: routes})
+	http.ListenAndServe(":"+strconv.Itoa(port), router)
 }
 
 //  traffic
