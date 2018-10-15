@@ -9,6 +9,8 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/bnkamalesh/webgo"
+
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
@@ -23,6 +25,7 @@ import (
 	"github.com/nbari/violetear"
 	"github.com/urfave/negroni"
 	"gopkg.in/macaron.v1"
+
 	// "github.com/go-gas/gas" // NOTE(@kirilldanshin): gas is 404 now, comment out
 	bxog "github.com/claygod/Bxog"
 	"github.com/go-martini/martini"
@@ -192,6 +195,8 @@ func main() {
 		startVioletear()
 	case "vulcan":
 		startVulcan()
+	case "webgo":
+		startWebgo()
 	}
 }
 
@@ -404,7 +409,7 @@ func freshHandler(c fresh.Context) error {
 
 func startFresh() {
 	f := fresh.New()
-	f.Config().Port(port)
+	f.Config().SetPort(port)
 	f.GET("/hello", freshHandler)
 	f.Run()
 }
@@ -843,6 +848,28 @@ func startVulcan() {
 	mux.HandleFunc(expr, helloHandler)
 
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+// webgo
+func getWebgoRoutes() []*webgo.Route {
+	return []*webgo.Route{
+		&webgo.Route{
+			Name:     "helloworld",
+			Method:   http.MethodGet,
+			Pattern:  "/helloworld",
+			Handlers: []http.HandlerFunc{helloHandler},
+		},
+	}
+}
+func startWebgo() {
+	cfg := webgo.Config{
+		Host:         "",
+		Port:         strconv.Itoa(port),
+		ReadTimeout:  120 * time.Second,
+		WriteTimeout: 120 * time.Second,
+	}
+	router := webgo.NewRouter(&cfg, getWebgoRoutes())
+	router.Start()
 }
 
 // mock

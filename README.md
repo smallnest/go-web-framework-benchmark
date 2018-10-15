@@ -57,6 +57,8 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [FastRouter](https://github.com/razonyang/fastrouter)
 * [negroni](https://github.com/urfave/negroni)
 * [tinyrouter](https://github.com/go101/tinyrouter)
+* [webgo](https://github.com/bnkamalesh/webgo)
+
 
 The below web frameworks will be removed from this test because of their poor performance:
 * [possum](https://github.com/mikespook/possum)
