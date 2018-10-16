@@ -20,8 +20,9 @@ import (
 	"github.com/dinever/golf"
 	"github.com/emicklei/go-restful"
 	"github.com/gin-gonic/gin"
-	"github.com/go-siris/siris"
-	siriscontext "github.com/go-siris/siris/context"
+
+	// "github.com/go-siris/siris"
+	// siriscontext "github.com/go-siris/siris/context"
 	"github.com/nbari/violetear"
 	"github.com/urfave/negroni"
 	"gopkg.in/macaron.v1"
@@ -50,7 +51,8 @@ import (
 	"github.com/mustafaakin/gongular"
 	"github.com/naoina/denco"
 	"github.com/pilu/traffic"
-	"github.com/plimble/ace"
+
+	// "github.com/plimble/ace"
 	"github.com/pressly/chi"
 	routing "github.com/qiangxue/fasthttp-routing"
 	"github.com/razonyang/fastrouter"
@@ -107,8 +109,8 @@ func main() {
 	switch webFramework {
 	case "default":
 		startDefaultMux()
-	case "ace":
-		startAce()
+	// case "ace":
+	// 	startAce()
 	case "baa":
 		startBaa()
 	case "beego":
@@ -181,8 +183,8 @@ func main() {
 		startPure()
 	case "r2router":
 		startR2router()
-	case "siris":
-		startSirisrouter()
+	// case "siris":
+	// 	startSirisrouter()
 	case "tango":
 		startTango()
 	case "tiger":
@@ -215,19 +217,19 @@ func startDefaultMux() {
 }
 
 //ace
-func aceHandler(c *ace.C) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
-	} else {
-		runtime.Gosched()
-	}
-	c.Writer.Write(message)
-}
-func startAce() {
-	mux := ace.New()
-	mux.GET("/hello", aceHandler)
-	mux.Run(":" + strconv.Itoa(port))
-}
+// func aceHandler(c *ace.C) {
+// 	if sleepTime > 0 {
+// 		time.Sleep(sleepTimeDuration)
+// 	} else {
+// 		runtime.Gosched()
+// 	}
+// 	c.Writer.Write(message)
+// }
+// func startAce() {
+// 	mux := ace.New()
+// 	mux.GET("/hello", aceHandler)
+// 	mux.Run(":" + strconv.Itoa(port))
+// }
 
 // baa
 func baaHandler(ctx *baa.Context) {
@@ -409,9 +411,9 @@ func freshHandler(c fresh.Context) error {
 
 func startFresh() {
 	f := fresh.New()
-	f.Config().SetPort(port)
+	f.Config().Port = port
 	f.GET("/hello", freshHandler)
-	f.Run()
+	f.Start()
 }
 
 //gear
@@ -765,20 +767,20 @@ func startR2router() {
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
-// siris
-func sirisrouterHandler(ctx siriscontext.Context) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
-	} else {
-		runtime.Gosched()
-	}
-	ctx.HTML(messageStr)
-}
-func startSirisrouter() {
-	app := siris.New()
-	app.Get("/hello", sirisrouterHandler)
-	app.Run(siris.Addr(":"+strconv.Itoa(port)), siris.WithCharset("UTF-8"))
-}
+// // siris
+// func sirisrouterHandler(ctx siriscontext.Context) {
+// 	if sleepTime > 0 {
+// 		time.Sleep(sleepTimeDuration)
+// 	} else {
+// 		runtime.Gosched()
+// 	}
+// 	ctx.HTML(messageStr)
+// }
+// func startSirisrouter() {
+// 	app := siris.New()
+// 	app.Get("/hello", sirisrouterHandler)
+// 	app.Run(siris.Addr(":"+strconv.Itoa(port)), siris.WithCharset("UTF-8"))
+// }
 
 //Tango
 func tangoHandler(ctx *tango.Context) {
