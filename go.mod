@@ -2,7 +2,7 @@ module github.com/smallnest/go-web-framework-benchmark
 
 require (
 	github.com/BurntSushi/toml v0.3.1 // indirect
-	github.com/Joker/jade v0.7.0 // indirect
+	github.com/Joker/jade v1.0.0 // indirect
 	github.com/Unknwon/com v0.0.0-20181010210213-41959bdd855f // indirect
 	github.com/ajg/form v0.0.0-20160822230020-523a5da1a92f // indirect
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
@@ -22,6 +22,7 @@ require (
 	github.com/dinever/golf v0.3.0
 	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
 	github.com/emicklei/go-restful v2.8.0+incompatible
+	github.com/fasthttp/router v0.3.0
 	github.com/fatih/color v1.7.0 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/flosch/pongo2 v0.0.0-20180809100617-24195e6d38b0 // indirect
@@ -61,7 +62,6 @@ require (
 	github.com/ivpusic/neo v0.3.0
 	github.com/ivpusic/urlregex v0.0.0-20160128000749-4dd86e784405 // indirect
 	github.com/jonboulle/clockwork v0.1.0 // indirect
-	github.com/json-iterator/go v1.1.5 // indirect
 	github.com/jtolds/gls v4.2.1+incompatible // indirect
 	github.com/juju/errors v0.0.0-20181012004132-a4583d0a56ea // indirect
 	github.com/juju/loggo v0.0.0-20180524022052-584905176618 // indirect
@@ -82,8 +82,6 @@ require (
 	github.com/mattn/go-sqlite3 v1.9.0 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.1 // indirect
 	github.com/mikespook/possum v0.0.0-20170224044927-56d7ebb6470b
-	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
-	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/monoculum/formam v0.0.0-20180901015400-4e68be1d79ba // indirect
 	github.com/moul/http2curl v0.0.0-20170919181001-9ac6cf4d929b // indirect
 	github.com/mustafaakin/gongular v0.0.0-20171116074631-b899c3c6e795
@@ -106,6 +104,7 @@ require (
 	github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7
 	github.com/russross/blackfriday v2.0.0+incompatible // indirect
 	github.com/satori/go.uuid v1.2.0 // indirect
+	github.com/savsgio/atreugo v0.0.0-20181107114028-4d3a4e41b608
 	github.com/sergi/go-diff v1.0.0 // indirect
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/shurcooL/sanitized_anchor_name v0.0.0-20170918181015-86672fcb3f95 // indirect
@@ -134,7 +133,7 @@ require (
 	go.uber.org/multierr v1.1.0 // indirect
 	go.uber.org/zap v1.9.1 // indirect
 	goji.io v0.0.0-20161114012657-0d89ff54b2c1
-	golang.org/x/net v0.0.0-20181011144130-49bb7cea24b1
+	golang.org/x/net v0.0.0-20181023162649-9b4f9f5ad519
 	golang.org/x/sys v0.0.0-20181011152604-fa43e7bc11ba // indirect
 	gopkg.in/baa.v1 v1.2.31
 	gopkg.in/celrenheit/lion.v1 v1.0.0-20161101201550-7c6ce5d22d64

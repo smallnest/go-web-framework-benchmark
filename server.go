@@ -9,23 +9,24 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/bnkamalesh/webgo"
-
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
 	"github.com/bmizerany/pat"
+	"github.com/bnkamalesh/webgo"
 	"github.com/buaazp/fasthttprouter"
 	"github.com/dimfeld/httptreemux"
 	"github.com/dinever/golf"
-	"github.com/emicklei/go-restful"
+	restful "github.com/emicklei/go-restful"
+	fasthttpSlashRouter "github.com/fasthttp/router"
 	"github.com/gin-gonic/gin"
+	"github.com/savsgio/atreugo"
 
 	// "github.com/go-siris/siris"
 	// siriscontext "github.com/go-siris/siris/context"
 	"github.com/nbari/violetear"
 	"github.com/urfave/negroni"
-	"gopkg.in/macaron.v1"
+	macaron "gopkg.in/macaron.v1"
 
 	// "github.com/go-gas/gas" // NOTE(@kirilldanshin): gas is 404 now, comment out
 	bxog "github.com/claygod/Bxog"
@@ -111,6 +112,8 @@ func main() {
 		startDefaultMux()
 	// case "ace":
 	// 	startAce()
+	case "atreugo":
+		startAtreugo()
 	case "baa":
 		startBaa()
 	case "beego":
@@ -129,6 +132,8 @@ func main() {
 		startFasthttp()
 	case "fasthttprouter":
 		startFastHTTPRouter()
+	case "fasthttp/router":
+		startFastHTTPSlashRouter()
 	case "fasthttp-routing":
 		startFastHTTPRouting()
 	case "fastrouter":
@@ -216,7 +221,7 @@ func startDefaultMux() {
 	http.ListenAndServe(":"+strconv.Itoa(port), nil)
 }
 
-//ace
+// ace
 // func aceHandler(c *ace.C) {
 // 	if sleepTime > 0 {
 // 		time.Sleep(sleepTimeDuration)
@@ -230,6 +235,21 @@ func startDefaultMux() {
 // 	mux.GET("/hello", aceHandler)
 // 	mux.Run(":" + strconv.Itoa(port))
 // }
+
+// atreugo
+func atreugoHandler(ctx *atreugo.RequestCtx) error {
+	if sleepTime > 0 {
+		time.Sleep(sleepTimeDuration)
+	} else {
+		runtime.Gosched()
+	}
+	return ctx.TextResponseBytes(message)
+}
+func startAtreugo() {
+	mux := atreugo.New(&atreugo.Config{Host: "127.0.0.1", Port: port})
+	mux.Path("GET", "/hello", atreugoHandler)
+	mux.ListenAndServe()
+}
 
 // baa
 func baaHandler(ctx *baa.Context) {
@@ -362,6 +382,13 @@ func fastHTTPHandler(ctx *fasthttp.RequestCtx) {
 }
 func startFastHTTPRouter() {
 	mux := fasthttprouter.New()
+	mux.GET("/hello", fastHTTPHandler)
+	fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.Handler)
+}
+
+//fasthttp Router
+func startFastHTTPSlashRouter() {
+	mux := fasthttpSlashRouter.New()
 	mux.GET("/hello", fastHTTPHandler)
 	fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.Handler)
 }
@@ -856,9 +883,9 @@ func startVulcan() {
 func getWebgoRoutes() []*webgo.Route {
 	return []*webgo.Route{
 		&webgo.Route{
-			Name:     "helloworld",
+			Name:     "hello",
 			Method:   http.MethodGet,
-			Pattern:  "/helloworld",
+			Pattern:  "/hello",
 			Handlers: []http.HandlerFunc{helloHandler},
 		},
 	}
