@@ -623,6 +623,7 @@ func grameworkHandler(ctx *gramework.Context) {
 }
 
 func startGramework() {
+	gramework.SetEnv(gramework.PROD) // equivalent of ENV=prod
 	app := gramework.New()
 	app.GET("/hello", grameworkHandler)
 	app.ListenAndServe(":" + strconv.Itoa(port))
