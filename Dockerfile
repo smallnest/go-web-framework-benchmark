@@ -1,4 +1,4 @@
-FROM golang:1.11.4-alpine3.8
+FROM golang:1.11.4-alpine3.7
 MAINTAINER smallnest <smallnest@gmail.com>
 
 RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
