@@ -1,5 +1,5 @@
-,default,ace,beego,bone,chi,denco,echov3,fasthttp-raw,fasthttprouter,fasthttp-routing,gear,gin,goji,gojsonrest,gongular,gorestful,gorilla,go-ozzo,gowww,gramework,httprouter,httptreemux,lars,lion,martini,neo,pat,pure,r2router,siris,tango,tiger,traffic,violetear,vulcan
-0 ms,107,103,102,98,106,104,103,35,45,39,109,101,112,100,124,110,135,103,97,56,99,98,107,101,127,142,102,103,104,109,92,95,131,276,104
-10 ms,125,127,134,132,108,132,120,21,24,26,136,97,119,121,134,126,125,120,100,26,100,116,130,133,163,130,102,118,106,111,114,127,140,220,132
-100 ms,80,81,121,80,108,76,128,17,16,23,83,129,103,80,92,81,107,83,91,19,113,116,89,82,133,95,122,130,71,127,86,86,75,75,127
-500 ms,106,116,140,112,110,117,87,16,17,15,78,69,77,89,86,82,126,100,82,20,130,116,129,102,101,111,124,88,72,100,81,121,87,119,124
+,default,atreugo,beego,bone,chi,denco,echov3,fasthttp-raw,fasthttprouter,fasthttp/router,fasthttp-routing,fastrouter,fresh,gear,gin,goji,gojsonrest,gongular,gorestful,gorilla,go-ozzo,gowww,gramework,httprouter,httptreemux,lars,lion,martini,negroni,neo,pat,pure,r2router,tango,tiger,tinyrouter,traffic,violetear,vulcan,webgo
+0 ms,18,7,21,20,19,22,18,7,10,7,9,19,24,24,18,20,20,18,22,20,19,22,9,21,19,19,20,25,18,21,17,20,20,20,18,20,20,19,19,19
+10 ms,27,8,21,17,23,22,25,7,7,7,12,17,22,23,23,25,17,21,26,20,22,19,6,18,21,17,23,17,18,22,19,19,26,16,18,25,28,23,18,26
+100 ms,23,6,25,28,14,26,16,5,5,5,6,22,24,24,25,26,23,21,18,28,15,26,8,15,15,20,15,15,22,28,21,25,25,24,24,16,23,24,15,26
+500 ms,16,5,32,18,23,26,26,5,6,5,6,26,25,20,27,17,24,20,18,20,15,26,8,23,26,25,19,29,17,24,15,16,24,20,16,26,22,28,15,21

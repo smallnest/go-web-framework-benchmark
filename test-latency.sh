@@ -2,7 +2,7 @@
 
 server_bin_name="gowebbenchmark"
 
-. ./libs.sh 
+. ./libs.sh
 
 length=${#web_frameworks[@]}
 

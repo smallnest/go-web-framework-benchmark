@@ -1,14 +1,14 @@
 # go-web-framework-benchmark
 This benchmark suite aims to compare the performance of Go web frameworks. It is inspired by [Go HTTP Router Benchmark](https://github.com/julienschmidt/go-http-routing-benchmark) but this benchmark suite is different with that. Go HTTP Router Benchmark suit aims to compare the performance of **routers** but this Benchmark suit aims to compare whole HTTP request processing.
 
-**Last Test Updated:** 2017-09-12
+**Last Test Updated:** 2019-01-03
 
 *test environment*
 
-* CPU:      Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz, 32 cores
-* Memory:   32G
-* Go:       1.9.0
-* OS:       CentOS 7 / 3.10.0-229.el7.x86_64
+* CPU:      Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz
+* Memory:   16G
+* Go:       1.11.4
+* OS:       Kubuntu 18.10 / 4.18.0-13-generic
 
 (doesn't contain test results of neo because one error)
 
@@ -58,6 +58,8 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [negroni](https://github.com/urfave/negroni)
 * [tinyrouter](https://github.com/go101/tinyrouter)
 * [webgo](https://github.com/bnkamalesh/webgo)
+* [fasthttp/router](https://github.com/fasthttp/router)
+* [atreugo](https://github.com/savsgio/atreugo)
 
 
 The below web frameworks will be removed from this test because of their poor performance:
