@@ -52,7 +52,7 @@ require (
 	github.com/gorilla/sessions v1.1.3 // indirect
 	github.com/gorilla/websocket v1.4.0 // indirect
 	github.com/gowww/router v0.0.0-20180327195201-5f9c626ef619
-	github.com/gramework/gramework v1.3.0
+	github.com/gramework/gramework v1.6.1
 	github.com/gravitational/trace v0.0.0-20180717152918-4a5e142f3251 // indirect
 	github.com/hashicorp/golang-lru v0.5.0 // indirect
 	github.com/imkira/go-interpol v1.1.0 // indirect
