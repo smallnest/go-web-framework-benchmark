@@ -16,13 +16,12 @@ require (
 	github.com/celrenheit/htest v0.0.0-20170621160705-e34d50431e7f // indirect
 	github.com/cheekybits/genny v1.0.0 // indirect
 	github.com/claygod/Bxog v0.0.0-20180830074730-c9d20deaaed3
-	github.com/cloudfoundry/gosigar v1.1.0 // indirect
 	github.com/codegangsta/inject v0.0.0-20150114235600-33e0aa1cb7c0 // indirect
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
 	github.com/dinever/golf v0.3.0
 	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
 	github.com/emicklei/go-restful v2.8.0+incompatible
-	github.com/fasthttp/router v0.3.0
+	github.com/fasthttp/router v0.3.1
 	github.com/fatih/color v1.7.0 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/flosch/pongo2 v0.0.0-20180809100617-24195e6d38b0 // indirect
@@ -87,7 +86,6 @@ require (
 	github.com/mustafaakin/gongular v0.0.0-20171116074631-b899c3c6e795
 	github.com/naoina/denco v0.0.0-20180930074809-8475105a6b4c
 	github.com/nbari/violetear v0.0.0-20180912134303-b8e1276ca190
-	github.com/onsi/gomega v1.4.2 // indirect
 	github.com/oxtoacart/bpool v0.0.0-20150712133111-4e1c5567d7c2 // indirect
 	github.com/pasztorpisti/qs v0.0.0-20171216220353-8d6c33ee906c // indirect
 	github.com/philhofer/fwd v1.0.0 // indirect
@@ -134,7 +132,6 @@ require (
 	go.uber.org/zap v1.9.1 // indirect
 	goji.io v0.0.0-20161114012657-0d89ff54b2c1
 	golang.org/x/net v0.0.0-20181023162649-9b4f9f5ad519
-	golang.org/x/sys v0.0.0-20181011152604-fa43e7bc11ba // indirect
 	gopkg.in/baa.v1 v1.2.31
 	gopkg.in/celrenheit/lion.v1 v1.0.0-20161101201550-7c6ce5d22d64
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
