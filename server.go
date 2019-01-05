@@ -71,6 +71,8 @@ import (
 
 var port = 8080
 var sleepTime = 0
+var cpuBound bool
+var target = 15
 var sleepTimeDuration time.Duration
 var message = []byte("hello world")
 var messageStr = "hello world"
@@ -86,6 +88,10 @@ func main() {
 	}
 	if argsLen > 2 {
 		sleepTime, _ = strconv.Atoi(args[2])
+		if sleepTime == -1 {
+			cpuBound = true
+			sleepTime = 0
+		}
 	}
 	if argsLen > 3 {
 		port, _ = strconv.Atoi(args[3])
@@ -209,10 +215,15 @@ func main() {
 
 // default mux
 func helloHandler(w http.ResponseWriter, r *http.Request) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	w.Write(message)
 }
@@ -238,10 +249,15 @@ func startDefaultMux() {
 
 // atreugo
 func atreugoHandler(ctx *atreugo.RequestCtx) error {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	return ctx.TextResponseBytes(message)
 }
@@ -253,10 +269,15 @@ func startAtreugo() {
 
 // baa
 func baaHandler(ctx *baa.Context) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	ctx.Text(200, message)
 }
@@ -268,10 +289,15 @@ func startBaa() {
 
 //beego
 func beegoHandler(ctx *context.Context) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	ctx.WriteString(messageStr)
 }
@@ -292,10 +318,15 @@ func startBone() {
 
 // bxog
 func bxogHandler(w http.ResponseWriter, req *http.Request, r *bxog.Router) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	w.Write(message)
 }
@@ -319,10 +350,15 @@ func startChi() {
 
 // denco
 func dencoHandler(w http.ResponseWriter, r *http.Request, params denco.Params) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	w.Write(message)
 }
@@ -334,10 +370,15 @@ func startDenco() {
 
 // echov3-standard
 func echov3Handler(c echov3.Context) error {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	c.Response().Write(message)
 	return nil
@@ -354,10 +395,15 @@ func fastHTTPRawHandler(ctx *fasthttp.RequestCtx) {
 	if string(ctx.Method()) == "GET" {
 		switch string(ctx.Path()) {
 		case "/hello":
-			if sleepTime > 0 {
-				time.Sleep(sleepTimeDuration)
+			if cpuBound {
+				pow(target)
 			} else {
-				runtime.Gosched()
+
+				if sleepTime > 0 {
+					time.Sleep(sleepTimeDuration)
+				} else {
+					runtime.Gosched()
+				}
 			}
 			ctx.Write(message)
 		default:
@@ -373,10 +419,15 @@ func startFasthttp() {
 
 //fasthttprouter
 func fastHTTPHandler(ctx *fasthttp.RequestCtx) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	ctx.Write(message)
 }
@@ -395,10 +446,15 @@ func startFastHTTPSlashRouter() {
 
 //fasthttprouting
 func fastHTTPRoutingHandler(c *routing.Context) error {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	c.Write(message)
 	return nil
@@ -411,10 +467,15 @@ func startFastHTTPRouting() {
 
 //fastrouter
 func fastRouterHandler(w http.ResponseWriter, r *http.Request) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	w.Write(message)
 }
@@ -427,10 +488,15 @@ func startFastRouter() {
 
 //fresh
 func freshHandler(c fresh.Context) error {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	c.Response().Text(http.StatusOK, messageStr)
 	return nil
@@ -449,10 +515,15 @@ func startGear() {
 	router := gear.NewRouter()
 
 	router.Get("/hello", func(c *gear.Context) error {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
+		if cpuBound {
+			pow(target)
 		} else {
-			runtime.Gosched()
+
+			if sleepTime > 0 {
+				time.Sleep(sleepTimeDuration)
+			} else {
+				runtime.Gosched()
+			}
 		}
 		return c.HTML(200, messageStr)
 	})
@@ -462,10 +533,15 @@ func startGear() {
 
 // gin
 func ginHandler(c *gin.Context) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	c.Writer.Write(message)
 }
@@ -480,10 +556,15 @@ func startGin() {
 type gocraftWebContext struct{}
 
 func gocraftWebHandler(w web.ResponseWriter, r *web.Request) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	w.Write(message)
 }
@@ -495,10 +576,15 @@ func startGocraftWeb() {
 
 // goji
 func gojiHandler(w http.ResponseWriter, r *http.Request) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	w.Write(message)
 }
@@ -510,10 +596,15 @@ func startGoji() {
 
 // goJsonRest
 func goJSONRestHandler(w rest.ResponseWriter, req *rest.Request) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	iow := w.(io.Writer)
 	iow.Write(message)
@@ -528,10 +619,15 @@ func startGoJSONRest() {
 }
 
 func golfHandler(ctx *golf.Context) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	ctx.Send(messageStr)
 }
@@ -545,10 +641,15 @@ func startGolf() {
 type HelloMessage struct{}
 
 func (w *HelloMessage) Handle(c *gongular.Context) error {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	c.SetBody(messageStr)
 
@@ -563,10 +664,15 @@ func startGongular() {
 
 // goRestful
 func goRestfulHandler(r *restful.Request, w *restful.Response) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	w.Write(message)
 }
@@ -587,10 +693,15 @@ func startGorilla() {
 
 // go-ozzo
 func ozzoHandler(c *ozzo.Context) error {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	c.Write(message)
 
@@ -613,10 +724,15 @@ func startGowww() {
 
 // Gramework
 func grameworkHandler(ctx *gramework.Context) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 
 	ctx.WriteString(messageStr)
@@ -631,10 +747,15 @@ func startGramework() {
 
 // httprouter
 func httpRouterHandler(w http.ResponseWriter, _ *http.Request, ps httprouter.Params) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	w.Write(message)
 }
@@ -646,10 +767,15 @@ func startHTTPRouter() {
 
 // httpTreeMux
 func httpTreeMuxHandler(w http.ResponseWriter, _ *http.Request, vars map[string]string) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	w.Write(message)
 }
@@ -661,10 +787,15 @@ func starthttpTreeMux() {
 
 // lars
 func larsHandler(c lars.Context) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	c.Response().Write(message)
 }
@@ -676,10 +807,15 @@ func startLars() {
 
 // lion
 func lionHandler(c gcontext.Context, w http.ResponseWriter, r *http.Request) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	w.Write(message)
 }
@@ -691,10 +827,15 @@ func startLion() {
 
 // Macaron
 func macaronHandler(c *macaron.Context) string {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	return messageStr
 }
@@ -706,10 +847,15 @@ func startMacaron() {
 
 // Martini
 func martiniHandlerWrite(params martini.Params) string {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	return messageStr
 }
@@ -739,10 +885,15 @@ func startNeo() {
 	app.Conf.App.Addr = ":" + strconv.Itoa(port)
 
 	app.Get("/hello", func(ctx *neo.Ctx) (int, error) {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
+		if cpuBound {
+			pow(target)
 		} else {
-			runtime.Gosched()
+
+			if sleepTime > 0 {
+				time.Sleep(sleepTimeDuration)
+			} else {
+				runtime.Gosched()
+			}
 		}
 		return 200, ctx.Res.Raw(message)
 	})
@@ -759,10 +910,15 @@ func startPat() {
 
 // Possum
 func possumHandler(c *possum.Context) error {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	c.Response.Write(message)
 	return nil
@@ -782,10 +938,15 @@ func startPure() {
 
 // R2router
 func r2routerHandler(w http.ResponseWriter, req *http.Request, params r2router.Params) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	w.Write(message)
 }
@@ -812,10 +973,15 @@ func startR2router() {
 
 //Tango
 func tangoHandler(ctx *tango.Context) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	ctx.Write(message)
 }
@@ -850,10 +1016,15 @@ func startTinyRouter() {
 
 //  traffic
 func trafficHandler(w traffic.ResponseWriter, r *traffic.Request) {
-	if sleepTime > 0 {
-		time.Sleep(sleepTimeDuration)
+	if cpuBound {
+		pow(target)
 	} else {
-		runtime.Gosched()
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
 	}
 	w.Write(message)
 }

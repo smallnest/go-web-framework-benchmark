@@ -56,6 +56,8 @@ test_all 100 5000
 echo "100 ms,"$(IFS=$','; echo "${test_result[*]}" ) >> processtime.csv
 test_all 500 5000
 echo "500 ms,"$(IFS=$','; echo "${test_result[*]}" ) >> processtime.csv
+test_all -1 5000
+echo "cpu-bound,"$(IFS=$','; echo "${test_result[*]}" ) >> processtime.csv
 
 
 
