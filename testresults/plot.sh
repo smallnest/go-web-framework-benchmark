@@ -15,4 +15,7 @@ gnuplot -c concurrency_latency.gnu
 gnuplot -c concurrency_alloc.gnu
 gnuplot -c concurrency_pipeline.gnu
 
+gnuplot -c cpubound_benchmark.gnu
+gnuplot -c cpubound_concurrency.gnu
+
 rm -fr t_*.csv
