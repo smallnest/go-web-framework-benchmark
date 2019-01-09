@@ -149,7 +149,7 @@ It takes a while to install a large number of dependencies that need to be downl
 
 ```
 cd $GOPATH/src/github.com/smallnest/go-web-framework-benchmark
-go build -o  gowebbenchmark server.go
+go build -o  gowebbenchmark *.go
 ./test.sh
 ```
 

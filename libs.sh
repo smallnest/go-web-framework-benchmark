@@ -4,4 +4,3 @@ web_frameworks=("default" "atreugo" "beego" "bone" "chi" "denco" "echov3" "fasth
 "fasthttp-routing" "fasthttp/router" "fasthttprouter" "fastrouter" "fresh" "gear" "gin" "goji" "gojsonrest" "gongular" "gorestful" "gorilla" "go-ozzo" "gowww" "gramework" "httprouter" \
 "httptreemux" "lars" "lion" "martini" "negroni" "neo" "pat" "pure" "r2router" "tango" "tiger" "tinyrouter" "traffic" "violetear" "vulcan" "webgo")
 
-
