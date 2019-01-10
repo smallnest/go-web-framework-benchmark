@@ -41,7 +41,6 @@ require (
 	github.com/ivpusic/neo v0.3.0
 	github.com/ivpusic/urlregex v0.0.0-20160128000749-4dd86e784405 // indirect
 	github.com/jonboulle/clockwork v0.1.0 // indirect
-	github.com/json-iterator/go v1.1.5 // indirect
 	github.com/jtolds/gls v4.2.1+incompatible // indirect
 	github.com/julienschmidt/httprouter v1.2.0
 	github.com/labstack/echo v3.3.5+incompatible
@@ -52,8 +51,6 @@ require (
 	github.com/mattn/go-colorable v0.0.9 // indirect
 	github.com/mattn/go-isatty v0.0.4 // indirect
 	github.com/mikespook/possum v0.0.0-20170224044927-56d7ebb6470b
-	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
-	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/mustafaakin/gongular v0.0.0-20171116074631-b899c3c6e795
 	github.com/naoina/denco v0.0.0-20180930074809-8475105a6b4c
 	github.com/nbari/violetear v0.0.0-20180912134303-b8e1276ca190
@@ -66,7 +63,7 @@ require (
 	github.com/rcrowley/go-metrics v0.0.0-20181016184325-3113b8401b8a // indirect
 	github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7
 	github.com/savsgio/atreugo v5.4.0+incompatible
-	github.com/savsgio/go-logger v2.1.1+incompatible // indirect
+	github.com/savsgio/atreugo/v6 v6.0.0
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/smartystreets/assertions v0.0.0-20180927180507-b2de0cb4f26d // indirect
 	github.com/smartystreets/goconvey v0.0.0-20181108003508-044398e4856c // indirect
@@ -74,7 +71,7 @@ require (
 	github.com/tockins/fresh v0.0.0-20181012144221-d8b891ad12e4
 	github.com/ugorji/go/codec v0.0.0-20181209151446-772ced7fd4c2 // indirect
 	github.com/urfave/negroni v1.0.0
-	github.com/valyala/fasthttp v1.0.0
+	github.com/valyala/fasthttp v1.1.0
 	github.com/valyala/fasttemplate v0.0.0-20170224212429-dcecefd839c4 // indirect
 	github.com/vanng822/r2router v0.0.0-20150523112421-1023140a4f30
 	github.com/vulcand/predicate v1.1.0 // indirect

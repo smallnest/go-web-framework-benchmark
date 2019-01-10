@@ -20,7 +20,7 @@ import (
 	restful "github.com/emicklei/go-restful"
 	fasthttpSlashRouter "github.com/fasthttp/router"
 	"github.com/gin-gonic/gin"
-	"github.com/savsgio/atreugo"
+	"github.com/savsgio/atreugo/v6"
 
 	// "github.com/go-siris/siris"
 	// siriscontext "github.com/go-siris/siris/context"
