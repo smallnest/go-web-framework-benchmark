@@ -20,7 +20,8 @@ import (
 	restful "github.com/emicklei/go-restful"
 	fasthttpSlashRouter "github.com/fasthttp/router"
 	"github.com/gin-gonic/gin"
-	"github.com/savsgio/atreugo/v6"
+	"github.com/kataras/muxie"
+	"github.com/savsgio/atreugo"
 
 	// "github.com/go-siris/siris"
 	// siriscontext "github.com/go-siris/siris/context"
@@ -182,6 +183,8 @@ func main() {
 		startMacaron()
 	case "martini":
 		startMartini()
+	case "muxie":
+		startMuxie()
 	case "negroni":
 		startNegroni()
 	case "neo":
@@ -866,6 +869,12 @@ func startMartini() {
 	martini := martini.New()
 	martini.Action(mux.Handle)
 	http.ListenAndServe(":"+strconv.Itoa(port), martini)
+}
+
+func startMuxie() {
+	mux := muxie.NewMux()
+	mux.HandleFunc("/hello", helloHandler)
+	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
 // negroni

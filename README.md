@@ -60,12 +60,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [webgo](https://github.com/bnkamalesh/webgo)
 * [fasthttp/router](https://github.com/fasthttp/router)
 * [atreugo](https://github.com/savsgio/atreugo)
-
-
-The below web frameworks will be removed from this test because of their poor performance:
-* [possum](https://github.com/mikespook/possum)
-* [Bxog](https://github.com/claygod/Bxog)
-* [golf] has `concurrent map writes` error
+* [muxie](https://github.com/kataras/muxie)
 
 
 version of all web frameworks is at: [libs.version](libs.version)
