@@ -1,16 +1,15 @@
 # go-web-framework-benchmark
 This benchmark suite aims to compare the performance of Go web frameworks. It is inspired by [Go HTTP Router Benchmark](https://github.com/julienschmidt/go-http-routing-benchmark) but this benchmark suite is different with that. Go HTTP Router Benchmark suit aims to compare the performance of **routers** but this Benchmark suit aims to compare whole HTTP request processing.
 
-**Last Test Updated:** 2019-01-04
+**Last Test Updated:** 2019-07-27
 
 *test environment*
 
-* CPU:      Intel(R) Core(TM) i5-5200U CPU @ 2.20GHz
-* Memory:   16G
-* Go:       1.11.4
-* OS:       Kubuntu 18.10 / 4.18.0-13-generic
+* CPU:      Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz (2 cpus, 10 physical cores, 40 logical cores)
+* Memory:   32G
+* Go:       go1.12.7 linux/amd64
+* OS:       CentOS Linux release 7.3.1611 (Core)
 
-(doesn't contain test results of neo because one error)
 
 ## Tested web frameworks
 
@@ -133,6 +132,10 @@ If we enable http pipelining, test result as below:
 ![concurrency pipelining(Round 2)](concurrency-pipeline.png)
 
 
+## cpu-bound case Test
+
+![cpu-bound (5000 concurrency)](cpubound_benchmark.png)
+
 ## Usage
 You should install this package first if you want to run this test.
 
@@ -171,6 +174,11 @@ It will  generate test results in processtime.csv and concurrency.csv. You can m
 ……
 web_frameworks=( "default" "ace" "beego" "bone" "denco" "echov1" "echov2standard" "echov2fasthttp" "fasthttp-raw" "fasthttprouter" "fasthttp-routing" "gin" "gocraftWeb" "goji" "gojiv2" "gojsonrest" "gorestful" "gorilla" "httprouter" "httptreemux" "lars" "lion" "macaron" "martini" "pat" "possum" "r2router" "tango" "tiger" "traffic" "violetear" "vulcan")
 ……
+```
+* If you want to test all cases, you can run:
+
+```
+./test-all.sh
 ```
 
 ## Plot

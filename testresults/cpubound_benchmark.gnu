@@ -1,5 +1,5 @@
 reset
-set title "Benchmark of different processing time"
+set title "Benchmark of cpu-bound case"
 set boxwidth 0.9
 set datafile separator ","
 set style data histogram
@@ -19,4 +19,4 @@ set grid
 set term pngcairo font "Times Roman,14"  enhanced size 1024,600 background rgb "gray80"
 set output "../cpubound_benchmark.png"
 
-plot 't_cpubound.csv' using 2:xticlabels(1) title columnheader(2), '' using 3:xticlabels(1) title columnheader(3), '' using 4:xticlabels(1) title columnheader(4), '' using 5:xticlabels(1) title columnheader(5)
+plot 't_cpubound.csv' using 2:xticlabels(1) title columnheader(2), '' using 3:xticlabels(1) title columnheader(3)
