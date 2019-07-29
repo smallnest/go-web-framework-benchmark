@@ -69,7 +69,6 @@ require (
 	github.com/razonyang/fastrouter v0.1.0
 	github.com/rcrowley/go-metrics v0.0.0-20181016184325-3113b8401b8a // indirect
 	github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7
-	github.com/savsgio/atreugo v5.4.0+incompatible // indirect
 	github.com/savsgio/atreugo/v8 v8.1.1
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/sirupsen/logrus v1.4.0 // indirect
