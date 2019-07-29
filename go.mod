@@ -15,7 +15,7 @@ require (
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
 	github.com/dinever/golf v0.3.0
 	github.com/emicklei/go-restful v2.9.3+incompatible
-	github.com/fasthttp/router v0.3.1
+	github.com/fasthttp/router v0.4.1
 	github.com/fatih/color v1.7.0 // indirect
 	github.com/gin-contrib/sse v0.0.0-20190301062529-5545eab6dad3 // indirect
 	github.com/gin-gonic/gin v1.3.0
@@ -31,7 +31,6 @@ require (
 	github.com/golang/gddo v0.0.0-20181116215533-9bd4a3295021 // indirect
 	github.com/golang/protobuf v1.3.1 // indirect
 	github.com/google/go-cmp v0.2.0 // indirect
-	github.com/google/uuid v1.1.1 // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20190328170749-bb2674552d8f // indirect
 	github.com/gorilla/mux v1.7.0
 	github.com/gowww/router v0.0.0-20180327195201-5f9c626ef619
@@ -43,7 +42,6 @@ require (
 	github.com/ivpusic/neo v0.3.0
 	github.com/ivpusic/urlregex v0.0.0-20160128000749-4dd86e784405 // indirect
 	github.com/jonboulle/clockwork v0.1.0 // indirect
-	github.com/json-iterator/go v1.1.6 // indirect
 	github.com/julienschmidt/httprouter v1.2.0
 	github.com/kataras/muxie v1.0.7
 	github.com/klauspost/compress v1.4.1 // indirect
@@ -57,8 +55,6 @@ require (
 	github.com/mattn/go-colorable v0.1.1 // indirect
 	github.com/mattn/go-isatty v0.0.7 // indirect
 	github.com/mikespook/possum v0.0.0-20170224044927-56d7ebb6470b
-	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
-	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/mustafaakin/gongular v0.0.0-20171116074631-b899c3c6e795
 	github.com/naoina/denco v0.0.0-20180930074809-8475105a6b4c
 	github.com/nbari/violetear v0.0.0-20180912134303-b8e1276ca190
@@ -73,8 +69,7 @@ require (
 	github.com/razonyang/fastrouter v0.1.0
 	github.com/rcrowley/go-metrics v0.0.0-20181016184325-3113b8401b8a // indirect
 	github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7
-	github.com/savsgio/atreugo v5.4.0+incompatible
-	github.com/savsgio/go-logger v1.0.0 // indirect
+	github.com/savsgio/atreugo/v8 v8.1.1
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/sirupsen/logrus v1.4.0 // indirect
 	github.com/smartystreets/assertions v0.0.0-20190215210624-980c5ac6f3ac // indirect
@@ -84,7 +79,7 @@ require (
 	github.com/tockins/fresh v0.0.0-20181012144221-d8b891ad12e4
 	github.com/ugorji/go/codec v0.0.0-20190320090025-2dc34c0b8780 // indirect
 	github.com/urfave/negroni v1.0.0
-	github.com/valyala/fasthttp v1.2.0
+	github.com/valyala/fasthttp v1.4.0
 	github.com/valyala/fasttemplate v1.0.1 // indirect
 	github.com/vanng822/r2router v0.0.0-20150523112421-1023140a4f30
 	github.com/vulcand/predicate v1.1.0 // indirect
