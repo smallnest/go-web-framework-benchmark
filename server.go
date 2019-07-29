@@ -21,7 +21,7 @@ import (
 	fasthttpSlashRouter "github.com/fasthttp/router"
 	"github.com/gin-gonic/gin"
 	"github.com/kataras/muxie"
-	"github.com/savsgio/atreugo"
+	"github.com/savsgio/atreugo/v8"
 
 	// "github.com/go-siris/siris"
 	// siriscontext "github.com/go-siris/siris/context"
