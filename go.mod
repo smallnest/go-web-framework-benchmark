@@ -16,7 +16,7 @@ require (
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
 	github.com/dinever/golf v0.3.0
 	github.com/emicklei/go-restful v2.9.6+incompatible
-	github.com/fasthttp/router v0.4.1
+	github.com/fasthttp/router v0.5.0
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/gin-gonic/gin v1.4.0
 	github.com/globalsign/mgo v0.0.0-20190517090918-73267e130ca1 // indirect
@@ -44,7 +44,6 @@ require (
 	github.com/ivpusic/neo v0.3.0
 	github.com/ivpusic/urlregex v0.0.0-20160128000749-4dd86e784405 // indirect
 	github.com/jonboulle/clockwork v0.1.0 // indirect
-	github.com/json-iterator/go v1.1.7 // indirect
 	github.com/julienschmidt/httprouter v1.2.0
 	github.com/kataras/muxie v1.0.7
 	github.com/klauspost/compress v1.7.5 // indirect
@@ -69,12 +68,12 @@ require (
 	github.com/razonyang/fastrouter v0.1.0
 	github.com/rcrowley/go-metrics v0.0.0-20190706150252-9beb055b7962 // indirect
 	github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7
-	github.com/savsgio/atreugo/v8 v8.1.1
+	github.com/savsgio/atreugo/v8 v8.2.1
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/sirupsen/logrus v1.4.2 // indirect
 	github.com/teambition/gear v1.16.2
 	github.com/tockins/fresh v0.0.0-20181012144221-d8b891ad12e4
-	github.com/ugorji/go/codec v1.1.7 // indirect
+	github.com/ugorji/go v1.1.7 // indirect
 	github.com/urfave/negroni v1.0.0
 	github.com/valyala/fasthttp v1.4.0
 	github.com/vanng822/r2router v0.0.0-20150523112421-1023140a4f30
