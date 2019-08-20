@@ -59,6 +59,8 @@ github.com/emicklei/go-restful v2.9.6+incompatible/go.mod h1:otzb+WCGbkyDHkqmQmT
 github.com/fasthttp-contrib/websocket v0.0.0-20160511215533-1f3b11f56072/go.mod h1:duJ4Jxv5lDcvg4QuQr0oowTf7dz4/CR8NtyCooz9HL8=
 github.com/fasthttp/router v0.4.1 h1:FtChotx7KqrjOvrdQO8St+A8Mf+0ijjlDp0qsacSrro=
 github.com/fasthttp/router v0.4.1/go.mod h1:lEEZAHnTxjTcHUy3HKrC0ZxVteWfkEMNfy5J49xG8/k=
+github.com/fasthttp/router v0.5.0 h1:7JZSyaQZkVVLmY35EgXV8zKdqqs280tDye5zG9FFiYc=
+github.com/fasthttp/router v0.5.0/go.mod h1:lEEZAHnTxjTcHUy3HKrC0ZxVteWfkEMNfy5J49xG8/k=
 github.com/fatih/color v1.7.0 h1:DkWD4oS2D8LGGgTQ6IvwJJXSL5Vp2ffcQg58nFV38Ys=
 github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5KwzbycvMj4=
 github.com/fsnotify/fsnotify v1.4.7 h1:IXs+QLmnXW2CcXuY+8Mzv/fWEsPGWxqefPtCP5CnV9I=
@@ -268,6 +270,8 @@ github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7/go.mod h1:i
 github.com/rogpeppe/fastuuid v1.1.0/go.mod h1:jVj6XXZzXRy/MSR5jhDC/2q6DgLz+nrA6LYCDYWNEvQ=
 github.com/savsgio/atreugo/v8 v8.1.1 h1:dT0u99EhnZaaDEzkmP1Efposn9NeBEB6flwdXw3piSA=
 github.com/savsgio/atreugo/v8 v8.1.1/go.mod h1:fdVj52U2KiY3twnLac/FAcEbjQMWhtj/3hYU4ZGcM14=
+github.com/savsgio/atreugo/v8 v8.2.1 h1:V593hIUzPSQ0j8tki7ub5UbXwNg1TOmL4yEHcOuMBEo=
+github.com/savsgio/atreugo/v8 v8.2.1/go.mod h1:ZPcbJP0KNEmDI2o7xb5x5mzDfoEtWx1E9WPSRLQLn1M=
 github.com/savsgio/go-logger v1.0.0 h1:jiaRvohRr8RwtcK/WDcA/Yp4eaPaarAko3JNPzt1xoQ=
 github.com/savsgio/go-logger v1.0.0/go.mod h1:/ZzTTmB3JJqjZQcLlxTGbwy3fIsLUoYyldsSEL5rU2g=
 github.com/savsgio/gotils v0.0.0-20190714152828-365999d0a274 h1:F52t1X2ziOrMcQMVHo8ZxwOrDTMAq6MrlKtL1Atu2wU=

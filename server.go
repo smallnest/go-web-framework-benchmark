@@ -264,6 +264,7 @@ func atreugoHandler(ctx *atreugo.RequestCtx) error {
 	}
 	return ctx.TextResponseBytes(message)
 }
+
 func startAtreugo() {
 	mux := atreugo.New(&atreugo.Config{Host: "127.0.0.1", Port: port})
 	mux.Path("GET", "/hello", atreugoHandler)
