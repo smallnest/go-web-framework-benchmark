@@ -20,8 +20,9 @@ import (
 	restful "github.com/emicklei/go-restful"
 	fasthttpSlashRouter "github.com/fasthttp/router"
 	"github.com/gin-gonic/gin"
+	"github.com/gramework/gramework"
 	"github.com/kataras/muxie"
-	"github.com/savsgio/atreugo/v8"
+	"github.com/savsgio/atreugo/v9"
 
 	// "github.com/go-siris/siris"
 	// siriscontext "github.com/go-siris/siris/context"
@@ -36,11 +37,11 @@ import (
 	"github.com/go-playground/lars"
 	"github.com/go-playground/pure"
 	"github.com/go-zoo/bone"
-	tiny "github.com/go101/tinyrouter"
 	"github.com/gocraft/web"
 	"github.com/gorilla/mux"
 	gowwwrouter "github.com/gowww/router"
-	"github.com/gramework/gramework"
+	tiny "go101.org/tinyrouter"
+
 	"github.com/ivpusic/neo"
 	"github.com/julienschmidt/httprouter"
 	echov3 "github.com/labstack/echo"
@@ -266,7 +267,7 @@ func atreugoHandler(ctx *atreugo.RequestCtx) error {
 }
 
 func startAtreugo() {
-	mux := atreugo.New(&atreugo.Config{Host: "127.0.0.1", Port: port})
+	mux := atreugo.New(&atreugo.Config{Addr: "127.0.0.1:" + strconv.Itoa(port)})
 	mux.Path("GET", "/hello", atreugoHandler)
 	mux.ListenAndServe()
 }
