@@ -9,6 +9,7 @@ require (
 	github.com/bmizerany/pat v0.0.0-20170815010413-6226ea591a40
 	github.com/bnkamalesh/webgo v2.5.1+incompatible
 	github.com/buaazp/fasthttprouter v0.1.1
+	github.com/celrenheit/htest v0.0.0-20170621160705-e34d50431e7f // indirect
 	github.com/claygod/Bxog v0.0.0-20181227191116-69c8cb949daf
 	github.com/codegangsta/inject v0.0.0-20150114235600-33e0aa1cb7c0 // indirect
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
@@ -24,6 +25,7 @@ require (
 	github.com/go-playground/pure v4.2.0+incompatible
 	github.com/go-zoo/bone v1.3.0
 	github.com/gocraft/web v0.0.0-20190207150652-9707327fb69b
+	github.com/golang/gddo v0.0.0-20190904175337-72a348e765d2 // indirect
 	github.com/gorilla/mux v1.7.3
 	github.com/gowww/router v0.0.0-20180327195201-5f9c626ef619
 	github.com/gramework/gramework v1.6.2
@@ -32,6 +34,7 @@ require (
 	github.com/gravitational/trace v0.0.0-20190726142706-a535a178675f // indirect
 	github.com/ivpusic/go-clicolor v0.0.0-20150828210804-23f0b77f328a // indirect
 	github.com/ivpusic/golog v0.0.0-20170608213328-28640bee649f // indirect
+	github.com/ivpusic/httpcheck v0.0.0-20170215120547-c49b174389ac // indirect
 	github.com/ivpusic/neo v0.3.0
 	github.com/ivpusic/urlregex v0.0.0-20160128000749-4dd86e784405 // indirect
 	github.com/jonboulle/clockwork v0.1.0 // indirect
@@ -47,6 +50,7 @@ require (
 	github.com/naoina/denco v0.0.0-20180930074809-8475105a6b4c
 	github.com/nbari/violetear v0.0.0-20190331194914-971f37295201
 	github.com/pilu/config v0.0.0-20131214182432-3eb99e6c0b9a // indirect
+	github.com/pilu/miniassert v0.0.0-20140522125902-bee63581261a // indirect
 	github.com/pilu/traffic v0.5.3
 	github.com/pressly/chi v4.0.2+incompatible
 	github.com/qiangxue/fasthttp-routing v0.0.0-20160225050629-6ccdc2a18d87
@@ -60,6 +64,7 @@ require (
 	github.com/urfave/negroni v1.0.0
 	github.com/valyala/fasthttp v1.5.0
 	github.com/vanng822/r2router v0.0.0-20150523112421-1023140a4f30
+	github.com/vardius/gorouter/v4 v4.2.0
 	github.com/vulcand/predicate v1.1.0 // indirect
 	go101.org/tinyrouter v1.0.1
 	goji.io v2.0.2+incompatible

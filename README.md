@@ -60,6 +60,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [fasthttp/router](https://github.com/fasthttp/router)
 * [atreugo](https://github.com/savsgio/atreugo)
 * [muxie](https://github.com/kataras/muxie)
+* [gorouter](https://github.com/vardius/gorouter)
 
 
 version of all web frameworks is at: [libs.version](libs.version)

@@ -64,6 +64,8 @@ import (
 	"github.com/tockins/fresh"
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
+	"github.com/vardius/gorouter/v4"
+	"github.com/vardius/gorouter/v4/context"
 	goji "goji.io"
 	gojipat "goji.io/pat"
 	gcontext "golang.org/x/net/context"
@@ -166,6 +168,10 @@ func main() {
 		startGoRestful()
 	case "gorilla":
 		startGorilla()
+	case "gorouter":
+		startGorouter()
+	case "gorouterfasthttp":
+		startGorouterFastHTTP()
 	case "go-ozzo":
 		startGoozzo()
 	case "gowww":
@@ -694,6 +700,19 @@ func startGorilla() {
 	mux := mux.NewRouter()
 	mux.HandleFunc("/hello", helloHandler).Methods("GET")
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+// gorouter
+func startGorouter() {
+	router := gorouter.New()
+	router.GET("/hello", http.HandlerFunc(helloHandler))
+	http.ListenAndServe(":"+strconv.Itoa(port), router)
+}
+
+func startGorouterFastHTTP() {
+	router := gorouter.NewFastHTTPRouter()
+	router.GET("/hello", fastHTTPHandler)
+	fasthttp.ListenAndServe(":"+strconv.Itoa(port), router.HandleFastHTTP)
 }
 
 // go-ozzo
