@@ -9,12 +9,17 @@ RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /et
     bash git bash@main libressl2.7-libcrypto@main libressl2.7-libssl@main wrk@community gnuplot@community \
     ttf-dejavu ttf-droid ttf-freefont ttf-liberation ttf-ubuntu-font-family
 
-RUN go get github.com/smallnest/go-web-framework-benchmark \
+ENV GOPROXY=https://goproxy.cn,direct
+ENV GO111MODULE=on
+
+RUN mkdir -p $GOPATH/src/github.com/smallnest \
+    && cd $GOPATH/src/github.com/smallnest \
+    && git clone https://github.com/smallnest/go-web-framework-benchmark.git \
     && cd $GOPATH/src/github.com/smallnest/go-web-framework-benchmark \
-    && go build -o  gowebbenchmark server.go
+    && GO111MODULE=on go mod download \
+    && go build -o  gowebbenchmark .
 
 VOLUME ["/data"]
-
 
 WORKDIR $GOPATH/src/github.com/smallnest/go-web-framework-benchmark
 
