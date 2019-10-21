@@ -65,7 +65,6 @@ import (
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
 	"github.com/vardius/gorouter/v4"
-	"github.com/vardius/gorouter/v4/context"
 	goji "goji.io"
 	gojipat "goji.io/pat"
 	gcontext "golang.org/x/net/context"
