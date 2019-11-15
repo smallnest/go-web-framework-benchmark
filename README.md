@@ -119,7 +119,7 @@ If we enable http pipelining, test result as below:
 ![benchmark pipelining (Round 2)](benchmark-pipeline.png)
 
 ## Concurrency Test
-In 30 ms processing time, the tets result for 100, 1000, 5000 clients is:
+In 30 ms processing time, the test result for 100, 1000, 5000 clients is:
 
 ![concurrency (Round 3)](concurrency.png)
 
