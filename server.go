@@ -8,7 +8,8 @@ import (
 	"runtime"
 	"strconv"
 	"time"
-
+	
+	"github.com/fenny/express"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
@@ -121,6 +122,8 @@ func main() {
 		startDefaultMux()
 	// case "ace":
 	// 	startAce()
+	case "express":
+		startExpress()
 	case "atreugo":
 		startAtreugo()
 	case "baa":
@@ -255,6 +258,16 @@ func startDefaultMux() {
 // 	mux.GET("/hello", aceHandler)
 // 	mux.Run(":" + strconv.Itoa(port))
 // }
+
+// express (alpha)
+func expressHandler(ctx *express.Context) {
+	ctx.Send(message)
+}
+func startExpress() {
+	app := express.Router()
+	app.Get("/hello", expressHandler)
+	app.Listen(port)
+}
 
 // atreugo
 func atreugoHandler(ctx *atreugo.RequestCtx) error {
