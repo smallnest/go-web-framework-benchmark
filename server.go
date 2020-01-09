@@ -19,6 +19,7 @@ import (
 	"github.com/dinever/golf"
 	restful "github.com/emicklei/go-restful"
 	fasthttpSlashRouter "github.com/fasthttp/router"
+	"github.com/fenny/fiber"
 	"github.com/gin-gonic/gin"
 	"github.com/gramework/gramework"
 	"github.com/kataras/muxie"
@@ -149,6 +150,8 @@ func main() {
 		startFastRouter()
 	case "fresh":
 		startFresh()
+	case "fiber":
+		startFiber()
 	case "gear":
 		startGear()
 	case "gin":
@@ -517,6 +520,27 @@ func startFresh() {
 	f.Config().Port = port
 	f.GET("/hello", freshHandler)
 	f.Start()
+}
+
+// fiber
+func fiberHandler(ctx *fiber.Ctx) {
+	if cpuBound {
+		pow(target)
+	} else {
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
+	}
+	ctx.Send(message)
+}
+
+func startFiber() {
+	app := fiber.New()
+	app.Get("/hello", fiberHandler)
+	app.Listen(port)
 }
 
 //gear
