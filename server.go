@@ -148,10 +148,10 @@ func main() {
 		startFastHTTPRouting()
 	case "fastrouter":
 		startFastRouter()
-	case "fresh":
-		startFresh()
 	case "fiber":
 		startFiber()
+	case "fresh":
+		startFresh()
 	case "gear":
 		startGear()
 	case "gin":
