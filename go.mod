@@ -17,6 +17,7 @@ require (
 	github.com/emicklei/go-restful v2.10.0+incompatible
 	github.com/fasthttp/router v0.5.2
 	github.com/fatih/color v1.7.0 // indirect
+	github.com/fenny/fiber v0.3.0
 	github.com/gin-gonic/gin v1.4.0
 	github.com/go-martini/martini v0.0.0-20170121215854-22fa46961aab
 	github.com/go-ozzo/ozzo-routing v2.1.4+incompatible
@@ -52,6 +53,7 @@ require (
 	github.com/pilu/config v0.0.0-20131214182432-3eb99e6c0b9a // indirect
 	github.com/pilu/miniassert v0.0.0-20140522125902-bee63581261a // indirect
 	github.com/pilu/traffic v0.5.3
+	github.com/pquerna/ffjson v0.0.0-20190930134022-aa0246cd15f7 // indirect
 	github.com/pressly/chi v4.0.2+incompatible
 	github.com/qiangxue/fasthttp-routing v0.0.0-20160225050629-6ccdc2a18d87
 	github.com/razonyang/fastrouter v0.1.0
