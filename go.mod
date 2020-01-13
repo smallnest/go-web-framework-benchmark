@@ -17,7 +17,7 @@ require (
 	github.com/emicklei/go-restful v2.10.0+incompatible
 	github.com/fasthttp/router v0.5.2
 	github.com/fatih/color v1.7.0 // indirect
-	github.com/fenny/fiber v0.3.0
+	github.com/fenny/fiber v0.6.0
 	github.com/gin-gonic/gin v1.4.0
 	github.com/go-martini/martini v0.0.0-20170121215854-22fa46961aab
 	github.com/go-ozzo/ozzo-routing v2.1.4+incompatible
@@ -64,7 +64,7 @@ require (
 	github.com/teambition/gear v1.17.0
 	github.com/tockins/fresh v0.0.0-20181012144221-d8b891ad12e4
 	github.com/urfave/negroni v1.0.0
-	github.com/valyala/fasthttp v1.6.0
+	github.com/valyala/fasthttp v1.8.0
 	github.com/vanng822/r2router v0.0.0-20150523112421-1023140a4f30
 	github.com/vardius/gorouter/v4 v4.2.0
 	github.com/vulcand/predicate v1.1.0 // indirect
