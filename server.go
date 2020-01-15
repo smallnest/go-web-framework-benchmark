@@ -534,7 +534,7 @@ func fiberHandler(ctx *fiber.Ctx) {
 			runtime.Gosched()
 		}
 	}
-	ctx.Send(message)
+	ctx.SendString(messageStr)
 }
 
 func startFiber() {
