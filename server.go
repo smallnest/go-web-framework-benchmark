@@ -23,7 +23,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gramework/gramework"
 	"github.com/kataras/muxie"
-	"github.com/savsgio/atreugo/v9"
+	"github.com/savsgio/atreugo/v10"
 
 	// "github.com/go-siris/siris"
 	// siriscontext "github.com/go-siris/siris/context"

@@ -15,7 +15,7 @@ require (
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
 	github.com/dinever/golf v0.3.0
 	github.com/emicklei/go-restful v2.10.0+incompatible
-	github.com/fasthttp/router v0.5.2
+	github.com/fasthttp/router v0.5.5
 	github.com/fatih/color v1.7.0 // indirect
 	github.com/fenny/fiber v0.6.0
 	github.com/gin-gonic/gin v1.4.0
@@ -59,7 +59,7 @@ require (
 	github.com/razonyang/fastrouter v0.1.0
 	github.com/rcrowley/go-metrics v0.0.0-20190826022208-cac0b30c2563 // indirect
 	github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7
-	github.com/savsgio/atreugo/v9 v9.0.1
+	github.com/savsgio/atreugo/v10 v10.1.0
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/teambition/gear v1.17.0
 	github.com/tockins/fresh v0.0.0-20181012144221-d8b891ad12e4
