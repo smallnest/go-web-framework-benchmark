@@ -271,12 +271,12 @@ func atreugoHandler(ctx *atreugo.RequestCtx) error {
 			runtime.Gosched()
 		}
 	}
-	return ctx.TextResponseBytes(message)
+	return ctx.TextResponse(messageStr)
 }
 
 func startAtreugo() {
 	mux := atreugo.New(&atreugo.Config{Addr: "127.0.0.1:" + strconv.Itoa(port)})
-	mux.Path("GET", "/hello", atreugoHandler)
+	mux.GET("/hello", atreugoHandler)
 	mux.ListenAndServe()
 }
 
