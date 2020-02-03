@@ -17,7 +17,6 @@ require (
 	github.com/emicklei/go-restful v2.10.0+incompatible
 	github.com/fasthttp/router v0.6.0
 	github.com/fatih/color v1.7.0 // indirect
-	github.com/fenny/fiber v0.6.0
 	github.com/gin-gonic/gin v1.4.0
 	github.com/go-martini/martini v0.0.0-20170121215854-22fa46961aab
 	github.com/go-ozzo/ozzo-routing v2.1.4+incompatible
@@ -26,6 +25,7 @@ require (
 	github.com/go-playground/pure v4.2.0+incompatible
 	github.com/go-zoo/bone v1.3.0
 	github.com/gocraft/web v0.0.0-20190207150652-9707327fb69b
+	github.com/gofiber/fiber v1.3.1
 	github.com/golang/gddo v0.0.0-20190904175337-72a348e765d2 // indirect
 	github.com/gorilla/mux v1.7.3
 	github.com/gowww/router v0.0.0-20180327195201-5f9c626ef619

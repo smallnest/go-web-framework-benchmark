@@ -19,8 +19,8 @@ import (
 	"github.com/dinever/golf"
 	restful "github.com/emicklei/go-restful"
 	fasthttpSlashRouter "github.com/fasthttp/router"
-	"github.com/fenny/fiber"
 	"github.com/gin-gonic/gin"
+	"github.com/gofiber/fiber"
 	"github.com/gramework/gramework"
 	"github.com/kataras/muxie"
 	"github.com/savsgio/atreugo/v10"
@@ -539,6 +539,7 @@ func fiberHandler(ctx *fiber.Ctx) {
 
 func startFiber() {
 	app := fiber.New()
+	app.Prefork = true
 	app.Get("/hello", fiberHandler)
 	app.Listen(port)
 }
