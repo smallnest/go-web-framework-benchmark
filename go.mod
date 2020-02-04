@@ -25,7 +25,7 @@ require (
 	github.com/go-playground/pure v4.2.0+incompatible
 	github.com/go-zoo/bone v1.3.0
 	github.com/gocraft/web v0.0.0-20190207150652-9707327fb69b
-	github.com/gofiber/fiber v1.3.1
+	github.com/gofiber/fiber v1.3.2
 	github.com/golang/gddo v0.0.0-20190904175337-72a348e765d2 // indirect
 	github.com/gorilla/mux v1.7.3
 	github.com/gowww/router v0.0.0-20180327195201-5f9c626ef619
