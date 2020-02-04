@@ -39,7 +39,6 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [tango](https://github.com/lunny/tango)
 * [violetear](https://github.com/nbari/violetear)
 * [vulcan](https://github.com/mailgun/route)
-* [~~possum~~](https://github.com/mikespook/possum)
 * [gongular](https://github.com/mustafaakin/gongular)
 * [denco](https://github.com/naoina/denco)
 * [traffic](https://github.com/pilu/traffic)
@@ -174,7 +173,7 @@ It will  generate test results in processtime.csv and concurrency.csv. You can m
 * If you want to test some of web frameworks, you can modify the test script and only keep your selected web frameworks:
 ```
 ……
-web_frameworks=( "default" "ace" "beego" "bone" "denco" "echov1" "echov2standard" "echov2fasthttp" "fasthttp-raw" "fasthttprouter" "fasthttp-routing" "gin" "gocraftWeb" "goji" "gojiv2" "gojsonrest" "gorestful" "gorilla" "httprouter" "httptreemux" "lars" "lion" "macaron" "martini" "pat" "possum" "r2router" "tango" "tiger" "traffic" "violetear" "vulcan")
+web_frameworks=( "default" "ace" "beego" "bone" "denco" "echov1" "echov2standard" "echov2fasthttp" "fasthttp-raw" "fasthttprouter" "fasthttp-routing" "gin" "gocraftWeb" "goji" "gojiv2" "gojsonrest" "gorestful" "gorilla" "httprouter" "httptreemux" "lars" "lion" "macaron" "martini" "pat" "r2router" "tango" "tiger" "traffic" "violetear" "vulcan")
 ……
 ```
 * If you want to test all cases, you can run:

@@ -19,7 +19,7 @@ import (
 	"github.com/dinever/golf"
 	restful "github.com/emicklei/go-restful"
 	fasthttpSlashRouter "github.com/fasthttp/router"
-	"github.com/fenny/fiber"
+	"github.com/gofiber/fiber"
 	"github.com/gin-gonic/gin"
 	"github.com/gramework/gramework"
 	"github.com/kataras/muxie"
@@ -32,7 +32,7 @@ import (
 	macaron "gopkg.in/macaron.v1"
 
 	// "github.com/go-gas/gas" // NOTE(@kirilldanshin): gas is 404 now, comment out
-	bxog "github.com/claygod/Bxog"
+	bxog "github.com/claygod/Bxog" 
 	"github.com/go-martini/martini"
 	ozzo "github.com/go-ozzo/ozzo-routing"
 	"github.com/go-playground/lars"
@@ -45,13 +45,10 @@ import (
 
 	"github.com/ivpusic/neo"
 	"github.com/julienschmidt/httprouter"
-	echov3 "github.com/labstack/echo"
+	echo "github.com/labstack/echo/v4"
 	llog "github.com/lunny/log"
 	"github.com/lunny/tango"
 	vulcan "github.com/mailgun/route"
-	"github.com/mikespook/possum"
-	possumrouter "github.com/mikespook/possum/router"
-	possumview "github.com/mikespook/possum/view"
 	"github.com/mustafaakin/gongular"
 	"github.com/naoina/denco"
 	"github.com/pilu/traffic"
@@ -136,8 +133,8 @@ func main() {
 		startChi()
 	case "denco":
 		startDenco()
-	case "echov3":
-		startEchoV3()
+	case "echo":
+		startEcho()
 	case "fasthttp-raw":
 		startFasthttp()
 	case "fasthttprouter":
@@ -200,8 +197,6 @@ func main() {
 		startNeo()
 	case "pat":
 		startPat()
-	case "possum":
-		startPossum()
 	case "pure":
 		startPure()
 	case "r2router":
@@ -381,8 +376,8 @@ func startDenco() {
 	http.ListenAndServe(":"+strconv.Itoa(port), handler)
 }
 
-// echov3-standard
-func echov3Handler(c echov3.Context) error {
+// echo
+func echoHandler(c echo.Context) error {
 	if cpuBound {
 		pow(target)
 	} else {
@@ -396,9 +391,9 @@ func echov3Handler(c echov3.Context) error {
 	c.Response().Write(message)
 	return nil
 }
-func startEchoV3() {
-	e := echov3.New()
-	e.GET("/hello", echov3Handler)
+func startEcho() {
+	e := echo.New()
+	e.GET("/hello", echoHandler)
 
 	e.Start(":" + strconv.Itoa(port))
 }
@@ -958,27 +953,6 @@ func startNeo() {
 func startPat() {
 	mux := pat.New()
 	mux.Get("/hello", http.HandlerFunc(helloHandler))
-	http.ListenAndServe(":"+strconv.Itoa(port), mux)
-}
-
-// Possum
-func possumHandler(c *possum.Context) error {
-	if cpuBound {
-		pow(target)
-	} else {
-
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		} else {
-			runtime.Gosched()
-		}
-	}
-	c.Response.Write(message)
-	return nil
-}
-func startPossum() {
-	mux := possum.NewServerMux()
-	mux.HandleFunc(possumrouter.Simple("/hello"), possumHandler, possumview.Simple("text/html", "utf-8"))
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
