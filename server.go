@@ -32,7 +32,7 @@ import (
 	macaron "gopkg.in/macaron.v1"
 
 	// "github.com/go-gas/gas" // NOTE(@kirilldanshin): gas is 404 now, comment out
-	bxog "github.com/claygod/Bxog" 
+	bxog "github.com/claygod/Bxog"
 	"github.com/go-martini/martini"
 	ozzo "github.com/go-ozzo/ozzo-routing"
 	"github.com/go-playground/lars"

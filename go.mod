@@ -3,19 +3,23 @@ module github.com/smallnest/go-web-framework-benchmark
 go 1.13
 
 require (
+	github.com/Joker/jade v1.0.0 // indirect
 	github.com/VictoriaMetrics/fastcache v1.5.7 // indirect
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
 	github.com/apex/log v1.1.2 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20200108200545-475eaeb16496 // indirect
 	github.com/astaxie/beego v1.12.0
+	github.com/aymerick/raymond v2.0.2+incompatible // indirect
 	github.com/bmizerany/pat v0.0.0-20170815010413-6226ea591a40
 	github.com/bnkamalesh/webgo v2.5.1+incompatible
 	github.com/buaazp/fasthttprouter v0.1.1
+	github.com/cbroglie/mustache v1.0.1 // indirect
 	github.com/celrenheit/htest v0.0.0-20170621160705-e34d50431e7f // indirect
 	github.com/claygod/Bxog v0.0.0-20200119144704-8af8b8bf2232
 	github.com/codegangsta/inject v0.0.0-20150114235600-33e0aa1cb7c0 // indirect
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
 	github.com/dinever/golf v0.3.0
+	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
 	github.com/emicklei/go-restful v2.11.1+incompatible
 	github.com/fasthttp/router v0.6.0
 	github.com/fatih/color v1.9.0 // indirect
@@ -29,7 +33,7 @@ require (
 	github.com/go-zoo/bone v1.3.0
 	github.com/gocarina/gocsv v0.0.0-20191214001331-e6697589f2e0 // indirect
 	github.com/gocraft/web v0.0.0-20190207150652-9707327fb69b
-	github.com/gofiber/fiber v1.3.1
+	github.com/gofiber/fiber v1.0.1
 	github.com/golang/gddo v0.0.0-20190904175337-72a348e765d2 // indirect
 	github.com/golang/protobuf v1.3.3 // indirect
 	github.com/gorilla/mux v1.7.3
@@ -75,7 +79,7 @@ require (
 	github.com/tockins/fresh v0.0.0-20181012144221-d8b891ad12e4
 	github.com/unknwon/com v1.0.1 // indirect
 	github.com/urfave/negroni v1.0.0
-	github.com/valyala/fasthttp v1.8.0
+	github.com/valyala/fasthttp v1.9.0
 	github.com/vanng822/r2router v0.0.0-20150523112421-1023140a4f30
 	github.com/vardius/gorouter/v4 v4.4.2
 	github.com/vulcand/predicate v1.1.0 // indirect
