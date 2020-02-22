@@ -19,7 +19,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [beego](https://github.com/astaxie/beego)
 * [pat](https://github.com/bmizerany/pat)
 * [fasthttprouter](https://github.com/buaazp/fasthttprouter)
-* [fiber](https://github.com/fenny/fiber)
+* [fiber](https://fiber.wiki)
 * [lion](https://github.com/celrenheit/lion)
 * [golf](https://github.com/dinever/golf)
 * [chi](https://github.com/pressly/chi)
