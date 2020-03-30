@@ -19,11 +19,11 @@ import (
 	"github.com/dinever/golf"
 	restful "github.com/emicklei/go-restful"
 	fasthttpSlashRouter "github.com/fasthttp/router"
-	"github.com/gofiber/fiber"
 	"github.com/gin-gonic/gin"
+	"github.com/gofiber/fiber"
 	"github.com/gramework/gramework"
 	"github.com/kataras/muxie"
-	"github.com/savsgio/atreugo/v10"
+	"github.com/savsgio/atreugo/v11"
 
 	// "github.com/go-siris/siris"
 	// siriscontext "github.com/go-siris/siris/context"
@@ -270,7 +270,7 @@ func atreugoHandler(ctx *atreugo.RequestCtx) error {
 }
 
 func startAtreugo() {
-	mux := atreugo.New(&atreugo.Config{Addr: "127.0.0.1:" + strconv.Itoa(port)})
+	mux := atreugo.New(atreugo.Config{Addr: "127.0.0.1:" + strconv.Itoa(port)})
 	mux.GET("/hello", atreugoHandler)
 	mux.ListenAndServe()
 }

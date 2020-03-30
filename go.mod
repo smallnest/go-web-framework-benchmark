@@ -8,7 +8,7 @@ require (
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
 	github.com/apex/log v1.1.2 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20200108200545-475eaeb16496 // indirect
-	github.com/astaxie/beego v1.12.0
+	github.com/astaxie/beego v1.12.1
 	github.com/aymerick/raymond v2.0.2+incompatible // indirect
 	github.com/bmizerany/pat v0.0.0-20170815010413-6226ea591a40
 	github.com/bnkamalesh/webgo v2.5.1+incompatible
@@ -17,13 +17,16 @@ require (
 	github.com/celrenheit/htest v0.0.0-20170621160705-e34d50431e7f // indirect
 	github.com/claygod/Bxog v0.0.0-20200119144704-8af8b8bf2232
 	github.com/codegangsta/inject v0.0.0-20150114235600-33e0aa1cb7c0 // indirect
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
 	github.com/dinever/golf v0.3.0
 	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
-	github.com/emicklei/go-restful v2.11.1+incompatible
-	github.com/fasthttp/router v0.6.0
+	github.com/emicklei/go-restful v2.12.0+incompatible
+	github.com/fasthttp/router v1.0.0
+	github.com/fasthttp/websocket v1.4.2 // indirect
 	github.com/fatih/color v1.9.0 // indirect
-	github.com/gin-gonic/gin v1.5.0
+	github.com/gin-gonic/gin v1.6.2
+	github.com/go-macaron/inject v0.0.0-20200308113650-138e5925c53b // indirect
 	github.com/go-martini/martini v0.0.0-20170121215854-22fa46961aab
 	github.com/go-ozzo/ozzo-routing v2.1.4+incompatible
 	github.com/go-playground/form v3.1.4+incompatible // indirect
@@ -31,13 +34,12 @@ require (
 	github.com/go-playground/pure v4.2.0+incompatible
 	github.com/go-playground/universal-translator v0.17.0 // indirect
 	github.com/go-zoo/bone v1.3.0
-	github.com/gocarina/gocsv v0.0.0-20191214001331-e6697589f2e0 // indirect
+	github.com/gocarina/gocsv v0.0.0-20200330101823-46266ca37bd3 // indirect
 	github.com/gocraft/web v0.0.0-20190207150652-9707327fb69b
-	github.com/gofiber/fiber v1.0.1
+	github.com/gofiber/fiber v1.8.43
 	github.com/golang/gddo v0.0.0-20190904175337-72a348e765d2 // indirect
-	github.com/golang/protobuf v1.3.3 // indirect
-	github.com/gorilla/mux v1.7.3
-	github.com/gorilla/websocket v1.4.1 // indirect
+	github.com/golang/protobuf v1.3.5 // indirect
+	github.com/gorilla/mux v1.7.4
 	github.com/gowww/router v0.0.0-20180327195201-5f9c626ef619
 	github.com/gramework/gramework v1.7.0
 	github.com/gramework/utils v0.0.0-20190202181041-3c30a162ea26 // indirect
@@ -50,9 +52,9 @@ require (
 	github.com/jonboulle/clockwork v0.1.0 // indirect
 	github.com/julienschmidt/httprouter v1.3.0
 	github.com/kataras/muxie v1.0.8
-	github.com/klauspost/compress v1.9.8 // indirect
+	github.com/klauspost/compress v1.10.3 // indirect
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
-	github.com/labstack/echo/v4 v4.1.14
+	github.com/labstack/echo/v4 v4.1.15
 	github.com/leodido/go-urn v1.2.0 // indirect
 	github.com/lunny/log v0.0.0-20160921050905-7887c61bf0de
 	github.com/lunny/tango v0.5.6
@@ -68,30 +70,33 @@ require (
 	github.com/pilu/traffic v0.5.3
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pquerna/ffjson v0.0.0-20190930134022-aa0246cd15f7 // indirect
-	github.com/pressly/chi v4.0.3+incompatible
+	github.com/pressly/chi v4.0.4+incompatible
 	github.com/qiangxue/fasthttp-routing v0.0.0-20160225050629-6ccdc2a18d87
 	github.com/razonyang/fastrouter v0.1.0
-	github.com/rcrowley/go-metrics v0.0.0-20190826022208-cac0b30c2563 // indirect
+	github.com/rcrowley/go-metrics v0.0.0-20200313005456-10cdbea86bc0 // indirect
 	github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7
-	github.com/savsgio/atreugo/v10 v10.3.0
+	github.com/savsgio/atreugo/v10 v10.4.2
+	github.com/savsgio/atreugo/v11 v11.0.0
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
-	github.com/teambition/gear v1.17.1
+	github.com/sirupsen/logrus v1.5.0 // indirect
+	github.com/teambition/gear v1.21.1
 	github.com/tockins/fresh v0.0.0-20181012144221-d8b891ad12e4
 	github.com/unknwon/com v1.0.1 // indirect
 	github.com/urfave/negroni v1.0.0
 	github.com/valyala/fasthttp v1.9.0
 	github.com/vanng822/r2router v0.0.0-20150523112421-1023140a4f30
-	github.com/vardius/gorouter/v4 v4.4.2
+	github.com/vardius/gorouter/v4 v4.4.3
 	github.com/vulcand/predicate v1.1.0 // indirect
 	go101.org/tinyrouter v1.0.1
 	goji.io v2.0.2+incompatible
-	golang.org/x/crypto v0.0.0-20200128174031-69ecbb4d6d5d // indirect
-	golang.org/x/net v0.0.0-20200202094626-16171245cfb2
-	golang.org/x/sys v0.0.0-20200202164722-d101bd2416d5 // indirect
+	golang.org/x/crypto v0.0.0-20200323165209-0ec3e9974c59 // indirect
+	golang.org/x/net v0.0.0-20200324143707-d3edc9973b7e
+	golang.org/x/sys v0.0.0-20200327173247-9dae0f8f5775 // indirect
 	gopkg.in/baa.v1 v1.2.32
 	gopkg.in/celrenheit/lion.v1 v1.0.0-20161101201550-7c6ce5d22d64
+	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/go-playground/validator.v9 v9.31.0 // indirect
-	gopkg.in/ini.v1 v1.52.0 // indirect
-	gopkg.in/macaron.v1 v1.3.4
+	gopkg.in/ini.v1 v1.55.0 // indirect
+	gopkg.in/macaron.v1 v1.3.5
 	gopkg.in/yaml.v2 v2.2.8 // indirect
 )
