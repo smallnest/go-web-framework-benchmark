@@ -14,8 +14,8 @@ require (
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
 	github.com/dinever/golf v0.3.0
 	github.com/emicklei/go-restful v2.12.0+incompatible
-	github.com/fasthttp/router v0.7.0
-	github.com/gin-gonic/gin v1.5.0
+	github.com/fasthttp/router v1.0.0
+	github.com/gin-gonic/gin v1.6.2
 	github.com/go-martini/martini v0.0.0-20170121215854-22fa46961aab
 	github.com/go-ozzo/ozzo-routing v2.1.4+incompatible
 	github.com/go-playground/form v3.1.4+incompatible // indirect
@@ -49,7 +49,7 @@ require (
 	github.com/razonyang/fastrouter v0.1.0
 	github.com/rcrowley/go-metrics v0.0.0-20200313005456-10cdbea86bc0 // indirect
 	github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7
-	github.com/savsgio/atreugo/v10 v10.4.2
+	github.com/savsgio/atreugo/v11 v11.0.0
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/teambition/gear v1.19.0
 	github.com/tockins/fresh v0.0.0-20181012144221-d8b891ad12e4
