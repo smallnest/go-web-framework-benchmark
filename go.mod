@@ -3,27 +3,21 @@ module github.com/smallnest/go-web-framework-benchmark
 go 1.13
 
 require (
-	github.com/Joker/jade v1.0.0 // indirect
 	github.com/VictoriaMetrics/fastcache v1.5.7 // indirect
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
 	github.com/apex/log v1.1.2 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20200108200545-475eaeb16496 // indirect
 	github.com/astaxie/beego v1.12.1
-	github.com/aymerick/raymond v2.0.2+incompatible // indirect
 	github.com/bmizerany/pat v0.0.0-20170815010413-6226ea591a40
 	github.com/bnkamalesh/webgo v2.5.1+incompatible
 	github.com/buaazp/fasthttprouter v0.1.1
-	github.com/cbroglie/mustache v1.0.1 // indirect
 	github.com/celrenheit/htest v0.0.0-20170621160705-e34d50431e7f // indirect
 	github.com/claygod/Bxog v0.0.0-20200119144704-8af8b8bf2232
 	github.com/codegangsta/inject v0.0.0-20150114235600-33e0aa1cb7c0 // indirect
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
 	github.com/dinever/golf v0.3.0
-	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
 	github.com/emicklei/go-restful v2.12.0+incompatible
 	github.com/fasthttp/router v1.0.0
-	github.com/fasthttp/websocket v1.4.2 // indirect
 	github.com/fatih/color v1.9.0 // indirect
 	github.com/gin-gonic/gin v1.6.2
 	github.com/go-macaron/inject v0.0.0-20200308113650-138e5925c53b // indirect
@@ -32,7 +26,6 @@ require (
 	github.com/go-playground/form v3.1.4+incompatible // indirect
 	github.com/go-playground/lars v4.0.1+incompatible
 	github.com/go-playground/pure v4.2.0+incompatible
-	github.com/go-playground/universal-translator v0.17.0 // indirect
 	github.com/go-zoo/bone v1.3.0
 	github.com/gocarina/gocsv v0.0.0-20200330101823-46266ca37bd3 // indirect
 	github.com/gocraft/web v0.0.0-20190207150652-9707327fb69b
@@ -54,12 +47,10 @@ require (
 	github.com/kataras/muxie v1.0.8
 	github.com/klauspost/compress v1.10.3 // indirect
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
-	github.com/labstack/echo/v4 v4.1.15
-	github.com/leodido/go-urn v1.2.0 // indirect
+	github.com/labstack/echo/v4 v4.1.16
 	github.com/lunny/log v0.0.0-20160921050905-7887c61bf0de
 	github.com/lunny/tango v0.5.6
 	github.com/mailgun/route v0.0.0-20191025171320-daa4df6c711a
-	github.com/mattn/go-isatty v0.0.12 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/mustafaakin/gongular v0.0.0-20171116074631-b899c3c6e795
@@ -75,7 +66,6 @@ require (
 	github.com/razonyang/fastrouter v0.1.0
 	github.com/rcrowley/go-metrics v0.0.0-20200313005456-10cdbea86bc0 // indirect
 	github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7
-	github.com/savsgio/atreugo/v10 v10.4.2
 	github.com/savsgio/atreugo/v11 v11.0.0
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/sirupsen/logrus v1.5.0 // indirect
@@ -95,8 +85,6 @@ require (
 	gopkg.in/baa.v1 v1.2.32
 	gopkg.in/celrenheit/lion.v1 v1.0.0-20161101201550-7c6ce5d22d64
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
-	gopkg.in/go-playground/validator.v9 v9.31.0 // indirect
 	gopkg.in/ini.v1 v1.55.0 // indirect
 	gopkg.in/macaron.v1 v1.3.5
-	gopkg.in/yaml.v2 v2.2.8 // indirect
 )
