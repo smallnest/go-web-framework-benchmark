@@ -54,6 +54,7 @@ import (
 	"github.com/pilu/traffic"
 
 	// "github.com/plimble/ace"
+	gearbox "github.com/abahmed/gearbox"
 	"github.com/pressly/chi"
 	routing "github.com/qiangxue/fasthttp-routing"
 	"github.com/razonyang/fastrouter"
@@ -151,6 +152,8 @@ func main() {
 		startFresh()
 	case "gear":
 		startGear()
+	case "gearbox":
+		startGearbox()
 	case "gin":
 		startGin()
 	case "gocraftWeb":
@@ -558,6 +561,25 @@ func startGear() {
 	})
 	app.UseHandler(router)
 	app.Listen(":" + strconv.Itoa(port))
+}
+
+// gearbox
+func startGearbox() {
+	gearbox := gearbox.New()
+	gearbox.Get("/hello", func(ctx *fasthttp.RequestCtx) {
+		if cpuBound {
+			pow(target)
+		} else {
+
+			if sleepTime > 0 {
+				time.Sleep(sleepTimeDuration)
+			} else {
+				runtime.Gosched()
+			}
+		}
+		ctx.Response.SetBodyString(messageStr)
+	})
+	gearbox.Start(":" + strconv.Itoa(port))
 }
 
 // gin
