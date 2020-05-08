@@ -29,7 +29,7 @@ require (
 	github.com/go-zoo/bone v1.3.0
 	github.com/gocarina/gocsv v0.0.0-20200330101823-46266ca37bd3 // indirect
 	github.com/gocraft/web v0.0.0-20190207150652-9707327fb69b
-	github.com/gofiber/fiber v1.9.3
+	github.com/gofiber/fiber v1.9.5
 	github.com/golang/gddo v0.0.0-20190904175337-72a348e765d2 // indirect
 	github.com/golang/protobuf v1.4.1 // indirect
 	github.com/gorilla/mux v1.7.4
@@ -66,7 +66,6 @@ require (
 	github.com/rcrowley/go-metrics v0.0.0-20200313005456-10cdbea86bc0 // indirect
 	github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7
 	github.com/savsgio/atreugo/v11 v11.0.4
-	github.com/savsgio/go-logger v1.0.0 // indirect
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/sirupsen/logrus v1.6.0 // indirect
 	github.com/teambition/gear v1.21.1
