@@ -259,18 +259,20 @@ func atreugoHandler(ctx *atreugo.RequestCtx) error {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
 			runtime.Gosched()
 		}
 	}
-	return ctx.TextResponse(messageStr)
+
+	ctx.Response.SetBodyString(messageStr)
+
+	return nil
 }
 
 func startAtreugo() {
-	mux := atreugo.New(atreugo.Config{Addr: "127.0.0.1:" + strconv.Itoa(port)})
+	mux := atreugo.New(atreugo.Config{Addr: ":" + strconv.Itoa(port)})
 	mux.GET("/hello", atreugoHandler)
 	mux.ListenAndServe()
 }
