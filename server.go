@@ -533,7 +533,10 @@ func fiberHandler(ctx *fiber.Ctx) {
 }
 
 func startFiber() {
-	app := fiber.New()
+	app := fiber.New(&fiber.Settings{
+		CaseSensitive: true,
+		StrictRouting: true,
+	})
 	app.Get("/hello", fiberHandler)
 	app.Listen(port)
 }
