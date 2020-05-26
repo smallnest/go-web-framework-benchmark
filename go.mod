@@ -9,7 +9,7 @@ require (
 	github.com/asaskevich/govalidator v0.0.0-20200428143746-21a406dcc535 // indirect
 	github.com/astaxie/beego v1.12.1
 	github.com/bmizerany/pat v0.0.0-20170815010413-6226ea591a40
-	github.com/bnkamalesh/webgo v2.5.1+incompatible
+	github.com/bnkamalesh/webgo/v3 v3.4.2
 	github.com/buaazp/fasthttprouter v0.1.1
 	github.com/celrenheit/htest v0.0.0-20170621160705-e34d50431e7f // indirect
 	github.com/claygod/Bxog v0.0.0-20200119144704-8af8b8bf2232
