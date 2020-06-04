@@ -13,7 +13,7 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
 	"github.com/bmizerany/pat"
-	"github.com/bnkamalesh/webgo"
+	"github.com/bnkamalesh/webgo/v4"
 	"github.com/buaazp/fasthttprouter"
 	"github.com/dimfeld/httptreemux"
 	"github.com/dinever/golf"
