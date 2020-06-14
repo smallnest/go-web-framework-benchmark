@@ -110,6 +110,9 @@
         },
         "gopkg.in/celrenheit/lion.v1": {
             "branch": "v1"
+        },
+        "github.com/gogearbox/gearbox": {
+            "branch": "master"
         }
     }
 }

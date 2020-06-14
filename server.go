@@ -54,7 +54,7 @@ import (
 	"github.com/pilu/traffic"
 
 	// "github.com/plimble/ace"
-	gearbox "github.com/abahmed/gearbox"
+	gearbox "github.com/gogearbox/gearbox"
 	"github.com/pressly/chi"
 	routing "github.com/qiangxue/fasthttp-routing"
 	"github.com/razonyang/fastrouter"
@@ -568,8 +568,8 @@ func startGear() {
 
 // gearbox
 func startGearbox() {
-	gearbox := gearbox.New()
-	gearbox.Get("/hello", func(ctx *fasthttp.RequestCtx) {
+	gb := gearbox.New()
+	gb.Get("/hello", func(ctx *gearbox.Context) {
 		if cpuBound {
 			pow(target)
 		} else {
@@ -580,9 +580,9 @@ func startGearbox() {
 				runtime.Gosched()
 			}
 		}
-		ctx.Response.SetBodyString(messageStr)
+		ctx.RequestCtx.Response.SetBodyString(messageStr)
 	})
-	gearbox.Start(":" + strconv.Itoa(port))
+	gb.Start(":" + strconv.Itoa(port))
 }
 
 // gin
