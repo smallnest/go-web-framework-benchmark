@@ -1,4 +1,4 @@
-,default,atreugo,beego,bone,chi,denco,echov3,fasthttp-raw,fasthttp-routing,fasthttp/router,fasthttprouter,fastrouter,fresh,gear,gin,goji,gojsonrest,gongular,gorestful,gorilla,go-ozzo,gowww,gramework,httprouter,httptreemux,lars,lion,martini,muxie,negroni,neo,pat,pure,r2router,tango,tiger,tinyrouter,traffic,violetear,vulcan,webgo
-100,6,4,6,6,7,8,8,4,4,5,4,5,8,6,7,8,5,7,8,6,6,7,6,5,5,8,6,8,5,6,6,6,6,7,7,6,6,6,8,7,8
-1000,32,14,28,21,20,30,23,14,18,14,18,20,29,25,22,25,24,30,22,31,24,28,21,19,28,21,29,27,24,20,30,18,27,22,32,32,28,30,24,30,22
-5000,84,57,147,104,97,110,102,57,74,57,65,127,134,125,92,97,88,144,113,101,99,104,125,111,114,88,131,98,127,109,95,136,124,93,108,106,110,138,98,109,138
+,default,atreugo,beego,bone,chi,denco,echov3,fasthttp-raw,fasthttp-routing,fasthttp/router,fasthttprouter,fastrouter,fiber,fresh,gear,gin,goji,gojsonrest,gongular,gorestful,gorilla,gorouter,gorouterfasthttp,go-ozzo,gowww,gramework,httprouter,httptreemux,lars,lion,martini,muxie,negroni,neo,pat,pure,r2router,tango,tiger,tinyrouter,traffic,violetear,vulcan,webgo
+100,7,5,9,8,8,7,,5,5,5,5,7,5,9,5,6,8,6,10,7,6,8,5,6,6,6,6,9,6,8,11,7,6,6,7,8,8,7,8,7,6,5,8,7
+1000,20,15,24,32,32,18,,14,15,14,19,23,16,30,29,28,20,23,28,21,22,20,19,31,18,27,18,22,22,30,21,22,30,33,23,19,32,20,25,23,27,26,20,19
+5000,109,57,140,83,96,129,,57,59,57,69,136,93,135,154,137,138,106,123,110,135,89,78,110,86,73,105,77,91,129,89,109,122,120,82,90,135,121,110,83,127,106,80,85

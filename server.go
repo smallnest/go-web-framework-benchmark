@@ -13,7 +13,7 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
 	"github.com/bmizerany/pat"
-	"github.com/bnkamalesh/webgo"
+	"github.com/bnkamalesh/webgo/v4"
 	"github.com/buaazp/fasthttprouter"
 	"github.com/dimfeld/httptreemux"
 	"github.com/dinever/golf"
@@ -273,7 +273,7 @@ func atreugoHandler(ctx *atreugo.RequestCtx) error {
 }
 
 func startAtreugo() {
-	mux := atreugo.New(atreugo.Config{Addr: "127.0.0.1:" + strconv.Itoa(port)})
+	mux := atreugo.New(atreugo.Config{Addr: ":" + strconv.Itoa(port)})
 	mux.GET("/hello", atreugoHandler)
 	mux.ListenAndServe()
 }
@@ -536,7 +536,10 @@ func fiberHandler(ctx *fiber.Ctx) {
 }
 
 func startFiber() {
-	app := fiber.New()
+	app := fiber.New(&fiber.Settings{
+		CaseSensitive: true,
+		StrictRouting: true,
+	})
 	app.Get("/hello", fiberHandler)
 	app.Listen(port)
 }
