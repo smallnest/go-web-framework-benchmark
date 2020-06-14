@@ -54,7 +54,6 @@ import (
 	"github.com/pilu/traffic"
 
 	// "github.com/plimble/ace"
-	gearbox "github.com/gogearbox/gearbox"
 	"github.com/pressly/chi"
 	routing "github.com/qiangxue/fasthttp-routing"
 	"github.com/razonyang/fastrouter"
@@ -63,6 +62,7 @@ import (
 	"github.com/tockins/fresh"
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
+	gearbox "github.com/gogearbox/gearbox"
 	"github.com/vardius/gorouter/v4"
 	goji "goji.io"
 	gojipat "goji.io/pat"
