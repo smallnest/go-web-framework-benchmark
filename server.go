@@ -62,6 +62,7 @@ import (
 	"github.com/tockins/fresh"
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
+	gearbox "github.com/gogearbox/gearbox"
 	"github.com/vardius/gorouter/v4"
 	goji "goji.io"
 	gojipat "goji.io/pat"
@@ -151,6 +152,8 @@ func main() {
 		startFresh()
 	case "gear":
 		startGear()
+	case "gearbox":
+		startGearbox()
 	case "gin":
 		startGin()
 	case "gocraftWeb":
@@ -561,6 +564,25 @@ func startGear() {
 	})
 	app.UseHandler(router)
 	app.Listen(":" + strconv.Itoa(port))
+}
+
+// gearbox
+func startGearbox() {
+	gb := gearbox.New()
+	gb.Get("/hello", func(ctx *gearbox.Context) {
+		if cpuBound {
+			pow(target)
+		} else {
+
+			if sleepTime > 0 {
+				time.Sleep(sleepTimeDuration)
+			} else {
+				runtime.Gosched()
+			}
+		}
+		ctx.RequestCtx.Response.SetBodyString(messageStr)
+	})
+	gb.Start(":" + strconv.Itoa(port))
 }
 
 // gin

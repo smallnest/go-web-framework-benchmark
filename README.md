@@ -61,7 +61,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [atreugo](https://github.com/savsgio/atreugo)
 * [muxie](https://github.com/kataras/muxie)
 * [gorouter](https://github.com/vardius/gorouter)
-
+* [gearbox](https://github.com/gogearbox/gearbox)
 
 version of all web frameworks is at: [libs.version](libs.version)
 

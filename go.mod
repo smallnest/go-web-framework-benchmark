@@ -30,6 +30,7 @@ require (
 	github.com/gocarina/gocsv v0.0.0-20200330101823-46266ca37bd3 // indirect
 	github.com/gocraft/web v0.0.0-20190207150652-9707327fb69b
 	github.com/gofiber/fiber v1.9.6
+	github.com/gogearbox/gearbox v1.0.0
 	github.com/golang/gddo v0.0.0-20190904175337-72a348e765d2 // indirect
 	github.com/golang/protobuf v1.4.1 // indirect
 	github.com/gorilla/mux v1.7.4
@@ -72,7 +73,7 @@ require (
 	github.com/tockins/fresh v0.0.0-20181012144221-d8b891ad12e4
 	github.com/unknwon/com v1.0.1 // indirect
 	github.com/urfave/negroni v1.0.0
-	github.com/valyala/fasthttp v1.13.1
+	github.com/valyala/fasthttp v1.14.0
 	github.com/vanng822/r2router v0.0.0-20150523112421-1023140a4f30
 	github.com/vardius/gorouter/v4 v4.4.3
 	github.com/vulcand/predicate v1.1.0 // indirect
