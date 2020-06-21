@@ -63,8 +63,6 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [gorouter](https://github.com/vardius/gorouter)
 * [gearbox](https://github.com/gogearbox/gearbox)
 
-version of all web frameworks is at: [libs.version](libs.version)
-
 
 ## Motivation
 When I investigated performance of Go web frameworks, I found [Go HTTP Router Benchmark](https://github.com/julienschmidt/go-http-routing-benchmark), created by Julien Schmidt. He also developed a high performance http router: [httprouter](https://github.com/julienschmidt/httprouter). I had thought I got the performance result until I created a piece of codes to mock the real business logics:
