@@ -9,6 +9,7 @@ import (
 	"strconv"
 	"time"
 
+	"clevergo.tech/clevergo"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
@@ -54,6 +55,7 @@ import (
 	"github.com/pilu/traffic"
 
 	// "github.com/plimble/ace"
+	gearbox "github.com/gogearbox/gearbox"
 	"github.com/pressly/chi"
 	routing "github.com/qiangxue/fasthttp-routing"
 	"github.com/razonyang/fastrouter"
@@ -62,7 +64,6 @@ import (
 	"github.com/tockins/fresh"
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
-	gearbox "github.com/gogearbox/gearbox"
 	"github.com/vardius/gorouter/v4"
 	goji "goji.io"
 	gojipat "goji.io/pat"
@@ -132,6 +133,8 @@ func main() {
 		startBxog()
 	case "chi":
 		startChi()
+	case "clevergo":
+		startCleverGo()
 	case "denco":
 		startDenco()
 	case "echo":
@@ -357,6 +360,26 @@ func startChi() {
 
 	// Start Chi.
 	http.ListenAndServe(":"+strconv.Itoa(port), r)
+}
+
+//clevergo
+func cleverGoHandler(c *clevergo.Context) error {
+	if cpuBound {
+		pow(target)
+	} else {
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
+	}
+	c.Response.Write(message)
+	return nil
+}
+func startCleverGo() {
+	app := clevergo.Pure()
+	app.Get("/hello", cleverGoHandler)
+	app.Run(":" + strconv.Itoa(port))
 }
 
 // denco

@@ -23,6 +23,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [lion](https://github.com/celrenheit/lion)
 * [golf](https://github.com/dinever/golf)
 * [chi](https://github.com/pressly/chi)
+* [clevergo](https://github.com/clevergo/clevergo)
 * [httptreemux](https://github.com/dimfeld/httptreemux)
 * [baa](https://github.com/go-baa/baa)
 * [go-ozzo](https://github.com/go-ozzo/ozzo-routing)
