@@ -3,6 +3,7 @@ module github.com/smallnest/go-web-framework-benchmark
 go 1.13
 
 require (
+	clevergo.tech/clevergo v0.3.0 // indirect
 	github.com/VictoriaMetrics/fastcache v1.5.7 // indirect
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
 	github.com/apex/log v1.1.4 // indirect
