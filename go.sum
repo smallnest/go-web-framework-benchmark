@@ -315,8 +315,8 @@ github.com/rcrowley/go-metrics v0.0.0-20200313005456-10cdbea86bc0/go.mod h1:bCqn
 github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7 h1:IF6au04LnXfITvXy4gwKKcka4zKYp73RXCEGUACqC/Y=
 github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7/go.mod h1:iFmRpXEuybfivhzfxebaHxO63V+ye2AFJMBk12tZPck=
 github.com/rogpeppe/fastuuid v1.1.0/go.mod h1:jVj6XXZzXRy/MSR5jhDC/2q6DgLz+nrA6LYCDYWNEvQ=
-github.com/savsgio/atreugo/v11 v11.4.4 h1:ZtgScvm1g3NryemDOngdfHuNzuQiuScQSp3fOJh5umw=
-github.com/savsgio/atreugo/v11 v11.4.4/go.mod h1:tbTK3CIM2fHCkifM+tm/kb2xl7JmLtlPy1SUb0etof8=
+github.com/savsgio/atreugo/v11 v11.5.0 h1:/0+EYD33flR6Cxgv/iDsNISGRRGmJ2z8caArfc12Bsk=
+github.com/savsgio/atreugo/v11 v11.5.0/go.mod h1:tbTK3CIM2fHCkifM+tm/kb2xl7JmLtlPy1SUb0etof8=
 github.com/savsgio/go-logger/v2 v2.0.1 h1:MgmsI5hnQFz0n5oX1Do/T9DldTo60guQTGwlRpzk0mk=
 github.com/savsgio/go-logger/v2 v2.0.1/go.mod h1:fog+sZsg75Or4EENyd1jrS/Ps44s39hd6lccqALz0C8=
 github.com/savsgio/gotils v0.0.0-20200616100644-13ff1fd2c28c h1:KKqhycXW1WVNkX7r4ekTV2gFkbhdyihlWD8c0/FiWmk=
