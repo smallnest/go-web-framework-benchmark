@@ -31,7 +31,7 @@ require (
 	github.com/gocarina/gocsv v0.0.0-20200330101823-46266ca37bd3 // indirect
 	github.com/gocraft/web v0.0.0-20190207150652-9707327fb69b
 	github.com/gofiber/fiber v1.13.3
-	github.com/gogearbox/gearbox v1.0.3
+	github.com/gogearbox/gearbox v1.1.0
 	github.com/golang/gddo v0.0.0-20190904175337-72a348e765d2 // indirect
 	github.com/golang/protobuf v1.4.1 // indirect
 	github.com/gorilla/mux v1.7.4

@@ -592,7 +592,7 @@ func startGear() {
 // gearbox
 func startGearbox() {
 	gb := gearbox.New()
-	gb.Get("/hello", func(ctx *gearbox.Context) {
+	gb.Get("/hello", func(ctx gearbox.Context) {
 		if cpuBound {
 			pow(target)
 		} else {
@@ -603,7 +603,7 @@ func startGearbox() {
 				runtime.Gosched()
 			}
 		}
-		ctx.RequestCtx.Response.SetBodyString(messageStr)
+		ctx.SendString(messageStr)
 	})
 	gb.Start(":" + strconv.Itoa(port))
 }
