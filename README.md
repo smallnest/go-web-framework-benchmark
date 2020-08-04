@@ -13,6 +13,8 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 
 ## Tested web frameworks
 
+**Only test those webframeworks which are stable**
+
 * [default http](https://golang.org/pkg/net/http/)
 * [macaron](https://github.com/Unknwon/macaron)
 * [go-json-rest](https://github.com/ant0ine/go-json-rest)
