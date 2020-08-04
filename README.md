@@ -72,13 +72,13 @@ When I investigated performance of Go web frameworks, I found [Go HTTP Router Be
 
 ```go
 api.Get("/rest/hello", func(c *XXXXX.Context) {
-		sleepTime := strconv.Atoi(os.Args[1]) //10ms
-		if sleepTime > 0 {
-			time.Sleep(time.Duration(sleepTime) * time.Millisecond)
-		}
+	sleepTime := strconv.Atoi(os.Args[1]) //10ms
+	if sleepTime > 0 {
+		time.Sleep(time.Duration(sleepTime) * time.Millisecond)
+	}
 
-		c.Text("Hello world")
-	})
+	c.Text("Hello world")
+})
 ```
 
 When I use the above codes to test those web frameworks, the token time of route selection is not so important in the whole http request processing, although performance of route selection of web frameworks are very different.
