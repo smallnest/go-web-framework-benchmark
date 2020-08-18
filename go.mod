@@ -75,6 +75,7 @@ require (
 	github.com/siddontang/go v0.0.0-20180604090527-bdc77568d726 // indirect
 	github.com/siddontang/ledisdb v0.0.0-20181029004158-becf5f38d373 // indirect
 	github.com/sirupsen/logrus v1.6.0 // indirect
+	github.com/tal-tech/go-zero v1.0.3 // indirect
 	github.com/teambition/gear v1.21.3
 	github.com/tockins/fresh v0.0.0-20181012144221-d8b891ad12e4
 	github.com/unknwon/com v1.0.1 // indirect
