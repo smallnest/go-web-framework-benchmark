@@ -30,6 +30,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [baa](https://github.com/go-baa/baa)
 * [go-ozzo](https://github.com/go-ozzo/ozzo-routing)
 * [go-restful](https://github.com/emicklei/go-restful)
+* [go-zero](https://github.com/tal-tech/go-zero)
 * [gin](https://github.com/gin-gonic/gin)
 * [martini](https://github.com/go-martini/martini)
 * [lars](https://github.com/go-playground/lars)
