@@ -1,6 +1,6 @@
 module github.com/smallnest/go-web-framework-benchmark
 
-go 1.13
+go 1.15
 
 require (
 	clevergo.tech/clevergo v0.4.1
@@ -29,7 +29,7 @@ require (
 	github.com/go-zoo/bone v1.3.0
 	github.com/gocarina/gocsv v0.0.0-20200330101823-46266ca37bd3 // indirect
 	github.com/gocraft/web v0.0.0-20190207150652-9707327fb69b
-	github.com/gofiber/fiber v1.13.3
+	github.com/gofiber/fiber/v2 v2.0.0
 	github.com/gogearbox/gearbox v1.1.0
 	github.com/golang/gddo v0.0.0-20190904175337-72a348e765d2 // indirect
 	github.com/gorilla/mux v1.7.4
@@ -45,11 +45,11 @@ require (
 	github.com/jonboulle/clockwork v0.2.0 // indirect
 	github.com/julienschmidt/httprouter v1.3.0
 	github.com/kataras/muxie v1.1.1
-	github.com/klauspost/compress v1.10.10 // indirect
 	github.com/labstack/echo/v4 v4.1.16
 	github.com/lunny/log v0.0.0-20160921050905-7887c61bf0de
 	github.com/lunny/tango v0.5.6
 	github.com/mailgun/route v0.0.0-20191025171320-daa4df6c711a
+	github.com/mattn/go-colorable v0.1.7 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.3 // indirect
 	github.com/mustafaakin/gongular v0.0.0-20200705144045-a428565ae628
 	github.com/naoina/denco v0.0.0-20180930074809-8475105a6b4c
@@ -79,7 +79,6 @@ require (
 	goji.io v2.0.2+incompatible
 	golang.org/x/crypto v0.0.0-20200728195943-123391ffb6de // indirect
 	golang.org/x/net v0.0.0-20200707034311-ab3426394381
-	golang.org/x/sys v0.0.0-20200803210538-64077c9b5642 // indirect
 	gopkg.in/baa.v1 v1.2.32
 	gopkg.in/celrenheit/lion.v1 v1.0.0-20161101201550-7c6ce5d22d64
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect

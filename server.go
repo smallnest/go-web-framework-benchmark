@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"runtime"
@@ -21,7 +22,7 @@ import (
 	restful "github.com/emicklei/go-restful"
 	fasthttpSlashRouter "github.com/fasthttp/router"
 	"github.com/gin-gonic/gin"
-	"github.com/gofiber/fiber"
+	"github.com/gofiber/fiber/v2"
 	"github.com/gramework/gramework"
 	"github.com/kataras/muxie"
 	"github.com/savsgio/atreugo/v11"
@@ -548,7 +549,7 @@ func startFresh() {
 }
 
 // fiber
-func fiberHandler(ctx *fiber.Ctx) {
+func fiberHandler(c *fiber.Ctx) error {
 	if cpuBound {
 		pow(target)
 	} else {
@@ -559,16 +560,20 @@ func fiberHandler(ctx *fiber.Ctx) {
 			runtime.Gosched()
 		}
 	}
-	ctx.SendString(messageStr)
+	return c.SendString(messageStr)
 }
 
 func startFiber() {
-	app := fiber.New(&fiber.Settings{
-		CaseSensitive: true,
-		StrictRouting: true,
+	app := fiber.New(fiber.Config{
+		Prefork:                   true,
+		CaseSensitive:             true,
+		StrictRouting:             true,
+		DisableDefaultDate:        true,
+		DisableHeaderNormalizing:  true,
+		DisableDefaultContentType: true,
 	})
 	app.Get("/hello", fiberHandler)
-	app.Listen(port)
+	log.Fatal(app.Listen(":" + strconv.Itoa(port)))
 }
 
 //gear
