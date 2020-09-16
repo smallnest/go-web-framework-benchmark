@@ -11,6 +11,8 @@ import (
 	"time"
 
 	"clevergo.tech/clevergo"
+	"github.com/System-Glitch/goyave/v3"
+	"github.com/System-Glitch/goyave/v3/config"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
@@ -228,6 +230,8 @@ func main() {
 		startVulcan()
 	case "webgo":
 		startWebgo()
+	case "goyave":
+		startGoyave()
 	}
 }
 
@@ -1175,6 +1179,35 @@ func startWebgo() {
 	}
 	router := webgo.NewRouter(&cfg, getWebgoRoutes())
 	router.Start()
+}
+
+// Goyave
+func goyaveHandler(r *goyave.Response, req *goyave.Request) {
+	if cpuBound {
+		pow(target)
+	} else {
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
+	}
+	r.String(http.StatusOK, "hello")
+}
+
+func getGoyaveRoutes(router *goyave.Router) {
+	router.Get("/hello", goyaveHandler)
+}
+
+func startGoyave() {
+	if err := config.LoadFrom("goyavecfg.json"); err != nil {
+		os.Exit(goyave.ExitInvalidConfig)
+	}
+	config.Set("server.port", port)
+	if err := goyave.Start(getGoyaveRoutes); err != nil {
+		os.Exit(err.(*goyave.Error).ExitCode)
+	}
 }
 
 // mock
