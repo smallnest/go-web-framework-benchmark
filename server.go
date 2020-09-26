@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -1201,10 +1202,33 @@ func getGoyaveRoutes(router *goyave.Router) {
 }
 
 func startGoyave() {
-	if err := config.LoadFrom("goyavecfg.json"); err != nil {
+	cfg := []byte(fmt.Sprintf(`
+	{
+		"server": {
+			"host": "0.0.0.0",
+			"port": %d,
+			"timeout": 120
+		}
+	}
+	`, port))
+
+	tmpFile, err := ioutil.TempFile("", "goyavecfg.json")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer os.Remove(tmpFile.Name())
+
+	if _, err := tmpFile.Write(cfg); err != nil {
+		log.Fatal(err)
+	}
+	if err := tmpFile.Close(); err != nil {
+		log.Fatal(err)
+	}
+
+	if err := config.LoadFrom(tmpFile.Name()); err != nil {
 		os.Exit(goyave.ExitInvalidConfig)
 	}
-	config.Set("server.port", port)
+
 	if err := goyave.Start(getGoyaveRoutes); err != nil {
 		os.Exit(err.(*goyave.Error).ExitCode)
 	}
