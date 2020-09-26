@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -11,6 +12,8 @@ import (
 	"time"
 
 	"clevergo.tech/clevergo"
+	"github.com/System-Glitch/goyave/v3"
+	"github.com/System-Glitch/goyave/v3/config"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
@@ -228,6 +231,8 @@ func main() {
 		startVulcan()
 	case "webgo":
 		startWebgo()
+	case "goyave":
+		startGoyave()
 	}
 }
 
@@ -1175,6 +1180,58 @@ func startWebgo() {
 	}
 	router := webgo.NewRouter(&cfg, getWebgoRoutes())
 	router.Start()
+}
+
+// Goyave
+func goyaveHandler(r *goyave.Response, req *goyave.Request) {
+	if cpuBound {
+		pow(target)
+	} else {
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
+	}
+	r.String(http.StatusOK, "hello")
+}
+
+func getGoyaveRoutes(router *goyave.Router) {
+	router.Get("/hello", goyaveHandler)
+}
+
+func startGoyave() {
+	cfg := []byte(fmt.Sprintf(`
+	{
+		"server": {
+			"host": "0.0.0.0",
+			"port": %d,
+			"timeout": 120
+		}
+	}
+	`, port))
+
+	tmpFile, err := ioutil.TempFile("", "goyavecfg.json")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer os.Remove(tmpFile.Name())
+
+	if _, err := tmpFile.Write(cfg); err != nil {
+		log.Fatal(err)
+	}
+	if err := tmpFile.Close(); err != nil {
+		log.Fatal(err)
+	}
+
+	if err := config.LoadFrom(tmpFile.Name()); err != nil {
+		os.Exit(goyave.ExitInvalidConfig)
+	}
+
+	if err := goyave.Start(getGoyaveRoutes); err != nil {
+		os.Exit(err.(*goyave.Error).ExitCode)
+	}
 }
 
 // mock

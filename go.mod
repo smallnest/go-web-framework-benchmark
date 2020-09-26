@@ -4,6 +4,7 @@ go 1.15
 
 require (
 	clevergo.tech/clevergo v0.4.1
+	github.com/System-Glitch/goyave/v3 v3.0.1
 	github.com/VictoriaMetrics/fastcache v1.5.7 // indirect
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
 	github.com/apex/log v1.7.0 // indirect
@@ -77,7 +78,6 @@ require (
 	github.com/vulcand/predicate v1.1.0 // indirect
 	go101.org/tinyrouter v1.0.1
 	goji.io v2.0.2+incompatible
-	golang.org/x/crypto v0.0.0-20200728195943-123391ffb6de // indirect
 	golang.org/x/net v0.0.0-20200707034311-ab3426394381
 	gopkg.in/baa.v1 v1.2.32
 	gopkg.in/celrenheit/lion.v1 v1.0.0-20161101201550-7c6ce5d22d64

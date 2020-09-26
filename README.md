@@ -66,6 +66,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [muxie](https://github.com/kataras/muxie)
 * [gorouter](https://github.com/vardius/gorouter)
 * [gearbox](https://github.com/gogearbox/gearbox)
+* [Goyave](https://github.com/System-Glitch/goyave)
 
 
 ## Motivation
