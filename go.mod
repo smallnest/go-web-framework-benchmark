@@ -18,7 +18,7 @@ require (
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
 	github.com/dinever/golf v0.3.0
 	github.com/emicklei/go-restful v2.13.0+incompatible
-	github.com/fasthttp/router v1.3.1
+	github.com/fasthttp/router v1.3.3
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-macaron/inject v0.0.0-20200308113650-138e5925c53b // indirect
 	github.com/go-martini/martini v0.0.0-20170121215854-22fa46961aab
@@ -30,8 +30,8 @@ require (
 	github.com/go-zoo/bone v1.3.0
 	github.com/gocarina/gocsv v0.0.0-20200330101823-46266ca37bd3 // indirect
 	github.com/gocraft/web v0.0.0-20190207150652-9707327fb69b
-	github.com/gofiber/fiber/v2 v2.0.0
-	github.com/gogearbox/gearbox v1.1.0
+	github.com/gofiber/fiber/v2 v2.2.0
+	github.com/gogearbox/gearbox v1.1.1
 	github.com/golang/gddo v0.0.0-20190904175337-72a348e765d2 // indirect
 	github.com/gorilla/mux v1.7.4
 	github.com/gowww/router v1.0.0
@@ -65,20 +65,20 @@ require (
 	github.com/razonyang/fastrouter v0.1.0
 	github.com/rcrowley/go-metrics v0.0.0-20200313005456-10cdbea86bc0 // indirect
 	github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7
-	github.com/savsgio/atreugo/v11 v11.5.1
+	github.com/savsgio/atreugo/v11 v11.5.4
 	github.com/tal-tech/go-zero v1.0.3
 	github.com/teambition/gear v1.21.3
 	github.com/tockins/fresh v0.0.0-20181012144221-d8b891ad12e4
 	github.com/unknwon/com v1.0.1 // indirect
 	github.com/urfave/negroni v1.0.0
-	github.com/valyala/fasthttp v1.16.0
+	github.com/valyala/fasthttp v1.17.0
 	github.com/valyala/fasttemplate v1.2.0 // indirect
 	github.com/vanng822/r2router v0.0.0-20150523112421-1023140a4f30
 	github.com/vardius/gorouter/v4 v4.4.3
 	github.com/vulcand/predicate v1.1.0 // indirect
 	go101.org/tinyrouter v1.0.1
 	goji.io v2.0.2+incompatible
-	golang.org/x/net v0.0.0-20200707034311-ab3426394381
+	golang.org/x/net v0.0.0-20201016165138-7b1cca2348c0
 	gopkg.in/baa.v1 v1.2.32
 	gopkg.in/celrenheit/lion.v1 v1.0.0-20161101201550-7c6ce5d22d64
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
