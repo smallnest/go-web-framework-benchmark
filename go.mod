@@ -66,6 +66,7 @@ require (
 	github.com/rcrowley/go-metrics v0.0.0-20200313005456-10cdbea86bc0 // indirect
 	github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7
 	github.com/savsgio/atreugo/v11 v11.5.4
+	github.com/savsgio/gotils v0.0.0-20200909101946-939aa3fc74fb
 	github.com/tal-tech/go-zero v1.0.3
 	github.com/teambition/gear v1.21.3
 	github.com/tockins/fresh v0.0.0-20181012144221-d8b891ad12e4

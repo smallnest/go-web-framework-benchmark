@@ -1,6 +1,6 @@
 #!/bin/bash
 
-web_frameworks=("default" "atreugo" "beego" "bone" "chi" "clevergo" "denco" "echov3" "fasthttp-raw" \
+web_frameworks=("default" "atreugo" "beego" "bone" "chi" "clevergo" "denco" "echov3" "fasthttp" \
 "fasthttp-routing" "fasthttp/router" "fasthttprouter" "fastrouter" "fiber" "fresh" "gear" "gearbox" \
 "gin" "goji" "gojsonrest" "gongular" "gorestful" "gorilla" "gorouter" "gorouterfasthttp" "go-ozzo" \
 "go-zero" "gowww" "gramework" "httprouter" "httptreemux" "lars" "lion" "martini" "muxie" "negroni" \

@@ -29,6 +29,7 @@ import (
 	"github.com/gramework/gramework"
 	"github.com/kataras/muxie"
 	"github.com/savsgio/atreugo/v11"
+	"github.com/savsgio/gotils"
 
 	// "github.com/go-siris/siris"
 	// siriscontext "github.com/go-siris/siris/context"
@@ -145,7 +146,7 @@ func main() {
 		startDenco()
 	case "echo":
 		startEcho()
-	case "fasthttp-raw":
+	case "fasthttp":
 		startFasthttp()
 	case "fasthttprouter":
 		startFastHTTPRouter()
@@ -442,29 +443,36 @@ func startEcho() {
 
 //fasthttp
 func fastHTTPRawHandler(ctx *fasthttp.RequestCtx) {
-	if string(ctx.Method()) == "GET" {
-		switch string(ctx.Path()) {
-		case "/hello":
-			if cpuBound {
-				pow(target)
-			} else {
+	path := gotils.B2S(ctx.Path())
 
-				if sleepTime > 0 {
-					time.Sleep(sleepTimeDuration)
-				} else {
-					runtime.Gosched()
-				}
+	switch path {
+	case "/hello":
+		if cpuBound {
+			pow(target)
+		} else {
+			if sleepTime > 0 {
+				time.Sleep(sleepTimeDuration)
+			} else {
+				runtime.Gosched()
 			}
-			ctx.Write(message)
-		default:
-			ctx.Error("Unsupported path", fasthttp.StatusNotFound)
 		}
-		return
+
+		ctx.Write(message)
+	default:
+		ctx.Error(fasthttp.StatusMessage(fasthttp.StatusNotFound), fasthttp.StatusNotFound)
 	}
-	ctx.Error("Unsupported method", fasthttp.StatusMethodNotAllowed)
 }
+
 func startFasthttp() {
-	fasthttp.ListenAndServe(":"+strconv.Itoa(port), fastHTTPRawHandler)
+	s := &fasthttp.Server{
+		Handler:                       fastHTTPRawHandler,
+		GetOnly:                       true,
+		NoDefaultDate:                 true,
+		NoDefaultContentType:          true,
+		DisableHeaderNamesNormalizing: true,
+	}
+
+	log.Fatal(s.ListenAndServe(":" + strconv.Itoa(port)))
 }
 
 //fasthttprouter
@@ -472,15 +480,16 @@ func fastHTTPHandler(ctx *fasthttp.RequestCtx) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
 			runtime.Gosched()
 		}
 	}
+
 	ctx.Write(message)
 }
+
 func startFastHTTPRouter() {
 	mux := fasthttprouter.New()
 	mux.GET("/hello", fastHTTPHandler)
@@ -491,7 +500,7 @@ func startFastHTTPRouter() {
 func startFastHTTPSlashRouter() {
 	mux := fasthttpSlashRouter.New()
 	mux.GET("/hello", fastHTTPHandler)
-	fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.Handler)
+	log.Fatal(fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.Handler))
 }
 
 //fasthttprouting
