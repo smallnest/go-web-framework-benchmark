@@ -234,6 +234,12 @@ func main() {
 		startWebgo()
 	case "goyave":
 		startGoyave()
+	default:
+		fmt.Println("--------------------------------------------------------------------")
+		fmt.Println("------------- Unknown framework given!!! Check libs.sh -------------")
+		fmt.Println("------------- Unknown framework given!!! Check libs.sh -------------")
+		fmt.Println("------------- Unknown framework given!!! Check libs.sh -------------")
+		fmt.Println("--------------------------------------------------------------------")
 	}
 }
 
