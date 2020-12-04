@@ -56,7 +56,6 @@ require (
 	github.com/mustafaakin/gongular v0.0.0-20200705144045-a428565ae628
 	github.com/naoina/denco v0.0.0-20180930074809-8475105a6b4c
 	github.com/nbari/violetear v0.0.0-20191105085335-75adcf9b986b
-	github.com/onsi/gomega v1.7.1
 	github.com/pilu/config v0.0.0-20131214182432-3eb99e6c0b9a // indirect
 	github.com/pilu/miniassert v0.0.0-20140522125902-bee63581261a // indirect
 	github.com/pilu/traffic v0.5.3
