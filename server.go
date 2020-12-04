@@ -77,6 +77,9 @@ import (
 	lion "gopkg.in/celrenheit/lion.v1"
 
 	zrouter "github.com/tal-tech/go-zero/rest/router"
+
+	gf "github.com/gogf/gf/frame/g"
+	gfhttp "github.com/gogf/gf/net/ghttp"
 )
 
 var port = 8080
@@ -168,6 +171,8 @@ func main() {
 		startGin()
 	case "gocraftWeb":
 		startGocraftWeb()
+	case "goframe":
+		startGoframe()
 	case "goji":
 		startGoji()
 	case "gojsonrest":
@@ -684,6 +689,26 @@ func startGocraftWeb() {
 	mux := web.New(gocraftWebContext{})
 	mux.Get("/hello", gocraftWebHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+// goframe
+func gfHandler(r *gfhttp.Request) {
+	if cpuBound {
+		pow(target)
+	} else {
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
+	}
+	r.Response.Write(message)
+}
+func startGoframe() {
+	s := gf.Server()
+	s.BindHandler("/hello", gfHandler)
+	s.SetPort(port)
+	s.Run()
 }
 
 // goji

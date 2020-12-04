@@ -35,6 +35,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [gearbox](https://github.com/gogearbox/gearbox)
 * [gem](https://github.com/go-gem/gem)
 * [gin](https://github.com/gin-gonic/gin)
+* [goframe](https://github.com/gogf/gf)
 * [go-json-rest](https://github.com/ant0ine/go-json-rest)
 * [go-ozzo](https://github.com/go-ozzo/ozzo-routing)
 * [go-restful](https://github.com/emicklei/go-restful)

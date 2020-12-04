@@ -32,6 +32,7 @@ require (
 	github.com/gocraft/web v0.0.0-20190207150652-9707327fb69b
 	github.com/gofiber/fiber/v2 v2.2.0
 	github.com/gogearbox/gearbox v1.1.1
+	github.com/gogf/gf v1.14.5
 	github.com/golang/gddo v0.0.0-20190904175337-72a348e765d2 // indirect
 	github.com/gorilla/mux v1.7.4
 	github.com/gowww/router v1.0.0
