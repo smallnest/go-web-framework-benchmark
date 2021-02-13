@@ -10,7 +10,7 @@ require (
 	github.com/apex/log v1.7.0 // indirect
 	github.com/astaxie/beego v1.12.2
 	github.com/bmizerany/pat v0.0.0-20170815010413-6226ea591a40
-	github.com/bnkamalesh/webgo/v4 v4.1.3
+	github.com/bnkamalesh/webgo/v4 v4.1.11
 	github.com/buaazp/fasthttprouter v0.1.1
 	github.com/celrenheit/htest v0.0.0-20170621160705-e34d50431e7f // indirect
 	github.com/claygod/Bxog v0.0.0-20200612145532-319bb00567a6
