@@ -77,9 +77,6 @@ import (
 	gcontext "golang.org/x/net/context"
 	baa "gopkg.in/baa.v1"
 	lion "gopkg.in/celrenheit/lion.v1"
-
-	zrouter "github.com/tal-tech/go-zero/rest/router"
-
 	gf "github.com/gogf/gf/frame/g"
 	gfhttp "github.com/gogf/gf/net/ghttp"
 )
@@ -195,8 +192,6 @@ func main() {
 		startGorouterFastHTTP()
 	case "go-ozzo":
 		startGoozzo()
-	case "go-zero":
-		startGoZero()
 	case "gowww":
 		startGowww()
 	case "gramework":
@@ -882,25 +877,6 @@ func ozzoHandler(c *ozzo.Context) error {
 func startGoozzo() {
 	r := ozzo.New()
 	r.Get("/hello", ozzoHandler)
-	http.ListenAndServe(":"+strconv.Itoa(port), r)
-}
-
-func zeroHandler(w http.ResponseWriter, r *http.Request) {
-	if cpuBound {
-		pow(target)
-	} else {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		} else {
-			runtime.Gosched()
-		}
-	}
-	w.Write(message)
-}
-
-func startGoZero() {
-	r := zrouter.NewPatRouter()
-	r.Handle(http.MethodGet, "/hello", http.HandlerFunc(zeroHandler))
 	http.ListenAndServe(":"+strconv.Itoa(port), r)
 }
 

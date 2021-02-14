@@ -41,7 +41,6 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [go-ozzo](https://github.com/go-ozzo/ozzo-routing)
 * [go-restful](https://github.com/emicklei/go-restful)
 * [go-tigertonic](https://github.com/rcrowley/go-tigertonic)
-* [go-zero](https://github.com/tal-tech/go-zero)
 * [goji](https://github.com/zenazn/goji/web)
 * [goji](http://goji.io)
 * [golf](https://github.com/dinever/golf)
