@@ -21,6 +21,7 @@ require (
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
 	github.com/dinever/golf v0.3.0
 	github.com/emicklei/go-restful v2.15.0+incompatible
+	github.com/emirmuminoglu/emir v0.0.3
 	github.com/fasthttp/router v1.3.6
 	github.com/fatih/color v1.10.0 // indirect
 	github.com/gin-gonic/gin v1.6.3

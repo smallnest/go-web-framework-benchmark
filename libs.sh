@@ -5,4 +5,4 @@ web_frameworks=("default" "atreugo" "beego" "bone" "chi" "clevergo" "denco" "ech
 "gin", "goframe", "goji" "gojsonrest" "gongular" "gorestful" "gorilla" "gorouter" "gorouterfasthttp" "go-ozzo" \
 "gowww" "gramework" "httprouter" "httptreemux" "lars" "lion" "martini" "muxie" "negroni" \
 "neo" "pat" "pure" "r2router" "tango" "tiger" "tinyrouter" "traffic" "violetear" "vulcan" "webgo" \
-"goyave")
+"goyave" "emir")
