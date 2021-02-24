@@ -62,6 +62,7 @@ import (
 	"github.com/pilu/traffic"
 
 	// "github.com/plimble/ace"
+	"github.com/emirmuminoglu/emir"
 	gearbox "github.com/gogearbox/gearbox"
 	"github.com/pressly/chi"
 	routing "github.com/qiangxue/fasthttp-routing"
@@ -238,6 +239,8 @@ func main() {
 		startWebgo()
 	case "goyave":
 		startGoyave()
+	case "emir":
+		startEmir()
 	default:
 		fmt.Println("--------------------------------------------------------------------")
 		fmt.Println("------------- Unknown framework given!!! Check libs.sh -------------")
@@ -1274,6 +1277,33 @@ func startGoyave() {
 	if err := goyave.Start(getGoyaveRoutes); err != nil {
 		os.Exit(err.(*goyave.Error).ExitCode)
 	}
+}
+
+//emir
+func emirHandler(c emir.Context) error {
+	if cpuBound {
+		pow(target)
+	} else {
+
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
+	}
+
+	c.PlainString(messageStr)
+	return nil
+}
+
+func startEmir() {
+	e := emir.New(emir.Config{
+		Addr:             "localhost:" + strconv.Itoa(port),
+		GracefulShutdown: true,
+	})
+
+	e.GET("/hello", emirHandler)
+	e.ListenAndServe()
 }
 
 // mock
