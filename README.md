@@ -48,7 +48,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [gorilla](https://github.com/gorilla/mux)
 * [gorouter](https://github.com/vardius/gorouter)
 * [goyave](https://github.com/System-Glitch/goyave)
-* [gramework](https://github.com/gramework/gramework)
+* [~~gramework~~](https://github.com/gramework/gramework):its init function pollutes the test so it has been removed from test.
 * [httprouter](https://github.com/julienschmidt/httprouter)
 * [httptreemux](https://github.com/dimfeld/httptreemux)
 * [lars](https://github.com/go-playground/lars)

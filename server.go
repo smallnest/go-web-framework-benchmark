@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	flygoc "github.com/billcoding/flygo/context"
 	"io"
 	"io/ioutil"
 	"log"
@@ -12,15 +11,15 @@ import (
 	"strconv"
 	"time"
 
+	flygoc "github.com/billcoding/flygo/context"
+
 	"clevergo.tech/clevergo"
-	"github.com/System-Glitch/goyave/v3"
-	"github.com/System-Glitch/goyave/v3/config"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
 	"github.com/billcoding/flygo"
 	"github.com/bmizerany/pat"
-	"github.com/bnkamalesh/webgo/v4"
+	"github.com/bnkamalesh/webgo/v5"
 	"github.com/buaazp/fasthttprouter"
 	"github.com/dimfeld/httptreemux"
 	"github.com/dinever/golf"
@@ -28,10 +27,11 @@ import (
 	fasthttpSlashRouter "github.com/fasthttp/router"
 	"github.com/gin-gonic/gin"
 	"github.com/gofiber/fiber/v2"
-	"github.com/gramework/gramework"
 	"github.com/kataras/muxie"
 	"github.com/savsgio/atreugo/v11"
 	"github.com/savsgio/gotils"
+	"goyave.dev/goyave/v3"
+	"goyave.dev/goyave/v3/config"
 
 	// "github.com/go-siris/siris"
 	// siriscontext "github.com/go-siris/siris/context"
@@ -63,6 +63,8 @@ import (
 
 	// "github.com/plimble/ace"
 	gearbox "github.com/gogearbox/gearbox"
+	gf "github.com/gogf/gf/frame/g"
+	gfhttp "github.com/gogf/gf/net/ghttp"
 	"github.com/pressly/chi"
 	routing "github.com/qiangxue/fasthttp-routing"
 	"github.com/razonyang/fastrouter"
@@ -77,18 +79,18 @@ import (
 	gcontext "golang.org/x/net/context"
 	baa "gopkg.in/baa.v1"
 	lion "gopkg.in/celrenheit/lion.v1"
-	gf "github.com/gogf/gf/frame/g"
-	gfhttp "github.com/gogf/gf/net/ghttp"
 )
 
-var port = 8080
-var sleepTime = 0
-var cpuBound bool
-var target = 15
-var sleepTimeDuration time.Duration
-var message = []byte("hello world")
-var messageStr = "hello world"
-var samplingPoint = 20 //seconds
+var (
+	port              = 8080
+	sleepTime         = 0
+	cpuBound          bool
+	target            = 15
+	sleepTimeDuration time.Duration
+	message           = []byte("hello world")
+	messageStr        = "hello world"
+	samplingPoint     = 20 // seconds
+)
 
 // server [default] [10] [8080]
 func main() {
@@ -194,8 +196,6 @@ func main() {
 		startGoozzo()
 	case "gowww":
 		startGowww()
-	case "gramework":
-		startGramework()
 	case "httprouter":
 		startHTTPRouter()
 	case "httptreemux":
@@ -252,7 +252,6 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -261,6 +260,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Write(message)
 }
+
 func startDefaultMux() {
 	http.HandleFunc("/hello", helloHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), nil)
@@ -313,7 +313,6 @@ func baaHandler(ctx *baa.Context) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -322,18 +321,18 @@ func baaHandler(ctx *baa.Context) {
 	}
 	ctx.Text(200, message)
 }
+
 func startBaa() {
 	mux := baa.New()
 	mux.Get("/hello", baaHandler)
 	mux.Run(":" + strconv.Itoa(port))
 }
 
-//beego
+// beego
 func beegoHandler(ctx *context.Context) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -342,6 +341,7 @@ func beegoHandler(ctx *context.Context) {
 	}
 	ctx.WriteString(messageStr)
 }
+
 func startBeego() {
 	beego.BConfig.RunMode = beego.PROD
 	beego.BeeLogger.Close()
@@ -362,7 +362,6 @@ func bxogHandler(w http.ResponseWriter, req *http.Request, r *bxog.Router) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -371,13 +370,14 @@ func bxogHandler(w http.ResponseWriter, req *http.Request, r *bxog.Router) {
 	}
 	w.Write(message)
 }
+
 func startBxog() {
 	mux := bxog.New()
 	mux.Add("/hello", bxogHandler)
 	mux.Start(":" + strconv.Itoa(port))
 }
 
-//chi
+// chi
 func startChi() {
 	// Create a router instance.
 	r := chi.NewRouter()
@@ -389,7 +389,7 @@ func startChi() {
 	http.ListenAndServe(":"+strconv.Itoa(port), r)
 }
 
-//clevergo
+// clevergo
 func cleverGoHandler(c *clevergo.Context) error {
 	if cpuBound {
 		pow(target)
@@ -403,6 +403,7 @@ func cleverGoHandler(c *clevergo.Context) error {
 	c.Response.Write(message)
 	return nil
 }
+
 func startCleverGo() {
 	app := clevergo.Pure()
 	app.Get("/hello", cleverGoHandler)
@@ -414,7 +415,6 @@ func dencoHandler(w http.ResponseWriter, r *http.Request, params denco.Params) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -423,6 +423,7 @@ func dencoHandler(w http.ResponseWriter, r *http.Request, params denco.Params) {
 	}
 	w.Write(message)
 }
+
 func startDenco() {
 	mux := denco.NewMux()
 	handler, _ := mux.Build([]denco.Handler{mux.GET("/hello", denco.HandlerFunc(dencoHandler))})
@@ -434,7 +435,6 @@ func echoHandler(c echo.Context) error {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -444,6 +444,7 @@ func echoHandler(c echo.Context) error {
 	c.Response().Write(message)
 	return nil
 }
+
 func startEcho() {
 	e := echo.New()
 	e.GET("/hello", echoHandler)
@@ -451,7 +452,7 @@ func startEcho() {
 	e.Start(":" + strconv.Itoa(port))
 }
 
-//fasthttp
+// fasthttp
 func fastHTTPRawHandler(ctx *fasthttp.RequestCtx) {
 	path := gotils.B2S(ctx.Path())
 
@@ -485,7 +486,7 @@ func startFasthttp() {
 	log.Fatal(s.ListenAndServe(":" + strconv.Itoa(port)))
 }
 
-//fasthttprouter
+// fasthttprouter
 func fastHTTPHandler(ctx *fasthttp.RequestCtx) {
 	if cpuBound {
 		pow(target)
@@ -506,19 +507,18 @@ func startFastHTTPRouter() {
 	fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.Handler)
 }
 
-//fasthttp Router
+// fasthttp Router
 func startFastHTTPSlashRouter() {
 	mux := fasthttpSlashRouter.New()
 	mux.GET("/hello", fastHTTPHandler)
 	log.Fatal(fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.Handler))
 }
 
-//fasthttprouting
+// fasthttprouting
 func fastHTTPRoutingHandler(c *routing.Context) error {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -528,18 +528,18 @@ func fastHTTPRoutingHandler(c *routing.Context) error {
 	c.Write(message)
 	return nil
 }
+
 func startFastHTTPRouting() {
 	mux := routing.New()
 	mux.Get("/hello", fastHTTPRoutingHandler)
 	fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.HandleRequest)
 }
 
-//fastrouter
+// fastrouter
 func fastRouterHandler(w http.ResponseWriter, r *http.Request) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -548,6 +548,7 @@ func fastRouterHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Write(message)
 }
+
 func startFastRouter() {
 	mux := fastrouter.New()
 	mux.Get("/hello", fastRouterHandler)
@@ -555,12 +556,11 @@ func startFastRouter() {
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
-//fresh
+// fresh
 func freshHandler(c fresh.Context) error {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -583,7 +583,6 @@ func fiberHandler(c *fiber.Ctx) error {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -611,7 +610,6 @@ func startFlygo() {
 		if cpuBound {
 			pow(target)
 		} else {
-
 			if sleepTime > 0 {
 				time.Sleep(sleepTimeDuration)
 			} else {
@@ -622,7 +620,7 @@ func startFlygo() {
 	}).Run()
 }
 
-//gear
+// gear
 func startGear() {
 	app := gear.New()
 	router := gear.NewRouter()
@@ -631,7 +629,6 @@ func startGear() {
 		if cpuBound {
 			pow(target)
 		} else {
-
 			if sleepTime > 0 {
 				time.Sleep(sleepTimeDuration)
 			} else {
@@ -651,7 +648,6 @@ func startGearbox() {
 		if cpuBound {
 			pow(target)
 		} else {
-
 			if sleepTime > 0 {
 				time.Sleep(sleepTimeDuration)
 			} else {
@@ -668,7 +664,6 @@ func ginHandler(c *gin.Context) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -677,6 +672,7 @@ func ginHandler(c *gin.Context) {
 	}
 	c.Writer.Write(message)
 }
+
 func startGin() {
 	gin.SetMode(gin.ReleaseMode)
 	mux := gin.New()
@@ -691,7 +687,6 @@ func gocraftWebHandler(w web.ResponseWriter, r *web.Request) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -700,6 +695,7 @@ func gocraftWebHandler(w web.ResponseWriter, r *web.Request) {
 	}
 	w.Write(message)
 }
+
 func startGocraftWeb() {
 	mux := web.New(gocraftWebContext{})
 	mux.Get("/hello", gocraftWebHandler)
@@ -719,6 +715,7 @@ func gfHandler(r *gfhttp.Request) {
 	}
 	r.Response.Write(message)
 }
+
 func startGoframe() {
 	s := gf.Server()
 	s.BindHandler("/hello", gfHandler)
@@ -731,7 +728,6 @@ func gojiHandler(w http.ResponseWriter, r *http.Request) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -752,7 +748,6 @@ func goJSONRestHandler(w rest.ResponseWriter, req *rest.Request) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -762,6 +757,7 @@ func goJSONRestHandler(w rest.ResponseWriter, req *rest.Request) {
 	iow := w.(io.Writer)
 	iow.Write(message)
 }
+
 func startGoJSONRest() {
 	api := rest.NewApi()
 	router, _ := rest.MakeRouter(
@@ -775,7 +771,6 @@ func golfHandler(ctx *golf.Context) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -797,7 +792,6 @@ func (w *HelloMessage) Handle(c *gongular.Context) error {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -820,7 +814,6 @@ func goRestfulHandler(r *restful.Request, w *restful.Response) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -829,6 +822,7 @@ func goRestfulHandler(r *restful.Request, w *restful.Response) {
 	}
 	w.Write(message)
 }
+
 func startGoRestful() {
 	wsContainer := restful.NewContainer()
 	ws := new(restful.WebService)
@@ -862,7 +856,6 @@ func ozzoHandler(c *ozzo.Context) error {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -880,35 +873,11 @@ func startGoozzo() {
 	http.ListenAndServe(":"+strconv.Itoa(port), r)
 }
 
-//gowww
+// gowww
 func startGowww() {
 	rt := gowwwrouter.New()
 	rt.Handle("GET", "/hello", http.HandlerFunc(helloHandler))
 	http.ListenAndServe(":"+strconv.Itoa(port), rt)
-
-}
-
-// Gramework
-func grameworkHandler(ctx *gramework.Context) {
-	if cpuBound {
-		pow(target)
-	} else {
-
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		} else {
-			runtime.Gosched()
-		}
-	}
-
-	ctx.WriteString(messageStr)
-}
-
-func startGramework() {
-	gramework.SetEnv(gramework.PROD) // equivalent of ENV=prod
-	app := gramework.New()
-	app.GET("/hello", grameworkHandler)
-	app.ListenAndServe(":" + strconv.Itoa(port))
 }
 
 // httprouter
@@ -916,7 +885,6 @@ func httpRouterHandler(w http.ResponseWriter, _ *http.Request, ps httprouter.Par
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -925,6 +893,7 @@ func httpRouterHandler(w http.ResponseWriter, _ *http.Request, ps httprouter.Par
 	}
 	w.Write(message)
 }
+
 func startHTTPRouter() {
 	mux := httprouter.New()
 	mux.GET("/hello", httpRouterHandler)
@@ -936,7 +905,6 @@ func httpTreeMuxHandler(w http.ResponseWriter, _ *http.Request, vars map[string]
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -945,6 +913,7 @@ func httpTreeMuxHandler(w http.ResponseWriter, _ *http.Request, vars map[string]
 	}
 	w.Write(message)
 }
+
 func starthttpTreeMux() {
 	mux := httptreemux.New()
 	mux.GET("/hello", httpTreeMuxHandler)
@@ -956,7 +925,6 @@ func larsHandler(c lars.Context) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -965,6 +933,7 @@ func larsHandler(c lars.Context) {
 	}
 	c.Response().Write(message)
 }
+
 func startLars() {
 	mux := lars.New()
 	mux.Get("/hello", larsHandler)
@@ -976,7 +945,6 @@ func lionHandler(c gcontext.Context, w http.ResponseWriter, r *http.Request) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -985,6 +953,7 @@ func lionHandler(c gcontext.Context, w http.ResponseWriter, r *http.Request) {
 	}
 	w.Write(message)
 }
+
 func startLion() {
 	mux := lion.New()
 	mux.GetFunc("/hello", lionHandler)
@@ -996,7 +965,6 @@ func macaronHandler(c *macaron.Context) string {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -1005,6 +973,7 @@ func macaronHandler(c *macaron.Context) string {
 	}
 	return messageStr
 }
+
 func startMacaron() {
 	mux := macaron.New()
 	mux.Get("/hello", macaronHandler)
@@ -1016,7 +985,6 @@ func martiniHandlerWrite(params martini.Params) string {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -1051,7 +1019,7 @@ func startNegroni() {
 	http.ListenAndServe(":"+strconv.Itoa(port), n)
 }
 
-//neo
+// neo
 func startNeo() {
 	app := neo.App()
 	app.Conf.App.Addr = ":" + strconv.Itoa(port)
@@ -1060,7 +1028,6 @@ func startNeo() {
 		if cpuBound {
 			pow(target)
 		} else {
-
 			if sleepTime > 0 {
 				time.Sleep(sleepTimeDuration)
 			} else {
@@ -1080,7 +1047,7 @@ func startPat() {
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
-//pure
+// pure
 func startPure() {
 	p := pure.New()
 	p.Get("/hello", helloHandler)
@@ -1092,7 +1059,6 @@ func r2routerHandler(w http.ResponseWriter, req *http.Request, params r2router.P
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -1101,6 +1067,7 @@ func r2routerHandler(w http.ResponseWriter, req *http.Request, params r2router.P
 	}
 	w.Write(message)
 }
+
 func startR2router() {
 	mux := r2router.NewRouter()
 	mux.Get("/hello", r2routerHandler)
@@ -1122,12 +1089,11 @@ func startR2router() {
 // 	app.Run(siris.Addr(":"+strconv.Itoa(port)), siris.WithCharset("UTF-8"))
 // }
 
-//Tango
+// Tango
 func tangoHandler(ctx *tango.Context) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -1160,7 +1126,8 @@ func startTinyRouter() {
 			Method:     "GET",
 			Pattern:    "/hello",
 			HandleFunc: helloHandler,
-		}}
+		},
+	}
 	router := tiny.New(tiny.Config{Routes: routes})
 	http.ListenAndServe(":"+strconv.Itoa(port), router)
 }
@@ -1170,7 +1137,6 @@ func trafficHandler(w traffic.ResponseWriter, r *traffic.Request) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
@@ -1179,6 +1145,7 @@ func trafficHandler(w traffic.ResponseWriter, r *traffic.Request) {
 	}
 	w.Write(message)
 }
+
 func startTraffic() {
 	traffic.SetVar("env", "bench")
 	mux := traffic.New()
@@ -1213,6 +1180,7 @@ func getWebgoRoutes() []*webgo.Route {
 		},
 	}
 }
+
 func startWebgo() {
 	cfg := webgo.Config{
 		Host:         "",
@@ -1229,7 +1197,6 @@ func goyaveHandler(r *goyave.Response, req *goyave.Request) {
 	if cpuBound {
 		pow(target)
 	} else {
-
 		if sleepTime > 0 {
 			time.Sleep(sleepTimeDuration)
 		} else {
