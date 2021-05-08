@@ -11,13 +11,10 @@ import (
 	"strconv"
 	"time"
 
-	flygoc "github.com/billcoding/flygo/context"
-
 	"clevergo.tech/clevergo"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
-	"github.com/billcoding/flygo"
 	"github.com/bmizerany/pat"
 	"github.com/bnkamalesh/webgo/v5"
 	"github.com/buaazp/fasthttprouter"
@@ -162,8 +159,6 @@ func main() {
 		startFastRouter()
 	case "fiber":
 		startFiber()
-	case "flygo":
-		startFlygo()
 	case "fresh":
 		startFresh()
 	case "gear":
@@ -603,21 +598,6 @@ func startFiber() {
 	})
 	app.Get("/hello", fiberHandler)
 	log.Fatal(app.Listen(":" + strconv.Itoa(port)))
-}
-
-func startFlygo() {
-	flygo.GetApp().GET("/hello", func(c *flygoc.Context) {
-		if cpuBound {
-			pow(target)
-		} else {
-			if sleepTime > 0 {
-				time.Sleep(sleepTimeDuration)
-			} else {
-				runtime.Gosched()
-			}
-		}
-		c.Text(messageStr)
-	}).Run()
 }
 
 // gear

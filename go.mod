@@ -8,8 +8,6 @@ require (
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
 	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d // indirect
 	github.com/astaxie/beego v1.12.3
-	github.com/billcoding/calls v0.0.0-20201221013021-2a8a0fd0a632 // indirect
-	github.com/billcoding/flygo v0.0.0-20210317012236-aa981fbee5f5
 	github.com/bmizerany/pat v0.0.0-20210406213842-e4b6760bdd6f
 	github.com/bnkamalesh/webgo/v5 v5.0.0
 	github.com/buaazp/fasthttprouter v0.1.1
@@ -36,7 +34,6 @@ require (
 	github.com/gogf/gf v1.15.7
 	github.com/golang/gddo v0.0.0-20190904175337-72a348e765d2 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
-	github.com/google/uuid v1.2.0 // indirect
 	github.com/gorilla/mux v1.8.0
 	github.com/gowww/router v1.0.0
 	github.com/gravitational/trace v1.1.15 // indirect
@@ -60,14 +57,12 @@ require (
 	github.com/mustafaakin/gongular v0.0.0-20200705144045-a428565ae628
 	github.com/naoina/denco v0.0.0-20180930074809-8475105a6b4c
 	github.com/nbari/violetear v0.0.0-20191105085335-75adcf9b986b
-	github.com/olekukonko/tablewriter v0.0.5 // indirect
 	github.com/pilu/config v0.0.0-20131214182432-3eb99e6c0b9a // indirect
 	github.com/pilu/miniassert v0.0.0-20140522125902-bee63581261a // indirect
 	github.com/pilu/traffic v0.5.3
 	github.com/pressly/chi v4.1.2+incompatible
 	github.com/prometheus/client_golang v1.10.0 // indirect
 	github.com/prometheus/common v0.23.0 // indirect
-	github.com/prometheus/procfs v0.6.0 // indirect
 	github.com/qiangxue/fasthttp-routing v0.0.0-20160225050629-6ccdc2a18d87
 	github.com/razonyang/fastrouter v0.1.0
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
@@ -93,12 +88,13 @@ require (
 	golang.org/x/net v0.0.0-20210505214959-0714010a04ed
 	golang.org/x/sys v0.0.0-20210507014357-30e306a8bba5 // indirect
 	golang.org/x/term v0.0.0-20210503060354-a79de5458b56 // indirect
+	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	gopkg.in/baa.v1 v1.2.32
 	gopkg.in/celrenheit/lion.v1 v1.0.0-20161101201550-7c6ce5d22d64
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/ini.v1 v1.62.0 // indirect
 	gopkg.in/macaron.v1 v1.4.0
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gorm.io/gorm v1.21.9 // indirect
 	goyave.dev/goyave/v3 v3.8.0
 )

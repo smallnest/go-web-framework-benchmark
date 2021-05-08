@@ -5,10 +5,10 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 
 *test environment*
 
-* CPU:      Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz (2 cpus, 10 physical cores, 40 logical cores)
-* Memory:   32G
-* Go:       go1.12.7 linux/amd64
-* OS:       CentOS Linux release 7.3.1611 (Core)
+* CPU:      QEMU Virtual CPU version(1.8GHZ, 8 cores)
+* Memory:   16G
+* Go:       go1.16.3 linux/amd64
+* OS:       CentOS Linux release 7.5.1804 (Core)
 
 
 ## Tested web frameworks (in alphabetical order)
@@ -31,7 +31,6 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [fasthttprouter](https://github.com/buaazp/fasthttprouter)
 * [fastRouter](https://github.com/razonyang/fastrouter)
 * [fiber](https://fiber.wiki)
-* [flygo](https://github.com/billcoding/flygo)
 * [gear](http://github.com/teambition/gear)
 * [gearbox](https://github.com/gogearbox/gearbox)
 * [gem](https://github.com/go-gem/gem)
