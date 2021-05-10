@@ -8,6 +8,7 @@ require (
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
 	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d // indirect
 	github.com/astaxie/beego v1.12.3
+	github.com/billcoding/flygo v0.0.0-20210317012236-aa981fbee5f5
 	github.com/bmizerany/pat v0.0.0-20210406213842-e4b6760bdd6f
 	github.com/bnkamalesh/webgo/v5 v5.0.0
 	github.com/buaazp/fasthttprouter v0.1.1
@@ -88,13 +89,11 @@ require (
 	golang.org/x/net v0.0.0-20210505214959-0714010a04ed
 	golang.org/x/sys v0.0.0-20210507014357-30e306a8bba5 // indirect
 	golang.org/x/term v0.0.0-20210503060354-a79de5458b56 // indirect
-	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	gopkg.in/baa.v1 v1.2.32
 	gopkg.in/celrenheit/lion.v1 v1.0.0-20161101201550-7c6ce5d22d64
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/ini.v1 v1.62.0 // indirect
 	gopkg.in/macaron.v1 v1.4.0
-	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gorm.io/gorm v1.21.9 // indirect
 	goyave.dev/goyave/v3 v3.8.0
 )
