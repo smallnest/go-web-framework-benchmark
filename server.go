@@ -1,20 +1,13 @@
 package main
 
 import (
-	"fmt"
-	"io"
-	"io/ioutil"
-	"log"
-	"net/http"
-	"os"
-	"runtime"
-	"strconv"
-	"time"
-
 	"clevergo.tech/clevergo"
+	"fmt"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
+	"github.com/billcoding/flygo"
+	flygocontext "github.com/billcoding/flygo/context"
 	"github.com/bmizerany/pat"
 	"github.com/bnkamalesh/webgo/v5"
 	"github.com/buaazp/fasthttprouter"
@@ -29,6 +22,14 @@ import (
 	"github.com/savsgio/gotils"
 	"goyave.dev/goyave/v3"
 	"goyave.dev/goyave/v3/config"
+	"io"
+	"io/ioutil"
+	"log"
+	"net/http"
+	"os"
+	"runtime"
+	"strconv"
+	"time"
 
 	// "github.com/go-siris/siris"
 	// siriscontext "github.com/go-siris/siris/context"
@@ -159,6 +160,8 @@ func main() {
 		startFastRouter()
 	case "fiber":
 		startFiber()
+	case "flygo":
+		startFlygo()
 	case "fresh":
 		startFresh()
 	case "gear":
@@ -598,6 +601,24 @@ func startFiber() {
 	})
 	app.Get("/hello", fiberHandler)
 	log.Fatal(app.Listen(":" + strconv.Itoa(port)))
+}
+
+func startFlygo() {
+	app := flygo.GetApp()
+	app.Config.Flygo.Server.Port = port
+	handler := func(c *flygocontext.Context) {
+		if cpuBound {
+			pow(target)
+		} else {
+			if sleepTime > 0 {
+				time.Sleep(sleepTimeDuration)
+			} else {
+				runtime.Gosched()
+			}
+		}
+		c.Text(messageStr)
+	}
+	app.GET("/hello", handler).Run()
 }
 
 // gear
