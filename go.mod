@@ -8,7 +8,7 @@ require (
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
 	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d // indirect
 	github.com/astaxie/beego v1.12.3
-	github.com/billcoding/flygo v0.0.0-20210317012236-aa981fbee5f5
+	github.com/billcoding/flygo v0.0.0-20210313081614-d19bc955a866
 	github.com/bmizerany/pat v0.0.0-20210406213842-e4b6760bdd6f
 	github.com/bnkamalesh/webgo/v5 v5.0.0
 	github.com/buaazp/fasthttprouter v0.1.1
@@ -58,6 +58,7 @@ require (
 	github.com/mustafaakin/gongular v0.0.0-20200705144045-a428565ae628
 	github.com/naoina/denco v0.0.0-20180930074809-8475105a6b4c
 	github.com/nbari/violetear v0.0.0-20191105085335-75adcf9b986b
+	github.com/onsi/ginkgo v1.15.2 // indirect
 	github.com/pilu/config v0.0.0-20131214182432-3eb99e6c0b9a // indirect
 	github.com/pilu/miniassert v0.0.0-20140522125902-bee63581261a // indirect
 	github.com/pilu/traffic v0.5.3
