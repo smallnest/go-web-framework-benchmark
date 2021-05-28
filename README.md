@@ -20,7 +20,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [baa](https://github.com/go-baa/baa)
 * [beego](https://github.com/astaxie/beego)
 * [bone](https://github.com/go-zoo/bone)
-* [chi](https://github.com/pressly/chi)
+* [chi](https://github.com/go-chi/chi)
 * [clevergo](https://github.com/clevergo/clevergo)
 * [default http](https://golang.org/pkg/net/http/)
 * [denco](https://github.com/naoina/denco)
