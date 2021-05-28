@@ -65,6 +65,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [tango](https://github.com/lunny/tango)
 * [tinyrouter](https://github.com/go101/tinyrouter)
 * [traffic](https://github.com/pilu/traffic)
+* [treemux](https://github.com/vmihailenco/treemux)
 * [violetear](https://github.com/nbari/violetear)
 * [vulcan](https://github.com/mailgun/route)
 * [webgo](https://github.com/bnkamalesh/webgo)
