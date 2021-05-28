@@ -83,6 +83,7 @@ require (
 	github.com/valyala/tcplisten v1.0.0 // indirect
 	github.com/vanng822/r2router v0.0.0-20150523112421-1023140a4f30
 	github.com/vardius/gorouter/v4 v4.5.1
+	github.com/vmihailenco/treemux v0.6.1
 	go.opentelemetry.io/otel v0.20.0 // indirect
 	go101.org/tinyrouter v1.0.1
 	goji.io v2.0.2+incompatible
