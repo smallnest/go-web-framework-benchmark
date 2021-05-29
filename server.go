@@ -1,8 +1,17 @@
 package main
 
 import (
-	"clevergo.tech/clevergo"
 	"fmt"
+	"io"
+	"io/ioutil"
+	"log"
+	"net/http"
+	"os"
+	"runtime"
+	"strconv"
+	"time"
+
+	"clevergo.tech/clevergo"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
@@ -22,14 +31,6 @@ import (
 	"github.com/savsgio/gotils"
 	"goyave.dev/goyave/v3"
 	"goyave.dev/goyave/v3/config"
-	"io"
-	"io/ioutil"
-	"log"
-	"net/http"
-	"os"
-	"runtime"
-	"strconv"
-	"time"
 
 	// "github.com/go-siris/siris"
 	// siriscontext "github.com/go-siris/siris/context"
@@ -60,10 +61,10 @@ import (
 	"github.com/pilu/traffic"
 
 	// "github.com/plimble/ace"
+	"github.com/go-chi/chi/v5"
 	gearbox "github.com/gogearbox/gearbox"
 	gf "github.com/gogf/gf/frame/g"
 	gfhttp "github.com/gogf/gf/net/ghttp"
-	"github.com/go-chi/chi"
 	routing "github.com/qiangxue/fasthttp-routing"
 	"github.com/razonyang/fastrouter"
 	tigertonic "github.com/rcrowley/go-tigertonic"
@@ -72,12 +73,12 @@ import (
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
 	"github.com/vardius/gorouter/v4"
+	"github.com/vmihailenco/treemux"
 	goji "goji.io"
 	gojipat "goji.io/pat"
 	gcontext "golang.org/x/net/context"
 	baa "gopkg.in/baa.v1"
 	lion "gopkg.in/celrenheit/lion.v1"
-	"github.com/vmihailenco/treemux"
 )
 
 var (
@@ -1160,8 +1161,11 @@ func startTraffic() {
 // Treemux
 func startTreemux() {
 	router := treemux.New()
-	router.Get("/hello", helloHandler)
-	http.ListenAndServe(":"+strconv.Itoa(port), r)
+	router.GET("/hello", func(w http.ResponseWriter, req treemux.Request) error {
+		helloHandler(w, req.Request)
+		return nil
+	})
+	http.ListenAndServe(":"+strconv.Itoa(port), router)
 }
 
 // violetear

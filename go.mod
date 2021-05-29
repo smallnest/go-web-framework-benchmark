@@ -21,7 +21,7 @@ require (
 	github.com/fasthttp/router v1.3.12
 	github.com/fatih/color v1.10.0 // indirect
 	github.com/gin-gonic/gin v1.7.1
-	github.com/go-chi/chi/v5 v5.0.3 // indirect
+	github.com/go-chi/chi/v5 v5.0.3
 	github.com/go-macaron/inject v0.0.0-20200308113650-138e5925c53b // indirect
 	github.com/go-martini/martini v0.0.0-20170121215854-22fa46961aab
 	github.com/go-ozzo/ozzo-routing v2.1.4+incompatible
