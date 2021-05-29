@@ -77,6 +77,7 @@ import (
 	gcontext "golang.org/x/net/context"
 	baa "gopkg.in/baa.v1"
 	lion "gopkg.in/celrenheit/lion.v1"
+	"github.com/vmihailenco/treemux"
 )
 
 var (
@@ -228,6 +229,8 @@ func main() {
 		startTinyRouter()
 	case "traffic":
 		startTraffic()
+	case "treemux":
+		startTreemux()
 	case "violetear":
 		startVioletear()
 	case "vulcan":
@@ -1152,6 +1155,13 @@ func startTraffic() {
 	mux := traffic.New()
 	mux.Get("/hello", trafficHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+// Treemux
+func startTreemux() {
+	router := treemux.New()
+	router.Get("/hello", helloHandler)
+	http.ListenAndServe(":"+strconv.Itoa(port), r)
 }
 
 // violetear
