@@ -21,6 +21,7 @@ require (
 	github.com/fasthttp/router v1.3.12
 	github.com/fatih/color v1.10.0 // indirect
 	github.com/gin-gonic/gin v1.7.1
+	github.com/go-chi/chi/v5 v5.0.3 // indirect
 	github.com/go-macaron/inject v0.0.0-20200308113650-138e5925c53b // indirect
 	github.com/go-martini/martini v0.0.0-20170121215854-22fa46961aab
 	github.com/go-ozzo/ozzo-routing v2.1.4+incompatible
@@ -62,7 +63,6 @@ require (
 	github.com/pilu/config v0.0.0-20131214182432-3eb99e6c0b9a // indirect
 	github.com/pilu/miniassert v0.0.0-20140522125902-bee63581261a // indirect
 	github.com/pilu/traffic v0.5.3
-	github.com/pressly/chi v4.1.2+incompatible
 	github.com/prometheus/client_golang v1.10.0 // indirect
 	github.com/prometheus/common v0.23.0 // indirect
 	github.com/qiangxue/fasthttp-routing v0.0.0-20160225050629-6ccdc2a18d87

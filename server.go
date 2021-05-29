@@ -63,7 +63,7 @@ import (
 	gearbox "github.com/gogearbox/gearbox"
 	gf "github.com/gogf/gf/frame/g"
 	gfhttp "github.com/gogf/gf/net/ghttp"
-	"github.com/pressly/chi"
+	"github.com/go-chi/chi"
 	routing "github.com/qiangxue/fasthttp-routing"
 	"github.com/razonyang/fastrouter"
 	tigertonic "github.com/rcrowley/go-tigertonic"
