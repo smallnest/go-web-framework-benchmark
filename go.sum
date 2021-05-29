@@ -56,8 +56,6 @@ github.com/beorn7/perks v1.0.1/go.mod h1:G2ZrVWU2WbWT9wwq4/hrbKbnv/1ERSJQ0ibhJ6r
 github.com/bgentry/speakeasy v0.1.0/go.mod h1:+zsyZBPWlz7T6j88CTgSN5bM796AkVf0kBD4zp0CCIs=
 github.com/billcoding/flygo v0.0.0-20210313081614-d19bc955a866 h1:pJIwXpKZIz2ARAVMOxL7IXGsAN3pj5b3qAJ4SRTgiRA=
 github.com/billcoding/flygo v0.0.0-20210313081614-d19bc955a866/go.mod h1:IP2uksSBlYW1Rswfnb45uOTZaFcoyNxkF9Bpeg3NWeQ=
-github.com/billcoding/flygo v0.0.0-20210317012236-aa981fbee5f5 h1:MjGv4QE4WXb8txvP7C06bSmXGv1wqf/y+Bx7YQ4Y7x4=
-github.com/billcoding/flygo v0.0.0-20210317012236-aa981fbee5f5/go.mod h1:Nhdw1j/v/zYPCLQ/0GYei4s+yM0gJr83WD2xM0Mrf+A=
 github.com/billcoding/tagparse v0.0.0-20210123031055-de0378380167 h1:o2G+V1dHHRVKkZpBYP6VWl9SWhCDM0dYlG55Jt6BaZg=
 github.com/billcoding/tagparse v0.0.0-20210123031055-de0378380167/go.mod h1:1sC6gaeSl3GR7cbQ7JbwJlm5bmL87OO/c6zp2oGapjE=
 github.com/billcoding/validator v0.0.0-20210308111115-7e4f0f7bf41c h1:B0xVWPMmgXFVBFj+QgFUIuv/IvjR0YO1H/LfraRQQLw=
