@@ -30,7 +30,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [fasthttp](https://github.com/valyala/fasthttp)
 * [fasthttprouter](https://github.com/buaazp/fasthttprouter)
 * [fastRouter](https://github.com/razonyang/fastrouter)
-* [fiber](https://fiber.wiki)
+* [fiber](https://gofiber.io/)
 * [flygo](https://github.com/billcoding/flygo)
 * [gear](http://github.com/teambition/gear)
 * [gearbox](https://github.com/gogearbox/gearbox)
