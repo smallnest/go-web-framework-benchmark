@@ -63,8 +63,7 @@ import (
 	// "github.com/plimble/ace"
 	"github.com/go-chi/chi/v5"
 	gearbox "github.com/gogearbox/gearbox"
-	gf "github.com/gogf/gf/frame/g"
-	gfhttp "github.com/gogf/gf/net/ghttp"
+	gf "github.com/gogf/gf/v2/frame/g"
 	routing "github.com/qiangxue/fasthttp-routing"
 	"github.com/razonyang/fastrouter"
 	tigertonic "github.com/rcrowley/go-tigertonic"
@@ -708,7 +707,7 @@ func startGocraftWeb() {
 }
 
 // goframe
-func gfHandler(r *gfhttp.Request) {
+func gfHandler(w http.ResponseWriter, r *http.Request) {
 	if cpuBound {
 		pow(target)
 	} else {
@@ -718,12 +717,22 @@ func gfHandler(r *gfhttp.Request) {
 			runtime.Gosched()
 		}
 	}
-	r.Response.Write(message)
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	_, _ = w.Write(message)
 }
 
 func startGoframe() {
 	s := gf.Server()
-	s.BindHandler("/hello", gfHandler)
+	s.SetHandler(func(w http.ResponseWriter, r *http.Request) {
+		switch r.URL.Path {
+		case "/hello":
+			gfHandler(w, r)
+
+		default:
+			w.WriteHeader(http.StatusNotFound)
+			_, _ = w.Write([]byte(http.StatusText(http.StatusNotFound)))
+		}
+	})
 	s.SetPort(port)
 	s.Run()
 }
