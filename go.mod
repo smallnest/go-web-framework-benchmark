@@ -6,6 +6,7 @@ require (
 	clevergo.tech/clevergo v0.5.2
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
 	github.com/astaxie/beego v1.12.3
+	github.com/aurora-go/aurora v0.2.3
 	github.com/billcoding/flygo v0.0.0-20210313081614-d19bc955a866
 	github.com/bmizerany/pat v0.0.0-20210406213842-e4b6760bdd6f
 	github.com/bnkamalesh/webgo/v5 v5.0.0
@@ -63,7 +64,7 @@ require (
 	github.com/vmihailenco/treemux v0.6.1
 	go101.org/tinyrouter v1.0.1
 	goji.io v2.0.2+incompatible
-	golang.org/x/net v0.0.0-20210510120150-4163338589ed
+	golang.org/x/net v0.0.0-20211112202133-69e39bad7dc2
 	gopkg.in/baa.v1 v1.2.32
 	gopkg.in/celrenheit/lion.v1 v1.0.0-20161101201550-7c6ce5d22d64
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
