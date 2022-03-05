@@ -17,6 +17,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 
 * [ace](https://github.com/plimble/ace)
 * [atreugo](https://github.com/savsgio/atreugo)
+* [aurora](https://github.com/aurora-go/aurora)
 * [baa](https://github.com/go-baa/baa)
 * [beego](https://github.com/astaxie/beego)
 * [bone](https://github.com/go-zoo/bone)

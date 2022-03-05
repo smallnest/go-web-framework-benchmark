@@ -1,20 +1,12 @@
 package main
 
 import (
-	"fmt"
-	"io"
-	"io/ioutil"
-	"log"
-	"net/http"
-	"os"
-	"runtime"
-	"strconv"
-	"time"
-
 	"clevergo.tech/clevergo"
+	"fmt"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
+	"github.com/aurora-go/aurora/aurora"
 	"github.com/billcoding/flygo"
 	flygocontext "github.com/billcoding/flygo/context"
 	"github.com/bmizerany/pat"
@@ -31,6 +23,14 @@ import (
 	"github.com/savsgio/gotils"
 	"goyave.dev/goyave/v3"
 	"goyave.dev/goyave/v3/config"
+	"io"
+	"io/ioutil"
+	"log"
+	"net/http"
+	"os"
+	"runtime"
+	"strconv"
+	"time"
 
 	// "github.com/go-siris/siris"
 	// siriscontext "github.com/go-siris/siris/context"
@@ -133,6 +133,8 @@ func main() {
 	// 	startAce()
 	case "atreugo":
 		startAtreugo()
+	case "aurora":
+		starAuroraGo()
 	case "baa":
 		startBaa()
 	case "beego":
@@ -307,6 +309,14 @@ func startAtreugo() {
 	})
 	server.GET("/hello", atreugoHandler)
 	log.Fatal(server.ListenAndServe())
+}
+
+func starAuroraGo() {
+	a := aurora.New()
+	a.GET("/hello", func(request aurora.Request) interface{} {
+		return messageStr
+	})
+	a.Guide("")
 }
 
 // baa
