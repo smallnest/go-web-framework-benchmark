@@ -1,15 +1,14 @@
 module github.com/smallnest/go-web-framework-benchmark
 
-go 1.15
+go 1.17
 
 require (
-	clevergo.tech/clevergo v0.5.2
+	clevergo.tech/clevergo v0.6.0
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
 	github.com/astaxie/beego v1.12.3
 	github.com/aurora-go/aurora v0.2.3
-	github.com/billcoding/flygo v0.0.0-20210313081614-d19bc955a866
 	github.com/bmizerany/pat v0.0.0-20210406213842-e4b6760bdd6f
-	github.com/bnkamalesh/webgo/v5 v5.0.0
+	github.com/bnkamalesh/webgo/v5 v5.3.2
 	github.com/buaazp/fasthttprouter v0.1.1
 	github.com/celrenheit/htest v0.0.0-20170621160705-e34d50431e7f // indirect
 	github.com/claygod/Bxog v0.0.0-20200612145532-319bb00567a6
@@ -17,9 +16,9 @@ require (
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
 	github.com/dinever/golf v0.3.0
 	github.com/emicklei/go-restful v2.15.0+incompatible
-	github.com/fasthttp/router v1.4.1
-	github.com/gin-gonic/gin v1.7.1
-	github.com/go-chi/chi/v5 v5.0.3
+	github.com/fasthttp/router v1.4.6
+	github.com/gin-gonic/gin v1.7.7
+	github.com/go-chi/chi/v5 v5.0.7
 	github.com/go-martini/martini v0.0.0-20170121215854-22fa46961aab
 	github.com/go-ozzo/ozzo-routing v2.1.4+incompatible
 	github.com/go-playground/form v3.1.4+incompatible // indirect
@@ -27,8 +26,8 @@ require (
 	github.com/go-playground/pure v4.2.0+incompatible
 	github.com/go-zoo/bone v1.3.0
 	github.com/gocraft/web v0.0.0-20190207150652-9707327fb69b
-	github.com/gofiber/fiber/v2 v2.16.0
-	github.com/gogearbox/gearbox v1.2.3
+	github.com/gofiber/fiber/v2 v2.28.0
+	github.com/gogearbox/gearbox v1.2.4
 	github.com/gogf/gf/v2 v2.0.0-rc3
 	github.com/golang/gddo v0.0.0-20210115222349-20d68f94ee1f // indirect
 	github.com/gorilla/mux v1.8.0
@@ -40,34 +39,136 @@ require (
 	github.com/ivpusic/urlregex v0.0.0-20160128000749-4dd86e784405 // indirect
 	github.com/julienschmidt/httprouter v1.3.0
 	github.com/kataras/muxie v1.1.2
-	github.com/labstack/echo/v4 v4.2.2
+	github.com/labstack/echo/v4 v4.7.0
 	github.com/lunny/log v0.0.0-20160921050905-7887c61bf0de
 	github.com/lunny/tango v0.5.6
 	github.com/mailgun/route v0.0.0-20191025171320-daa4df6c711a
 	github.com/mustafaakin/gongular v0.0.0-20200705144045-a428565ae628
 	github.com/naoina/denco v0.0.0-20180930074809-8475105a6b4c
-	github.com/nbari/violetear v0.0.0-20191105085335-75adcf9b986b
+	github.com/nbari/violetear v0.0.0-20210524103009-ce83b52538c9
 	github.com/pilu/config v0.0.0-20131214182432-3eb99e6c0b9a // indirect
 	github.com/pilu/miniassert v0.0.0-20140522125902-bee63581261a // indirect
 	github.com/pilu/traffic v0.5.3
 	github.com/qiangxue/fasthttp-routing v0.0.0-20160225050629-6ccdc2a18d87
 	github.com/razonyang/fastrouter v0.1.0
 	github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7
-	github.com/savsgio/atreugo/v11 v11.8.1
-	github.com/savsgio/gotils v0.0.0-20210617111740-97865ed5a873
-	github.com/teambition/gear v1.24.0
+	github.com/teambition/gear v1.25.1
 	github.com/tockins/fresh v0.0.0-20181012144221-d8b891ad12e4
 	github.com/urfave/negroni v1.0.0
-	github.com/valyala/fasthttp v1.28.0
+	github.com/valyala/fasthttp v1.34.0
 	github.com/vanng822/r2router v0.0.0-20150523112421-1023140a4f30
 	github.com/vardius/gorouter/v4 v4.5.1
-	github.com/vmihailenco/treemux v0.6.1
 	go101.org/tinyrouter v1.0.1
 	goji.io v2.0.2+incompatible
-	golang.org/x/net v0.0.0-20211112202133-69e39bad7dc2
+	golang.org/x/net v0.0.0-20220225172249-27dd8689420f
 	gopkg.in/baa.v1 v1.2.32
 	gopkg.in/celrenheit/lion.v1 v1.0.0-20161101201550-7c6ce5d22d64
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/macaron.v1 v1.4.0
-	goyave.dev/goyave/v3 v3.8.0
+	goyave.dev/goyave/v3 v3.11.0
+)
+
+require (
+	clevergo.tech/log v0.3.0 // indirect
+	gitea.com/lunny/log v0.0.0-20190322053110-01b5df579c4e // indirect
+	github.com/BurntSushi/toml v1.0.0 // indirect
+	github.com/Code-Hex/uniseg v0.2.0 // indirect
+	github.com/andybalholm/brotli v1.0.4 // indirect
+	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d // indirect
+	github.com/aurora-go/aurora-email v0.0.2 // indirect
+	github.com/aurora-go/minilog v0.0.7 // indirect
+	github.com/beorn7/perks v1.0.1 // indirect
+	github.com/cespare/xxhash/v2 v2.1.2 // indirect
+	github.com/clbanning/mxj/v2 v2.5.5 // indirect
+	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/denisenkom/go-mssqldb v0.12.0 // indirect
+	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
+	github.com/fatih/color v1.13.0 // indirect
+	github.com/fsnotify/fsnotify v1.5.1 // indirect
+	github.com/gin-contrib/sse v0.1.0 // indirect
+	github.com/go-http-utils/cookie v1.3.1 // indirect
+	github.com/go-http-utils/negotiator v1.0.0 // indirect
+	github.com/go-logr/logr v1.2.2 // indirect
+	github.com/go-logr/stdr v1.2.2 // indirect
+	github.com/go-macaron/inject v0.0.0-20200308113650-138e5925c53b // indirect
+	github.com/go-playground/locales v0.14.0 // indirect
+	github.com/go-playground/universal-translator v0.18.0 // indirect
+	github.com/go-playground/validator/v10 v10.10.1 // indirect
+	github.com/go-redis/redis/v8 v8.11.4 // indirect
+	github.com/go-sql-driver/mysql v1.6.0 // indirect
+	github.com/golang-sql/civil v0.0.0-20220223132316-b832511892a9 // indirect
+	github.com/golang-sql/sqlexp v0.0.0-20170517235910-f1bb20e5a188 // indirect
+	github.com/golang/protobuf v1.5.2 // indirect
+	github.com/google/uuid v1.3.0 // indirect
+	github.com/gorilla/websocket v1.5.0 // indirect
+	github.com/gravitational/trace v1.1.17 // indirect
+	github.com/grokify/html-strip-tags-go v0.0.1 // indirect
+	github.com/hashicorp/golang-lru v0.5.4 // indirect
+	github.com/hashicorp/hcl v1.0.0 // indirect
+	github.com/imdario/mergo v0.3.12 // indirect
+	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
+	github.com/jackc/pgconn v1.11.0 // indirect
+	github.com/jackc/pgio v1.0.0 // indirect
+	github.com/jackc/pgpassfile v1.0.0 // indirect
+	github.com/jackc/pgproto3/v2 v2.2.0 // indirect
+	github.com/jackc/pgservicefile v0.0.0-20200714003250-2b9c44734f2b // indirect
+	github.com/jackc/pgtype v1.10.0 // indirect
+	github.com/jackc/pgx/v4 v4.15.0 // indirect
+	github.com/jinzhu/inflection v1.0.0 // indirect
+	github.com/jinzhu/now v1.1.4 // indirect
+	github.com/jonboulle/clockwork v0.2.2 // indirect
+	github.com/json-iterator/go v1.1.12 // indirect
+	github.com/klauspost/compress v1.15.0 // indirect
+	github.com/konsorten/go-windows-terminal-sequences v1.0.3 // indirect
+	github.com/labstack/gommon v0.3.1 // indirect
+	github.com/leodido/go-urn v1.2.1 // indirect
+	github.com/magiconair/properties v1.8.6 // indirect
+	github.com/mattn/go-colorable v0.1.12 // indirect
+	github.com/mattn/go-isatty v0.0.14 // indirect
+	github.com/mattn/go-runewidth v0.0.13 // indirect
+	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
+	github.com/mitchellh/mapstructure v1.4.3 // indirect
+	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
+	github.com/modern-go/reflect2 v1.0.2 // indirect
+	github.com/olekukonko/tablewriter v0.0.5 // indirect
+	github.com/pelletier/go-toml v1.9.4 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
+	github.com/prometheus/client_golang v1.12.1 // indirect
+	github.com/prometheus/client_model v0.2.0 // indirect
+	github.com/prometheus/common v0.32.1 // indirect
+	github.com/prometheus/procfs v0.7.3 // indirect
+	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
+	github.com/rivo/uniseg v0.2.0 // indirect
+	github.com/savsgio/gotils v0.0.0-20220201163454-d252f0a44d5b // indirect
+	github.com/shiena/ansicolor v0.0.0-20200904210342-c7312218db18 // indirect
+	github.com/sirupsen/logrus v1.8.1 // indirect
+	github.com/spf13/afero v1.8.1 // indirect
+	github.com/spf13/cast v1.4.1 // indirect
+	github.com/spf13/jwalterweatherman v1.1.0 // indirect
+	github.com/spf13/pflag v1.0.5 // indirect
+	github.com/spf13/viper v1.10.1 // indirect
+	github.com/stretchr/testify v1.7.0 // indirect
+	github.com/subosito/gotenv v1.2.0 // indirect
+	github.com/teambition/trie-mux v1.5.2 // indirect
+	github.com/ugorji/go/codec v1.2.7 // indirect
+	github.com/unknwon/com v1.0.1 // indirect
+	github.com/valyala/bytebufferpool v1.0.0 // indirect
+	github.com/valyala/fasttemplate v1.2.1 // indirect
+	github.com/valyala/tcplisten v1.0.0 // indirect
+	github.com/vulcand/predicate v1.2.0 // indirect
+	go.opentelemetry.io/otel v1.4.1 // indirect
+	go.opentelemetry.io/otel/sdk v1.4.1 // indirect
+	go.opentelemetry.io/otel/trace v1.4.1 // indirect
+	golang.org/x/crypto v0.0.0-20220307211146-efcb8507fb70 // indirect
+	golang.org/x/sys v0.0.0-20220307203707-22a9840ba4d7 // indirect
+	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
+	golang.org/x/text v0.3.8-0.20211105212822-18b340fc7af2 // indirect
+	google.golang.org/protobuf v1.27.1 // indirect
+	gopkg.in/ini.v1 v1.66.4 // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
+	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
+	gorm.io/driver/mysql v1.3.2 // indirect
+	gorm.io/driver/postgres v1.3.1 // indirect
+	gorm.io/driver/sqlserver v1.3.1 // indirect
+	gorm.io/gorm v1.23.2 // indirect
 )

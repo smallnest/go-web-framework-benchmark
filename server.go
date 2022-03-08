@@ -1,14 +1,22 @@
 package main
 
 import (
-	"clevergo.tech/clevergo"
 	"fmt"
+	"io"
+	"io/ioutil"
+	"log"
+	"net/http"
+	"os"
+	"runtime"
+	"strconv"
+	"time"
+
+	"clevergo.tech/clevergo"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
 	"github.com/aurora-go/aurora/aurora"
-	"github.com/billcoding/flygo"
-	flygocontext "github.com/billcoding/flygo/context"
+
 	"github.com/bmizerany/pat"
 	"github.com/bnkamalesh/webgo/v5"
 	"github.com/buaazp/fasthttprouter"
@@ -19,26 +27,13 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gofiber/fiber/v2"
 	"github.com/kataras/muxie"
-	"github.com/savsgio/atreugo/v11"
-	"github.com/savsgio/gotils"
 	"goyave.dev/goyave/v3"
 	"goyave.dev/goyave/v3/config"
-	"io"
-	"io/ioutil"
-	"log"
-	"net/http"
-	"os"
-	"runtime"
-	"strconv"
-	"time"
 
-	// "github.com/go-siris/siris"
-	// siriscontext "github.com/go-siris/siris/context"
 	"github.com/nbari/violetear"
 	"github.com/urfave/negroni"
 	macaron "gopkg.in/macaron.v1"
 
-	// "github.com/go-gas/gas" // NOTE(@kirilldanshin): gas is 404 now, comment out
 	bxog "github.com/claygod/Bxog"
 	"github.com/go-martini/martini"
 	ozzo "github.com/go-ozzo/ozzo-routing"
@@ -60,7 +55,6 @@ import (
 	"github.com/naoina/denco"
 	"github.com/pilu/traffic"
 
-	// "github.com/plimble/ace"
 	"github.com/go-chi/chi/v5"
 	gearbox "github.com/gogearbox/gearbox"
 	gf "github.com/gogf/gf/v2/frame/g"
@@ -72,7 +66,7 @@ import (
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
 	"github.com/vardius/gorouter/v4"
-	"github.com/vmihailenco/treemux"
+
 	goji "goji.io"
 	gojipat "goji.io/pat"
 	gcontext "golang.org/x/net/context"
@@ -129,10 +123,6 @@ func main() {
 	switch webFramework {
 	case "default":
 		startDefaultMux()
-	// case "ace":
-	// 	startAce()
-	case "atreugo":
-		startAtreugo()
 	case "aurora":
 		starAuroraGo()
 	case "baa":
@@ -163,8 +153,6 @@ func main() {
 		startFastRouter()
 	case "fiber":
 		startFiber()
-	case "flygo":
-		startFlygo()
 	case "fresh":
 		startFresh()
 	case "gear":
@@ -221,8 +209,6 @@ func main() {
 		startPure()
 	case "r2router":
 		startR2router()
-	// case "siris":
-	// 	startSirisrouter()
 	case "tango":
 		startTango()
 	case "tiger":
@@ -231,8 +217,6 @@ func main() {
 		startTinyRouter()
 	case "traffic":
 		startTraffic()
-	case "treemux":
-		startTreemux()
 	case "violetear":
 		startVioletear()
 	case "vulcan":
@@ -284,32 +268,32 @@ func startDefaultMux() {
 // 	mux.Run(":" + strconv.Itoa(port))
 // }
 
-// atreugo
-func atreugoHandler(ctx *atreugo.RequestCtx) error {
-	if cpuBound {
-		pow(target)
-	} else {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		} else {
-			runtime.Gosched()
-		}
-	}
+// // atreugo
+// func atreugoHandler(ctx *atreugo.RequestCtx) error {
+// 	if cpuBound {
+// 		pow(target)
+// 	} else {
+// 		if sleepTime > 0 {
+// 			time.Sleep(sleepTimeDuration)
+// 		} else {
+// 			runtime.Gosched()
+// 		}
+// 	}
 
-	return ctx.TextResponse(messageStr)
-}
+// 	return ctx.TextResponse(messageStr)
+// }
 
-func startAtreugo() {
-	server := atreugo.New(atreugo.Config{
-		Addr:                          ":" + strconv.Itoa(port),
-		Prefork:                       true,
-		NoDefaultDate:                 true,
-		NoDefaultContentType:          true,
-		DisableHeaderNamesNormalizing: true,
-	})
-	server.GET("/hello", atreugoHandler)
-	log.Fatal(server.ListenAndServe())
-}
+// func startAtreugo() {
+// 	server := atreugo.New(atreugo.Config{
+// 		Addr:                          ":" + strconv.Itoa(port),
+// 		Prefork:                       true,
+// 		NoDefaultDate:                 true,
+// 		NoDefaultContentType:          true,
+// 		DisableHeaderNamesNormalizing: true,
+// 	})
+// 	server.GET("/hello", atreugoHandler)
+// 	log.Fatal(server.ListenAndServe())
+// }
 
 func starAuroraGo() {
 	a := aurora.New()
@@ -463,31 +447,9 @@ func startEcho() {
 	e.Start(":" + strconv.Itoa(port))
 }
 
-// fasthttp
-func fastHTTPRawHandler(ctx *fasthttp.RequestCtx) {
-	path := gotils.B2S(ctx.Path())
-
-	switch path {
-	case "/hello":
-		if cpuBound {
-			pow(target)
-		} else {
-			if sleepTime > 0 {
-				time.Sleep(sleepTimeDuration)
-			} else {
-				runtime.Gosched()
-			}
-		}
-
-		ctx.Write(message)
-	default:
-		ctx.Error(fasthttp.StatusMessage(fasthttp.StatusNotFound), fasthttp.StatusNotFound)
-	}
-}
-
 func startFasthttp() {
 	s := &fasthttp.Server{
-		Handler:                       fastHTTPRawHandler,
+		Handler:                       fastHTTPHandler,
 		GetOnly:                       true,
 		NoDefaultDate:                 true,
 		NoDefaultContentType:          true,
@@ -616,23 +578,23 @@ func startFiber() {
 	log.Fatal(app.Listen(":" + strconv.Itoa(port)))
 }
 
-func startFlygo() {
-	app := flygo.GetApp()
-	app.Config.Flygo.Server.Port = port
-	handler := func(c *flygocontext.Context) {
-		if cpuBound {
-			pow(target)
-		} else {
-			if sleepTime > 0 {
-				time.Sleep(sleepTimeDuration)
-			} else {
-				runtime.Gosched()
-			}
-		}
-		c.Text(messageStr)
-	}
-	app.GET("/hello", handler).Run()
-}
+// func startFlygo() {
+// 	app := flygo.GetApp()
+// 	app.Config.Flygo.Server.Port = port
+// 	handler := func(c *flygocontext.Context) {
+// 		if cpuBound {
+// 			pow(target)
+// 		} else {
+// 			if sleepTime > 0 {
+// 				time.Sleep(sleepTimeDuration)
+// 			} else {
+// 				runtime.Gosched()
+// 			}
+// 		}
+// 		c.Text(messageStr)
+// 	}
+// 	app.GET("/hello", handler).Run()
+// }
 
 // gear
 func startGear() {
@@ -1177,15 +1139,15 @@ func startTraffic() {
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
-// Treemux
-func startTreemux() {
-	router := treemux.New()
-	router.GET("/hello", func(w http.ResponseWriter, req treemux.Request) error {
-		helloHandler(w, req.Request)
-		return nil
-	})
-	http.ListenAndServe(":"+strconv.Itoa(port), router)
-}
+// // Treemux
+// func startTreemux() {
+// 	router := treemux.New()
+// 	router.GET("/hello", func(w http.ResponseWriter, req treemux.Request) error {
+// 		helloHandler(w, req.Request)
+// 		return nil
+// 	})
+// 	http.ListenAndServe(":"+strconv.Itoa(port), router)
+// }
 
 // violetear
 func startVioletear() {
@@ -1206,7 +1168,7 @@ func startVulcan() {
 // webgo
 func getWebgoRoutes() []*webgo.Route {
 	return []*webgo.Route{
-		&webgo.Route{
+		{
 			Name:     "hello",
 			Method:   http.MethodGet,
 			Pattern:  "/hello",
