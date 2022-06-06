@@ -13,7 +13,7 @@ actix-http = { version="1.0.1", default-features = false }
 actix-rt = "1.0.0"
 actix-codec = "0.2.0"
 actix-server = "1.0.0"
-actix-service = "1.0.1"
+actix-service = "1.0.6"
 # jemallocator = "0.3.2"
 # snmalloc-rs = "0.2.3"
 bytes = "0.5.3"
