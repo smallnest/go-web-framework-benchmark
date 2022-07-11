@@ -1,4 +1,4 @@
-module github.com/dennissetiawan/go-web-framework-benchmark
+module github.com/smallnest/go-web-framework-benchmark
 
 go 1.17
 
