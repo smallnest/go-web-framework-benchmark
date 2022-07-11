@@ -15,7 +15,6 @@ import (
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
-	"github.com/aurora-go/aurora/aurora"
 
 	"github.com/bmizerany/pat"
 	"github.com/bnkamalesh/webgo/v5"
@@ -123,8 +122,7 @@ func main() {
 	switch webFramework {
 	case "default":
 		startDefaultMux()
-	case "aurora":
-		starAuroraGo()
+
 	case "baa":
 		startBaa()
 	case "beego":
@@ -295,13 +293,13 @@ func startDefaultMux() {
 // 	log.Fatal(server.ListenAndServe())
 // }
 
-func starAuroraGo() {
-	a := aurora.New()
-	a.GET("/hello", func(request aurora.Request) interface{} {
-		return messageStr
-	})
-	a.Guide("")
-}
+// func starAuroraGo() {
+// 	a := aurora.New()
+// 	a.GET("/hello", func(request aurora.Request) interface{} {
+// 		return messageStr
+// 	})
+// 	a.Guide("")
+// }
 
 // baa
 func baaHandler(ctx *baa.Context) {
