@@ -5,10 +5,10 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 
 *test environment*
 
-* CPU:      QEMU Virtual CPU version(1.8GHZ, 8 cores)
+* CPU:      KVM Virtual CPU version(2 GHz, 4 cores)
 * Memory:   16G
-* Go:       go1.16.3 linux/amd64
-* OS:       CentOS Linux release 7.5.1804 (Core)
+* Go:       go1.18.5 linux/amd64
+* OS:       Ubuntu 22.04.1 LTS with Kernel 5.15.0-41-generic
 
 
 ## Tested web frameworks (in alphabetical order)
