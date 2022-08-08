@@ -26,6 +26,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gofiber/fiber/v2"
 	"github.com/kataras/muxie"
+	echoSlimMiddleware "github.com/partialize/echo-slim/v4/middleware"
 	"goyave.dev/goyave/v3"
 	"goyave.dev/goyave/v3/config"
 
@@ -52,6 +53,7 @@ import (
 	vulcan "github.com/mailgun/route"
 	"github.com/mustafaakin/gongular"
 	"github.com/naoina/denco"
+	echoSlim "github.com/partialize/echo-slim/v4"
 	"github.com/pilu/traffic"
 
 	"github.com/go-chi/chi/v5"
@@ -64,8 +66,8 @@ import (
 	"github.com/tockins/fresh"
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
-	"github.com/vardius/gorouter/v4"
 
+	"github.com/vardius/gorouter/v4"
 	goji "goji.io"
 	gojipat "goji.io/pat"
 	gcontext "golang.org/x/net/context"
@@ -139,6 +141,8 @@ func main() {
 		startDenco()
 	case "echo":
 		startEcho()
+	case "echo-slim":
+		startEchoSlim()
 	case "fasthttp":
 		startFasthttp()
 	case "fasthttprouter":
@@ -441,6 +445,32 @@ func echoHandler(c echo.Context) error {
 func startEcho() {
 	e := echo.New()
 	e.GET("/hello", echoHandler)
+
+	e.Start(":" + strconv.Itoa(port))
+}
+
+// echo-slim
+func echoSlimHandler(c echoSlim.Context) error {
+	if cpuBound {
+		pow(target)
+	} else {
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
+	}
+	c.Response().Write(message)
+	return nil
+}
+
+func startEchoSlim() {
+	e := echoSlim.New()
+	r := echoSlimMiddleware.NewRouter()
+
+	r.GET("/hello", echoSlimHandler)
+
+	e.Use(r.Routes)
 
 	e.Start(":" + strconv.Itoa(port))
 }
