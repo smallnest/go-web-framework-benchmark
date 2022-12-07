@@ -52,7 +52,7 @@ require (
 	github.com/razonyang/fastrouter v0.1.0
 	github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7
 	github.com/teambition/gear v1.26.0
-	github.com/tockins/fresh v0.0.0-20220719194346-eee4eda4271e
+	github.com/tockins/fresh v0.0.0-20181012144221-d8b891ad12e4
 	github.com/urfave/negroni v1.0.0
 	github.com/valyala/fasthttp v1.38.0
 	github.com/vanng822/r2router v0.0.0-20150523112421-1023140a4f30
