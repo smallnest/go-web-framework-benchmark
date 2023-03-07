@@ -113,6 +113,9 @@
         },
         "github.com/gogearbox/gearbox": {
             "branch": "master"
+        },
+        "github.com/savsgio/atreugo": {
+            "branch": "master"
         }
     }
 }
