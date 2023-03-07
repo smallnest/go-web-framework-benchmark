@@ -15,6 +15,7 @@ import (
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
+	"github.com/savsgio/atreugo/v11"
 
 	"github.com/bmizerany/pat"
 	"github.com/bnkamalesh/webgo/v5"
@@ -125,6 +126,8 @@ func main() {
 	case "default":
 		startDefaultMux()
 
+	case "atreugo":
+		startAtreugo()
 	case "baa":
 		startBaa()
 	case "beego":
@@ -270,32 +273,32 @@ func startDefaultMux() {
 // 	mux.Run(":" + strconv.Itoa(port))
 // }
 
-// // atreugo
-// func atreugoHandler(ctx *atreugo.RequestCtx) error {
-// 	if cpuBound {
-// 		pow(target)
-// 	} else {
-// 		if sleepTime > 0 {
-// 			time.Sleep(sleepTimeDuration)
-// 		} else {
-// 			runtime.Gosched()
-// 		}
-// 	}
+// atreugo
+func atreugoHandler(ctx *atreugo.RequestCtx) error {
+	if cpuBound {
+		pow(target)
+	} else {
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
+	}
 
-// 	return ctx.TextResponse(messageStr)
-// }
+	return ctx.TextResponse(messageStr)
+}
 
-// func startAtreugo() {
-// 	server := atreugo.New(atreugo.Config{
-// 		Addr:                          ":" + strconv.Itoa(port),
-// 		Prefork:                       true,
-// 		NoDefaultDate:                 true,
-// 		NoDefaultContentType:          true,
-// 		DisableHeaderNamesNormalizing: true,
-// 	})
-// 	server.GET("/hello", atreugoHandler)
-// 	log.Fatal(server.ListenAndServe())
-// }
+func startAtreugo() {
+	server := atreugo.New(atreugo.Config{
+		Addr:                          ":" + strconv.Itoa(port),
+		Prefork:                       true,
+		NoDefaultDate:                 true,
+		NoDefaultContentType:          true,
+		DisableHeaderNamesNormalizing: true,
+	})
+	server.GET("/hello", atreugoHandler)
+	log.Fatal(server.ListenAndServe())
+}
 
 // func starAuroraGo() {
 // 	a := aurora.New()
@@ -1126,14 +1129,14 @@ func startTango() {
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
-//  Tiger Tonic
+// Tiger Tonic
 func startTigerTonic() {
 	mux := tigertonic.NewTrieServeMux()
 	mux.Handle("GET", "/hello", http.HandlerFunc(helloHandler))
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
-//  TinyRouter
+// TinyRouter
 func startTinyRouter() {
 	routes := []tiny.Route{
 		{
@@ -1146,7 +1149,7 @@ func startTinyRouter() {
 	http.ListenAndServe(":"+strconv.Itoa(port), router)
 }
 
-//  traffic
+// traffic
 func trafficHandler(w traffic.ResponseWriter, r *traffic.Request) {
 	if cpuBound {
 		pow(target)
