@@ -61,6 +61,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [negroni](https://github.com/urfave/negroni)
 * [neo](https://github.com/ivpusic/neo)
 * [pat](https://github.com/bmizerany/pat)
+* [pulse](https://github.com/gopulse/pulse)
 * [pure](https://github.com/go-playground/pure)
 * [r2router](https://github.com/vanng822/r2router)
 * [siris](https://github.com/go-siris/siris)
