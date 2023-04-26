@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/gopulse/pulse"
 	"io"
 	"io/ioutil"
 	"log"
@@ -15,20 +16,15 @@ import (
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
-	"github.com/savsgio/atreugo/v11"
-
 	"github.com/bmizerany/pat"
-	"github.com/bnkamalesh/webgo/v5"
 	"github.com/buaazp/fasthttprouter"
 	"github.com/dimfeld/httptreemux"
 	"github.com/dinever/golf"
 	restful "github.com/emicklei/go-restful"
 	fasthttpSlashRouter "github.com/fasthttp/router"
 	"github.com/gin-gonic/gin"
-	"github.com/gofiber/fiber/v2"
 	"github.com/kataras/muxie"
 	echoSlimMiddleware "github.com/partialize/echo-slim/v4/middleware"
-	"goyave.dev/goyave/v3"
 	"goyave.dev/goyave/v3/config"
 
 	"github.com/nbari/violetear"
@@ -57,7 +53,6 @@ import (
 	echoSlim "github.com/partialize/echo-slim/v4"
 	"github.com/pilu/traffic"
 
-	"github.com/go-chi/chi/v5"
 	gearbox "github.com/gogearbox/gearbox"
 	gf "github.com/gogf/gf/v2/frame/g"
 	routing "github.com/qiangxue/fasthttp-routing"
@@ -68,7 +63,6 @@ import (
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
 
-	"github.com/vardius/gorouter/v4"
 	goji "goji.io"
 	gojipat "goji.io/pat"
 	gcontext "golang.org/x/net/context"
@@ -210,6 +204,8 @@ func main() {
 		startNeo()
 	case "pat":
 		startPat()
+	case "pulse":
+		startPulse()
 	case "pure":
 		startPure()
 	case "r2router":
@@ -1062,6 +1058,21 @@ func startPat() {
 	mux := pat.New()
 	mux.Get("/hello", http.HandlerFunc(helloHandler))
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+// pulse
+func startPulse() {
+	app := pulse.New()
+	router := pulse.NewRouter()
+
+	app.Router = router
+
+	router.Get("/hello", func(c *pulse.Context) error {
+		c.String(string(message))
+		return nil
+	})
+
+	app.Run(":" + strconv.Itoa(port))
 }
 
 // pure
