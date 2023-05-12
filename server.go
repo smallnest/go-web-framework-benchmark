@@ -1,8 +1,8 @@
 package main
 
 import (
+	"context"
 	"fmt"
-	"github.com/gopulse/pulse"
 	"io"
 	"io/ioutil"
 	"log"
@@ -13,61 +13,65 @@ import (
 	"time"
 
 	"clevergo.tech/clevergo"
+	"github.com/abemedia/go-don"
+	_ "github.com/abemedia/go-don/encoding/text"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/astaxie/beego"
-	"github.com/astaxie/beego/context"
+	beegoContext "github.com/astaxie/beego/context"
 	"github.com/bmizerany/pat"
+	"github.com/bnkamalesh/webgo/v5"
 	"github.com/buaazp/fasthttprouter"
+	bxog "github.com/claygod/Bxog"
 	"github.com/dimfeld/httptreemux"
 	"github.com/dinever/golf"
 	restful "github.com/emicklei/go-restful"
 	fasthttpSlashRouter "github.com/fasthttp/router"
 	"github.com/gin-gonic/gin"
-	"github.com/kataras/muxie"
-	echoSlimMiddleware "github.com/partialize/echo-slim/v4/middleware"
-	"goyave.dev/goyave/v3/config"
-
-	"github.com/nbari/violetear"
-	"github.com/urfave/negroni"
-	macaron "gopkg.in/macaron.v1"
-
-	bxog "github.com/claygod/Bxog"
+	"github.com/go-chi/chi/v5"
 	"github.com/go-martini/martini"
 	ozzo "github.com/go-ozzo/ozzo-routing"
 	"github.com/go-playground/lars"
 	"github.com/go-playground/pure"
 	"github.com/go-zoo/bone"
 	"github.com/gocraft/web"
+	"github.com/gofiber/fiber/v2"
+	gearbox "github.com/gogearbox/gearbox"
+	gf "github.com/gogf/gf/v2/frame/g"
+	"github.com/gopulse/pulse"
 	"github.com/gorilla/mux"
 	gowwwrouter "github.com/gowww/router"
-	tiny "go101.org/tinyrouter"
-
 	"github.com/ivpusic/neo"
 	"github.com/julienschmidt/httprouter"
+	"github.com/kataras/muxie"
 	echo "github.com/labstack/echo/v4"
 	llog "github.com/lunny/log"
 	"github.com/lunny/tango"
 	vulcan "github.com/mailgun/route"
 	"github.com/mustafaakin/gongular"
 	"github.com/naoina/denco"
+	"github.com/nbari/violetear"
 	echoSlim "github.com/partialize/echo-slim/v4"
+	echoSlimMiddleware "github.com/partialize/echo-slim/v4/middleware"
 	"github.com/pilu/traffic"
-
-	gearbox "github.com/gogearbox/gearbox"
-	gf "github.com/gogf/gf/v2/frame/g"
 	routing "github.com/qiangxue/fasthttp-routing"
 	"github.com/razonyang/fastrouter"
 	tigertonic "github.com/rcrowley/go-tigertonic"
+	"github.com/savsgio/atreugo/v11"
 	"github.com/teambition/gear"
 	"github.com/tockins/fresh"
+	"github.com/urfave/negroni"
 	"github.com/valyala/fasthttp"
 	"github.com/vanng822/r2router"
-
+	"github.com/vardius/gorouter/v4"
+	tiny "go101.org/tinyrouter"
 	goji "goji.io"
 	gojipat "goji.io/pat"
 	gcontext "golang.org/x/net/context"
 	baa "gopkg.in/baa.v1"
 	lion "gopkg.in/celrenheit/lion.v1"
+	macaron "gopkg.in/macaron.v1"
+	"goyave.dev/goyave/v3"
+	"goyave.dev/goyave/v3/config"
 )
 
 var (
@@ -136,6 +140,8 @@ func main() {
 		startCleverGo()
 	case "denco":
 		startDenco()
+	case "don":
+		startDon()
 	case "echo":
 		startEcho()
 	case "echo-slim":
@@ -325,7 +331,7 @@ func startBaa() {
 }
 
 // beego
-func beegoHandler(ctx *context.Context) {
+func beegoHandler(ctx *beegoContext.Context) {
 	if cpuBound {
 		pow(target)
 	} else {
@@ -424,6 +430,26 @@ func startDenco() {
 	mux := denco.NewMux()
 	handler, _ := mux.Build([]denco.Handler{mux.GET("/hello", denco.HandlerFunc(dencoHandler))})
 	http.ListenAndServe(":"+strconv.Itoa(port), handler)
+}
+
+// don
+func donHandler(context.Context, don.Empty) ([]byte, error) {
+	if cpuBound {
+		pow(target)
+	} else {
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
+	}
+	return message, nil
+}
+
+func startDon() {
+	api := don.New(nil)
+	api.Get("/hello", don.H(donHandler))
+	api.ListenAndServe(":" + strconv.Itoa(port))
 }
 
 // echo

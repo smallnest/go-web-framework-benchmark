@@ -25,6 +25,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [clevergo](https://github.com/clevergo/clevergo)
 * [default http](https://golang.org/pkg/net/http/)
 * [denco](https://github.com/naoina/denco)
+* [don](https://github.com/abemedia/go-don)
 * [echo](https://github.com/labstack/echo)
 * [echo-slim](https://github.com/partialize/echo-slim)
 * [fasthttp-routing](https://github.com/qiangxue/fasthttp-routing)
