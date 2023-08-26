@@ -19,7 +19,7 @@ import (
 	"github.com/astaxie/beego"
 	beegoContext "github.com/astaxie/beego/context"
 	"github.com/bmizerany/pat"
-	"github.com/bnkamalesh/webgo/v5"
+	"github.com/bnkamalesh/webgo/v7"
 	"github.com/buaazp/fasthttprouter"
 	bxog "github.com/claygod/Bxog"
 	"github.com/dimfeld/httptreemux"
@@ -70,8 +70,8 @@ import (
 	baa "gopkg.in/baa.v1"
 	lion "gopkg.in/celrenheit/lion.v1"
 	macaron "gopkg.in/macaron.v1"
-	"goyave.dev/goyave/v3"
-	"goyave.dev/goyave/v3/config"
+	"goyave.dev/goyave/v4"
+	"goyave.dev/goyave/v4/config"
 )
 
 var (
@@ -433,7 +433,7 @@ func startDenco() {
 }
 
 // don
-func donHandler(context.Context, don.Empty) ([]byte, error) {
+func donHandler(context.Context, any) ([]byte, error) {
 	if cpuBound {
 		pow(target)
 	} else {
@@ -1252,7 +1252,7 @@ func startWebgo() {
 		ReadTimeout:  120 * time.Second,
 		WriteTimeout: 120 * time.Second,
 	}
-	router := webgo.NewRouter(&cfg, getWebgoRoutes())
+	router := webgo.NewRouter(&cfg, getWebgoRoutes()...)
 	router.Start()
 }
 
