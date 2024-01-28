@@ -8,7 +8,7 @@ length=${#web_frameworks[@]}
 
 test_result=()
 
-cpu_cores=`cat /proc/cpuinfo|grep processor|wc -l`
+cpu_cores=$(< "/proc/cpuinfo" grep -c processor)
 if [ $cpu_cores -eq 0 ]
 then
   cpu_cores=1
@@ -17,16 +17,15 @@ fi
 test_web_framework()
 {
   echo "testing web framework: $2"
-  ./$server_bin_name $2 $3 &
-  sleep 2
+  ./$server_bin_name $2 $3 & sleep 2
 
-  throughput=`wrk -t$cpu_cores -c$4 -d30s http://127.0.0.1:8080/hello | grep Requests/sec | awk '{print $2}'`
-  echo "throughput: $throughput requests/second"
-  test_result[$1]=$throughput
+  throughput=$(wrk -t$cpu_cores -c$4 -d30s http://127.0.0.1:8080/hello)
+  echo "$throughput"
+  test_result[$1]=$(echo "$throughput" | grep Requests/sec | awk '{print $2}')
 
   pkill -9 $server_bin_name
-  sleep 2
-  echo "finsihed testing $2"
+  sleep 1
+  echo "finished testing $2"
   echo
 }
 
@@ -38,7 +37,7 @@ test_all()
   echo "      Concurrency     $2           "
   echo "                                   "
   echo "###################################"
-  for ((i=0; i<$length; i++))
+  for ((i=0; i<length; i++))
   do
   	test_web_framework $i ${web_frameworks[$i]} $1 $2
   done
