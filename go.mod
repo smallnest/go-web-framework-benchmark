@@ -1,6 +1,6 @@
 module github.com/smallnest/go-web-framework-benchmark
 
-go 1.21
+go 1.20
 
 require (
 	clevergo.tech/clevergo v0.6.0
@@ -29,6 +29,7 @@ require (
 	github.com/gopulse/pulse v1.1.0
 	github.com/gorilla/mux v1.8.1
 	github.com/gowww/router v1.0.0
+	github.com/indigo-web/indigo v0.15.7
 	github.com/ivpusic/neo v0.3.0
 	github.com/julienschmidt/httprouter v1.3.0
 	github.com/kataras/muxie v1.1.2
@@ -95,13 +96,15 @@ require (
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/golang/gddo v0.0.0-20210115222349-20d68f94ee1f // indirect
-	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/uuid v1.4.0 // indirect
 	github.com/gorilla/websocket v1.5.1 // indirect
 	github.com/gravitational/trace v1.3.1 // indirect
 	github.com/grokify/html-strip-tags-go v0.1.0 // indirect
 	github.com/hashicorp/golang-lru v1.0.2 // indirect
 	github.com/imdario/mergo v0.3.16 // indirect
+	github.com/indigo-web/chunkedbody v0.1.0 // indirect
+	github.com/indigo-web/iter v0.1.0 // indirect
+	github.com/indigo-web/utils v0.6.1 // indirect
 	github.com/ivpusic/go-clicolor v0.0.0-20150828210804-23f0b77f328a // indirect
 	github.com/ivpusic/golog v0.0.0-20170608213328-28640bee649f // indirect
 	github.com/ivpusic/httpcheck v0.0.0-20170215120547-c49b174389ac // indirect
@@ -118,7 +121,6 @@ require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-runewidth v0.0.15 // indirect
-	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
 	github.com/matttproud/golang_protobuf_extensions/v2 v2.0.0 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
@@ -151,7 +153,7 @@ require (
 	go.opentelemetry.io/otel/sdk v1.21.0 // indirect
 	go.opentelemetry.io/otel/trace v1.21.0 // indirect
 	golang.org/x/arch v0.6.0 // indirect
-	golang.org/x/crypto v0.16.0 // indirect
+	golang.org/x/crypto v0.17.0 // indirect
 	golang.org/x/sys v0.15.0 // indirect
 	golang.org/x/term v0.15.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
