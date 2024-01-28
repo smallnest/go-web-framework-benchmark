@@ -260,21 +260,6 @@ func startDefaultMux() {
 	http.ListenAndServe(":"+strconv.Itoa(port), nil)
 }
 
-// ace
-// func aceHandler(c *ace.C) {
-// 	if sleepTime > 0 {
-// 		time.Sleep(sleepTimeDuration)
-// 	} else {
-// 		runtime.Gosched()
-// 	}
-// 	c.Writer.Write(message)
-// }
-// func startAce() {
-// 	mux := ace.New()
-// 	mux.GET("/hello", aceHandler)
-// 	mux.Run(":" + strconv.Itoa(port))
-// }
-
 // atreugo
 func atreugoHandler(ctx *atreugo.RequestCtx) error {
 	if cpuBound {
@@ -301,14 +286,6 @@ func startAtreugo() {
 	server.GET("/hello", atreugoHandler)
 	log.Fatal(server.ListenAndServe())
 }
-
-// func starAuroraGo() {
-// 	a := aurora.New()
-// 	a.GET("/hello", func(request aurora.Request) interface{} {
-// 		return messageStr
-// 	})
-// 	a.Guide("")
-// }
 
 // baa
 func baaHandler(ctx *baa.Context) {
@@ -630,24 +607,6 @@ func startFiber() {
 	app.Get("/hello", fiberHandler)
 	log.Fatal(app.Listen(":" + strconv.Itoa(port)))
 }
-
-// func startFlygo() {
-// 	app := flygo.GetApp()
-// 	app.Config.Flygo.Server.Port = port
-// 	handler := func(c *flygocontext.Context) {
-// 		if cpuBound {
-// 			pow(target)
-// 		} else {
-// 			if sleepTime > 0 {
-// 				time.Sleep(sleepTimeDuration)
-// 			} else {
-// 				runtime.Gosched()
-// 			}
-// 		}
-// 		c.Text(messageStr)
-// 	}
-// 	app.GET("/hello", handler).Run()
-// }
 
 // gear
 func startGear() {
@@ -1128,21 +1087,6 @@ func startR2router() {
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
-// // siris
-// func sirisrouterHandler(ctx siriscontext.Context) {
-// 	if sleepTime > 0 {
-// 		time.Sleep(sleepTimeDuration)
-// 	} else {
-// 		runtime.Gosched()
-// 	}
-// 	ctx.HTML(messageStr)
-// }
-// func startSirisrouter() {
-// 	app := siris.New()
-// 	app.Get("/hello", sirisrouterHandler)
-// 	app.Run(siris.Addr(":"+strconv.Itoa(port)), siris.WithCharset("UTF-8"))
-// }
-
 // Tango
 func tangoHandler(ctx *tango.Context) {
 	if cpuBound {
@@ -1206,16 +1150,6 @@ func startTraffic() {
 	mux.Get("/hello", trafficHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
-
-// // Treemux
-// func startTreemux() {
-// 	router := treemux.New()
-// 	router.GET("/hello", func(w http.ResponseWriter, req treemux.Request) error {
-// 		helloHandler(w, req.Request)
-// 		return nil
-// 	})
-// 	http.ListenAndServe(":"+strconv.Itoa(port), router)
-// }
 
 // violetear
 func startVioletear() {
