@@ -83,3 +83,4 @@ mv -f processtime.csv ./testresults
 mv -f concurrency.csv ./testresults
 mv -f cpubound.csv ./testresults
 mv -f cpubound-concurrency.csv ./testresults
+./testresults/plot.sh
