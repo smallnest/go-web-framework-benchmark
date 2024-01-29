@@ -15,9 +15,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 
 **Only test those webframeworks which are stable**
 
-* [ace](https://github.com/plimble/ace)
 * [atreugo](https://github.com/savsgio/atreugo)
-* [aurora](https://github.com/aurora-go/aurora)
 * [baa](https://github.com/go-baa/baa)
 * [beego](https://github.com/astaxie/beego)
 * [bone](https://github.com/go-zoo/bone)
@@ -30,9 +28,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [fasthttp-routing](https://github.com/qiangxue/fasthttp-routing)
 * [fasthttp/router](https://github.com/fasthttp/router)
 * [fasthttp](https://github.com/valyala/fasthttp)
-* [fasthttprouter](https://github.com/buaazp/fasthttprouter)
 * [fiber](https://gofiber.io/)
-* [flygo](https://github.com/billcoding/flygo)
 * [gear](http://github.com/teambition/gear)
 * [gearbox](https://github.com/gogearbox/gearbox)
 * [gem](https://github.com/go-gem/gem)
