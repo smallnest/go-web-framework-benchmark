@@ -225,6 +225,14 @@ github.com/hpcloud/tail v1.0.0/go.mod h1:ab1qPbhIpdTxEkNHXyeSf5vhxWSCs/tWer42PpO
 github.com/imdario/mergo v0.3.16 h1:wwQJbIsHYGMUyLSPrEq1CT16AhnhNJQ51+4fdHUnCl4=
 github.com/imdario/mergo v0.3.16/go.mod h1:WBLT9ZmE3lPoWsEzCh9LPo3TiwVN+ZKEjmz+hD27ysY=
 github.com/inconshreveable/log15 v0.0.0-20170622235902-74a0988b5f80/go.mod h1:cOaXtrgN4ScfRrD9Bre7U1thNq5RtJ8ZoP4iXVGRj6o=
+github.com/indigo-web/chunkedbody v0.1.0 h1:fZerB4rS9aufemrNTPPKOMSWsgnImfuW4g1lxnWISHI=
+github.com/indigo-web/chunkedbody v0.1.0/go.mod h1:E3IVH0uH1ePqQO4n76M2EVPplGyqZTP88MpR3kRj/mE=
+github.com/indigo-web/indigo v0.15.8 h1:p62vDAetvT+UelgVsAzXR3Y0s40OCu4FFeYbbtO7X/M=
+github.com/indigo-web/indigo v0.15.8/go.mod h1:+UcymCBzgMcmZQh2od09GC9aTm4akrOZxlgVbXqMjes=
+github.com/indigo-web/iter v0.1.0 h1:3LJG319EytEULerDX6meT4xW/lqncIqTnZewsMtiPT4=
+github.com/indigo-web/iter v0.1.0/go.mod h1:hftmhzfi4hpWc715PmXsfMjE1K0FLwznr+iyLxM7wyQ=
+github.com/indigo-web/utils v0.6.1 h1:WWvqTchkwQU/RdOyEeSuEf6Cy/XMItllftbnCQM1Z/g=
+github.com/indigo-web/utils v0.6.1/go.mod h1:Q+voOJjIRN7DV+ifWozy6RY6cDF10Ev0NPDjsuOAXfQ=
 github.com/jinzhu/inflection v1.0.0 h1:K317FqzuhWc8YvSVlFMCCUb36O/S9MCKRDI7QkRKD/E=
 github.com/jinzhu/inflection v1.0.0/go.mod h1:h+uFLlag+Qp1Va5pdKtLDYj+kHp5pxUVkryuEj+Srlc=
 github.com/jinzhu/now v1.1.5 h1:/o9tlHleP7gOFmsnYNz3RGnqzefHA47wQpKrrdTIwXQ=

@@ -25,6 +25,7 @@ require (
 	github.com/gogf/gf/v2 v2.5.7
 	github.com/gopulse/pulse v1.1.0
 	github.com/gorilla/mux v1.8.1
+	github.com/indigo-web/indigo v0.15.8
 	github.com/julienschmidt/httprouter v1.3.0
 	github.com/kataras/muxie v1.1.2
 	github.com/labstack/echo/v4 v4.11.3
@@ -86,6 +87,9 @@ require (
 	github.com/grokify/html-strip-tags-go v0.1.0 // indirect
 	github.com/hashicorp/golang-lru v1.0.2 // indirect
 	github.com/imdario/mergo v0.3.16 // indirect
+	github.com/indigo-web/chunkedbody v0.1.0 // indirect
+	github.com/indigo-web/iter v0.1.0 // indirect
+	github.com/indigo-web/utils v0.6.1 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/jonboulle/clockwork v0.4.0 // indirect

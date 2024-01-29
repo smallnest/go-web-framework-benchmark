@@ -45,6 +45,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [goyave](https://github.com/System-Glitch/goyave)
 * [httprouter](https://github.com/julienschmidt/httprouter)
 * [httptreemux](https://github.com/dimfeld/httptreemux)
+* [indigo](https://github.com/indigo-web/indigo)
 * [lars](https://github.com/go-playground/lars)
 * [lion](https://github.com/celrenheit/lion)
 * [macaron](https://github.com/Unknwon/macaron)
@@ -170,7 +171,7 @@ It will  generate test results in processtime.csv and concurrency.csv. You can m
 * If you want to test some of web frameworks, you can modify the test script and only keep your selected web frameworks:
 ```
 ……
-web_frameworks=("default" "atreugo" "beego" "bone" "chi" "denco" "don" "echo"  "fasthttp" "fasthttp-routing" "fasthttp/router" "fiber" "gear" "gearbox" "gin" "goframe" "goji" "gorestful" "gorilla" "gorouter" "gorouterfasthttp" "go-ozzo" "goyave" "httprouter" "httptreemux" "indigo" "lars" "lion" "muxie" "negroni" "pat" "pulse" "pure" "r2router" "tango" "tiger" "tinyrouter" "violetear" "vulcan" "webgo")
+web_frameworks=("default" "atreugo" "beego" "bone" "chi" "denco" "don" "echo" "fasthttp" "fasthttp-routing" "fasthttp/router" "fiber" "gear" "gearbox" "gin" "goframe" "goji" "gorestful" "gorilla" "gorouter" "gorouterfasthttp" "go-ozzo" "goyave" "httprouter" "httptreemux" "indigo" "lars" "lion" "muxie" "negroni" "pat" "pulse" "pure" "r2router" "tango" "tiger" "tinyrouter" "violetear" "vulcan" "webgo")
 ……
 ```
 * If you want to test all cases, you can run:

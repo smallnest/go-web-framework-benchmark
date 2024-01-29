@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/indigo-web/indigo"
+	"github.com/indigo-web/indigo/router/inbuilt"
 	"github.com/vanng822/r2router"
 	"io"
 	"io/ioutil"
@@ -37,6 +39,7 @@ import (
 	gf "github.com/gogf/gf/v2/frame/g"
 	"github.com/gopulse/pulse"
 	"github.com/gorilla/mux"
+	ihttp "github.com/indigo-web/indigo/http"
 	"github.com/julienschmidt/httprouter"
 	"github.com/kataras/muxie"
 	"github.com/labstack/echo/v4"
@@ -165,6 +168,8 @@ func main() {
 		startHTTPRouter()
 	case "httptreemux":
 		starthttpTreeMux()
+	case "indigo":
+		startIndigo()
 	case "lars":
 		startLars()
 	case "lion":
@@ -744,6 +749,28 @@ func starthttpTreeMux() {
 	mux := httptreemux.New()
 	mux.GET("/hello", httpTreeMuxHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+// indigo
+func indigoHandler(r *ihttp.Request) *ihttp.Response {
+	if cpuBound {
+		pow(target)
+	} else {
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
+	}
+
+	return ihttp.Bytes(r, message)
+}
+
+func startIndigo() {
+	r := inbuilt.New()
+	r.Get("/hello", indigoHandler)
+
+	_ = indigo.New(":" + strconv.Itoa(port)).Serve(r)
 }
 
 // lars
