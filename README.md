@@ -145,7 +145,7 @@ It takes a while to install a large number of dependencies that need to be downl
 
 ```
 cd $GOPATH/src/github.com/smallnest/go-web-framework-benchmark
-go build -o  gowebbenchmark *.go
+go build -o gowebbenchmark .
 ./test.sh
 ```
 
@@ -170,7 +170,7 @@ It will  generate test results in processtime.csv and concurrency.csv. You can m
 * If you want to test some of web frameworks, you can modify the test script and only keep your selected web frameworks:
 ```
 ……
-web_frameworks=( "default" "ace" "beego" "bone" "denco" "echov1" "echov2standard" "echov2fasthttp" "fasthttp-raw" "fasthttprouter" "fasthttp-routing" "gin" "gocraftWeb" "goji" "gojiv2" "gojsonrest" "gorestful" "gorilla" "httprouter" "httptreemux" "lars" "lion" "macaron" "martini" "pat" "r2router" "tango" "tiger" "traffic" "violetear" "vulcan")
+web_frameworks=("default" "atreugo" "beego" "bone" "chi" "denco" "don" "echo"  "fasthttp" "fasthttp-routing" "fasthttp/router" "fiber" "gear" "gearbox" "gin" "goframe" "goji" "gorestful" "gorilla" "gorouter" "gorouterfasthttp" "go-ozzo" "goyave" "httprouter" "httptreemux" "indigo" "lars" "lion" "muxie" "negroni" "pat" "pulse" "pure" "r2router" "tango" "tiger" "tinyrouter" "violetear" "vulcan" "webgo")
 ……
 ```
 * If you want to test all cases, you can run:
@@ -179,9 +179,12 @@ web_frameworks=( "default" "ace" "beego" "bone" "denco" "echov1" "echov2standard
 ./test-all.sh
 ```
 
-## Plot
-you can run the shell script `plot.sh` in testresults directory and it can generate all images in its parent directory.
+NOTE: comparing 2 webframeworks consumes approx. 11-13 minutes (doesn't depend on the machine). Just `test.sh` with all
+the webframeworks enabled will take a couple of hours to run.
 
+## Plot
+All the graphs are generated automatically as the `./test.sh` finishes. However, if the run was interrupted, you can
+generate them manually of partial data by executing `plot.sh` in testresults directory.
 
 ### Add new web framework
 Welcome to add new Go web frameworks. You can follow the below steps and send me a pull request.
