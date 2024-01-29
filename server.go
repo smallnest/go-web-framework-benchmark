@@ -13,7 +13,6 @@ import (
 	"strconv"
 	"time"
 
-	"clevergo.tech/clevergo"
 	"github.com/abemedia/go-don"
 	_ "github.com/abemedia/go-don/encoding/text"
 	"github.com/ant0ine/go-json-rest/rest"
@@ -21,12 +20,11 @@ import (
 	beegoContext "github.com/astaxie/beego/context"
 	"github.com/bmizerany/pat"
 	"github.com/bnkamalesh/webgo/v7"
-	"github.com/buaazp/fasthttprouter"
 	bxog "github.com/claygod/Bxog"
 	"github.com/dimfeld/httptreemux"
 	"github.com/dinever/golf"
 	"github.com/emicklei/go-restful"
-	fasthttpSlashRouter "github.com/fasthttp/router"
+	fasthttprouter "github.com/fasthttp/router"
 	"github.com/gin-gonic/gin"
 	"github.com/go-chi/chi/v5"
 	ozzo "github.com/go-ozzo/ozzo-routing"
@@ -126,8 +124,6 @@ func main() {
 		startBxog()
 	case "chi":
 		startChi()
-	case "clevergo":
-		startCleverGo()
 	case "denco":
 		startDenco()
 	case "don":
@@ -136,8 +132,6 @@ func main() {
 		startEcho()
 	case "fasthttp":
 		startFasthttp()
-	case "fasthttprouter":
-		startFastHTTPRouter()
 	case "fasthttp/router":
 		startFastHTTPSlashRouter()
 	case "fasthttp-routing":
@@ -340,27 +334,6 @@ func startChi() {
 	http.ListenAndServe(":"+strconv.Itoa(port), r)
 }
 
-// clevergo
-func cleverGoHandler(c *clevergo.Context) error {
-	if cpuBound {
-		pow(target)
-	} else {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		} else {
-			runtime.Gosched()
-		}
-	}
-	c.Response.Write(message)
-	return nil
-}
-
-func startCleverGo() {
-	app := clevergo.Pure()
-	app.Get("/hello", cleverGoHandler)
-	app.Run(":" + strconv.Itoa(port))
-}
-
 // denco
 func dencoHandler(w http.ResponseWriter, r *http.Request, params denco.Params) {
 	if cpuBound {
@@ -423,19 +396,7 @@ func startEcho() {
 	e.Start(":" + strconv.Itoa(port))
 }
 
-func startFasthttp() {
-	s := &fasthttp.Server{
-		Handler:                       fastHTTPHandler,
-		GetOnly:                       true,
-		NoDefaultDate:                 true,
-		NoDefaultContentType:          true,
-		DisableHeaderNamesNormalizing: true,
-	}
-
-	log.Fatal(s.ListenAndServe(":" + strconv.Itoa(port)))
-}
-
-// fasthttprouter
+// fasthttp
 func fastHTTPHandler(ctx *fasthttp.RequestCtx) {
 	if cpuBound {
 		pow(target)
@@ -450,15 +411,21 @@ func fastHTTPHandler(ctx *fasthttp.RequestCtx) {
 	ctx.Write(message)
 }
 
-func startFastHTTPRouter() {
-	mux := fasthttprouter.New()
-	mux.GET("/hello", fastHTTPHandler)
-	fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.Handler)
+func startFasthttp() {
+	s := &fasthttp.Server{
+		Handler:                       fastHTTPHandler,
+		GetOnly:                       true,
+		NoDefaultDate:                 true,
+		NoDefaultContentType:          true,
+		DisableHeaderNamesNormalizing: true,
+	}
+
+	log.Fatal(s.ListenAndServe(":" + strconv.Itoa(port)))
 }
 
 // fasthttp Router
 func startFastHTTPSlashRouter() {
-	mux := fasthttpSlashRouter.New()
+	mux := fasthttprouter.New()
 	mux.GET("/hello", fastHTTPHandler)
 	log.Fatal(fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.Handler))
 }

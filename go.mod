@@ -3,13 +3,11 @@ module github.com/smallnest/go-web-framework-benchmark
 go 1.20
 
 require (
-	clevergo.tech/clevergo v0.6.0
 	github.com/abemedia/go-don v0.2.1
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
 	github.com/astaxie/beego v1.12.3
 	github.com/bmizerany/pat v0.0.0-20210406213842-e4b6760bdd6f
 	github.com/bnkamalesh/webgo/v7 v7.0.0
-	github.com/buaazp/fasthttprouter v0.1.1
 	github.com/claygod/Bxog v0.0.0-20220907175109-bec75fbdd5e7
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
 	github.com/dinever/golf v0.3.0
@@ -53,7 +51,6 @@ require (
 )
 
 require (
-	clevergo.tech/log v0.3.0 // indirect
 	gitea.com/lunny/log v0.0.0-20190322053110-01b5df579c4e // indirect
 	github.com/BurntSushi/toml v1.3.2 // indirect
 	github.com/Code-Hex/uniseg v0.2.0 // indirect
