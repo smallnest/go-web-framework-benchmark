@@ -17,7 +17,6 @@ require (
 	github.com/fasthttp/router v1.4.22
 	github.com/gin-gonic/gin v1.9.1
 	github.com/go-chi/chi/v5 v5.0.10
-	github.com/go-martini/martini v0.0.0-20170121215854-22fa46961aab
 	github.com/go-ozzo/ozzo-routing v2.1.4+incompatible
 	github.com/go-playground/lars v4.0.1+incompatible
 	github.com/go-playground/pure v4.2.0+incompatible
@@ -28,26 +27,18 @@ require (
 	github.com/gogf/gf/v2 v2.5.7
 	github.com/gopulse/pulse v1.1.0
 	github.com/gorilla/mux v1.8.1
-	github.com/gowww/router v1.0.0
-	github.com/indigo-web/indigo v0.15.7
-	github.com/ivpusic/neo v0.3.0
 	github.com/julienschmidt/httprouter v1.3.0
 	github.com/kataras/muxie v1.1.2
 	github.com/labstack/echo/v4 v4.11.3
 	github.com/lunny/log v0.0.0-20160921050905-7887c61bf0de
 	github.com/lunny/tango v0.5.6
 	github.com/mailgun/route v0.0.0-20191025171320-daa4df6c711a
-	github.com/mustafaakin/gongular v0.0.0-20200705144045-a428565ae628
 	github.com/naoina/denco v0.0.0-20180930074809-8475105a6b4c
 	github.com/nbari/violetear v0.0.0-20210524103009-ce83b52538c9
-	github.com/partialize/echo-slim/v4 v4.9.1
-	github.com/pilu/traffic v0.5.3
 	github.com/qiangxue/fasthttp-routing v0.0.0-20160225050629-6ccdc2a18d87
-	github.com/razonyang/fastrouter v0.1.0
 	github.com/rcrowley/go-tigertonic v0.0.0-20170420123839-fe6b9f080eb7
 	github.com/savsgio/atreugo/v11 v11.12.0
 	github.com/teambition/gear v1.27.3
-	github.com/tockins/fresh v0.0.0-20181012144221-d8b891ad12e4
 	github.com/urfave/negroni v1.0.0
 	github.com/valyala/fasthttp v1.51.0
 	github.com/vanng822/r2router v0.0.0-20150523112421-1023140a4f30
@@ -69,7 +60,6 @@ require (
 	github.com/abemedia/fasthttpfs v0.0.0-20220405193636-731805b0c723 // indirect
 	github.com/abemedia/httprouter v0.0.0-20230505023925-232e0e5a4b1b // indirect
 	github.com/andybalholm/brotli v1.0.6 // indirect
-	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bytedance/sonic v1.10.2 // indirect
 	github.com/celrenheit/htest v0.0.0-20170621160705-e34d50431e7f // indirect
@@ -77,7 +67,6 @@ require (
 	github.com/chenzhuoyu/base64x v0.0.0-20230717121745-296ad89f973d // indirect
 	github.com/chenzhuoyu/iasm v0.9.1 // indirect
 	github.com/clbanning/mxj/v2 v2.7.0 // indirect
-	github.com/codegangsta/inject v0.0.0-20150114235600-33e0aa1cb7c0 // indirect
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fatih/color v1.16.0 // indirect
@@ -94,7 +83,6 @@ require (
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.16.0 // indirect
 	github.com/goccy/go-json v0.10.2 // indirect
-	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/golang/gddo v0.0.0-20210115222349-20d68f94ee1f // indirect
 	github.com/google/uuid v1.4.0 // indirect
 	github.com/gorilla/websocket v1.5.1 // indirect
@@ -102,13 +90,6 @@ require (
 	github.com/grokify/html-strip-tags-go v0.1.0 // indirect
 	github.com/hashicorp/golang-lru v1.0.2 // indirect
 	github.com/imdario/mergo v0.3.16 // indirect
-	github.com/indigo-web/chunkedbody v0.1.0 // indirect
-	github.com/indigo-web/iter v0.1.0 // indirect
-	github.com/indigo-web/utils v0.6.1 // indirect
-	github.com/ivpusic/go-clicolor v0.0.0-20150828210804-23f0b77f328a // indirect
-	github.com/ivpusic/golog v0.0.0-20170608213328-28640bee649f // indirect
-	github.com/ivpusic/httpcheck v0.0.0-20170215120547-c49b174389ac // indirect
-	github.com/ivpusic/urlregex v0.0.0-20160128000749-4dd86e784405 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/jonboulle/clockwork v0.4.0 // indirect
@@ -126,8 +107,6 @@ require (
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
 	github.com/pelletier/go-toml/v2 v2.1.0 // indirect
-	github.com/pilu/config v0.0.0-20131214182432-3eb99e6c0b9a // indirect
-	github.com/pilu/miniassert v0.0.0-20140522125902-bee63581261a // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/prometheus/client_golang v1.17.0 // indirect
 	github.com/prometheus/client_model v0.5.0 // indirect
@@ -157,7 +136,6 @@ require (
 	golang.org/x/sys v0.15.0 // indirect
 	golang.org/x/term v0.15.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
-	golang.org/x/time v0.5.0 // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
