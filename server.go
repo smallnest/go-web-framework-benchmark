@@ -58,7 +58,6 @@ import (
 	gcontext "golang.org/x/net/context"
 	"gopkg.in/baa.v1"
 	"gopkg.in/celrenheit/lion.v1"
-	"gopkg.in/macaron.v1"
 	"goyave.dev/goyave/v4"
 	"goyave.dev/goyave/v4/config"
 )
@@ -133,7 +132,7 @@ func main() {
 	case "fasthttp":
 		startFasthttp()
 	case "fasthttp/router":
-		startFastHTTPSlashRouter()
+		startFastHTTPRouter()
 	case "fasthttp-routing":
 		startFastHTTPRouting()
 	case "fiber":
@@ -170,8 +169,6 @@ func main() {
 		startLars()
 	case "lion":
 		startLion()
-	case "macaron":
-		startMacaron()
 	case "muxie":
 		startMuxie()
 	case "negroni":
@@ -424,7 +421,7 @@ func startFasthttp() {
 }
 
 // fasthttp Router
-func startFastHTTPSlashRouter() {
+func startFastHTTPRouter() {
 	mux := fasthttprouter.New()
 	mux.GET("/hello", fastHTTPHandler)
 	log.Fatal(fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.Handler))
@@ -787,26 +784,6 @@ func startLion() {
 	mux := lion.New()
 	mux.GetFunc("/hello", lionHandler)
 	mux.Run(":" + strconv.Itoa(port))
-}
-
-// Macaron
-func macaronHandler(c *macaron.Context) string {
-	if cpuBound {
-		pow(target)
-	} else {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		} else {
-			runtime.Gosched()
-		}
-	}
-	return messageStr
-}
-
-func startMacaron() {
-	mux := macaron.New()
-	mux.Get("/hello", macaronHandler)
-	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
 func startMuxie() {
