@@ -15,9 +15,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 
 **Only test those webframeworks which are stable**
 
-* [ace](https://github.com/plimble/ace)
 * [atreugo](https://github.com/savsgio/atreugo)
-* [aurora](https://github.com/aurora-go/aurora)
 * [baa](https://github.com/go-baa/baa)
 * [beego](https://github.com/astaxie/beego)
 * [bone](https://github.com/go-zoo/bone)
@@ -27,48 +25,38 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [denco](https://github.com/naoina/denco)
 * [don](https://github.com/abemedia/go-don)
 * [echo](https://github.com/labstack/echo)
-* [echo-slim](https://github.com/partialize/echo-slim)
 * [fasthttp-routing](https://github.com/qiangxue/fasthttp-routing)
 * [fasthttp/router](https://github.com/fasthttp/router)
 * [fasthttp](https://github.com/valyala/fasthttp)
-* [fasthttprouter](https://github.com/buaazp/fasthttprouter)
-* [fastRouter](https://github.com/razonyang/fastrouter)
 * [fiber](https://gofiber.io/)
-* [flygo](https://github.com/billcoding/flygo)
 * [gear](http://github.com/teambition/gear)
 * [gearbox](https://github.com/gogearbox/gearbox)
 * [gem](https://github.com/go-gem/gem)
 * [gin](https://github.com/gin-gonic/gin)
 * [goframe](https://github.com/gogf/gf)
-* [go-json-rest](https://github.com/ant0ine/go-json-rest)
 * [go-ozzo](https://github.com/go-ozzo/ozzo-routing)
 * [go-restful](https://github.com/emicklei/go-restful)
 * [go-tigertonic](https://github.com/rcrowley/go-tigertonic)
 * [goji](https://github.com/zenazn/goji/web)
 * [goji](http://goji.io)
 * [golf](https://github.com/dinever/golf)
-* [gongular](https://github.com/mustafaakin/gongular)
 * [gorilla](https://github.com/gorilla/mux)
 * [gorouter](https://github.com/vardius/gorouter)
 * [goyave](https://github.com/System-Glitch/goyave)
-* [~~gramework~~](https://github.com/gramework/gramework):its init function pollutes the test so it has been removed from test.
 * [httprouter](https://github.com/julienschmidt/httprouter)
 * [httptreemux](https://github.com/dimfeld/httptreemux)
+* [indigo](https://github.com/indigo-web/indigo)
 * [lars](https://github.com/go-playground/lars)
 * [lion](https://github.com/celrenheit/lion)
 * [macaron](https://github.com/Unknwon/macaron)
-* [martini](https://github.com/go-martini/martini)
 * [muxie](https://github.com/kataras/muxie)
 * [negroni](https://github.com/urfave/negroni)
-* [neo](https://github.com/ivpusic/neo)
 * [pat](https://github.com/bmizerany/pat)
 * [pulse](https://github.com/gopulse/pulse)
 * [pure](https://github.com/go-playground/pure)
 * [r2router](https://github.com/vanng822/r2router)
-* [siris](https://github.com/go-siris/siris)
 * [tango](https://github.com/lunny/tango)
 * [tinyrouter](https://github.com/go101/tinyrouter)
-* [traffic](https://github.com/pilu/traffic)
 * [treemux](https://github.com/vmihailenco/treemux)
 * [violetear](https://github.com/nbari/violetear)
 * [vulcan](https://github.com/mailgun/route)
@@ -158,7 +146,7 @@ It takes a while to install a large number of dependencies that need to be downl
 
 ```
 cd $GOPATH/src/github.com/smallnest/go-web-framework-benchmark
-go build -o  gowebbenchmark *.go
+go build -o gowebbenchmark .
 ./test.sh
 ```
 
@@ -183,7 +171,7 @@ It will  generate test results in processtime.csv and concurrency.csv. You can m
 * If you want to test some of web frameworks, you can modify the test script and only keep your selected web frameworks:
 ```
 ……
-web_frameworks=( "default" "ace" "beego" "bone" "denco" "echov1" "echov2standard" "echov2fasthttp" "fasthttp-raw" "fasthttprouter" "fasthttp-routing" "gin" "gocraftWeb" "goji" "gojiv2" "gojsonrest" "gorestful" "gorilla" "httprouter" "httptreemux" "lars" "lion" "macaron" "martini" "pat" "r2router" "tango" "tiger" "traffic" "violetear" "vulcan")
+web_frameworks=("default" "atreugo" "beego" "bone" "chi" "denco" "don" "echo" "fasthttp" "fasthttp-routing" "fasthttp/router" "fiber" "gear" "gearbox" "gin" "goframe" "goji" "gorestful" "gorilla" "gorouter" "gorouterfasthttp" "go-ozzo" "goyave" "httprouter" "httptreemux" "indigo" "lars" "lion" "muxie" "negroni" "pat" "pulse" "pure" "r2router" "tango" "tiger" "tinyrouter" "violetear" "vulcan" "webgo")
 ……
 ```
 * If you want to test all cases, you can run:
@@ -192,9 +180,12 @@ web_frameworks=( "default" "ace" "beego" "bone" "denco" "echov1" "echov2standard
 ./test-all.sh
 ```
 
-## Plot
-you can run the shell script `plot.sh` in testresults directory and it can generate all images in its parent directory.
+NOTE: comparing 2 webframeworks consumes approx. 11-13 minutes (doesn't depend on the machine). Just `test.sh` with all
+the webframeworks enabled will take a couple of hours to run.
 
+## Plot
+All the graphs are generated automatically as the `./test.sh` finishes. However, if the run was interrupted, you can
+generate them manually of partial data by executing `plot.sh` in testresults directory.
 
 ### Add new web framework
 Welcome to add new Go web frameworks. You can follow the below steps and send me a pull request.

@@ -22,10 +22,10 @@ test_web_framework()
   ./$server_bin_name $2 $3 > alloc.log 2>&1 &
   sleep 2
   wrk -t$cpu_cores -c$4 -d30s -H 'Connection: Close' http://127.0.0.1:8080/hello > tmp.log
-  throughput=`cat tmp.log|grep Requests/sec|awk '{print $2}'`
-  latency=`cat tmp.log|grep Latency | awk '{print $2}'`
+  throughput=$(< "tmp.log" grep Requests/sec|awk '{print $2}')
+  latency=$(< "tmp.log" grep Latency | awk '{print $2}')
   latency=${latency%ms}
-  alloc=`cat alloc.log|grep HeapAlloc | awk '{print $2}'`
+  alloc=$(< "alloc.log" grep HeapAlloc | awk '{print $2}')
   echo "throughput: $throughput requests/second, latency: $latency ms, alloc: $alloc"
   test_result[$1]=$throughput
   test_latency_result[$1]=$latency
@@ -33,7 +33,7 @@ test_web_framework()
 
   pkill -9 $server_bin_name
   sleep 2
-  echo "finsihed testing $2"
+  echo "finished testing $2"
   echo
 }
 
@@ -45,9 +45,9 @@ test_all()
   echo "      Concurrency     $2           "
   echo "                                   "
   echo "###################################"
-  for ((i=0; i<$length; i++))
+  for ((i=0; i<length; i++))
   do
-  	test_web_framework $i ${web_frameworks[$i]} $1 $2
+  	test_web_framework "$i" "${web_frameworks[$i]}" "$1" "$2"
   done
 }
 
@@ -99,3 +99,4 @@ mv -f processtime_latency.csv ./testresults
 mv -f concurrency.csv ./testresults
 mv -f concurrency_latency.csv ./testresults
 mv -f concurrency_alloc.csv ./testresults
+./testresults/plot.sh

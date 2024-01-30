@@ -3,6 +3,9 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/indigo-web/indigo"
+	"github.com/indigo-web/indigo/router/inbuilt"
+	"github.com/vanng822/r2router"
 	"io"
 	"io/ioutil"
 	"log"
@@ -12,7 +15,6 @@ import (
 	"strconv"
 	"time"
 
-	"clevergo.tech/clevergo"
 	"github.com/abemedia/go-don"
 	_ "github.com/abemedia/go-don/encoding/text"
 	"github.com/ant0ine/go-json-rest/rest"
@@ -20,56 +22,45 @@ import (
 	beegoContext "github.com/astaxie/beego/context"
 	"github.com/bmizerany/pat"
 	"github.com/bnkamalesh/webgo/v7"
-	"github.com/buaazp/fasthttprouter"
 	bxog "github.com/claygod/Bxog"
 	"github.com/dimfeld/httptreemux"
 	"github.com/dinever/golf"
-	restful "github.com/emicklei/go-restful"
-	fasthttpSlashRouter "github.com/fasthttp/router"
+	"github.com/emicklei/go-restful"
+	fasthttprouter "github.com/fasthttp/router"
 	"github.com/gin-gonic/gin"
 	"github.com/go-chi/chi/v5"
-	"github.com/go-martini/martini"
 	ozzo "github.com/go-ozzo/ozzo-routing"
 	"github.com/go-playground/lars"
 	"github.com/go-playground/pure"
 	"github.com/go-zoo/bone"
 	"github.com/gocraft/web"
 	"github.com/gofiber/fiber/v2"
-	gearbox "github.com/gogearbox/gearbox"
+	"github.com/gogearbox/gearbox"
 	gf "github.com/gogf/gf/v2/frame/g"
 	"github.com/gopulse/pulse"
 	"github.com/gorilla/mux"
-	gowwwrouter "github.com/gowww/router"
-	"github.com/ivpusic/neo"
+	ihttp "github.com/indigo-web/indigo/http"
 	"github.com/julienschmidt/httprouter"
 	"github.com/kataras/muxie"
-	echo "github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4"
 	llog "github.com/lunny/log"
 	"github.com/lunny/tango"
 	vulcan "github.com/mailgun/route"
-	"github.com/mustafaakin/gongular"
 	"github.com/naoina/denco"
 	"github.com/nbari/violetear"
-	echoSlim "github.com/partialize/echo-slim/v4"
-	echoSlimMiddleware "github.com/partialize/echo-slim/v4/middleware"
-	"github.com/pilu/traffic"
-	routing "github.com/qiangxue/fasthttp-routing"
-	"github.com/razonyang/fastrouter"
-	tigertonic "github.com/rcrowley/go-tigertonic"
+	"github.com/qiangxue/fasthttp-routing"
+	"github.com/rcrowley/go-tigertonic"
 	"github.com/savsgio/atreugo/v11"
 	"github.com/teambition/gear"
-	"github.com/tockins/fresh"
 	"github.com/urfave/negroni"
 	"github.com/valyala/fasthttp"
-	"github.com/vanng822/r2router"
 	"github.com/vardius/gorouter/v4"
 	tiny "go101.org/tinyrouter"
 	goji "goji.io"
 	gojipat "goji.io/pat"
 	gcontext "golang.org/x/net/context"
-	baa "gopkg.in/baa.v1"
-	lion "gopkg.in/celrenheit/lion.v1"
-	macaron "gopkg.in/macaron.v1"
+	"gopkg.in/baa.v1"
+	"gopkg.in/celrenheit/lion.v1"
 	"goyave.dev/goyave/v4"
 	"goyave.dev/goyave/v4/config"
 )
@@ -123,7 +114,6 @@ func main() {
 	switch webFramework {
 	case "default":
 		startDefaultMux()
-
 	case "atreugo":
 		startAtreugo()
 	case "baa":
@@ -136,30 +126,20 @@ func main() {
 		startBxog()
 	case "chi":
 		startChi()
-	case "clevergo":
-		startCleverGo()
 	case "denco":
 		startDenco()
 	case "don":
 		startDon()
 	case "echo":
 		startEcho()
-	case "echo-slim":
-		startEchoSlim()
 	case "fasthttp":
 		startFasthttp()
-	case "fasthttprouter":
-		startFastHTTPRouter()
 	case "fasthttp/router":
-		startFastHTTPSlashRouter()
+		startFastHTTPRouter()
 	case "fasthttp-routing":
 		startFastHTTPRouting()
-	case "fastrouter":
-		startFastRouter()
 	case "fiber":
 		startFiber()
-	case "fresh":
-		startFresh()
 	case "gear":
 		startGear()
 	case "gearbox":
@@ -172,12 +152,8 @@ func main() {
 		startGoframe()
 	case "goji":
 		startGoji()
-	case "gojsonrest":
-		startGoJSONRest()
 	case "golf":
 		startGolf()
-	case "gongular":
-		startGongular()
 	case "gorestful":
 		startGoRestful()
 	case "gorilla":
@@ -188,26 +164,20 @@ func main() {
 		startGorouterFastHTTP()
 	case "go-ozzo":
 		startGoozzo()
-	case "gowww":
-		startGowww()
 	case "httprouter":
 		startHTTPRouter()
 	case "httptreemux":
 		starthttpTreeMux()
+	case "indigo":
+		startIndigo()
 	case "lars":
 		startLars()
 	case "lion":
 		startLion()
-	case "macaron":
-		startMacaron()
-	case "martini":
-		startMartini()
 	case "muxie":
 		startMuxie()
 	case "negroni":
 		startNegroni()
-	case "neo":
-		startNeo()
 	case "pat":
 		startPat()
 	case "pulse":
@@ -222,8 +192,6 @@ func main() {
 		startTigerTonic()
 	case "tinyrouter":
 		startTinyRouter()
-	case "traffic":
-		startTraffic()
 	case "violetear":
 		startVioletear()
 	case "vulcan":
@@ -368,27 +336,6 @@ func startChi() {
 	http.ListenAndServe(":"+strconv.Itoa(port), r)
 }
 
-// clevergo
-func cleverGoHandler(c *clevergo.Context) error {
-	if cpuBound {
-		pow(target)
-	} else {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		} else {
-			runtime.Gosched()
-		}
-	}
-	c.Response.Write(message)
-	return nil
-}
-
-func startCleverGo() {
-	app := clevergo.Pure()
-	app.Get("/hello", cleverGoHandler)
-	app.Run(":" + strconv.Itoa(port))
-}
-
 // denco
 func dencoHandler(w http.ResponseWriter, r *http.Request, params denco.Params) {
 	if cpuBound {
@@ -405,7 +352,7 @@ func dencoHandler(w http.ResponseWriter, r *http.Request, params denco.Params) {
 
 func startDenco() {
 	mux := denco.NewMux()
-	handler, _ := mux.Build([]denco.Handler{mux.GET("/hello", denco.HandlerFunc(dencoHandler))})
+	handler, _ := mux.Build([]denco.Handler{mux.GET("/hello", dencoHandler)})
 	http.ListenAndServe(":"+strconv.Itoa(port), handler)
 }
 
@@ -451,45 +398,7 @@ func startEcho() {
 	e.Start(":" + strconv.Itoa(port))
 }
 
-// echo-slim
-func echoSlimHandler(c echoSlim.Context) error {
-	if cpuBound {
-		pow(target)
-	} else {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		} else {
-			runtime.Gosched()
-		}
-	}
-	c.Response().Write(message)
-	return nil
-}
-
-func startEchoSlim() {
-	e := echoSlim.New()
-	r := echoSlimMiddleware.NewRouter()
-
-	r.GET("/hello", echoSlimHandler)
-
-	e.Use(r.Routes)
-
-	e.Start(":" + strconv.Itoa(port))
-}
-
-func startFasthttp() {
-	s := &fasthttp.Server{
-		Handler:                       fastHTTPHandler,
-		GetOnly:                       true,
-		NoDefaultDate:                 true,
-		NoDefaultContentType:          true,
-		DisableHeaderNamesNormalizing: true,
-	}
-
-	log.Fatal(s.ListenAndServe(":" + strconv.Itoa(port)))
-}
-
-// fasthttprouter
+// fasthttp
 func fastHTTPHandler(ctx *fasthttp.RequestCtx) {
 	if cpuBound {
 		pow(target)
@@ -504,15 +413,21 @@ func fastHTTPHandler(ctx *fasthttp.RequestCtx) {
 	ctx.Write(message)
 }
 
-func startFastHTTPRouter() {
-	mux := fasthttprouter.New()
-	mux.GET("/hello", fastHTTPHandler)
-	fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.Handler)
+func startFasthttp() {
+	s := &fasthttp.Server{
+		Handler:                       fastHTTPHandler,
+		GetOnly:                       true,
+		NoDefaultDate:                 true,
+		NoDefaultContentType:          true,
+		DisableHeaderNamesNormalizing: true,
+	}
+
+	log.Fatal(s.ListenAndServe(":" + strconv.Itoa(port)))
 }
 
 // fasthttp Router
-func startFastHTTPSlashRouter() {
-	mux := fasthttpSlashRouter.New()
+func startFastHTTPRouter() {
+	mux := fasthttprouter.New()
 	mux.GET("/hello", fastHTTPHandler)
 	log.Fatal(fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.Handler))
 }
@@ -536,49 +451,6 @@ func startFastHTTPRouting() {
 	mux := routing.New()
 	mux.Get("/hello", fastHTTPRoutingHandler)
 	fasthttp.ListenAndServe(":"+strconv.Itoa(port), mux.HandleRequest)
-}
-
-// fastrouter
-func fastRouterHandler(w http.ResponseWriter, r *http.Request) {
-	if cpuBound {
-		pow(target)
-	} else {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		} else {
-			runtime.Gosched()
-		}
-	}
-	w.Write(message)
-}
-
-func startFastRouter() {
-	mux := fastrouter.New()
-	mux.Get("/hello", fastRouterHandler)
-	mux.Prepare()
-	http.ListenAndServe(":"+strconv.Itoa(port), mux)
-}
-
-// fresh
-func freshHandler(c fresh.Context) error {
-	if cpuBound {
-		pow(target)
-	} else {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		} else {
-			runtime.Gosched()
-		}
-	}
-	c.Response().Text(http.StatusOK, messageStr)
-	return nil
-}
-
-func startFresh() {
-	f := fresh.New()
-	f.Config().Port = port
-	f.GET("/hello", freshHandler)
-	f.Start()
 }
 
 // fiber
@@ -756,15 +628,6 @@ func goJSONRestHandler(w rest.ResponseWriter, req *rest.Request) {
 	iow.Write(message)
 }
 
-func startGoJSONRest() {
-	api := rest.NewApi()
-	router, _ := rest.MakeRouter(
-		&rest.Route{HttpMethod: "GET", PathExp: "/hello", Func: goJSONRestHandler},
-	)
-	api.SetApp(router)
-	http.ListenAndServe(":"+strconv.Itoa(port), api.MakeHandler())
-}
-
 func golfHandler(ctx *golf.Context) {
 	if cpuBound {
 		pow(target)
@@ -782,29 +645,6 @@ func startGolf() {
 	app := golf.New()
 	app.Get("/hello", golfHandler)
 	app.Run(":" + strconv.Itoa(port))
-}
-
-type HelloMessage struct{}
-
-func (w *HelloMessage) Handle(c *gongular.Context) error {
-	if cpuBound {
-		pow(target)
-	} else {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		} else {
-			runtime.Gosched()
-		}
-	}
-	c.SetBody(messageStr)
-
-	return nil
-}
-
-func startGongular() {
-	g := gongular.NewEngine()
-	g.GetRouter().GET("/hello", &HelloMessage{})
-	g.ListenAndServe(":" + strconv.Itoa(port))
 }
 
 // goRestful
@@ -871,13 +711,6 @@ func startGoozzo() {
 	http.ListenAndServe(":"+strconv.Itoa(port), r)
 }
 
-// gowww
-func startGowww() {
-	rt := gowwwrouter.New()
-	rt.Handle("GET", "/hello", http.HandlerFunc(helloHandler))
-	http.ListenAndServe(":"+strconv.Itoa(port), rt)
-}
-
 // httprouter
 func httpRouterHandler(w http.ResponseWriter, _ *http.Request, ps httprouter.Params) {
 	if cpuBound {
@@ -916,6 +749,28 @@ func starthttpTreeMux() {
 	mux := httptreemux.New()
 	mux.GET("/hello", httpTreeMuxHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+// indigo
+func indigoHandler(r *ihttp.Request) *ihttp.Response {
+	if cpuBound {
+		pow(target)
+	} else {
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
+	}
+
+	return ihttp.Bytes(r, message)
+}
+
+func startIndigo() {
+	r := inbuilt.New()
+	r.Get("/hello", indigoHandler)
+
+	_ = indigo.New(":" + strconv.Itoa(port)).Serve(r)
 }
 
 // lars
@@ -958,48 +813,6 @@ func startLion() {
 	mux.Run(":" + strconv.Itoa(port))
 }
 
-// Macaron
-func macaronHandler(c *macaron.Context) string {
-	if cpuBound {
-		pow(target)
-	} else {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		} else {
-			runtime.Gosched()
-		}
-	}
-	return messageStr
-}
-
-func startMacaron() {
-	mux := macaron.New()
-	mux.Get("/hello", macaronHandler)
-	http.ListenAndServe(":"+strconv.Itoa(port), mux)
-}
-
-// Martini
-func martiniHandlerWrite(params martini.Params) string {
-	if cpuBound {
-		pow(target)
-	} else {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		} else {
-			runtime.Gosched()
-		}
-	}
-	return messageStr
-}
-
-func startMartini() {
-	mux := martini.NewRouter()
-	mux.Get("/hello", martiniHandlerWrite)
-	martini := martini.New()
-	martini.Action(mux.Handle)
-	http.ListenAndServe(":"+strconv.Itoa(port), martini)
-}
-
 func startMuxie() {
 	mux := muxie.NewMux()
 	mux.HandleFunc("/hello", helloHandler)
@@ -1015,27 +828,6 @@ func startNegroni() {
 	n.UseHandler(mux)
 
 	http.ListenAndServe(":"+strconv.Itoa(port), n)
-}
-
-// neo
-func startNeo() {
-	app := neo.App()
-	app.Conf.App.Addr = ":" + strconv.Itoa(port)
-
-	app.Get("/hello", func(ctx *neo.Ctx) (int, error) {
-		if cpuBound {
-			pow(target)
-		} else {
-			if sleepTime > 0 {
-				time.Sleep(sleepTimeDuration)
-			} else {
-				runtime.Gosched()
-			}
-		}
-		return 200, ctx.Res.Raw(message)
-	})
-
-	app.Start()
 }
 
 // pat
@@ -1128,27 +920,6 @@ func startTinyRouter() {
 	}
 	router := tiny.New(tiny.Config{Routes: routes})
 	http.ListenAndServe(":"+strconv.Itoa(port), router)
-}
-
-// traffic
-func trafficHandler(w traffic.ResponseWriter, r *traffic.Request) {
-	if cpuBound {
-		pow(target)
-	} else {
-		if sleepTime > 0 {
-			time.Sleep(sleepTimeDuration)
-		} else {
-			runtime.Gosched()
-		}
-	}
-	w.Write(message)
-}
-
-func startTraffic() {
-	traffic.SetVar("env", "bench")
-	mux := traffic.New()
-	mux.Get("/hello", trafficHandler)
-	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 
 // violetear
