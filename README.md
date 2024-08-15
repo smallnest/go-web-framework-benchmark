@@ -82,7 +82,7 @@ When I use the above codes to test those web frameworks, the token time of route
 
 So I create this project to compare performance of web frameworks including connection, route selection, handler processing. It mocks business logics and can set a special processing time.
 
-The you can get some interesting results if you use it to test.
+Then you can get some interesting results if you use it to test.
 
 ## Implementation
 When you test a web framework, this test suit will starts a simple http server implemented by this web framework. It is a real http server and only contains GET url: "/hello".
