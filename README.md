@@ -45,6 +45,7 @@ This benchmark suite aims to compare the performance of Go web frameworks. It is
 * [goyave](https://github.com/System-Glitch/goyave)
 * [httprouter](https://github.com/julienschmidt/httprouter)
 * [httptreemux](https://github.com/dimfeld/httptreemux)
+* [httpz](https://github.com/aeilang/httpz)
 * [indigo](https://github.com/indigo-web/indigo)
 * [lars](https://github.com/go-playground/lars)
 * [lion](https://github.com/celrenheit/lion)
