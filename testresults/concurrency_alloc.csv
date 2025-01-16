@@ -1,4 +1,4 @@
-,default,beego,bone,chi,clevergo,denco,echo,fasthttp,fasthttp-routing,fasthttp/router,fasthttprouter,fastrouter,fiber,fresh,gear,gearbox,gin,goframe,goji,gojsonrest,gongular,gorestful,gorilla,gorouter,gorouterfasthttp,go-ozzo,gowww,goyave,httprouter,httptreemux,lars,lion,martini,muxie,negroni,neo,pat,pure,r2router,tango,tiger,tinyrouter,traffic,violetear,vulcan,webgo
-100,8,5,8,8,10,7,5,5,5,5,6,5,4 3 3 4 5,6,8,7,9,8,7,7,6,10,5,5,4,9,7,10,5,5,6,8,6,8,6,5,9,9,5,6,8,7,7,6,10,6
-1000,31,21,21,25,30,22,34,14,19,14,19,26,3 6 7 7 6,39,23,18,39,31,24,29,38,30,34,30,18,35,33,19,37,30,19,20,44,18,21,40,30,37,21,24,18,31,21,19,40,33
-5000,83,149,134,100,161,148,148,57,69,59,71,153,4 17 18 17 17,115,143,92,134,97,160,103,100,116,79,85,59,129,163,89,146,78,162,166,154,129,150,119,142,95,155,134,134,113,179,111,83,161
+,default,chi,echo,gin,goframe,httpz
+100,11,6,10,7,11,7
+1000,22,35,30,31,21,25
+5000,144,132,97,151,130,117
