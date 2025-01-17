@@ -3,9 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/indigo-web/indigo"
-	"github.com/indigo-web/indigo/router/inbuilt"
-	"github.com/vanng822/r2router"
 	"io"
 	"io/ioutil"
 	"log"
@@ -14,6 +11,11 @@ import (
 	"runtime"
 	"strconv"
 	"time"
+
+	"github.com/aeilang/httpz"
+	"github.com/indigo-web/indigo"
+	"github.com/indigo-web/indigo/router/inbuilt"
+	"github.com/vanng822/r2router"
 
 	"github.com/abemedia/go-don"
 	_ "github.com/abemedia/go-don/encoding/text"
@@ -48,7 +50,7 @@ import (
 	vulcan "github.com/mailgun/route"
 	"github.com/naoina/denco"
 	"github.com/nbari/violetear"
-	"github.com/qiangxue/fasthttp-routing"
+	routing "github.com/qiangxue/fasthttp-routing"
 	"github.com/rcrowley/go-tigertonic"
 	"github.com/savsgio/atreugo/v11"
 	"github.com/teambition/gear"
@@ -168,6 +170,8 @@ func main() {
 		startHTTPRouter()
 	case "httptreemux":
 		starthttpTreeMux()
+	case "httpz":
+		startHTTPZ()
 	case "indigo":
 		startIndigo()
 	case "lars":
@@ -748,6 +752,28 @@ func httpTreeMuxHandler(w http.ResponseWriter, _ *http.Request, vars map[string]
 func starthttpTreeMux() {
 	mux := httptreemux.New()
 	mux.GET("/hello", httpTreeMuxHandler)
+	http.ListenAndServe(":"+strconv.Itoa(port), mux)
+}
+
+// httpz
+func httpzHandler(w http.ResponseWriter, _ *http.Request) error {
+	if cpuBound {
+		pow(target)
+	} else {
+		if sleepTime > 0 {
+			time.Sleep(sleepTimeDuration)
+		} else {
+			runtime.Gosched()
+		}
+	}
+
+	w.Write(message)
+	return nil
+}
+
+func startHTTPZ() {
+	mux := httpz.NewServeMux()
+	mux.Get("/hello", httpzHandler)
 	http.ListenAndServe(":"+strconv.Itoa(port), mux)
 }
 

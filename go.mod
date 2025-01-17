@@ -1,9 +1,10 @@
 module github.com/smallnest/go-web-framework-benchmark
 
-go 1.20
+go 1.23.3
 
 require (
 	github.com/abemedia/go-don v0.2.1
+	github.com/aeilang/httpz v1.1.2
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
 	github.com/astaxie/beego v1.12.3
 	github.com/bmizerany/pat v0.0.0-20210406213842-e4b6760bdd6f
@@ -119,7 +120,7 @@ require (
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/smartystreets/assertions v1.0.1 // indirect
 	github.com/smartystreets/goconvey v1.6.4 // indirect
-	github.com/stretchr/testify v1.8.4 // indirect
+	github.com/stretchr/testify v1.10.0 // indirect
 	github.com/teambition/trie-mux v1.5.2 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.12 // indirect
